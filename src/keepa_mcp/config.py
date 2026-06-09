@@ -12,7 +12,9 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Load .env from the current working directory or the repository root, if any.
-load_dotenv()
+# override=True so the project's .env is the authoritative source of the key,
+# even if a stale/empty value is present in the parent environment.
+load_dotenv(override=True)
 
 # Repository root = two levels up from this file (src/keepa_mcp/config.py).
 REPO_ROOT = Path(__file__).resolve().parents[2]
