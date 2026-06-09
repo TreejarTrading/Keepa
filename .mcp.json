@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "keepa": {
+      "command": "uv",
+      "args": ["run", "--directory", ".", "keepa-mcp"],
+      "env": {
+        "KEEPA_API_KEY": "${KEEPA_API_KEY}",
+        "KEEPA_DOMAIN": "US"
+      }
+    }
+  }
+}
