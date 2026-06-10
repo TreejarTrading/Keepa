@@ -1,9 +1,12 @@
 # Secrets
 .env
+ENV DOCS*
+ENV_DOCS*
 
 # Generated reports (keep the folder, ignore the XLSX outputs)
-Продукты/*.xlsx
-!Продукты/.gitkeep
+Products/*.xlsx
+!Products/.gitkeep
+auto_search.log
 
 # Python
 __pycache__/

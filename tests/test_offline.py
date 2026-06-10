@@ -122,3 +122,137 @@ def test_build_selection_units():
     assert sel["current_RATING_gte"] == 43
     assert sel["current_COUNT_REVIEWS_gte"] == 500
     assert sel["title"] == "earbuds"
+
+
+def test_build_selection_extras():
+    from keepa_mcp import keepa_client
+
+    sel = keepa_client.build_selection(
+        max_offer_count=15,
+        min_monthly_sold=300,
+        extra_filters={"avg90_SALES_lte": 40000},
+    )
+    assert sel["current_COUNT_NEW_lte"] == 15
+    assert sel["monthlySold_gte"] == 300
+    assert sel["avg90_SALES_lte"] == 40000
+
+
+def test_normalize_domain():
+    from keepa_mcp import keepa_client
+
+    assert keepa_client.normalize_domain("UK") == "GB"
+    assert keepa_client.normalize_domain("uk") == "GB"
+    assert keepa_client.normalize_domain("US") == "US"
+    for market in ("US", "UK", "DE", "FR", "IT", "ES"):
+        code = keepa_client.normalize_domain(market)
+        assert code in keepa_client.DOMAIN_IDS
+        assert code in keepa_client.DOMAIN_TLDS
+    with pytest.raises(ValueError):
+        keepa_client.normalize_domain("XX")
+
+
+def test_domain_aware_urls(fake_product):
+    from keepa_mcp import analysis
+
+    rec = analysis.build_record(fake_product, domain="UK")
+    assert rec["marketplace"] == "GB"
+    assert rec["url"] == "https://www.amazon.co.uk/dp/B0TEST1234"
+    assert rec["keepa_url"] == "https://keepa.com/#!product/2-B0TEST1234"
+
+
+def test_auto_verdict_buy(fake_product):
+    from keepa_mcp import analysis
+
+    rec = analysis.auto_verdict(analysis.build_record(fake_product, stats_days=90))
+    assert rec["verdict"] in {"BUY", "WATCH", "SKIP"}
+    # This fixture is a healthy product: steady price, sales drops, 4.4 rating.
+    assert rec["verdict"] == "BUY"
+    assert rec["rationale"]
+    assert rec["confidence"] in {"high", "medium", "low"}
+
+
+def test_auto_verdict_skip():
+    from keepa_mcp import analysis
+
+    bad = {
+        "metrics": {
+            "pricing": {"new": {"volatility": 0.8}},
+            "sales_rank": {"drops_30d": 0},
+            "competition": {"offer_count": {"current": 40}, "buy_box_is_amazon": True},
+            "reviews": {"rating_current": 3.5, "review_count_current": 20},
+            "demand": {"monthly_sold_estimate": 10},
+        }
+    }
+    rec = analysis.auto_verdict(bad)
+    assert rec["verdict"] == "SKIP"
+
+
+def test_env_docs_loading(tmp_path, monkeypatch):
+    import importlib
+
+    monkeypatch.delenv("KEEPA_API_KEY", raising=False)
+    from keepa_mcp import config
+
+    (tmp_path / "ENV DOCS").write_text(
+        "# Keepa key\nKEEPA_API_KEY=abc123testkey\n", encoding="utf-8"
+    )
+    monkeypatch.setattr(config, "REPO_ROOT", tmp_path)
+    config._load_env_docs()
+    assert os.environ.get("KEEPA_API_KEY") == "abc123testkey"
+    monkeypatch.delenv("KEEPA_API_KEY", raising=False)
+
+    # Bare-token format
+    (tmp_path / "ENV DOCS").write_text("a" * 64 + "\n", encoding="utf-8")
+    config._load_env_docs()
+    assert os.environ.get("KEEPA_API_KEY") == "a" * 64
+    monkeypatch.delenv("KEEPA_API_KEY", raising=False)
+    importlib.reload(config)
+
+
+def test_auto_search_config(tmp_path):
+    import json
+
+    from keepa_mcp import auto_search
+
+    cfg = tmp_path / "auto_searches.json"
+    cfg.write_text(
+        json.dumps(
+            {
+                "searches": [
+                    {
+                        "name": "test",
+                        "domain": "UK",
+                        "filters": {"title": "pet", "min_price": 10},
+                        "limit": 5,
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    searches = auto_search.load_searches(cfg)
+    assert searches[0]["name"] == "test"
+    assert searches[0]["domain"] == "UK"
+    assert searches[0]["limit"] == 5
+
+    cfg.write_text(
+        json.dumps({"searches": [{"name": "bad", "filters": {"bogus_key": 1}}]}),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="bogus_key"):
+        auto_search.load_searches(cfg)
+
+    with pytest.raises(FileNotFoundError):
+        auto_search.load_searches(tmp_path / "missing.json")
+
+
+def test_repo_auto_searches_file_valid():
+    from keepa_mcp import auto_search, config
+
+    searches = auto_search.load_searches(config.AUTO_SEARCH_FILE)
+    assert len(searches) >= 1
+    for s in searches:
+        from keepa_mcp import keepa_client
+
+        keepa_client.normalize_domain(s["domain"])  # must not raise
+        keepa_client.build_selection(**s["filters"], extra_filters=s["extra_filters"])

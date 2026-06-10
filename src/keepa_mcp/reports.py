@@ -1,4 +1,4 @@
-"""Generate XLSX purchase-analysis reports into the Продукты/ folder."""
+"""Generate XLSX purchase-analysis reports into the Products/ folder."""
 
 from __future__ import annotations
 

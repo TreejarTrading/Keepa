@@ -183,11 +183,17 @@ def extract_metrics(product: dict[str, Any], stats_days: int = 90) -> dict[str, 
     }
 
 
-def product_overview(product: dict[str, Any]) -> dict[str, Any]:
+def product_overview(product: dict[str, Any], domain: str = "US") -> dict[str, Any]:
     """Catalogue / qualitative fields useful for spec & customer-need analysis."""
+    from . import keepa_client
+
+    code = keepa_client.normalize_domain(domain)
+    tld = keepa_client.DOMAIN_TLDS.get(code, "com")
+    domain_id = keepa_client.DOMAIN_IDS.get(code, 1)
     category_tree = product.get("categoryTree") or []
     categories = [c.get("name") for c in category_tree if isinstance(c, dict)]
     return {
+        "marketplace": code,
         "asin": product.get("asin"),
         "title": product.get("title"),
         "brand": product.get("brand") or product.get("manufacturer"),
@@ -206,21 +212,82 @@ def product_overview(product: dict[str, Any]) -> dict[str, Any]:
         "variation_count": len(product.get("variations") or []),
         "fba_fees": product.get("fbaFees"),
         "image": (product.get("imagesCSV") or "").split(",")[0] or None,
-        "url": f"https://www.amazon.com/dp/{product.get('asin')}"
+        "url": f"https://www.amazon.{tld}/dp/{product.get('asin')}"
         if product.get("asin")
         else None,
-        "keepa_url": f"https://keepa.com/#!product/1-{product.get('asin')}"
+        "keepa_url": f"https://keepa.com/#!product/{domain_id}-{product.get('asin')}"
         if product.get("asin")
         else None,
     }
 
 
-def build_record(product: dict[str, Any], stats_days: int = 90) -> dict[str, Any]:
+def build_record(
+    product: dict[str, Any], stats_days: int = 90, domain: str = "US"
+) -> dict[str, Any]:
     """Combine overview + metrics into a single analysis record."""
     return {
-        **product_overview(product),
+        **product_overview(product, domain=domain),
         "metrics": extract_metrics(product, stats_days=stats_days),
     }
+
+
+def auto_verdict(record: dict[str, Any]) -> dict[str, Any]:
+    """Attach a rule-based verdict to a record (used by unattended auto runs).
+
+    Mirrors DECISION_GUIDANCE so scheduled reports are immediately actionable;
+    when Claude is in the loop it produces its own, richer verdicts instead.
+    """
+    m = record.get("metrics") or {}
+    pricing = (m.get("pricing") or {}).get("new") or {}
+    rank = m.get("sales_rank") or {}
+    comp = m.get("competition") or {}
+    offers = (comp.get("offer_count") or {}).get("current")
+    reviews = m.get("reviews") or {}
+    demand = m.get("demand") or {}
+
+    pros: list[str] = []
+    cons: list[str] = []
+
+    volatility = pricing.get("volatility")
+    if volatility is not None:
+        if volatility <= 0.25:
+            pros.append(f"stable price (volatility {volatility})")
+        elif volatility >= 0.5:
+            cons.append(f"volatile price (volatility {volatility})")
+
+    drops30 = rank.get("drops_30d")
+    monthly = demand.get("monthly_sold_estimate")
+    if (drops30 or 0) >= 8 or (monthly or 0) >= 300:
+        pros.append(f"healthy sales velocity (drops30={drops30}, monthly≈{monthly})")
+    elif drops30 is not None and drops30 <= 2 and (monthly or 0) < 100:
+        cons.append(f"weak sales velocity (drops30={drops30}, monthly≈{monthly})")
+
+    if comp.get("buy_box_is_amazon"):
+        cons.append("Amazon holds the Buy Box")
+    if offers is not None:
+        if offers <= 12:
+            pros.append(f"moderate competition ({int(offers)} offers)")
+        elif offers >= 25:
+            cons.append(f"crowded listing ({int(offers)} offers)")
+
+    rating = reviews.get("rating_current")
+    review_count = reviews.get("review_count_current")
+    if rating is not None:
+        if rating >= 4.2 and (review_count or 0) >= 100:
+            pros.append(f"strong rating {rating} with {int(review_count)} reviews")
+        elif rating < 4.0:
+            cons.append(f"low rating {rating}")
+
+    if len(cons) >= 3 or (rating is not None and rating < 3.8):
+        verdict = "SKIP"
+    elif len(pros) >= 3 and len(cons) <= 1:
+        verdict = "BUY"
+    else:
+        verdict = "WATCH"
+
+    confidence = "high" if len(pros) + len(cons) >= 4 else "medium" if pros or cons else "low"
+    rationale = "; ".join(["+ " + p for p in pros] + ["- " + c for c in cons]) or "insufficient data"
+    return {**record, "verdict": verdict, "confidence": confidence, "rationale": rationale}
 
 
 # Guidance returned alongside data so Claude's verdicts stay consistent.
