@@ -35,6 +35,9 @@ def main() -> int:
         status = keepa_client.tokens_left()
         print("=== Keepa token status ===")
         print(json.dumps(status, ensure_ascii=False, indent=2))
+        if status.get("error"):
+            print(f"\n[X] Keepa is not reachable/authorized: {status['error']}")
+            return 2
         print("\n[OK] Key is valid. Reports will be written to:")
         print(f"     {config.OUTPUT_DIR}")
         return 0

@@ -71,9 +71,22 @@ def get_client():
 def tokens_left() -> dict[str, Any]:
     """Report remaining Keepa request tokens (quota)."""
     api = get_client()
+    error: str | None = None
+    try:
+        api.update_status()
+    except Exception as exc:  # noqa: BLE001 - report instead of crashing
+        error = f"{type(exc).__name__}: {exc}"
+        if "403" in str(exc):
+            error += (
+                " — likely an invalid key, no active Keepa API subscription, or "
+                "api.keepa.com is blocked by the network policy/allowlist."
+            )
+    status = getattr(api, "status", None)
     return {
         "tokens_left": getattr(api, "tokens_left", None),
-        "status": getattr(api, "status", None),
+        "refill_in_ms": getattr(status, "refillIn", None),
+        "refill_rate_per_min": getattr(status, "refillRate", None),
+        "error": error,
     }
 
 
