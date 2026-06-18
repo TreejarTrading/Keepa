@@ -8,6 +8,15 @@ MCP-сервер, который ищет товары на Amazon через **
 [SEARCH_GUIDE.md](SEARCH_GUIDE.md); кроме того, есть авторежим, который сам
 прогоняет сохранённые поиски каждые 2 дня.
 
+После того как товар отобран (через Keepa или из ваших данных по рынку Amazon),
+сервер помогает **найти этот товар в Китае** — на **1688, Alibaba.com,
+Taobao/Tmall, Pinduoduo** — и его цену предложения, с оценкой маржи. Цель
+мэтчинга — 100% тот же товар (EXACT), иначе ищем похожие (SIMILAR). Поскольку
+открытого API у этих площадок нет, **Claude сам ищет на сайтах** (WebSearch /
+WebFetch / поиск по картинке), а сервер строит план поиска, классифицирует
+найденные предложения и сохраняет отчёт по сорсингу. Подробно —
+[SOURCING_GUIDE.md](SOURCING_GUIDE.md).
+
 ## Что внутри
 
 ```
@@ -16,13 +25,15 @@ KEEPA/
 ├── .env.example             # шаблон переменных окружения
 ├── ENV DOCS                 # (ваш файл, не в git) — ключ Keepa API
 ├── SEARCH_GUIDE.md          # инструкция: фильтры, рынки, критерии вердиктов
+├── SOURCING_GUIDE.md        # инструкция: поиск товара в Китае (1688/Alibaba/...)
 ├── auto_searches.json       # сохранённые поиски для авторежима (раз в 2 дня)
 ├── pyproject.toml           # пакет keepa-mcp (uv / pip)
 ├── src/keepa_mcp/
 │   ├── config.py            # конфигурация (env, .env, ENV DOCS)
 │   ├── keepa_client.py      # обёртка над Keepa API (поиск, категории, бестселлеры)
 │   ├── analysis.py          # метрики решения + rule-based авто-вердикт
-│   ├── reports.py           # генерация XLSX-отчётов
+│   ├── china_sourcing.py    # сорсинг в Китае (план поиска, мэтчинг, маржа)
+│   ├── reports.py           # генерация XLSX-отчётов (Keepa + сорсинг)
 │   ├── auto_search.py       # авторежим (keepa-auto, cron каждые 2 дня)
 │   └── server.py            # MCP-сервер (FastMCP) и его инструменты
 ├── Products/                # сюда складываются XLSX-отчёты
@@ -91,6 +102,10 @@ Claude вызовет инструменты сервера, проанализ�
 | `analyze_and_report` | Загрузить метрики по ASIN, сразу сохранить отчёт, вернуть данные. |
 | `save_report` | Сохранить XLSX-отчёт с вердиктами, проставленными Claude. |
 | `run_auto_search` | Прогнать сохранённые поиски из `auto_searches.json` прямо сейчас. |
+| `china_sourcing_plan` | Построить план поиска товара в Китае (по ASIN из Keepa и/или вашим товарам): ссылки и запросы для 1688/Alibaba/Taobao/Tmall/Pinduoduo. |
+| `match_china_offers` | Оценить найденные предложения из Китая: EXACT vs SIMILAR, себестоимость в USD и маржа к цене Amazon. |
+| `fetch_page` | Запасной best-effort GET страницы (китайские сайты часто блокируют ботов — основной путь это WebSearch/WebFetch Claude). |
+| `save_sourcing_report` | Сохранить XLSX-отчёт по сорсингу (листы «Сорсинг» и «Сводка»). |
 
 ## Авторежим: поиск каждые 2 дня
 
@@ -109,6 +124,27 @@ uv run keepa-auto
 
 Каждый прогон кладёт по одному XLSX на поиск в `Products/` с автоматическими
 вердиктами BUY/WATCH/SKIP (правила — те же сигналы, что в SEARCH_GUIDE.md).
+
+## Сорсинг в Китае (1688 / Alibaba / Taobao / Pinduoduo)
+
+После отбора товара — найти его в Китае и цену предложения. У китайских площадок
+нет открытого API, поэтому **Claude сам ищет на сайтах** (WebSearch / WebFetch /
+поиск по картинке), а сервер даёт «леса»:
+
+1. `china_sourcing_plan(asins=[...])` или `china_sourcing_plan(products=[...])`
+   — строит по каждому товару ссылки и запросы для всех площадок и гайд, как
+   искать (перевести название на китайский, искать по фото для 100% совпадения).
+2. Claude ищет на 1688/Alibaba/Taobao/Pinduoduo, собирает предложения
+   (поставщик, цена, MOQ, ссылка, подтверждение по фото).
+3. `match_china_offers(product, offers, freight_pct=0.15)` — классифицирует
+   **EXACT** (тот же товар, ~100%) vs **SIMILAR** (похожий), считает
+   себестоимость в USD и маржу к цене Amazon, сортирует лучшее вперёд.
+4. `save_sourcing_report(results)` — XLSX в `Products/` (листы «Сорсинг» и
+   «Сводка»).
+
+Курсы валют и площадки настраиваются через env (`CHINA_PLATFORMS`,
+`CHINA_USD_PER_CNY`, `CHINA_FREIGHT_PCT`, `CHINA_EXACT_THRESHOLD`). Подробная
+инструкция — [SOURCING_GUIDE.md](SOURCING_GUIDE.md).
 
 ## Метрики и логика решения
 

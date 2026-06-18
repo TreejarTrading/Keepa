@@ -15,7 +15,7 @@ from typing import Any
 
 from mcp.server.fastmcp import FastMCP
 
-from . import analysis, config, keepa_client, reports
+from . import analysis, china_sourcing, config, keepa_client, reports
 
 mcp = FastMCP("keepa-product-research")
 
@@ -275,6 +275,140 @@ def analyze_and_report(
     }
 
 
+def _descriptor_from_record(rec: dict[str, Any]) -> dict[str, Any]:
+    """Turn a Keepa analysis record into a China-sourcing product descriptor."""
+    pricing = (((rec.get("metrics") or {}).get("pricing") or {}).get("new") or {})
+    ref = pricing.get("current") or pricing.get("avg")
+    code = rec.get("marketplace") or "US"
+    tree = rec.get("category_tree") or []
+    return {
+        "asin": rec.get("asin"),
+        "title": rec.get("title"),
+        "brand": rec.get("brand"),
+        "image_url": rec.get("image"),
+        "reference_price": ref,
+        "currency": china_sourcing.MARKET_CURRENCY.get(code, "USD"),
+        "marketplace": code,
+        "category": tree[-1] if tree else None,
+    }
+
+
+@mcp.tool()
+def china_sourcing_plan(
+    products: list[dict[str, Any]] | None = None,
+    asins: list[str] | None = None,
+    platforms: list[str] | None = None,
+    domain: str | None = None,
+    stats_days: int | None = None,
+) -> dict[str, Any]:
+    """Build a China-sourcing search plan: where and how to look for each product.
+
+    The next step after Keepa decides a product is worth selling: find it (and
+    its supplier price) on the Chinese marketplaces. There is no marketplace
+    API — *you* browse the sites (WebSearch / WebFetch / image search) using
+    this plan, then call ``match_china_offers`` with what you find.
+
+    Provide products either way (or both):
+      - ``asins``: pulled from Keepa — title, brand, photo and the current
+        Amazon price are filled in automatically as the reference.
+      - ``products``: your own Amazon market data, each a dict with any of
+        ``title``, ``brand``, ``keywords``, ``query_zh`` (Chinese translation),
+        ``image_url``, ``asin``, ``reference_price``, ``currency``.
+
+    Returns, per product, a search URL + query for each platform (defaults:
+    1688, Alibaba, Taobao, Tmall, Pinduoduo) plus guidance on translating the
+    name to Chinese and searching by image for a 100% match.
+    """
+    descriptors: list[dict[str, Any]] = []
+    if asins:
+        sd = stats_days or config.DEFAULT_STATS_DAYS
+        descriptors.extend(_descriptor_from_record(r) for r in _records_for(asins, domain, sd))
+    for prod in products or []:
+        if isinstance(prod, dict):
+            descriptors.append(prod)
+
+    if not descriptors:
+        return {
+            "plans": [],
+            "guidance": china_sourcing.SOURCING_GUIDANCE,
+            "note": "Provide 'asins' (looked up via Keepa) and/or 'products' "
+            "(your own Amazon data) to plan a sourcing search.",
+        }
+
+    plans = [china_sourcing.build_search_plan(d, platforms=platforms) for d in descriptors]
+    return {
+        "platforms": china_sourcing.normalize_platforms(platforms),
+        "plans": plans,
+        "guidance": china_sourcing.SOURCING_GUIDANCE,
+    }
+
+
+@mcp.tool()
+def match_china_offers(
+    product: dict[str, Any],
+    offers: list[dict[str, Any]],
+    freight_pct: float | None = None,
+    extra_cost_usd: float = 0.0,
+) -> dict[str, Any]:
+    """Score the China supplier offers you found against an Amazon product.
+
+    Pass the ``product`` descriptor (same shape as in ``china_sourcing_plan``,
+    including ``reference_price``/``currency`` for margin math) and the
+    ``offers`` you collected while browsing. Each offer is a dict with any of:
+    ``platform``, ``supplier``, ``title``, ``title_en`` (English translation),
+    ``brand``, ``unit_price``, ``currency`` (CNY/USD), ``moq``, ``url``,
+    ``image_confirmed`` (True if you visually verified the same product),
+    ``image_score`` (0-1).
+
+    Returns the offers classified EXACT (~100% match) vs SIMILAR, with landed
+    cost and margin estimates, sorted best-first, and the best EXACT and best
+    SIMILAR surfaced. ``freight_pct`` (e.g. 0.15) adds shipping on top of unit
+    cost; ``extra_cost_usd`` adds a flat per-unit cost.
+    """
+    ranked = china_sourcing.rank_offers(
+        product, offers, freight_pct=freight_pct, extra_cost_usd=extra_cost_usd
+    )
+    return {**ranked, "guidance": china_sourcing.SOURCING_GUIDANCE}
+
+
+@mcp.tool()
+def fetch_page(url: str, max_chars: int = 20000) -> dict[str, Any]:
+    """Best-effort fetch of a web page (FALLBACK for when your WebFetch is blocked).
+
+    Prefer your own WebSearch / WebFetch / image search for browsing the
+    Chinese marketplaces. This is only a fallback: those sites are aggressively
+    bot-protected, so a ``blocked: true`` result (CAPTCHA / login / region
+    block) is common and expected.
+    """
+    return china_sourcing.fetch_page(url, max_chars=max_chars)
+
+
+@mcp.tool()
+def save_sourcing_report(
+    results: list[dict[str, Any]],
+    report_name: str | None = None,
+    query_summary: str | None = None,
+) -> dict[str, Any]:
+    """Write a China-sourcing XLSX report into the Products/ folder.
+
+    Pass the per-product results from ``match_china_offers`` (or raw items
+    shaped ``{"product": {...}, "offers": [...]}`` — they will be scored). The
+    report has two sheets: Сорсинг (every supplier offer with match type,
+    price, MOQ, landed cost and margin vs the Amazon price) and Сводка (totals
+    and the best EXACT / SIMILAR offer per product).
+    """
+    norm = [china_sourcing.ensure_ranked(r) for r in results]
+    path = reports.generate_sourcing_report(
+        norm, report_name=report_name, query_summary=query_summary
+    )
+    return {
+        "saved_to": str(path),
+        "products": len(norm),
+        "offers": sum(len(r.get("offers") or []) for r in norm),
+        "output_dir": str(config.OUTPUT_DIR),
+    }
+
+
 @mcp.tool()
 def run_auto_search(searches_file: str | None = None) -> dict[str, Any]:
     """Execute the saved auto searches (auto_searches.json) right now.
@@ -298,6 +432,8 @@ def server_info() -> dict[str, Any]:
         "output_dir": str(config.OUTPUT_DIR),
         "auto_search_file": str(config.AUTO_SEARCH_FILE),
         "api_key_configured": bool(config.KEEPA_API_KEY),
+        "china_sourcing_platforms": china_sourcing.normalize_platforms(),
+        "china_usd_per_cny": config.CHINA_USD_PER_CNY,
     }
 
 

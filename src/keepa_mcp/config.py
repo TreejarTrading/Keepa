@@ -108,6 +108,69 @@ AUTO_SEARCH_FILE: Path = Path(
 ).expanduser()
 
 
+# --- China sourcing ----------------------------------------------------------
+# The "find it cheaper in China" half of the workflow (see SOURCING_GUIDE.md).
+# There is no paid marketplace API in the loop: Claude browses the Chinese
+# sites itself (WebSearch / WebFetch / image search). These settings only tune
+# which platforms to target and how to turn prices into comparable USD numbers.
+
+
+def _csv_env(name: str, default: list[str]) -> list[str]:
+    """Read a comma-separated env var into a list, falling back to ``default``."""
+    raw = os.getenv(name, "").strip()
+    if not raw:
+        return list(default)
+    return [part.strip() for part in raw.split(",") if part.strip()]
+
+
+# Chinese marketplaces to source from, in default search priority. Wholesale /
+# B2B first (that is where sourcing margin lives). Override with CHINA_PLATFORMS.
+CHINA_PLATFORMS: list[str] = _csv_env(
+    "CHINA_PLATFORMS", ["1688", "alibaba", "taobao", "tmall", "pinduoduo"]
+)
+
+# Rough FX rates to USD, used to compare China offer prices against the Amazon
+# reference price. These DRIFT over time — treat results as estimates and
+# override via env (CHINA_USD_PER_CNY for the yuan, or a full CHINA_FX_TO_USD
+# JSON map) when accuracy matters.
+CHINA_FX_TO_USD: dict[str, float] = {
+    "USD": 1.0, "CNY": 0.14, "RMB": 0.14, "EUR": 1.08, "GBP": 1.27,
+    "JPY": 0.0064, "CAD": 0.73, "AED": 0.272, "MXN": 0.058, "BRL": 0.18, "INR": 0.012,
+}
+
+_usd_per_cny = os.getenv("CHINA_USD_PER_CNY", "").strip()
+if _usd_per_cny:
+    try:
+        CHINA_FX_TO_USD["CNY"] = CHINA_FX_TO_USD["RMB"] = float(_usd_per_cny)
+    except ValueError:
+        pass
+
+_fx_override = os.getenv("CHINA_FX_TO_USD", "").strip()
+if _fx_override:
+    try:
+        import json as _json
+
+        CHINA_FX_TO_USD.update(
+            {str(k).upper(): float(v) for k, v in _json.loads(_fx_override).items()}
+        )
+    except Exception:  # noqa: BLE001 - bad override should not break startup
+        pass
+
+# Convenience: yuan->USD rate (also the default for unlabelled China prices).
+CHINA_USD_PER_CNY: float = CHINA_FX_TO_USD["CNY"]
+
+# Default extra freight as a fraction of unit cost when estimating landed cost
+# (0 = ignore until the user supplies a real figure per run).
+CHINA_FREIGHT_PCT: float = float(os.getenv("CHINA_FREIGHT_PCT", "0") or 0)
+
+# Match score (0-1) at/above which a China offer is treated as a ~100% (EXACT)
+# match even without an explicit image confirmation.
+CHINA_EXACT_THRESHOLD: float = float(os.getenv("CHINA_EXACT_THRESHOLD", "0.9") or 0.9)
+
+# Timeout (seconds) for the best-effort ``fetch_page`` helper.
+CHINA_FETCH_TIMEOUT: float = float(os.getenv("CHINA_FETCH_TIMEOUT", "20") or 20)
+
+
 def ensure_output_dir() -> Path:
     """Create the report output directory if needed and return it."""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
