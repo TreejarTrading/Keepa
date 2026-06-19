@@ -348,6 +348,19 @@ describe("freight resolution", () => {
     expect(row.assumptions!).toContain("логистика = 2.5 кг × 1.2 USD/кг");
   });
 
+  it("reads weight from package_weight_g (the sourcing form / analysis.ts field)", () => {
+    const item = sampleItem();
+    item.weight_g = null; // weight only provided as package_weight_g
+    item.package_weight_g = 2500; // 2.5 kg
+    const row = buildPlan([item], {
+      fx: { EUR: 1.08, CNY: 0.14 },
+      dutyPct: 0.05,
+      freightPerKg: 1.2,
+    }).rows[0]!;
+    approx(row.freight ?? null, 3.0); // 2.5 kg * 1.2
+    expect(row.assumptions!).toContain("логистика = 2.5 кг × 1.2 USD/кг");
+  });
+
   it("defaults freight to 0 with an assumption note when nothing is given", () => {
     const item = sampleItem();
     item.weight_g = null; // no weight to compute from

@@ -63,6 +63,7 @@ export interface Item {
   monthly_sold?: number | null;
   weight_kg?: number | null;
   weight_g?: number | null;
+  package_weight_g?: number | null;
   duty_pct?: number | null;
   url?: string | null;
   suppliers?: Supplier[] | null;
@@ -560,11 +561,16 @@ export function sourcingVerdict(row: SourcingRow): Verdict {
 
 // --- row & plan assembly ----------------------------------------------------
 
-/** Product weight in kg from `weight_kg` or Keepa's `weight_g`/packageWeight. */
+/**
+ * Product weight in kg. Accepts an explicit `weight_kg`/`weight_g`, or the
+ * `package_weight_g` field that both the sourcing form and `analysis.ts`
+ * (Keepa's package weight, in grams) actually populate. First non-empty wins.
+ */
 export function _itemWeightKg(item: Item): number | null {
   const sources: [keyof Item, number][] = [
     ["weight_kg", 1.0],
     ["weight_g", 1000.0],
+    ["package_weight_g", 1000.0],
   ];
   for (const [key, div] of sources) {
     const val = item[key];

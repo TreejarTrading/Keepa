@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import VerdictBadge from "@/components/VerdictBadge";
-import { money, num, pct, verdictClass } from "@/lib/format";
+import { money, num, pct, verdictClass, amazonUrl } from "@/lib/format";
 
 type Item = {
   id: string;
@@ -203,7 +203,7 @@ function ItemsTable({ items, isSourcing, marketplace }: { items: Item[]; isSourc
                 <div className="flex gap-2">
                   {i.imageUrl && <img src={i.imageUrl} alt="" className="h-10 w-10 rounded object-contain" />}
                   <div>
-                    <a href={`https://www.amazon.com/dp/${i.asin}`} target="_blank" rel="noreferrer"
+                    <a href={amazonUrl(i.asin, marketplace)} target="_blank" rel="noreferrer"
                        className="font-medium text-brand hover:underline line-clamp-2">{i.title || i.asin}</a>
                     <div className="text-xs text-slate-400">{i.asin}{i.brand ? ` · ${i.brand}` : ""}</div>
                   </div>
