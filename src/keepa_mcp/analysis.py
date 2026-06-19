@@ -89,6 +89,87 @@ def _price_volatility(stats: dict[str, float | None]) -> float | None:
     return round((hi - lo) / avg, 3)
 
 
+# Amazon charges a minimum referral fee per item (commonly $0.30).
+_MIN_REFERRAL_FEE = 0.30
+
+
+def _referral_pct(product: dict[str, Any]) -> float | None:
+    """Referral fee as a fraction (0.15), read from Keepa's integer percent.
+
+    Keepa exposes the category referral percent; field spelling has varied
+    across API versions, so accept the known variants.
+    """
+    for key in ("referralFeePercent", "referralFeePercentage", "referralFee"):
+        pct = _clean(product.get(key))
+        if pct is not None:
+            return round(pct / 100.0, 4) if pct > 1 else round(pct, 4)
+    return None
+
+
+def _fba_pick_pack_fee(product: dict[str, Any]) -> float | None:
+    """FBA pick&pack fee in dollars from Keepa's ``fbaFees`` object (raw cents)."""
+    fees = product.get("fbaFees")
+    if isinstance(fees, dict):
+        cents = _clean(fees.get("pickAndPackFee"))
+        if cents is not None:
+            # Nested fee objects are passed through in the smallest currency
+            # unit (cents); the keepa package only converts the csv/stats series.
+            return round(cents / 100.0, 2) if cents >= 50 else round(cents, 2)
+    return None
+
+
+def _amazon_fees(product: dict[str, Any], pricing: dict[str, Any]) -> dict[str, Any]:
+    """Estimate per-unit Amazon fees so margin-after-fees can be computed.
+
+    Combines Keepa's referral percent and FBA pick&pack fee with the realistic
+    sell price (Buy Box, else current New/Amazon) to give referral fee amount,
+    total fees and net proceeds — the basis for the China-sourcing margin.
+    """
+    from . import fees
+
+    sell = None
+    for key in ("buy_box", "new", "amazon"):
+        cur = (pricing.get(key) or {}).get("current")
+        if cur is not None:
+            sell = cur
+            break
+
+    # Referral %: prefer Keepa's real per-product value; otherwise estimate from
+    # the Amazon category (NOT a blind 15%).
+    referral_pct = _referral_pct(product)
+    referral_source = "keepa"
+    if referral_pct is None:
+        cats = [
+            c.get("name")
+            for c in (product.get("categoryTree") or [])
+            if isinstance(c, dict)
+        ]
+        referral_pct = fees.estimate_referral_pct(cats, product.get("productGroup"), sell)
+        referral_source = "category"
+
+    fba_fee = _fba_pick_pack_fee(product)
+
+    referral_fee = None
+    if sell is not None and referral_pct is not None:
+        referral_fee = round(max(sell * referral_pct, _MIN_REFERRAL_FEE), 2)
+
+    total_fees = None
+    if referral_fee is not None or fba_fee is not None:
+        total_fees = round((referral_fee or 0.0) + (fba_fee or 0.0), 2)
+
+    net = round(sell - total_fees, 2) if (sell is not None and total_fees is not None) else None
+
+    return {
+        "sell_price_used": sell,
+        "referral_pct": referral_pct,
+        "referral_pct_source": referral_source,
+        "referral_fee": referral_fee,
+        "fba_fee": fba_fee,
+        "total_fees": total_fees,
+        "net_proceeds": net,
+    }
+
+
 def _rank_drops(values, times, days: int | None = 90) -> int | None:
     """Count sales-rank drops (a proxy for sales events) over a window.
 
@@ -161,6 +242,7 @@ def extract_metrics(product: dict[str, Any], stats_days: int = 90) -> dict[str, 
 
     return {
         "pricing": pricing,
+        "amazon_fees": _amazon_fees(product, pricing),
         "sales_rank": {
             **rank,
             "drops_30d": rank_drops_30,
@@ -211,6 +293,8 @@ def product_overview(product: dict[str, Any], domain: str = "US") -> dict[str, A
         },
         "variation_count": len(product.get("variations") or []),
         "fba_fees": product.get("fbaFees"),
+        "fba_pick_pack_fee": _fba_pick_pack_fee(product),
+        "referral_fee_pct": _referral_pct(product),
         "image": (product.get("imagesCSV") or "").split(",")[0] or None,
         "url": f"https://www.amazon.{tld}/dp/{product.get('asin')}"
         if product.get("asin")

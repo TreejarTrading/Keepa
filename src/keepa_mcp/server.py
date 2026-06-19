@@ -15,7 +15,7 @@ from typing import Any
 
 from mcp.server.fastmcp import FastMCP
 
-from . import analysis, config, keepa_client, reports
+from . import analysis, config, keepa_client, reports, sourcing
 
 mcp = FastMCP("keepa-product-research")
 
@@ -272,6 +272,141 @@ def analyze_and_report(
         "saved_to": str(path),
         "records": records,
         "guidance": analysis.DECISION_GUIDANCE,
+    }
+
+
+@mcp.tool()
+def china_sourcing_guide() -> dict[str, Any]:
+    """Return the China-sourcing methodology: platforms, match rules, columns.
+
+    Read this before sourcing. It tells you to search beyond Alibaba (1688,
+    Made-in-China, Global Sources, DHgate), to keep ALL MOQ price tiers and use
+    the tier matching the order quantity, to match the EXACT product (model
+    number / photo / specs, not a look-alike), to use the Amazon ``manufacturer``
+    field as a supplier search key, and what each report column means (Russian).
+    Full text: SOURCING_GUIDE.md.
+    """
+    return {
+        "guidance": sourcing.SOURCING_GUIDANCE,
+        "column_docs": [{"column": h, "meaning": d} for h, d in sourcing.COLUMN_DOCS],
+        "defaults": {
+            "base_currency": "USD",
+            "duty_pct": sourcing.DEFAULT_DUTY_PCT,
+            "referral_pct_fallback": sourcing.DEFAULT_REFERRAL_PCT,
+            "freight": "вес (кг) × freight_per_kg, либо явная freight_per_unit поставщика",
+        },
+    }
+
+
+@mcp.tool()
+def sourcing_inputs_from_asins(
+    asins: list[str],
+    domain: str | None = None,
+    stats_days: int | None = None,
+) -> dict[str, Any]:
+    """Build the Amazon-side sourcing skeletons for the given ASINs.
+
+    Pulls each product from Keepa and returns the fields needed to source it in
+    China: title, brand, **manufacturer** (use it as an Alibaba/1688 search key),
+    sell price, real Amazon fees (referral % + FBA), monthly sales and weight.
+    Attach a ``suppliers`` list to each item (from your web search across
+    Alibaba/1688/Made-in-China/Global Sources/DHgate), then call
+    ``build_sourcing_plan``.
+    """
+    sd = stats_days or config.DEFAULT_STATS_DAYS
+    records = _records_for(asins, domain, sd)
+    items = [sourcing.amazon_item_from_record(r) for r in records]
+    return {"items": items, "guidance": sourcing.SOURCING_GUIDANCE}
+
+
+@mcp.tool()
+def build_sourcing_plan(
+    items: list[dict[str, Any]],
+    base_currency: str = "USD",
+    fx: dict[str, float] | None = None,
+    duty_pct: float | None = None,
+    freight_per_kg: float | None = None,
+    default_order_quantity: int | None = None,
+    report_name: str | None = None,
+    query_summary: str | None = None,
+    save: bool = True,
+) -> dict[str, Any]:
+    """Compare Amazon products with Chinese suppliers and model the unit economics.
+
+    Each ``items`` entry combines the Amazon side (from
+    ``sourcing_inputs_from_asins``) with a ``suppliers`` list you gathered via
+    web search. Each supplier MUST keep the full MOQ price ladder so the correct
+    tier is used::
+
+        {"asin": "...", "title": "...", "manufacturer": "...",
+         "marketplace": "DE", "amazon_sell_price": 32.0,
+         "amazon_referral_pct": 0.15, "amazon_fba_fee": 4.5,
+         "monthly_sold": 400, "weight_g": 2500,
+         "suppliers": [{
+            "platform": "Alibaba"|"1688"|"Made-in-China"|"Global Sources"|"DHgate",
+            "supplier_name": "...", "is_manufacturer": true,
+            "matches_amazon_manufacturer": true,
+            "match_quality": "точное"|"близкое"|"аналог",
+            "match_basis": "модель MS008 + фото", "model_number": "MS008",
+            "currency": "EUR", "moq": 100,
+            "price_tiers": [{"min_qty": 1, "max_qty": 100, "unit_price": 9.91},
+                            {"min_qty": 101, "max_qty": 999, "unit_price": 9.78},
+                            {"min_qty": 1000, "max_qty": null, "unit_price": 9.53}],
+            "freight_per_unit": null, "url": "https://..."}]}
+
+    Computes landed cost, Amazon fees, profit, margin %, ROI %, per-volume
+    scenarios and a rule-based verdict (ЗАКУПАТЬ / ПРОВЕРИТЬ / ОТКАЗ). Writes the
+    Russian XLSX (Сопоставление / Сценарии / Пояснения / Сводка) when
+    ``save=True``. Returns the plan so you can refine verdicts and re-save with
+    ``save_sourcing_report``.
+
+    Args:
+        base_currency: Currency for landed cost / margin (default USD).
+        fx: Map of currency -> multiplier to ``base_currency`` (e.g. {"EUR":1.08,
+            "CNY":0.14}). Missing rates are assumed 1.0 and flagged.
+        duty_pct: Import duty as a fraction of (cost+freight); defaults to the
+            UAE/GCC 5%.
+        freight_per_kg: Freight rate per kg in ``base_currency`` (weight from
+            Keepa); used when a supplier has no explicit ``freight_per_unit``.
+        default_order_quantity: Order size for the economics (default = each
+            supplier's MOQ).
+    """
+    plan = sourcing.build_plan(
+        items,
+        base_currency=base_currency,
+        fx=fx,
+        duty_pct=sourcing.DEFAULT_DUTY_PCT if duty_pct is None else duty_pct,
+        default_order_quantity=default_order_quantity,
+        freight_per_kg=freight_per_kg,
+    )
+    if save:
+        path = reports.generate_sourcing_report(
+            plan, report_name=report_name, query_summary=query_summary
+        )
+        plan["saved_to"] = str(path)
+        plan["output_dir"] = str(config.OUTPUT_DIR)
+    return plan
+
+
+@mcp.tool()
+def save_sourcing_report(
+    plan: dict[str, Any],
+    report_name: str | None = None,
+    query_summary: str | None = None,
+) -> dict[str, Any]:
+    """Write the China-sourcing comparison XLSX from a (possibly edited) plan.
+
+    Pass the plan from ``build_sourcing_plan`` after refining any ``verdict`` /
+    ``confidence`` / ``rationale`` on its ``rows``. Produces the four-sheet
+    Russian report (Сопоставление / Сценарии / Пояснения / Сводка).
+    """
+    path = reports.generate_sourcing_report(
+        plan, report_name=report_name, query_summary=query_summary
+    )
+    return {
+        "saved_to": str(path),
+        "rows": len(plan.get("rows") or []),
+        "output_dir": str(config.OUTPUT_DIR),
     }
 
 
