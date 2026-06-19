@@ -8,6 +8,7 @@ type Item = { href: string; label: string; adminOnly?: boolean };
 const ITEMS: Item[] = [
   { href: "/dashboard", label: "Обзор" },
   { href: "/search", label: "Поиск товаров" },
+  { href: "/sourcing", label: "Сорсинг" },
   { href: "/reports", label: "Отчёты" },
   { href: "/admin/users", label: "Пользователи", adminOnly: true },
   { href: "/admin/audit", label: "Журнал", adminOnly: true },
