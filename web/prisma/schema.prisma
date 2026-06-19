@@ -1,0 +1,148 @@
+// Keepa web app — PostgreSQL schema.
+// Users & roles (admin-managed credentials), audit journal, and saved product
+// reports (Amazon analysis + China sourcing) grouped by category.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum ReportType {
+  AMAZON // подбор товаров Amazon (аналитика, вердикт BUY/WATCH/SKIP)
+  SOURCING // сорсинг в Китае (landed, маржа, ROI, вердикт ЗАКУПАТЬ/...)
+}
+
+// One account. The e-mail is the login. Only an ADMIN can create accounts and
+// (re)set passwords — there is no self sign-up.
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String?
+  passwordHash String
+  role         Role      @default(USER)
+  isActive     Boolean   @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  createdById String?
+  createdBy   User?   @relation("UserCreatedBy", fields: [createdById], references: [id])
+  createdUsers User[] @relation("UserCreatedBy")
+
+  reports   Report[]
+  auditLogs AuditLog[]
+
+  @@index([role])
+}
+
+// Append-only journal of meaningful actions in the app.
+model AuditLog {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now())
+  action     String // LOGIN, LOGOUT, USER_CREATE, SEARCH_RUN, REPORT_CREATE, ...
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  userEmail  String? // snapshot, survives user deletion
+  targetType String? // USER | REPORT | SEARCH | ...
+  targetId   String?
+  ip         String?
+  detail     Json? // arbitrary structured context
+
+  @@index([createdAt])
+  @@index([action])
+  @@index([userId])
+}
+
+// A saved set of products produced by one search/sourcing run. Items keep the
+// full analysis record so reports stay reproducible offline.
+model Report {
+  id          String     @id @default(cuid())
+  title       String
+  type        ReportType @default(AMAZON)
+  marketplace String     @default("US")
+  notes       String?
+  // Search filters used to build it (category, price bounds, etc.).
+  query       Json?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  createdById String
+  createdBy   User   @relation(fields: [createdById], references: [id])
+
+  items ReportItem[]
+
+  @@index([type])
+  @@index([marketplace])
+  @@index([createdAt])
+}
+
+// One product within a report. Category fields are denormalised so the team can
+// slice/filter reports by category without re-parsing the raw record.
+model ReportItem {
+  id            String   @id @default(cuid())
+  reportId      String
+  report        Report   @relation(fields: [reportId], references: [id], onDelete: Cascade)
+  asin          String
+  title         String?
+  brand         String?
+  manufacturer  String?
+  marketplace   String   @default("US")
+  // Category as a flat name + full path for grouping/filtering.
+  rootCategory  String?
+  categoryPath  String[] @default([])
+  imageUrl      String?
+  sellPrice     Float?
+  monthlySold   Int?
+  rating        Float?
+  reviewCount   Int?
+  referralPct   Float?
+  fbaFee        Float?
+  // Sourcing economics (null for AMAZON-only items).
+  landedCost    Float?
+  marginPct     Float?
+  roiPct        Float?
+  // Verdict: BUY/WATCH/SKIP (Amazon) or ЗАКУПАТЬ/ПРОВЕРИТЬ/ОТКАЗ (sourcing).
+  verdict       String?
+  confidence    String?
+  rationale     String?
+  // Full structured record (analysis or sourcing row) for fidelity.
+  data          Json
+  createdAt     DateTime @default(now())
+
+  @@index([reportId])
+  @@index([asin])
+  @@index([rootCategory])
+  @@index([verdict])
+}
+
+// Reusable named search (category + filters) the team can re-run.
+model SavedQuery {
+  id          String   @id @default(cuid())
+  name        String
+  type        ReportType @default(AMAZON)
+  params      Json
+  createdById String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Lightweight cache of Keepa root categories so the category picker is fast.
+model KeepaCategory {
+  catId    BigInt
+  domain   String
+  name     String
+  parentId BigInt?
+  updatedAt DateTime @updatedAt
+
+  @@id([domain, catId])
+  @@index([domain])
+}
