@@ -20,6 +20,7 @@ const ACTION_LABELS: Record<string, string> = {
   USER_UPDATE: "Изменён пользователь", USER_DEACTIVATE: "Отключён пользователь",
   USER_PASSWORD_RESET: "Сброс пароля", SEARCH_RUN: "Поиск", REPORT_CREATE: "Создан отчёт",
   REPORT_VIEW: "Просмотр отчёта", REPORT_DELETE: "Удалён отчёт", VERDICT_OVERRIDE: "Изменён вердикт",
+  SAVED_QUERY_CREATE: "Сохранён поиск", SAVED_QUERY_DELETE: "Удалён сохранённый поиск",
 };
 
 export default function AuditTable({

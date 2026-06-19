@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireUser, isResponse, badRequest } from "@/lib/api";
-import { searchCategories, KeepaError } from "@/lib/keepa";
+import { KeepaError } from "@/lib/keepa";
+import { searchCategoriesCached } from "@/lib/categories";
 
 export async function GET(req: Request) {
   const user = await requireUser();
@@ -12,8 +13,8 @@ export async function GET(req: Request) {
   if (term.length < 2) return badRequest("Введите минимум 2 символа");
 
   try {
-    const categories = await searchCategories(term, { domain });
-    return NextResponse.json({ categories: categories.slice(0, 50) });
+    const { categories, source } = await searchCategoriesCached(term, { domain });
+    return NextResponse.json({ categories: categories.slice(0, 50), source });
   } catch (err) {
     if (err instanceof KeepaError) {
       return NextResponse.json({ error: err.message }, { status: err.status });

@@ -97,7 +97,16 @@ export default function SourcingClient() {
     };
   }
 
+  function validate(): string | null {
+    if (n(sellPrice) === undefined) return "Укажите цену продажи Amazon.";
+    const hasTier = suppliers.some((s) => s.tiers.some((t) => n(t.unit_price) !== undefined));
+    if (!hasTier) return "Добавьте хотя бы один ценовой уровень с ценой за единицу.";
+    return null;
+  }
+
   async function compute() {
+    const problem = validate();
+    if (problem) { setError(problem); setRows([]); return; }
     setBusy(true);
     setError(null);
     try {

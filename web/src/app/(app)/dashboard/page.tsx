@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { getCurrentUser } from "@/lib/auth";
-import { dateTime } from "@/lib/format";
+import { dateTime, verdictClass } from "@/lib/format";
 import TokenStatus from "@/components/TokenStatus";
 
 export const dynamic = "force-dynamic";
@@ -20,12 +20,13 @@ export default async function DashboardPage() {
   const user = await getCurrentUser();
   const isAdmin = user?.role === "ADMIN";
 
-  const [reportCount, amazonCount, sourcingCount, itemCount, userCount, recent] = await Promise.all([
+  const [reportCount, amazonCount, sourcingCount, itemCount, userCount, verdictGroups, recent] = await Promise.all([
     prisma.report.count(),
     prisma.report.count({ where: { type: "AMAZON" } }),
     prisma.report.count({ where: { type: "SOURCING" } }),
     prisma.reportItem.count(),
     isAdmin ? prisma.user.count() : Promise.resolve(0),
+    prisma.reportItem.groupBy({ by: ["verdict"], _count: { _all: true } }),
     prisma.report.findMany({
       orderBy: { createdAt: "desc" },
       take: 6,
@@ -36,6 +37,11 @@ export default async function DashboardPage() {
       },
     }),
   ]);
+
+  const verdicts = verdictGroups
+    .filter((g) => g.verdict)
+    .map((g) => ({ verdict: g.verdict as string, count: g._count._all }))
+    .sort((a, b) => b.count - a.count);
 
   return (
     <div className="space-y-6">
@@ -57,6 +63,19 @@ export default async function DashboardPage() {
       {isAdmin && (
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5">
           <TokenStatus />
+        </div>
+      )}
+
+      {verdicts.length > 0 && (
+        <div className="card p-4">
+          <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            Вердикты по товарам
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {verdicts.map((v) => (
+              <span key={v.verdict} className={verdictClass(v.verdict)}>{v.verdict}: {v.count}</span>
+            ))}
+          </div>
         </div>
       )}
 
