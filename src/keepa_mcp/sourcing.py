@@ -415,13 +415,26 @@ def build_row(
         item, supplier, base_currency, fx, freight_per_kg, assumptions
     )
 
+    # Duty: a real per-product/supplier rate (e.g. found by HS code) wins;
+    # otherwise fall back to the destination default (UAE/GCC 5%).
+    eff_duty = duty_pct
+    for src in (supplier, item):
+        if src.get("duty_pct") is not None:
+            try:
+                eff_duty = float(src["duty_pct"])
+            except (TypeError, ValueError):
+                pass
+            break
+    else:
+        assumptions.append(f"пошлина по умолчанию {duty_pct:.0%}")
+
     econ = compute_economics(
         sell_base=sell_base,
         referral_pct=referral_pct,
         fba_fee_base=fba_base,
         unit_cost_base=unit_base,
         freight_base=freight_base,
-        duty_pct=duty_pct,
+        duty_pct=eff_duty,
         monthly_sold=item.get("monthly_sold"),
         qty=qty,
     )
@@ -477,7 +490,7 @@ def build_row(
             fba_fee_base=fba_base,
             unit_cost_base=u_base,
             freight_base=freight_base,
-            duty_pct=duty_pct,
+            duty_pct=eff_duty,
             monthly_sold=item.get("monthly_sold"),
             qty=s_qty,
         )

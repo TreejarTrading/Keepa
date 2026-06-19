@@ -147,6 +147,22 @@ def test_build_plan_economics_and_verdict():
     assert "кг ×" in row["assumptions"]
 
 
+def test_duty_override_per_supplier():
+    """A real per-product duty rate wins over the country default."""
+    from keepa_mcp import sourcing
+
+    item = _sample_item()
+    base = sourcing.build_plan([item], fx={"EUR": 1.08, "CNY": 0.14},
+                               duty_pct=0.05, freight_per_kg=1.2)["rows"][0]
+    item2 = _sample_item()
+    item2["suppliers"][0]["duty_pct"] = 0.0  # duty-free for this HS code
+    free = sourcing.build_plan([item2], fx={"EUR": 1.08, "CNY": 0.14},
+                               duty_pct=0.05, freight_per_kg=1.2)["rows"][0]
+    assert base["duty"] > 0
+    assert free["duty"] == 0
+    assert free["landed_cost"] < base["landed_cost"]
+
+
 def test_verdict_reject_on_analog_or_thin_margin():
     from keepa_mcp import sourcing
 

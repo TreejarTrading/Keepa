@@ -365,7 +365,8 @@ def build_sourcing_plan(
         fx: Map of currency -> multiplier to ``base_currency`` (e.g. {"EUR":1.08,
             "CNY":0.14}). Missing rates are assumed 1.0 and flagged.
         duty_pct: Import duty as a fraction of (cost+freight); defaults to the
-            UAE/GCC 5%.
+            UAE/GCC 5%. A real per-product rate (e.g. from the HS code) can be
+            set as ``duty_pct`` on an item or supplier and overrides this.
         freight_per_kg: Freight rate per kg in ``base_currency`` (weight from
             Keepa); used when a supplier has no explicit ``freight_per_unit``.
         default_order_quantity: Order size for the economics (default = each
