@@ -6,7 +6,8 @@ End-to-end пайплайн для оценки ниши на Amazon US/DE с м
 
 1. **TAM ниши** — оценка объёма в шт/мес и $/мес по категории или фильтру
 2. **Бенчмарки маржинальности** с учётом FBA pick&pack + Referral fee из Keepa
-3. **ASIN + URL + главное изображение** для каждого товара
+3. **ASIN + активная ссылка на Amazon + главное изображение** для каждого
+   товара (в XLSX ячейка ASIN — кликабельная ссылка на страницу товара)
 4. **Alibaba matching** — поиск поставщиков по title/brand через Apify
 5. **CN vs Local split** — сколько продавцов из Китая (включая "замаскированных" под US/EU LLC) vs локальных
 
@@ -109,6 +110,7 @@ python -m src.run_pipeline --config config/niche.yaml --stages 5  # только
 - `stage3_sellers.parquet` — продавцы с классификацией
 - `stage4_alibaba.parquet` — поставщики
 - `report.xlsx` — финальный отчёт с листами TAM / Margin / CN_vs_Local / Alibaba
+  (в листах `Margin_Top100` и `Products_All` ASIN — активная ссылка на Amazon)
 
 ## Бюджет токенов Keepa
 

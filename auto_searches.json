@@ -1,5 +1,5 @@
 {
-  "_comment": "Сохранённые поиски для авторежима (keepa-auto, каждые 2 дня). Формат описан в SEARCH_GUIDE.md. Допустимые filters: title, category_id, brand, min_price, max_price, min_rating, max_sales_rank, min_review_count, max_offer_count, min_monthly_sold. Сырые ключи Keepa Product Finder — в extra_filters.",
+  "_comment": "Сохранённые поиски для авторежима (keepa-auto, каждые 2 дня). Формат описан в SEARCH_GUIDE.md. Допустимые filters: title, category_id, brand, min_price, max_price, min_rating, max_sales_rank, min_review_count, max_offer_count, min_monthly_sold. Сырые ключи Keepa Product Finder — в extra_filters. Фильтры выровнены с профилем по умолчанию (цена 15-60, рейтинг >=4.2, офферы <=15) и правилами вердиктов из CLAUDE.md. В каждом XLSX-отчёте ASIN — активная ссылка на Amazon.",
   "searches": [
     {
       "name": "US_kitchen_gadgets",
@@ -24,7 +24,8 @@
         "max_price": 60,
         "min_rating": 4.3,
         "min_review_count": 300,
-        "max_sales_rank": 50000
+        "max_sales_rank": 50000,
+        "max_offer_count": 15
       },
       "limit": 15
     },
@@ -37,7 +38,8 @@
         "max_price": 45,
         "min_rating": 4.2,
         "min_review_count": 150,
-        "max_sales_rank": 40000
+        "max_sales_rank": 40000,
+        "max_offer_count": 15
       },
       "limit": 10
     },
@@ -50,7 +52,8 @@
         "max_price": 55,
         "min_rating": 4.2,
         "min_review_count": 150,
-        "max_sales_rank": 40000
+        "max_sales_rank": 40000,
+        "max_offer_count": 15
       },
       "limit": 10
     }

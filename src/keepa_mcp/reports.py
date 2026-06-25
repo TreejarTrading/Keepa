@@ -15,6 +15,8 @@ from . import config
 
 _HEADER_FILL = PatternFill("solid", fgColor="1F4E78")
 _HEADER_FONT = Font(color="FFFFFF", bold=True)
+# Active hyperlink styling for the clickable ASIN cell (Excel "Hyperlink" blue).
+_LINK_FONT = Font(color="0563C1", underline="single")
 _VERDICT_FILLS = {
     "BUY": PatternFill("solid", fgColor="C6EFCE"),
     "WATCH": PatternFill("solid", fgColor="FFEB9C"),
@@ -45,8 +47,11 @@ _COLUMNS: list[tuple[str, str]] = [
     ("Verdict", "verdict"),
     ("Confidence", "confidence"),
     ("Rationale", "rationale"),
-    ("Amazon URL", "url"),
 ]
+# NOTE: there is intentionally no separate "Amazon URL" text column — the
+# Amazon link is attached directly to the ASIN cell as an active hyperlink
+# (see ``_linkify`` and ``generate_report``). Every report row's ASIN is a
+# clickable link to its amazon.<tld>/dp/<asin> product page.
 
 
 def _dig(record: dict[str, Any], path: str) -> Any:
@@ -61,6 +66,17 @@ def _dig(record: dict[str, Any], path: str) -> Any:
         else:
             return None
     return cur
+
+
+def _linkify(cell, url: str | None) -> None:
+    """Turn ``cell`` into an active (clickable) Amazon hyperlink.
+
+    Used to make every ASIN cell a live link to its Amazon product page. If no
+    URL is available the cell is left as plain text.
+    """
+    if url:
+        cell.hyperlink = url
+        cell.font = _LINK_FONT
 
 
 def _slugify(name: str) -> str:
@@ -107,9 +123,12 @@ def generate_report(
     ws.freeze_panes = "A2"
 
     verdict_col = headers.index("Verdict") + 1
+    asin_col = headers.index("ASIN") + 1
     for rec in records:
         row = [_format(_dig(rec, path)) for _, path in _COLUMNS]
         ws.append(row)
+        # The ASIN cell is the active Amazon link for this product.
+        _linkify(ws.cell(row=ws.max_row, column=asin_col), rec.get("url"))
         verdict = str(rec.get("verdict", "")).upper()
         if verdict in _VERDICT_FILLS:
             ws.cell(row=ws.max_row, column=verdict_col).fill = _VERDICT_FILLS[verdict]
@@ -135,6 +154,8 @@ def generate_report(
             rec.get("package_weight_g"),
             rec.get("variation_count"),
         ])
+        # Keep the ASIN clickable here too, for consistency with the main sheet.
+        _linkify(ws2.cell(row=ws2.max_row, column=1), rec.get("url"))
     _autosize(ws2, max_width=80)
 
     # --- Sheet 3: Run metadata ------------------------------------------

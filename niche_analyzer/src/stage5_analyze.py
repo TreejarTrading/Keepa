@@ -15,8 +15,30 @@ from pathlib import Path
 
 import duckdb
 import pandas as pd
+from openpyxl.styles import Font
 
 log = logging.getLogger(__name__)
+
+# Active hyperlink styling for clickable ASIN cells (Excel "Hyperlink" blue).
+_LINK_FONT = Font(color="0563C1", underline="single")
+
+
+def _linkify_asins(
+    ws, df: pd.DataFrame, asin_col: str = "asin", url_col: str = "amazon_url"
+) -> None:
+    """Make each ASIN cell in a written sheet an active link to its Amazon page.
+
+    ``df`` must be the exact frame written to ``ws`` (index=False), so row order
+    lines up. Sheets without an ``asin``/``amazon_url`` column are skipped.
+    """
+    if asin_col not in df.columns or url_col not in df.columns:
+        return
+    col_idx = list(df.columns).index(asin_col) + 1  # openpyxl is 1-based
+    for row_offset, url in enumerate(df[url_col].tolist()):
+        if isinstance(url, str) and url:
+            cell = ws.cell(row=row_offset + 2, column=col_idx)  # +2: header is row 1
+            cell.hyperlink = url
+            cell.font = _LINK_FONT
 
 
 def run(out_dir: Path) -> Path:
@@ -124,6 +146,8 @@ def run(out_dir: Path) -> Path:
 
     # === Запись Excel ===================================================
     report_path = out_dir / "report.xlsx"
+    # ограничим Products_All первыми 5000 строк чтобы Excel не подвис
+    products_all = products.head(5000)
     with pd.ExcelWriter(report_path, engine="openpyxl") as w:
         tam.to_excel(w, sheet_name="TAM", index=False)
         margin.to_excel(w, sheet_name="Margin_Top100", index=False)
@@ -132,8 +156,11 @@ def run(out_dir: Path) -> Path:
             sellers.to_excel(w, sheet_name="Sellers_Detail", index=False)
         if not alibaba.empty:
             alibaba.to_excel(w, sheet_name="Alibaba", index=False)
-        # ограничим Products_All первыми 5000 строк чтобы Excel не подвис
-        products.head(5000).to_excel(w, sheet_name="Products_All", index=False)
+        products_all.to_excel(w, sheet_name="Products_All", index=False)
+
+        # Активная ссылка на Amazon: каждый ASIN кликабелен в листах с товарами.
+        _linkify_asins(w.sheets["Margin_Top100"], margin)
+        _linkify_asins(w.sheets["Products_All"], products_all)
 
     log.info("Stage 5 done → %s", report_path)
     return report_path

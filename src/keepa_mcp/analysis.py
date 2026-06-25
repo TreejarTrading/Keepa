@@ -231,11 +231,33 @@ def build_record(
     }
 
 
+# --- Verdict rule thresholds -------------------------------------------------
+# Tunable cut-offs for the rule-based verdict. Kept here (not buried inside the
+# function) so the "rules" are explicit and editable in one place. These are
+# mirrored in CLAUDE.md and SEARCH_GUIDE.md — keep all three in sync when you
+# change a number.
+VOLATILITY_STABLE_MAX = 0.25     # volatility ≤ this → "stable price" (pro)
+VOLATILITY_RISK_MIN = 0.50       # volatility ≥ this → "volatile price" (con)
+PRICE_DOWNTREND_RATIO = 0.85     # current < avg×this → downward trend / margin erosion (con)
+DROPS30_STRONG = 8               # rank drops/30d ≥ this → strong velocity (pro)
+MONTHLY_STRONG = 300             # monthly sold ≥ this → strong velocity (pro)
+DROPS30_WEAK = 2                 # rank drops/30d ≤ this (+ low monthly) → weak velocity (con)
+MONTHLY_WEAK = 100               # monthly sold < this (+ low drops) → weak velocity (con)
+OFFERS_LOW_MAX = 12              # offers ≤ this → moderate competition (pro)
+OFFERS_CROWDED_MIN = 25          # offers ≥ this → crowded / price war (con)
+RATING_GOOD = 4.2                # rating ≥ this (+ enough reviews) → strong rating (pro)
+RATING_GOOD_REVIEWS = 100        # reviews needed to treat the rating as proven
+RATING_WEAK = 4.0                # rating < this → "low rating" (con)
+RATING_SKIP = 3.8                # rating < this → hard SKIP regardless of other signals
+HEAVY_ITEM_G = 2500              # package weight (g) > this → bulky/heavy, pricey FBA (con)
+
+
 def auto_verdict(record: dict[str, Any]) -> dict[str, Any]:
     """Attach a rule-based verdict to a record (used by unattended auto runs).
 
     Mirrors DECISION_GUIDANCE so scheduled reports are immediately actionable;
     when Claude is in the loop it produces its own, richer verdicts instead.
+    Thresholds are the module-level constants above.
     """
     m = record.get("metrics") or {}
     pricing = (m.get("pricing") or {}).get("new") or {}
@@ -250,35 +272,47 @@ def auto_verdict(record: dict[str, Any]) -> dict[str, Any]:
 
     volatility = pricing.get("volatility")
     if volatility is not None:
-        if volatility <= 0.25:
+        if volatility <= VOLATILITY_STABLE_MAX:
             pros.append(f"stable price (volatility {volatility})")
-        elif volatility >= 0.5:
+        elif volatility >= VOLATILITY_RISK_MIN:
             cons.append(f"volatile price (volatility {volatility})")
+
+    # Sustained downward price trend = margin erosion (current well below avg).
+    cur_price, avg_price = pricing.get("current"), pricing.get("avg")
+    if cur_price is not None and avg_price and cur_price < avg_price * PRICE_DOWNTREND_RATIO:
+        cons.append(
+            f"downward price trend (now {cur_price} vs avg {avg_price}, margin erosion)"
+        )
 
     drops30 = rank.get("drops_30d")
     monthly = demand.get("monthly_sold_estimate")
-    if (drops30 or 0) >= 8 or (monthly or 0) >= 300:
+    if (drops30 or 0) >= DROPS30_STRONG or (monthly or 0) >= MONTHLY_STRONG:
         pros.append(f"healthy sales velocity (drops30={drops30}, monthly≈{monthly})")
-    elif drops30 is not None and drops30 <= 2 and (monthly or 0) < 100:
+    elif drops30 is not None and drops30 <= DROPS30_WEAK and (monthly or 0) < MONTHLY_WEAK:
         cons.append(f"weak sales velocity (drops30={drops30}, monthly≈{monthly})")
 
     if comp.get("buy_box_is_amazon"):
         cons.append("Amazon holds the Buy Box")
     if offers is not None:
-        if offers <= 12:
+        if offers <= OFFERS_LOW_MAX:
             pros.append(f"moderate competition ({int(offers)} offers)")
-        elif offers >= 25:
+        elif offers >= OFFERS_CROWDED_MIN:
             cons.append(f"crowded listing ({int(offers)} offers)")
 
     rating = reviews.get("rating_current")
     review_count = reviews.get("review_count_current")
     if rating is not None:
-        if rating >= 4.2 and (review_count or 0) >= 100:
+        if rating >= RATING_GOOD and (review_count or 0) >= RATING_GOOD_REVIEWS:
             pros.append(f"strong rating {rating} with {int(review_count)} reviews")
-        elif rating < 4.0:
+        elif rating < RATING_WEAK:
             cons.append(f"low rating {rating}")
 
-    if len(cons) >= 3 or (rating is not None and rating < 3.8):
+    # Bulky/heavy items carry pricey FBA pick&pack + inbound shipping.
+    weight_g = _clean(record.get("package_weight_g"))
+    if weight_g is not None and weight_g > HEAVY_ITEM_G:
+        cons.append(f"bulky/heavy item ({int(weight_g)} g, pricey FBA/logistics)")
+
+    if len(cons) >= 3 or (rating is not None and rating < RATING_SKIP):
         verdict = "SKIP"
     elif len(pros) >= 3 and len(cons) <= 1:
         verdict = "BUY"
@@ -308,6 +342,8 @@ DECISION_GUIDANCE = {
         "Bulky/heavy item inflating FBA / shipping costs",
     ],
     "recommended_output": "For each ASIN give a verdict (BUY / WATCH / SKIP), a "
-    "confidence level, the 2-3 metrics that drove it, and how well the product "
-    "satisfies the target customer need.",
+    "confidence level, the 2-3 metrics that drove it, the active Amazon link "
+    "(every record carries a `url`; in the XLSX the ASIN cell itself links to "
+    "the product page), and how well the product satisfies the target customer "
+    "need.",
 }
