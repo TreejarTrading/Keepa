@@ -38,6 +38,9 @@
 
 ## Быстрый старт (Docker Compose)
 
+> Развернуть онлайн без своего сервера (Railway / Vercel+Neon) или на своём
+> сервере — пошагово в **[DEPLOY.md](DEPLOY.md)**.
+
 ```bash
 cd web
 cp .env.example .env            # задайте AUTH_SECRET, ADMIN_PASSWORD, KEEPA_API_KEY
