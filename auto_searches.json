@@ -1,0 +1,58 @@
+{
+  "_comment": "Сохранённые поиски для авторежима (keepa-auto, каждые 2 дня). Формат описан в SEARCH_GUIDE.md. Допустимые filters: title, category_id, brand, min_price, max_price, min_rating, max_sales_rank, min_review_count, max_offer_count, min_monthly_sold. Сырые ключи Keepa Product Finder — в extra_filters.",
+  "searches": [
+    {
+      "name": "US_kitchen_gadgets",
+      "domain": "US",
+      "filters": {
+        "title": "kitchen gadget",
+        "min_price": 15,
+        "max_price": 50,
+        "min_rating": 4.2,
+        "min_review_count": 200,
+        "max_sales_rank": 60000,
+        "max_offer_count": 15
+      },
+      "limit": 15
+    },
+    {
+      "name": "US_home_organization",
+      "domain": "US",
+      "filters": {
+        "title": "storage organizer",
+        "min_price": 18,
+        "max_price": 60,
+        "min_rating": 4.3,
+        "min_review_count": 300,
+        "max_sales_rank": 50000
+      },
+      "limit": 15
+    },
+    {
+      "name": "UK_pet_supplies",
+      "domain": "UK",
+      "filters": {
+        "title": "pet",
+        "min_price": 12,
+        "max_price": 45,
+        "min_rating": 4.2,
+        "min_review_count": 150,
+        "max_sales_rank": 40000
+      },
+      "limit": 10
+    },
+    {
+      "name": "DE_sport_fitness",
+      "domain": "DE",
+      "filters": {
+        "title": "fitness",
+        "min_price": 15,
+        "max_price": 55,
+        "min_rating": 4.2,
+        "min_review_count": 150,
+        "max_sales_rank": 40000
+      },
+      "limit": 10
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: keepa
+      POSTGRES_PASSWORD: keepa
+      POSTGRES_DB: keepa
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U keepa -d keepa"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: "postgresql://keepa:keepa@postgres:5432/keepa?schema=public"
+      AUTH_SECRET: "${AUTH_SECRET:-change-me-please-generate-a-long-random-secret}"
+      AUTH_SESSION_HOURS: "${AUTH_SESSION_HOURS:-12}"
+      ADMIN_EMAIL: "${ADMIN_EMAIL:-kadievdavid37@gmail.com}"
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD:-change-this-on-first-login}"
+      ADMIN_NAME: "${ADMIN_NAME:-Administrator}"
+      KEEPA_API_KEY: "${KEEPA_API_KEY:-}"
+      KEEPA_DEFAULT_DOMAIN: "${KEEPA_DEFAULT_DOMAIN:-US}"
+      KEEPA_STATS_DAYS: "${KEEPA_STATS_DAYS:-90}"
+      NODE_ENV: "production"
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:
