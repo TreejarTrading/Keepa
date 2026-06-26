@@ -99,4 +99,38 @@ FOB-бенчмарки из поиска: **25-pc прозрачный drawer-с
 > Apify/Bright Data Stage 4 (`niche_analyzer/src/stage4_alibaba.py`) можно запустить с `APIFY_TOKEN` для автоматического матчинга поставщиков по title/brand и выгрузки цен/MOQ в parquet.
 
 ---
+
+## 7. Расширенная выборка — 180 уникальных ASIN (обновление)
+
+Чтобы выборка не была узкой, прогнал **4 ключа** (`makeup organizer`, `cosmetic organizer`, `vanity organizer`, `acrylic makeup organizer`) → дедупликация дала **180 уникальных ASIN**. Полный XLSX со всеми 180 и авто-вердиктами: `Products/makeup_organizer_US_FULL_2026-06-26.xlsx`.
+
+### Сегменты рынка (по типу товара)
+| Сегмент | ASIN | Σ продаж/мес (proxy) | Что внутри |
+|---|---:|---:|---|
+| **Drawer-сет / трей** | 76 | ~68 750 | прозрачные дробящие сеты, stackable-ящики (Vtopmart, WOWBOX, A-LuGei) |
+| **Акрил (drawers/box)** | 49 | ~35 150 | акрил-органайзеры с ящиками, qtip-холдеры, floating-полки |
+| **Travel / косметичка** | 49 | ~29 600 | toiletry/makeup bags (BAGSMART, EACHY) |
+| **Вращающиеся** | 6 | ~450 | 360°, lazy-susan |
+
+### Топ-бренды (расширенно)
+| Бренд | Listings | Σ продаж/мес | Профиль |
+|---|---:|---:|---|
+| **Vtopmart** | 27 | ~54 900 | абсолютный лидер, диверсифицирован (сеты + stackable + bath) |
+| **BAGSMART** | 41 | ~27 100 | доминатор travel-сегмента, 63.5k отзывов, 4.8★ |
+| **WOWBOX** | 15 | ~12 150 | №2 в drawer-сетах |
+| **AOZITA** | 9 | ~11 850 | акрил qtip/cotton (1 SKU 67.7k отзывов!) |
+| **A-LuGei** | 28 | ~8 950 | растущий новичок с УТП |
+| **Akro-Mils** | 15 | ~7 850 | craft-кабинеты (не профиль) |
+
+### Новые точки входа (BUY), которых не было в узкой выборке
+| ASIN | Бренд | Цена | Продаж/мес | Отзывы | ★ | Почему |
+|---|---|---|---|---|---|---|
+| [B0D7Q1DWPF](https://www.amazon.com/dp/B0D7Q1DWPF) | ARSTPEOE | $31.99 | 2 000 | **907** | 4.7 | **Премиум-акрил, 13 ящиков. Низкий moat (907 отз.) при высокой цене → лучшая маржа.** |
+| [B0CXLK9PJ9](https://www.amazon.com/dp/B0CXLK9PJ9) | Vtopmart | $44.99 | 10 000 | 3 911 | 4.8 | Stackable drawers Set of 5 — высокий ASP-сегмент, 4.8★ |
+| [B0CDXMVLVK](https://www.amazon.com/dp/B0CDXMVLVK) | Vtopmart | $25.99 | 2 000 | 3 911 | 4.8 | Тот же формат, средний чек |
+| [B0CJQWNQ6P](https://www.amazon.com/dp/B0CJQWNQ6P) | Lifewit | $11.99 | 3 000 | 4 165 | 4.7 | Акриловые floating-полки — смежный формат, низкий moat |
+
+> **Уточнение вывода:** деньги не в копии «25-pc прозрачного сета» (там Vtopmart/WOWBOX с 14–48k отзывов), а в **премиум-акриле с ящиками** ($25–45, конкуренты с <1k–4k отзывов — [ARSTPEOE](https://www.amazon.com/dp/B0D7Q1DWPF), STARLATTA, caktraie) и в **stackable-drawer высоком ASP** ($40+). Здесь и маржа выше, и review-moat ещё не построен.
+
+---
 *Заметка: значения sales_rank здесь — ранг внутри под-категории «Makeup organizers», не корневой BSR. `monthly_sold` Keepa округляет (700/8000/20000) и не отдаёт для части ASIN. Отзывы шарятся на уровне родительского листинга (вариации одного бренда показывают общий счётчик).*
