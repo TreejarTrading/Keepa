@@ -100,6 +100,42 @@ def _autosize(ws, max_width: int = 60) -> None:
         ws.column_dimensions[letter].width = min(max(length + 2, 10), max_width)
 
 
+# Fixed display order for discovery buckets; unknown tags fall in after these.
+_BUCKET_ORDER = ("Bestseller", "Rising", "New")
+
+
+def _summarize(records: list[dict[str, Any]]) -> dict[str, Any]:
+    """Aggregate records into verdict / bucket / market tallies for the summary.
+
+    A product can sit in several buckets, so bucket counts overlap. ``buckets``
+    is a list of ``(tag, count, avg_momentum)`` in :data:`_BUCKET_ORDER`;
+    ``markets`` groups by ``marketplace`` (lead US vs target DE/AE), each with a
+    verdict split.
+    """
+    buckets: dict[str, list[float]] = {}
+    markets: dict[str, dict[str, int]] = {}
+    verdicts = {"BUY": 0, "WATCH": 0, "SKIP": 0}
+    for rec in records:
+        disc = rec.get("discovery") or {}
+        score = disc.get("momentum_score") or 0.0
+        for tag in disc.get("tags") or []:
+            buckets.setdefault(tag, []).append(score)
+        market = rec.get("marketplace") or "—"
+        slot = markets.setdefault(market, {"n": 0, "BUY": 0, "WATCH": 0, "SKIP": 0})
+        slot["n"] += 1
+        verdict = str(rec.get("verdict") or "").upper()
+        if verdict in verdicts:
+            verdicts[verdict] += 1
+            slot[verdict] += 1
+    ordered = [t for t in _BUCKET_ORDER if t in buckets] + [
+        t for t in buckets if t not in _BUCKET_ORDER
+    ]
+    bucket_rows = [
+        (t, len(buckets[t]), round(sum(buckets[t]) / len(buckets[t]), 1)) for t in ordered
+    ]
+    return {"verdicts": verdicts, "buckets": bucket_rows, "markets": markets}
+
+
 def generate_report(
     records: list[dict[str, Any]],
     *,
@@ -167,21 +203,36 @@ def generate_report(
         _linkify(ws2.cell(row=ws2.max_row, column=1), rec.get("url"))
     _autosize(ws2, max_width=80)
 
-    # --- Sheet 3: Run metadata ------------------------------------------
+    # --- Sheet 3: Summary — run meta + verdict / bucket / market tallies -
     ws3 = wb.create_sheet("Сводка")
     ws3.append(["Generated", datetime.now().isoformat(timespec="seconds")])
     ws3.append(["Products analysed", len(records)])
     ws3.append(["Query / context", query_summary or "—"])
-    counts = {"BUY": 0, "WATCH": 0, "SKIP": 0}
-    for rec in records:
-        v = str(rec.get("verdict", "")).upper()
-        if v in counts:
-            counts[v] += 1
-    ws3.append(["BUY", counts["BUY"]])
-    ws3.append(["WATCH", counts["WATCH"]])
-    ws3.append(["SKIP", counts["SKIP"]])
+
+    summary = _summarize(records)
+
+    def _section(header: list[str]) -> None:
+        ws3.append([])
+        ws3.append(header)
+        for cell in ws3[ws3.max_row]:
+            cell.font = Font(bold=True)
+
+    _section(["Verdict", "Count"])
+    for v in ("BUY", "WATCH", "SKIP"):
+        ws3.append([v, summary["verdicts"][v]])
+
+    _section(["Bucket", "Count", "Avg momentum"])
+    for tag, n, avg in summary["buckets"]:
+        ws3.append([tag, n, avg])
+
+    _section(["Market", "Count", "BUY", "WATCH", "SKIP"])
+    for market, d in sorted(summary["markets"].items()):
+        ws3.append([market, d["n"], d["BUY"], d["WATCH"], d["SKIP"]])
+
     ws3.column_dimensions["A"].width = 22
-    ws3.column_dimensions["B"].width = 60
+    ws3.column_dimensions["B"].width = 40
+    for col in ("C", "D", "E"):
+        ws3.column_dimensions[col].width = 13
 
     wb.save(path)
     return path
@@ -275,21 +326,29 @@ def generate_docx_report(
     if query_summary:
         doc.add_paragraph(query_summary)
 
-    buckets: dict[str, int] = {}
-    verdicts: dict[str, int] = {}
-    for rec in records:
-        for tag in (rec.get("discovery") or {}).get("tags") or []:
-            buckets[tag] = buckets.get(tag, 0) + 1
-        v = str(rec.get("verdict") or "").upper()
-        if v:
-            verdicts[v] = verdicts.get(v, 0) + 1
-    if buckets:
+    summary = _summarize(records)
+    doc.add_paragraph(
+        "Verdicts — "
+        + ", ".join(f"{v}: {summary['verdicts'][v]}" for v in ("BUY", "WATCH", "SKIP"))
+    )
+    if summary["buckets"]:
+        doc.add_paragraph("Buckets:")
+        bt = doc.add_table(rows=1, cols=3)
+        try:
+            bt.style = "Light List Accent 1"
+        except Exception:
+            pass
+        hdr = bt.rows[0].cells
+        hdr[0].text, hdr[1].text, hdr[2].text = "Bucket", "Count", "Avg momentum"
+        for tag, n, avg in summary["buckets"]:
+            cells = bt.add_row().cells
+            cells[0].text, cells[1].text, cells[2].text = tag, str(n), str(avg)
+    if summary["markets"]:
         doc.add_paragraph(
-            "Buckets — " + ", ".join(f"{k}: {n}" for k, n in sorted(buckets.items()))
-        )
-    if verdicts:
-        doc.add_paragraph(
-            "Verdicts — " + ", ".join(f"{k}: {n}" for k, n in verdicts.items())
+            "Markets — "
+            + ", ".join(
+                f"{market}: {d['n']}" for market, d in sorted(summary["markets"].items())
+            )
         )
     doc.add_paragraph(
         "US is the lead market; these are candidates to resell in DE/AE. Each "

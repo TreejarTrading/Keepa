@@ -266,6 +266,14 @@ def test_sourcing_links():
     assert "stainless" in kw and "steel" in kw  # product nouns kept
     assert "2" not in kw.split()  # pure number dropped
 
+    # The product noun is the title tail, not the brand-line front.
+    oxo = sourcing.keyword_phrase("OXO Good Grips Stainless Steel Garlic Press", "OXO")
+    assert oxo.endswith("garlic press")
+    assert "good" not in oxo and "grips" not in oxo
+    # A trailing qualifier clause is cut before keywords are taken.
+    clause = sourcing.keyword_phrase("Silicone Baking Mat, Non-Stick - 2 Pack")
+    assert clause.endswith("baking mat")
+
     url = sourcing.alibaba_search_url("garlic press")
     assert url == "https://www.alibaba.com/trade/search?SearchText=garlic+press"
     assert sourcing.alibaba_search_url("") is None
@@ -320,6 +328,17 @@ def test_buyer_report_formats(fake_product, tmp_path, monkeypatch):
 
     assert cell("ASIN").hyperlink.target.endswith("/dp/B0TEST1234")
     assert "alibaba.com" in cell("Alibaba").hyperlink.target
+
+    # Summary sheet carries data-driven bucket + market breakdowns.
+    summary_cells = {
+        c.value
+        for row in load_workbook(paths["xlsx"])["Сводка"].iter_rows()
+        for c in row
+        if c.value is not None
+    }
+    assert {"Bucket", "Market", "Avg momentum"} <= summary_cells
+    assert "Bestseller" in summary_cells  # fake_product is a bestseller
+    assert "US" in summary_cells  # market column is data-driven (marketplace)
 
     from docx import Document
 

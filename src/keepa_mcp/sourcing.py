@@ -22,15 +22,36 @@ _STOPWORDS = {
     "xl", "xxl", "inch", "inches", "cm", "mm", "ml", "oz", "lb", "lbs", "kg",
     "g", "pro", "plus", "best", "top", "quality", "high", "super", "ultra",
     "official", "genuine", "original", "brand", "color", "colour",
+    # Feature / marketing adjectives that are never the product noun — dropping
+    # them sharpens the supplier query, especially when they trail the noun.
+    "portable", "mini", "compact", "lightweight", "handheld", "rechargeable",
+    "wireless", "cordless", "foldable", "collapsible", "adjustable", "reusable",
+    "waterproof", "automatic", "professional", "durable", "multifunctional",
+    "universal", "upgraded", "improved",
 }
+
+# Amazon titles tack qualifier clauses after the first comma / dash / bracket
+# ("Garlic Press, Dishwasher Safe — 2 Pack"); the product noun lives in the head.
+_TAIL_CLAUSE = re.compile(r"[,(){}\[\]|]|\s[-–—]\s")
+
+
+def _meaningful_tokens(text: str) -> list[str]:
+    """Tokens worth searching on: no stopwords, single chars, or pure numbers."""
+    return [
+        w
+        for w in re.findall(r"\w+", text, flags=re.UNICODE)
+        if w not in _STOPWORDS and len(w) > 1 and not w.isdigit()
+    ]
 
 
 def keyword_phrase(title: str | None, brand: str | None = None, max_words: int = 4) -> str:
     """Distil an Amazon title into a short, supplier-searchable phrase.
 
-    Drops the brand, pure numbers, units and marketing filler, then keeps the
-    first ``max_words`` meaningful tokens (which tend to be the product noun +
-    qualifiers, e.g. "stainless steel garlic press").
+    Amazon titles read "[Brand] [adjectives] [product noun], [qualifiers]", so the
+    product noun sits at the **tail of the head clause** — e.g. "OXO Good Grips
+    Stainless Steel Garlic Press" → "stainless steel garlic press", not the
+    brand-line front. We drop the brand, cut any trailing qualifier clause, strip
+    units / numbers / marketing filler, then keep the **last** ``max_words`` tokens.
     """
     if not title:
         return (brand or "").strip()
@@ -41,15 +62,9 @@ def keyword_phrase(title: str | None, brand: str | None = None, max_words: int =
             if token:
                 text = re.sub(rf"\b{re.escape(token)}\b", " ", text)
 
-    words = re.findall(r"\w+", text, flags=re.UNICODE)
-    out: list[str] = []
-    for w in words:
-        if w in _STOPWORDS or len(w) <= 1 or w.isdigit():
-            continue
-        out.append(w)
-        if len(out) >= max_words:
-            break
-    return " ".join(out) or title.strip()
+    head = _TAIL_CLAUSE.split(text, maxsplit=1)[0]
+    tokens = _meaningful_tokens(head) or _meaningful_tokens(text)
+    return " ".join(tokens[-max_words:]) or title.strip()
 
 
 def alibaba_search_url(text: str | None) -> str | None:
