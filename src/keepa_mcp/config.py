@@ -97,6 +97,10 @@ DEFAULT_STATS_DAYS: int = int(os.getenv("KEEPA_STATS_DAYS", "90"))
 # Default max number of ASINs returned by a product-finder search.
 DEFAULT_SEARCH_LIMIT: int = int(os.getenv("KEEPA_SEARCH_LIMIT", "50"))
 
+# HTTP read timeout (seconds) for Keepa API calls. The keepa package defaults
+# to 10s, which often trips on large product queries / slow proxies.
+REQUEST_TIMEOUT: int = int(os.getenv("KEEPA_TIMEOUT", "60"))
+
 # --- Reports -----------------------------------------------------------------
 OUTPUT_DIR: Path = _resolve_output_dir()
 

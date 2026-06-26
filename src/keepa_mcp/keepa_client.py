@@ -61,11 +61,18 @@ def get_client():
     """Return a cached, authenticated Keepa client.
 
     Imported lazily so that simply importing this module (e.g. for tests or
-    report generation) does not require the API key or network access.
+    report generation) does not require the API key or network access. The
+    HTTP read timeout is configurable via ``KEEPA_TIMEOUT`` (seconds); the
+    keepa package default of 10s is often too short for large product
+    queries, especially behind a proxy.
     """
     import keepa  # local import keeps module import cheap
 
-    return keepa.Keepa(config.require_api_key())
+    try:
+        return keepa.Keepa(config.require_api_key(), timeout=config.REQUEST_TIMEOUT)
+    except TypeError:
+        # Older keepa versions without a ``timeout`` kwarg.
+        return keepa.Keepa(config.require_api_key())
 
 
 def tokens_left() -> dict[str, Any]:
