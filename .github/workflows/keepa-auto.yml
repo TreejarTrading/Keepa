@@ -1,0 +1,56 @@
+name: Keepa Auto Search
+
+# Прогоняет сохранённые поиски из auto_searches.json и выгружает XLSX-отчёты
+# как артефакты запуска. Ключ берётся из секрета репозитория KEEPA_API_KEY.
+
+on:
+  schedule:
+    # ~раз в 2 дня, 06:00 UTC (нечётные числа месяца)
+    - cron: "0 6 */2 * *"
+  workflow_dispatch:
+    inputs:
+      searches_file:
+        description: "Путь к файлу поисков (по умолчанию auto_searches.json)"
+        required: false
+        default: "auto_searches.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: keepa-auto
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+
+      - name: Run saved Keepa searches
+        env:
+          KEEPA_API_KEY: ${{ secrets.KEEPA_API_KEY }}
+          KEEPA_DOMAIN: US
+          KEEPA_AUTO_SEARCH_FILE: ${{ github.event.inputs.searches_file || 'auto_searches.json' }}
+        run: |
+          if [ -z "$KEEPA_API_KEY" ]; then
+            echo "::error::Секрет KEEPA_API_KEY не задан. Settings → Secrets and variables → Actions → New repository secret (имя KEEPA_API_KEY)."
+            exit 1
+          fi
+          uv run keepa-auto
+
+      - name: Upload XLSX reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: keepa-reports-${{ github.run_id }}
+          path: Products/*.xlsx
+          if-no-files-found: warn
+          retention-days: 30

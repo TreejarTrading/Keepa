@@ -1,0 +1,28 @@
+# Secrets
+.env
+ENV DOCS*
+ENV_DOCS*
+
+# Generated reports (keep the folder, ignore the XLSX outputs)
+Products/*.xlsx
+!Products/.gitkeep
+auto_search.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+dist/
+build/
+
+# uv
+.uv/
+uv.lock
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
