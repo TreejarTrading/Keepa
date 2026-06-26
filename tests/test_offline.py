@@ -193,19 +193,51 @@ def test_env_docs_loading(tmp_path, monkeypatch):
     monkeypatch.delenv("KEEPA_API_KEY", raising=False)
     from keepa_mcp import config
 
+    # KEY=VALUE format
     (tmp_path / "ENV DOCS").write_text(
         "# Keepa key\nKEEPA_API_KEY=abc123testkey\n", encoding="utf-8"
     )
     monkeypatch.setattr(config, "REPO_ROOT", tmp_path)
-    config._load_env_docs()
-    assert os.environ.get("KEEPA_API_KEY") == "abc123testkey"
-    monkeypatch.delenv("KEEPA_API_KEY", raising=False)
+    assert config._env_docs_key() == "abc123testkey"
 
     # Bare-token format
     (tmp_path / "ENV DOCS").write_text("a" * 64 + "\n", encoding="utf-8")
-    config._load_env_docs()
-    assert os.environ.get("KEEPA_API_KEY") == "a" * 64
+    assert config._env_docs_key() == "a" * 64
+
+    # Full resolution falls back to ENV DOCS when env/.env are absent
+    monkeypatch.setattr(config, "REPO_ROOT", tmp_path)
+    monkeypatch.chdir(tmp_path)
+    assert config._resolve_api_key() == "a" * 64
+    importlib.reload(config)
+
+
+def test_api_key_resolution_precedence(tmp_path, monkeypatch):
+    import importlib
+
+    from keepa_mcp import config
+
+    monkeypatch.setattr(config, "REPO_ROOT", tmp_path)
+    monkeypatch.chdir(tmp_path)
+    real = "r" * 64
+    file_key = "f" * 64
+    (tmp_path / ".env").write_text(f"KEEPA_API_KEY={file_key}\n", encoding="utf-8")
+
+    # 1. A real env var wins over the .env file.
+    monkeypatch.setenv("KEEPA_API_KEY", real)
+    assert config._resolve_api_key() == real
+
+    # 2. A placeholder/empty env var must NOT mask a real key in .env.
+    monkeypatch.setenv("KEEPA_API_KEY", "your_keepa_api_key_here")
+    assert config._resolve_api_key() == file_key
+    monkeypatch.setenv("KEEPA_API_KEY", "   ")
+    assert config._resolve_api_key() == file_key
+
+    # 3. No env var at all → .env provides it.
     monkeypatch.delenv("KEEPA_API_KEY", raising=False)
+    assert config._resolve_api_key() == file_key
+
+    # Surrounding quotes/whitespace are stripped from a pasted secret.
+    assert config._clean_key('"  ' + real + '  "\n') == real
     importlib.reload(config)
 
 

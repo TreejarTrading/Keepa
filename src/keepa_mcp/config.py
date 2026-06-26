@@ -1,11 +1,21 @@
 """Runtime configuration for the Keepa MCP server.
 
-All settings are read from environment variables. Two local files are loaded
-automatically if present in the repository root:
+The Keepa API key is resolved from the first of these that holds a real value,
+in priority order:
 
-- ``.env``       — standard dotenv file;
-- ``ENV DOCS``   — the user's key file (``ENV DOCS``, ``ENV DOCS.txt``,
-  ``ENV_DOCS`` …): either ``KEY=VALUE`` lines or a bare Keepa API key.
+1. the ``KEEPA_API_KEY`` **environment variable** — this is how Claude Code
+   (web/MCP) and CI inject secrets, and it always wins;
+2. a ``.env`` file in the project root (handy for local development);
+3. an ``ENV DOCS`` file in the project root (``ENV DOCS``, ``ENV DOCS.txt``,
+   ``ENV_DOCS`` …): either ``KEY=VALUE`` lines or a bare Keepa API key.
+
+Note: a key stored only in GitHub *repository/Actions secrets* does **not**
+reach this server — those are visible to GitHub Actions workflows, not to the
+running MCP process. Put the key in one of the three places above.
+
+Empty values, common placeholders (``your_keepa_api_key_here`` …) and
+surrounding whitespace/quotes are ignored/stripped, so a half-finished ``.env``
+copied from ``.env.example`` can no longer mask a real key.
 
 Nothing here requires editing the source.
 """
@@ -14,27 +24,63 @@ from __future__ import annotations
 
 import os
 import re
+import sys
 from pathlib import Path
 
-from dotenv import load_dotenv
-
-# Load .env from the current working directory or the repository root, if any.
-# override=True so the project's .env is the authoritative source of the key,
-# even if a stale/empty value is present in the parent environment.
-load_dotenv(override=True)
+from dotenv import dotenv_values, load_dotenv
 
 # Repository root = two levels up from this file (src/keepa_mcp/config.py).
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
-load_dotenv(REPO_ROOT / ".env", override=True)
+# Load .env from the current working directory and the repository root, if any.
+# override=False so a real key injected via the environment (the Claude Code
+# environment variable / CI secret) is always authoritative and a stale .env
+# cannot clobber it. Placeholder/empty env values are handled in
+# ``_resolve_api_key`` below, which falls back to the files when needed.
+load_dotenv(override=False)
+load_dotenv(REPO_ROOT / ".env", override=False)
+
+# Values that look "set" but are not a real key — treated as absent.
+_PLACEHOLDER_KEYS = {
+    "your_keepa_api_key_here",
+    "your_key",
+    "your-key",
+    "changeme",
+    "change_me",
+    "todo",
+    "xxx",
+    "none",
+    "null",
+}
 
 
-def _load_env_docs() -> None:
-    """Pick up KEEPA_API_KEY from an ``ENV DOCS`` file in the repo root.
+def _clean_key(value: str | None) -> str | None:
+    """Normalise a candidate key; return ``None`` if it is not a usable value.
 
-    The user keeps the Keepa key in a file named "ENV DOCS" next to the
-    project. Accept common spellings and two formats: ``KEY=VALUE`` lines or
-    a single bare key token. Values never override an already-set variable.
+    Strips surrounding whitespace and quotes (a trailing newline or stray
+    quotes on a pasted secret is a common cause of silent 403s) and rejects
+    empty strings and known placeholders.
+    """
+    if value is None:
+        return None
+    cleaned = value.strip().strip("'\"").strip()
+    if not cleaned or cleaned.lower() in _PLACEHOLDER_KEYS:
+        return None
+    return cleaned
+
+
+def _looks_like_keepa_key(value: str) -> bool:
+    """Keepa keys are long alphanumeric tokens (typically 64 hex chars)."""
+    return bool(re.fullmatch(r"[A-Za-z0-9]{40,}", value))
+
+
+def _env_docs_key() -> str | None:
+    """Pick up KEEPA_API_KEY (and side-set other KEY=VALUE) from ``ENV DOCS``.
+
+    The user may keep the key in a file named "ENV DOCS" next to the project.
+    Accept common spellings and two formats: ``KEY=VALUE`` lines or a single
+    bare key token. Non-key ``KEY=VALUE`` pairs are exported only when unset;
+    the Keepa key itself is returned for the central resolver to rank.
     """
     candidates = [
         p
@@ -42,29 +88,49 @@ def _load_env_docs() -> None:
         if p.is_file() and re.fullmatch(r"env[ _-]?docs(\.(txt|md|env))?", p.name, re.IGNORECASE)
     ] if REPO_ROOT.is_dir() else []
 
+    found: str | None = None
     for path in candidates:
         try:
             text = path.read_text(encoding="utf-8-sig")
         except OSError:
             continue
-        bare_tokens: list[str] = []
         for line in text.splitlines():
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
             if "=" in line:
                 key, _, value = line.partition("=")
-                key, value = key.strip().upper(), value.strip().strip("'\"")
-                if key and value and not os.getenv(key):
+                key, value = key.strip().upper(), _clean_key(value)
+                if not key or not value:
+                    continue
+                if key == "KEEPA_API_KEY":
+                    found = found or value
+                elif not os.getenv(key):
                     os.environ[key] = value
-            elif re.fullmatch(r"[A-Za-z0-9]{40,}", line):
-                bare_tokens.append(line)
-        # A lone long token in the file is treated as the API key itself.
-        if bare_tokens and not os.getenv("KEEPA_API_KEY"):
-            os.environ["KEEPA_API_KEY"] = bare_tokens[0]
+            elif found is None and _looks_like_keepa_key(line):
+                # A lone long token in the file is treated as the API key.
+                found = line
+    return found
 
 
-_load_env_docs()
+def _resolve_api_key() -> str | None:
+    """Resolve the Keepa key by priority: env var → .env file → ENV DOCS."""
+    primary = _clean_key(os.getenv("KEEPA_API_KEY"))
+    if primary:
+        return primary
+
+    # Env var missing or a placeholder — consult the files explicitly so a
+    # placeholder in the environment cannot block a real key in .env.
+    for env_path in (REPO_ROOT / ".env", Path.cwd() / ".env"):
+        try:
+            if env_path.is_file():
+                candidate = _clean_key(dotenv_values(env_path).get("KEEPA_API_KEY"))
+                if candidate:
+                    return candidate
+        except OSError:
+            continue
+
+    return _clean_key(_env_docs_key())
 
 
 def _resolve_output_dir() -> Path:
@@ -81,7 +147,17 @@ def _resolve_output_dir() -> Path:
 
 
 # --- Keepa API ---------------------------------------------------------------
-KEEPA_API_KEY: str | None = os.getenv("KEEPA_API_KEY") or None
+KEEPA_API_KEY: str | None = _resolve_api_key()
+
+# Warn (don't crash) on a key that does not look like a Keepa key — catches a
+# truncated/mangled secret early, since Keepa would otherwise just 403.
+if KEEPA_API_KEY and not _looks_like_keepa_key(KEEPA_API_KEY):
+    print(
+        f"[keepa-mcp] warning: KEEPA_API_KEY ({len(KEEPA_API_KEY)} chars) does not "
+        "look like a Keepa key (expected 40+ alphanumeric chars). Check for a "
+        "truncated or mis-pasted value.",
+        file=sys.stderr,
+    )
 
 # Markets we sell-research in, most mature first (used as the default order
 # for multi-market searches).
@@ -118,8 +194,15 @@ def require_api_key() -> str:
     """Return the Keepa API key or raise a clear, actionable error."""
     if not KEEPA_API_KEY:
         raise RuntimeError(
-            "KEEPA_API_KEY is not set. Add it to your environment or to a .env "
-            "file in the project root (see .env.example). Get a key at "
-            "https://keepa.com/#!api"
+            "KEEPA_API_KEY is not set. Provide it in ONE of these places "
+            "(checked in this order):\n"
+            "  1. the KEEPA_API_KEY environment variable — for Claude Code "
+            "(web/MCP) add it as an environment variable in your Claude Code "
+            "environment settings;\n"
+            "  2. a .env file in the project root (see .env.example);\n"
+            "  3. an 'ENV DOCS' file in the project root.\n"
+            "Note: a GitHub repository/Actions secret is NOT enough — it is "
+            "only visible to GitHub Actions, not to this server. "
+            "Get a key at https://keepa.com/#!api"
         )
     return KEEPA_API_KEY
