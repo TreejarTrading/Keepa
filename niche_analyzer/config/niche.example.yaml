@@ -1,0 +1,33 @@
+niche_name: "yoga_mats"
+keywords:
+  - "yoga mat"
+  - "exercise mat"
+  - "pilates mat"
+
+marketplaces:
+  US:
+    domain: 1
+    root_category: 3375251       # Sports & Outdoors
+    bsr_max: 50000
+    bsr_min: 100
+    price_min_usd: 15
+    price_max_usd: 80
+    review_min: 50
+  DE:
+    domain: 3
+    root_category: 16435051      # Sport & Freizeit
+    bsr_max: 30000
+    bsr_min: 100
+    price_min_usd: 15
+    price_max_usd: 80
+    review_min: 30
+
+limits:
+  max_asins_per_market: 2000
+  offers_for_top_n: 300
+  alibaba_searches: 200
+  sleep_between_calls_sec: 4
+
+api_keys:
+  keepa_env: "KEEPA_API_KEY"
+  apify_env: "APIFY_TOKEN"
