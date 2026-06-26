@@ -23,7 +23,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from . import analysis, config, keepa_client, reports
+from . import analysis, config, dashboard, keepa_client, reports
 
 # build_selection keyword arguments accepted inside a search's "filters".
 _FILTER_KEYS = {
@@ -91,14 +91,15 @@ def run_search(search: dict[str, Any]) -> dict[str, Any]:
     records = [
         analysis.auto_verdict(analysis.build_record(p, domain=domain)) for p in products
     ]
-    path = reports.generate_report(
-        records,
-        report_name=f"auto_{search['name']}_{domain}",
-        query_summary=(
-            f"AUTO {datetime.now():%Y-%m-%d %H:%M} | market={domain} | "
-            f"filters={json.dumps(search['filters'], ensure_ascii=False)} | "
-            f"extra={json.dumps(search['extra_filters'], ensure_ascii=False)}"
-        ),
+    summary = (
+        f"AUTO {datetime.now():%Y-%m-%d %H:%M} | market={domain} | "
+        f"filters={json.dumps(search['filters'], ensure_ascii=False)} | "
+        f"extra={json.dumps(search['extra_filters'], ensure_ascii=False)}"
+    )
+    report_name = f"auto_{search['name']}_{domain}"
+    path = reports.generate_report(records, report_name=report_name, query_summary=summary)
+    dash_path = dashboard.generate_dashboard(
+        records, dashboard_name=report_name, query_summary=summary
     )
     verdicts = {"BUY": 0, "WATCH": 0, "SKIP": 0}
     for r in records:
@@ -109,6 +110,7 @@ def run_search(search: dict[str, Any]) -> dict[str, Any]:
         "asins_found": len(asins),
         "verdicts": verdicts,
         "saved_to": str(path),
+        "dashboard": str(dash_path),
     }
 
 

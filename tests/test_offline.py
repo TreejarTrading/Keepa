@@ -76,6 +76,73 @@ def test_build_record(fake_product):
     assert m["demand"]["monthly_sold_estimate"] == 1200
 
 
+def test_velocity_and_inventory_in_record(fake_product):
+    from keepa_mcp import analysis
+
+    rec = analysis.build_record(fake_product, stats_days=90)
+    vel = rec["metrics"]["velocity"]
+    # monthlySold=1200 -> ~40/day -> 1200/mo, prefers the real number.
+    assert vel["source"] == "monthly_sold"
+    assert vel["estimated_monthly_sales"] == 1200
+    assert vel["estimated_daily_sales"] == 40
+    assert vel["trend"] in {"accelerating", "declining", "stable"}
+
+    inv = rec["metrics"]["inventory"]
+    assert inv["recommended_order_qty"] == 1200  # 40/day * 30
+    assert inv["days_of_inventory"] == 1
+    assert inv["stockout_risk"] in {"high", "medium", "low", "unknown"}
+
+
+def test_velocity_rank_fallback():
+    from keepa_mcp import analysis
+
+    vel = analysis.estimate_velocity(None, 10_000, 20_000)
+    assert vel["source"] == "rank_estimate"
+    assert vel["estimated_daily_sales"] == 10_000  # 1e6/sqrt(10000)=10000
+    assert vel["trend"] == "accelerating"  # current rank better than avg
+
+
+def test_opportunity_score(fake_product):
+    from keepa_mcp import analysis
+
+    rec = analysis.build_record(fake_product, stats_days=90)
+    opp = rec["opportunity"]
+    assert 0 <= opp["score"] <= 100
+    assert opp["label"] in {"high", "medium", "low"}
+    assert isinstance(opp["drivers"], list)
+
+
+def test_category_summary(fake_product):
+    from keepa_mcp import analysis
+
+    recs = [analysis.build_record(fake_product, stats_days=90) for _ in range(3)]
+    summary = analysis.category_summary(recs)
+    assert summary["products"] == 3
+    assert summary["competition_level"] in {"high", "medium", "low", "unknown"}
+    assert summary["quality"] in {"excellent", "good", "fair", "poor", "unknown"}
+    assert summary["price_bands"]["mid"] == 3  # ~$29 New price -> mid band
+    assert summary["leader_share_pct"] == 100.0  # all same brand
+    assert "portfolio_health" in summary
+
+
+def test_generate_dashboard(fake_product, tmp_path, monkeypatch):
+    monkeypatch.setenv("KEEPA_OUTPUT_DIR", str(tmp_path))
+    import importlib
+    from keepa_mcp import config, dashboard, analysis
+    importlib.reload(config)
+    importlib.reload(dashboard)
+
+    rec = analysis.build_record(fake_product, stats_days=90)
+    rec["verdict"] = "BUY"
+    path = dashboard.generate_dashboard([rec], dashboard_name="test dash", query_summary="unit")
+    assert path.exists()
+    assert path.suffix == ".html"
+    html = path.read_text(encoding="utf-8")
+    assert "B0TEST1234" in html
+    assert "Chart" in html
+    assert "/*__DATA__*/" not in html  # placeholder was substituted
+
+
 def test_clean_sentinels():
     from keepa_mcp import analysis
 

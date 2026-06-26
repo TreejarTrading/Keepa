@@ -15,7 +15,7 @@ from typing import Any
 
 from mcp.server.fastmcp import FastMCP
 
-from . import analysis, config, keepa_client, reports
+from . import analysis, config, dashboard, keepa_client, reports
 
 mcp = FastMCP("keepa-product-research")
 
@@ -276,6 +276,104 @@ def analyze_and_report(
 
 
 @mcp.tool()
+def category_analysis(
+    category_id: int,
+    domain: str | None = None,
+    limit: int = 25,
+    stats_days: int | None = None,
+) -> dict[str, Any]:
+    """Analyse a whole category: market summary + per-product opportunity scores.
+
+    Pulls the category best sellers, computes a market-level summary (price
+    bands, competition level, quality, brand concentration, portfolio health,
+    average opportunity score) and returns it alongside the individual records
+    (each carrying its own 0-100 opportunity score). Good for "is this niche
+    worth entering?" decisions.
+    """
+    sd = stats_days or config.DEFAULT_STATS_DAYS
+    asins = keepa_client.best_sellers(category_id, domain=domain)[: max(1, limit)]
+    if not asins:
+        return {"asins_found": 0, "summary": {}, "records": []}
+    records = _records_for(asins, domain, sd)
+    return {
+        "asins_found": len(asins),
+        "summary": analysis.category_summary(records),
+        "records": records,
+        "guidance": analysis.DECISION_GUIDANCE,
+    }
+
+
+@mcp.tool()
+def market_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
+    """Compute a market-level summary over a set of analysis records.
+
+    Pass records from any search tool to get aggregate price bands, competition
+    level, quality, brand concentration, portfolio health and the average
+    opportunity score — without spending more Keepa tokens.
+    """
+    return analysis.category_summary(records)
+
+
+@mcp.tool()
+def save_dashboard(
+    records: list[dict[str, Any]],
+    dashboard_name: str | None = None,
+    query_summary: str | None = None,
+) -> dict[str, Any]:
+    """Write a self-contained interactive HTML dashboard into Products/.
+
+    Pass analysis records (from any search tool), optionally enriched with
+    ``verdict``/``confidence``/``rationale``. The dashboard has KPI cards,
+    charts (opportunity score, price bands, verdicts, top sellers) and a
+    sortable/filterable product table. Open the returned .html file in a
+    browser — no server needed. Returns the saved file path.
+    """
+    path = dashboard.generate_dashboard(
+        records, dashboard_name=dashboard_name, query_summary=query_summary
+    )
+    return {
+        "saved_to": str(path),
+        "products": len(records),
+        "output_dir": str(config.OUTPUT_DIR),
+    }
+
+
+@mcp.tool()
+def analyze_and_dashboard(
+    asins: list[str],
+    dashboard_name: str | None = None,
+    query_summary: str | None = None,
+    domain: str | None = None,
+    stats_days: int | None = None,
+    also_xlsx: bool = True,
+) -> dict[str, Any]:
+    """Fetch metrics for ASINs, build an HTML dashboard (and optional XLSX).
+
+    One-shot: pulls full records (with opportunity scores), writes an
+    interactive HTML dashboard into Products/, optionally also an XLSX report,
+    and returns the records plus a market summary so Claude can add verdicts.
+    """
+    sd = stats_days or config.DEFAULT_STATS_DAYS
+    records = _records_for(asins, domain, sd)
+    html_path = dashboard.generate_dashboard(
+        records, dashboard_name=dashboard_name, query_summary=query_summary
+    )
+    out: dict[str, Any] = {
+        "dashboard": str(html_path),
+        "records": records,
+        "summary": analysis.category_summary(records),
+        "guidance": analysis.DECISION_GUIDANCE,
+    }
+    if also_xlsx:
+        out["report"] = str(
+            reports.generate_report(
+                records, report_name=dashboard_name, query_summary=query_summary
+            )
+        )
+    return out
+
+
+@mcp.tool()
 def run_auto_search(searches_file: str | None = None) -> dict[str, Any]:
     """Execute the saved auto searches (auto_searches.json) right now.
 
@@ -298,6 +396,14 @@ def server_info() -> dict[str, Any]:
         "output_dir": str(config.OUTPUT_DIR),
         "auto_search_file": str(config.AUTO_SEARCH_FILE),
         "api_key_configured": bool(config.KEEPA_API_KEY),
+        "analytics": [
+            "sales_velocity",
+            "inventory_signals",
+            "opportunity_score_0_100",
+            "portfolio_health",
+            "category_summary",
+        ],
+        "report_formats": ["xlsx", "html_dashboard"],
     }
 
 

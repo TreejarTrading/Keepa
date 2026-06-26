@@ -122,6 +122,174 @@ def _rank_drops(values, times, days: int | None = 90) -> int | None:
     return drops
 
 
+def _out_of_stock_pct(product: dict[str, Any]) -> float | None:
+    """Best-effort out-of-stock percentage from the Keepa stats object.
+
+    Keepa exposes several ``outOfStockPercentage*`` fields depending on the
+    requested window. We take the first usable one so inventory signals work
+    whenever the stats object is present, and degrade gracefully otherwise.
+    """
+    stats = product.get("stats")
+    if not isinstance(stats, dict):
+        return None
+    for key, value in stats.items():
+        if "outofstock" in str(key).lower():
+            v = _clean(value)
+            if v is not None:
+                return min(100.0, v)
+    return None
+
+
+def estimate_velocity(
+    monthly_sold: float | None,
+    rank_current: float | None,
+    rank_avg: float | None,
+) -> dict[str, Any]:
+    """Estimate sales velocity (daily/weekly/monthly) and its trend.
+
+    Prefers Keepa's actual ``monthlySold`` when present; otherwise falls back
+    to a rank-based heuristic (``1e6 / sqrt(rank)``) adapted from common Keepa
+    tooling. Marked as an estimate so downstream consumers know its precision.
+    """
+    source = None
+    daily: float | None = None
+    if monthly_sold and monthly_sold > 0:
+        daily = monthly_sold / 30.0
+        source = "monthly_sold"
+    elif rank_current and rank_current > 0:
+        daily = max(1.0, math.floor(1_000_000 / math.sqrt(rank_current)))
+        source = "rank_estimate"
+
+    if daily is None:
+        return {
+            "estimated_daily_sales": None,
+            "estimated_weekly_sales": None,
+            "estimated_monthly_sales": None,
+            "trend": None,
+            "change_pct": None,
+            "source": None,
+        }
+
+    # Trend: a *lower* current rank than the window average means the item is
+    # selling faster now than on average -> accelerating.
+    trend = None
+    change_pct = None
+    if rank_current and rank_avg and rank_avg > 0:
+        change_pct = round((rank_avg - rank_current) / rank_avg * 100, 1)
+        if change_pct > 5:
+            trend = "accelerating"
+        elif change_pct < -5:
+            trend = "declining"
+        else:
+            trend = "stable"
+
+    return {
+        "estimated_daily_sales": int(round(daily)),
+        "estimated_weekly_sales": int(round(daily * 7)),
+        "estimated_monthly_sales": int(round(daily * 30)),
+        "trend": trend,
+        "change_pct": change_pct,
+        "source": source,
+    }
+
+
+def inventory_signals(
+    daily_sales: float | None, out_of_stock_pct: float | None
+) -> dict[str, Any]:
+    """Inventory turnover, days-of-inventory, reorder qty and stockout risk.
+
+    Thresholds adapted from common Keepa inventory tooling; ``daily_sales``
+    comes from :func:`estimate_velocity` so the numbers stay consistent with
+    the velocity block.
+    """
+    if out_of_stock_pct is None:
+        turnover = None
+        risk = "unknown"
+    else:
+        turnover = max(1.0, 12 - (out_of_stock_pct / 10)) if out_of_stock_pct < 50 else 1.0
+        if out_of_stock_pct > 30:
+            risk = "high"
+        elif out_of_stock_pct > 15:
+            risk = "medium"
+        else:
+            risk = "low"
+
+    days_of_inventory = None
+    reorder_qty = None
+    if daily_sales and daily_sales > 0:
+        days_of_inventory = math.ceil(30 / max(1.0, daily_sales))
+        reorder_qty = math.ceil(daily_sales * 30)
+
+    return {
+        "turnover_rate": round(turnover, 1) if turnover is not None else None,
+        "days_of_inventory": days_of_inventory,
+        "recommended_order_qty": reorder_qty,
+        "out_of_stock_pct": round(out_of_stock_pct, 1) if out_of_stock_pct is not None else None,
+        "stockout_risk": risk,
+    }
+
+
+def opportunity_score(record: dict[str, Any]) -> dict[str, Any]:
+    """A 0-100 market-opportunity score with the drivers that produced it.
+
+    Higher = a more attractive niche to enter. Combines competition (rank &
+    offers), quality headroom (low ratings = room for a better product), a
+    price sweet spot and price stability. Adapted and extended from the
+    opportunity heuristic in cosjef/Keepa_MCP.
+    """
+    m = record.get("metrics") or {}
+    rank = (m.get("sales_rank") or {})
+    pricing = (m.get("pricing") or {}).get("new") or {}
+    comp = m.get("competition") or {}
+    offers = (comp.get("offer_count") or {}).get("current")
+    rating = (m.get("reviews") or {}).get("rating_current")
+    avg_rank = rank.get("avg") or rank.get("current")
+    avg_price = pricing.get("avg") or pricing.get("current")
+    volatility = pricing.get("volatility")
+
+    score = 50
+    drivers: list[str] = []
+
+    if avg_rank is not None:
+        if avg_rank > 100_000:
+            score += 30
+            drivers.append("low competition (high avg rank)")
+        elif avg_rank > 50_000:
+            score += 20
+            drivers.append("moderate competition")
+        elif avg_rank < 5_000:
+            score -= 10
+            drivers.append("crowded (very low rank)")
+
+    if rating is not None and rating < 3.8:
+        score += 15
+        drivers.append(f"quality headroom (rating {rating})")
+
+    if avg_price is not None and 20 <= avg_price <= 100:
+        score += 10
+        drivers.append("price in sweet spot ($20-100)")
+
+    if volatility is not None:
+        if volatility <= 0.25:
+            score += 10
+            drivers.append("stable price")
+        elif volatility >= 0.5:
+            score -= 10
+            drivers.append("volatile price")
+
+    if offers is not None:
+        if offers <= 12:
+            score += 10
+            drivers.append(f"few offers ({int(offers)})")
+        elif offers >= 25:
+            score -= 10
+            drivers.append(f"many offers ({int(offers)})")
+
+    score = max(0, min(100, score))
+    label = "high" if score >= 70 else "medium" if score >= 45 else "low"
+    return {"score": score, "label": label, "drivers": drivers}
+
+
 def extract_metrics(product: dict[str, Any], stats_days: int = 90) -> dict[str, Any]:
     """Build a flat, decision-oriented metrics dict from a Keepa product."""
     data = product.get("data") or {}
@@ -159,6 +327,11 @@ def extract_metrics(product: dict[str, Any], stats_days: int = 90) -> dict[str, 
 
     monthly_sold = product.get("monthlySold") or product.get("monthlySoldEstimate")
 
+    velocity = estimate_velocity(monthly_sold, rank.get("current"), rank.get("avg"))
+    inventory = inventory_signals(
+        velocity.get("estimated_daily_sales"), _out_of_stock_pct(product)
+    )
+
     return {
         "pricing": pricing,
         "sales_rank": {
@@ -175,6 +348,8 @@ def extract_metrics(product: dict[str, Any], stats_days: int = 90) -> dict[str, 
             "monthly_sold_estimate": monthly_sold,
             "review_velocity_per_month": review_velocity,
         },
+        "velocity": velocity,
+        "inventory": inventory,
         "reviews": {
             "rating_current": rating.get("current"),
             "rating_avg": rating.get("avg"),
@@ -224,10 +399,139 @@ def product_overview(product: dict[str, Any], domain: str = "US") -> dict[str, A
 def build_record(
     product: dict[str, Any], stats_days: int = 90, domain: str = "US"
 ) -> dict[str, Any]:
-    """Combine overview + metrics into a single analysis record."""
-    return {
+    """Combine overview + metrics + opportunity into a single analysis record."""
+    record = {
         **product_overview(product, domain=domain),
         "metrics": extract_metrics(product, stats_days=stats_days),
+    }
+    record["opportunity"] = opportunity_score(record)
+    return record
+
+
+def portfolio_health(records: list[dict[str, Any]]) -> dict[str, Any]:
+    """Aggregate fast/slow-mover health across a set of records.
+
+    Fast mover: ~30+ est. units/month. Slow mover: <10 est. units/month.
+    Classification thresholds adapted from cosjef/Keepa_MCP.
+    """
+    total = len(records)
+    if total == 0:
+        return {"products": 0, "rating": "n/a", "fast_movers": 0, "slow_movers": 0}
+
+    fast = slow = 0
+    for rec in records:
+        monthly = (((rec.get("metrics") or {}).get("velocity") or {})
+                   .get("estimated_monthly_sales"))
+        if monthly is None:
+            continue
+        if monthly >= 30:
+            fast += 1
+        elif monthly < 10:
+            slow += 1
+
+    fast_ratio = fast / total
+    slow_ratio = slow / total
+    if fast_ratio > 0.30 and slow_ratio < 0.30:
+        rating = "excellent"
+    elif fast_ratio > 0.20 and slow_ratio < 0.40:
+        rating = "good"
+    elif slow_ratio > 0.50:
+        rating = "poor"
+    else:
+        rating = "fair"
+
+    return {
+        "products": total,
+        "rating": rating,
+        "fast_movers": fast,
+        "slow_movers": slow,
+        "fast_mover_pct": round(fast_ratio * 100, 1),
+        "slow_mover_pct": round(slow_ratio * 100, 1),
+    }
+
+
+def category_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
+    """Market-level summary: price bands, competition, quality, brand share.
+
+    A compact category-analysis block adapted from cosjef/Keepa_MCP, computed
+    over whatever record set is passed (best sellers, a search, etc.).
+    """
+    total = len(records)
+    if total == 0:
+        return {"products": 0}
+
+    prices: list[float] = []
+    ranks: list[float] = []
+    ratings: list[float] = []
+    opp_scores: list[int] = []
+    brands: dict[str, int] = {}
+    bands = {"budget": 0, "mid": 0, "premium": 0, "luxury": 0}
+
+    for rec in records:
+        m = rec.get("metrics") or {}
+        price = ((m.get("pricing") or {}).get("new") or {}).get("current")
+        rank = (m.get("sales_rank") or {}).get("current")
+        rating = (m.get("reviews") or {}).get("rating_current")
+        opp = (rec.get("opportunity") or {}).get("score")
+        brand = rec.get("brand")
+        if price is not None:
+            prices.append(price)
+            if price < 25:
+                bands["budget"] += 1
+            elif price < 75:
+                bands["mid"] += 1
+            elif price < 200:
+                bands["premium"] += 1
+            else:
+                bands["luxury"] += 1
+        if rank is not None:
+            ranks.append(rank)
+        if rating is not None:
+            ratings.append(rating)
+        if opp is not None:
+            opp_scores.append(opp)
+        if brand:
+            brands[brand] = brands.get(brand, 0) + 1
+
+    avg_rank = sum(ranks) / len(ranks) if ranks else None
+    avg_rating = sum(ratings) / len(ratings) if ratings else None
+    if avg_rank is None:
+        competition = "unknown"
+    elif avg_rank < 10_000:
+        competition = "high"
+    elif avg_rank <= 50_000:
+        competition = "medium"
+    else:
+        competition = "low"
+    if avg_rating is None:
+        quality = "unknown"
+    elif avg_rating >= 4.2:
+        quality = "excellent"
+    elif avg_rating >= 3.8:
+        quality = "good"
+    elif avg_rating >= 3.0:
+        quality = "fair"
+    else:
+        quality = "poor"
+
+    top_brands = sorted(brands.items(), key=lambda kv: kv[1], reverse=True)[:5]
+    top_share = round(top_brands[0][1] / total * 100, 1) if top_brands else 0
+
+    return {
+        "products": total,
+        "price_avg": round(sum(prices) / len(prices), 2) if prices else None,
+        "price_min": round(min(prices), 2) if prices else None,
+        "price_max": round(max(prices), 2) if prices else None,
+        "price_bands": bands,
+        "competition_level": competition,
+        "avg_sales_rank": int(avg_rank) if avg_rank is not None else None,
+        "quality": quality,
+        "avg_rating": round(avg_rating, 2) if avg_rating is not None else None,
+        "avg_opportunity_score": round(sum(opp_scores) / len(opp_scores), 1) if opp_scores else None,
+        "unique_brands": len(brands),
+        "top_brands": [{"brand": b, "count": c} for b, c in top_brands],
+        "leader_share_pct": top_share,
+        "portfolio_health": portfolio_health(records),
     }
 
 

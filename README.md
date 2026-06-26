@@ -2,6 +2,12 @@
 
 End-to-end пайплайн для оценки ниши на Amazon US/DE с матчингом поставщиков Alibaba и анализом доли китайских продавцов.
 
+> 📊 **Аналитика и дашборды.** Keepa MCP-сервер (`src/keepa_mcp/`) теперь
+> считает sales velocity, inventory/stockout, opportunity score 0–100,
+> category analysis и portfolio health, а также строит интерактивные
+> HTML-дашборды. Подробности и сравнение с `cosjef/Keepa_MCP` — в
+> [ANALYTICS.md](ANALYTICS.md).
+
 ## Что считает
 
 1. **TAM ниши** — оценка объёма в шт/мес и $/мес по категории или фильтру
