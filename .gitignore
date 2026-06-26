@@ -3,8 +3,9 @@
 ENV DOCS*
 ENV_DOCS*
 
-# Generated reports (keep the folder, ignore the XLSX outputs)
+# Generated reports (keep the folder, ignore the XLSX + HTML dashboard outputs)
 Products/*.xlsx
+Products/*.html
 !Products/.gitkeep
 auto_search.log
 
