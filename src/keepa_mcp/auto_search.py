@@ -83,7 +83,9 @@ def run_search(search: dict[str, Any]) -> dict[str, Any]:
     selection = keepa_client.build_selection(
         **search["filters"], extra_filters=search["extra_filters"]
     )
-    asins = keepa_client.product_finder(selection, domain=domain, limit=search["limit"])
+    # Product Finder may return a full page regardless of n_products, so cap the
+    # ASINs we enrich to the configured limit — enrichment is the expensive part.
+    asins = keepa_client.product_finder(selection, domain=domain, limit=search["limit"])[: search["limit"]]
     if not asins:
         return {"name": search["name"], "domain": domain, "asins_found": 0, "saved_to": None}
 
