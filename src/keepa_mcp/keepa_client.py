@@ -165,6 +165,7 @@ def build_selection(
     min_review_count: int | None = None,
     max_offer_count: int | None = None,
     min_monthly_sold: int | None = None,
+    min_rank_drops_30: int | None = None,
     sort_by_sales_rank: bool = True,
     extra_filters: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
@@ -205,6 +206,11 @@ def build_selection(
 
     if min_monthly_sold is not None:
         sel["monthlySold_gte"] = int(min_monthly_sold)
+
+    # Sales-rank drops in 30 days ≈ units sold — a reliable "is it actually
+    # selling / gaining momentum" floor for discovery sweeps.
+    if min_rank_drops_30 is not None:
+        sel["salesRankDrops30_gte"] = int(min_rank_drops_30)
 
     if sort_by_sales_rank:
         # Best sellers first (ascending sales rank).

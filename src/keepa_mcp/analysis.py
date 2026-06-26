@@ -122,6 +122,43 @@ def _rank_drops(values, times, days: int | None = 90) -> int | None:
     return drops
 
 
+def _trend_pct(values, times, days: int | None, *, improving_is_down: bool) -> float | None:
+    """Percent change between the recent third and the earlier part of a window.
+
+    Compares the mean of the most recent third against the earlier portion. For
+    sales rank (``improving_is_down=True``) a *falling* rank is good, so a
+    positive result means the product is gaining momentum; for price/reviews a
+    *rising* value is the positive direction.
+    """
+    if values is None or times is None or len(values) < 4:
+        return None
+    pairs: list[tuple[Any, float]] = []
+    for t, v in zip(times, values):
+        cv = _clean(v)
+        if cv is not None:
+            pairs.append((t, cv))
+    if len(pairs) < 4:
+        return None
+    if days is not None:
+        try:
+            cutoff = _to_datetime(pairs[-1][0]) - timedelta(days=days)
+            windowed = [(t, v) for t, v in pairs if _to_datetime(t) >= cutoff]
+            if len(windowed) >= 4:
+                pairs = windowed
+        except Exception:
+            pass
+    k = max(1, len(pairs) // 3)
+    recent = [v for _, v in pairs[-k:]]
+    older = [v for _, v in pairs[:-k]]
+    older_avg = sum(older) / len(older)
+    if not older_avg:
+        return None
+    change = (sum(recent) / len(recent) - older_avg) / older_avg * 100.0
+    if improving_is_down:
+        change = -change  # falling rank → positive "improving" number
+    return round(change, 1)
+
+
 def extract_metrics(product: dict[str, Any], stats_days: int = 90) -> dict[str, Any]:
     """Build a flat, decision-oriented metrics dict from a Keepa product."""
     data = product.get("data") or {}
@@ -142,6 +179,8 @@ def extract_metrics(product: dict[str, Any], stats_days: int = 90) -> dict[str, 
     rank = _window_stats(rank_vals, rank_times, stats_days)
     rank_drops_30 = _rank_drops(rank_vals, rank_times, days=30)
     rank_drops_90 = _rank_drops(rank_vals, rank_times, days=90)
+    # Momentum: positive % = sales rank improving over the window (rising demand).
+    rank_trend_pct = _trend_pct(rank_vals, rank_times, stats_days, improving_is_down=True)
 
     # --- competition -----------------------------------------------------
     offer_vals, offer_times = series("COUNT_NEW")
@@ -165,6 +204,7 @@ def extract_metrics(product: dict[str, Any], stats_days: int = 90) -> dict[str, 
             **rank,
             "drops_30d": rank_drops_30,
             "drops_90d": rank_drops_90,
+            "trend_pct": rank_trend_pct,
         },
         "competition": {
             "offer_count": offers,
@@ -183,20 +223,30 @@ def extract_metrics(product: dict[str, Any], stats_days: int = 90) -> dict[str, 
     }
 
 
+def _image_url(images_csv: str | None) -> str | None:
+    """Build the full Amazon media URL for the main image (Keepa stores names)."""
+    name = (images_csv or "").split(",")[0].strip()
+    return f"https://m.media-amazon.com/images/I/{name}" if name else None
+
+
 def product_overview(product: dict[str, Any], domain: str = "US") -> dict[str, Any]:
     """Catalogue / qualitative fields useful for spec & customer-need analysis."""
-    from . import keepa_client
+    from . import keepa_client, sourcing
 
     code = keepa_client.normalize_domain(domain)
     tld = keepa_client.DOMAIN_TLDS.get(code, "com")
     domain_id = keepa_client.DOMAIN_IDS.get(code, 1)
     category_tree = product.get("categoryTree") or []
     categories = [c.get("name") for c in category_tree if isinstance(c, dict)]
+    title = product.get("title")
+    brand = product.get("brand") or product.get("manufacturer")
+    # Buyer-facing supplier-search links (Alibaba) derived from the title.
+    links = sourcing.sourcing_links(title, brand, categories[-1] if categories else None)
     return {
         "marketplace": code,
         "asin": product.get("asin"),
-        "title": product.get("title"),
-        "brand": product.get("brand") or product.get("manufacturer"),
+        "title": title,
+        "brand": brand,
         "manufacturer": product.get("manufacturer"),
         "product_group": product.get("productGroup"),
         "category_tree": categories,
@@ -211,24 +261,104 @@ def product_overview(product: dict[str, Any], domain: str = "US") -> dict[str, A
         },
         "variation_count": len(product.get("variations") or []),
         "fba_fees": product.get("fbaFees"),
-        "image": (product.get("imagesCSV") or "").split(",")[0] or None,
+        "image": _image_url(product.get("imagesCSV")),
         "url": f"https://www.amazon.{tld}/dp/{product.get('asin')}"
         if product.get("asin")
         else None,
         "keepa_url": f"https://keepa.com/#!product/{domain_id}-{product.get('asin')}"
         if product.get("asin")
         else None,
+        **links,
+    }
+
+
+# --- Discovery / momentum classification ------------------------------------
+# Buckets the buyer report sorts by: what already sells, what's gaining
+# momentum, and what's newly launched. Thresholds are named so they're tunable.
+NEW_LISTING_DAYS = 180        # tracked ≤ this many days → "New" arrival
+BESTSELLER_RANK_MAX = 15000   # current sales rank ≤ this → "Bestseller"
+BESTSELLER_MONTHLY = 300      # OR monthly sold ≥ this → "Bestseller"
+RISING_TREND_PCT = 20.0       # sales rank improved ≥ this % over window → "Rising"
+RISING_DROPS_30 = 8           # OR ≥ this many rank drops in 30d → "Rising"
+
+# Keepa stores time as minutes since 2011-01-01 UTC.
+_KEEPA_EPOCH = datetime(2011, 1, 1)
+
+
+def _listing_age_days(product: dict[str, Any]) -> int | None:
+    """Approximate how long Keepa has tracked the listing, in days (newness)."""
+    ts = product.get("trackingSince")
+    if ts is None:
+        return None
+    try:
+        if isinstance(ts, datetime):
+            dt = ts
+        elif isinstance(ts, (int, float)):
+            dt = _KEEPA_EPOCH + timedelta(minutes=int(ts))
+        else:
+            dt = _to_datetime(ts)
+        age = (datetime.utcnow() - dt).days
+        return age if age >= 0 else None
+    except Exception:
+        return None
+
+
+def discovery_signals(
+    product: dict[str, Any], record: dict[str, Any], stats_days: int = 90
+) -> dict[str, Any]:
+    """Tag a record as Bestseller / Rising / New and score its momentum.
+
+    A product can carry several tags. ``momentum_score`` is a coarse rank for
+    "most interesting to source first" — used to order the buyer report.
+    """
+    m = record.get("metrics") or {}
+    rank = m.get("sales_rank") or {}
+    demand = m.get("demand") or {}
+    current_rank = rank.get("current")
+    monthly = demand.get("monthly_sold_estimate")
+    trend_pct = rank.get("trend_pct")
+    drops30 = rank.get("drops_30d")
+    review_velocity = demand.get("review_velocity_per_month")
+    age_days = _listing_age_days(product)
+
+    tags: list[str] = []
+    is_new = age_days is not None and age_days <= NEW_LISTING_DAYS
+    if is_new:
+        tags.append("New")
+    if (trend_pct or 0) >= RISING_TREND_PCT or (drops30 or 0) >= RISING_DROPS_30:
+        tags.append("Rising")
+    if (current_rank is not None and current_rank <= BESTSELLER_RANK_MAX) or (
+        monthly or 0
+    ) >= BESTSELLER_MONTHLY:
+        tags.append("Bestseller")
+
+    score = 0.0
+    score += max(0.0, trend_pct or 0.0)          # improving rank
+    score += (drops30 or 0) * 2.0                 # active selling
+    score += min(review_velocity or 0.0, 50.0)    # review growth (capped)
+    if is_new:
+        score += 20.0                             # newness boost
+    if monthly:
+        score += min(monthly / 50.0, 20.0)        # raw volume (capped)
+
+    return {
+        "tags": tags or ["Steady"],
+        "is_new": is_new,
+        "listing_age_days": age_days,
+        "momentum_score": round(score, 1),
     }
 
 
 def build_record(
     product: dict[str, Any], stats_days: int = 90, domain: str = "US"
 ) -> dict[str, Any]:
-    """Combine overview + metrics into a single analysis record."""
-    return {
+    """Combine overview + metrics + discovery tags into a single record."""
+    rec = {
         **product_overview(product, domain=domain),
         "metrics": extract_metrics(product, stats_days=stats_days),
     }
+    rec["discovery"] = discovery_signals(product, rec, stats_days=stats_days)
+    return rec
 
 
 # --- Verdict rule thresholds -------------------------------------------------
@@ -346,4 +476,25 @@ DECISION_GUIDANCE = {
     "(every record carries a `url`; in the XLSX the ASIN cell itself links to "
     "the product page), and how well the product satisfies the target customer "
     "need.",
+}
+
+
+# Guidance for the sourcing / discovery flow (what to buy and resell).
+DISCOVERY_GUIDANCE = {
+    "strategy": "US is the lead market (products surface here first). Use it to "
+    "discover candidates to import and resell in DE and AE. Validate demand in "
+    "DE via Keepa; Keepa has no data for amazon.ae, so treat AE as a target "
+    "sell-side market without its own Keepa metrics.",
+    "buckets": {
+        "Bestseller": "Already selling well (low sales rank or high monthly sold) "
+        "— safest demand, but usually more competition.",
+        "Rising": "Sales rank improving over the window (momentum) or many recent "
+        "rank drops — catching a trend early.",
+        "New": "Recently listed (young tracking history) — first-mover sourcing, "
+        "thinner history so verify carefully.",
+    },
+    "price_band": "Default sourcing band is $20–500 (we can import anything).",
+    "recommended_output": "Hand the buyer a report where each product shows its "
+    "bucket(s), momentum, key demand metrics, a clickable Amazon link, and a "
+    "ready Alibaba supplier-search link so they can start sourcing immediately.",
 }

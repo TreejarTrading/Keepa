@@ -256,3 +256,72 @@ def test_repo_auto_searches_file_valid():
 
         keepa_client.normalize_domain(s["domain"])  # must not raise
         keepa_client.build_selection(**s["filters"], extra_filters=s["extra_filters"])
+
+
+def test_sourcing_links():
+    from keepa_mcp import sourcing
+
+    kw = sourcing.keyword_phrase("Acme Stainless Steel Garlic Press 2 Pack", "Acme")
+    assert "acme" not in kw.lower()  # brand dropped
+    assert "stainless" in kw and "steel" in kw  # product nouns kept
+    assert "2" not in kw.split()  # pure number dropped
+
+    url = sourcing.alibaba_search_url("garlic press")
+    assert url == "https://www.alibaba.com/trade/search?SearchText=garlic+press"
+    assert sourcing.alibaba_search_url("") is None
+
+    links = sourcing.sourcing_links("Foldable Dog Ramp", "PetCo", "Pet Supplies")
+    assert links["alibaba_url"].startswith("https://www.alibaba.com/trade/search?")
+    assert "Pet+Supplies" in links["alibaba_category_url"]
+
+
+def test_discovery_signals(fake_product):
+    from keepa_mcp import analysis
+
+    rec = analysis.build_record(fake_product, stats_days=90)
+    disc = rec["discovery"]
+    # Healthy fixture: monthly 1200 → Bestseller; improving rank → Rising.
+    assert "Bestseller" in disc["tags"]
+    assert disc["momentum_score"] > 0
+    assert rec["metrics"]["sales_rank"]["trend_pct"] is not None
+    # Sourcing + image links are attached to every record.
+    assert rec["alibaba_url"].startswith("https://www.alibaba.com/trade/search?")
+    assert rec["image"].startswith("https://m.media-amazon.com/images/I/")
+
+
+def test_buyer_report_formats(fake_product, tmp_path, monkeypatch):
+    monkeypatch.setenv("KEEPA_OUTPUT_DIR", str(tmp_path))
+    import importlib
+    from pathlib import Path
+
+    from openpyxl import load_workbook
+
+    from keepa_mcp import analysis, config, reports
+
+    importlib.reload(config)
+    importlib.reload(reports)
+
+    rec = analysis.auto_verdict(analysis.build_record(fake_product, stats_days=90))
+    paths = reports.generate_reports(
+        [rec], report_name="buyer", query_summary="unit test",
+        formats=("xlsx", "docx"), embed_images=False,
+    )
+    assert set(paths) == {"xlsx", "docx"}
+    assert Path(paths["xlsx"]).exists() and Path(paths["docx"]).exists()
+
+    ws = load_workbook(paths["xlsx"])["Анализ"]
+    headers = [c.value for c in ws[1]]
+    for col in ("ASIN", "Bucket", "Alibaba", "Image"):
+        assert col in headers
+    assert "Amazon URL" not in headers
+
+    def cell(name):
+        return ws.cell(row=2, column=headers.index(name) + 1)
+
+    assert cell("ASIN").hyperlink.target.endswith("/dp/B0TEST1234")
+    assert "alibaba.com" in cell("Alibaba").hyperlink.target
+
+    from docx import Document
+
+    doc = Document(paths["docx"])
+    assert len(doc.paragraphs) > 0

@@ -223,6 +223,86 @@ def get_products(
 
 
 @mcp.tool()
+def discover_products(
+    title: str | None = None,
+    category_id: int | None = None,
+    min_price: float = 20.0,
+    max_price: float = 500.0,
+    min_rating: float | None = 4.0,
+    max_sales_rank: int | None = 80000,
+    min_review_count: int | None = None,
+    max_offer_count: int | None = None,
+    min_monthly_sold: int | None = None,
+    min_rank_drops_30: int | None = None,
+    focus: str = "all",
+    extra_filters: dict[str, Any] | None = None,
+    limit: int = 30,
+    domain: str | None = "US",
+    stats_days: int | None = None,
+) -> dict[str, Any]:
+    """Discover what to source in a market: bestsellers, rising movers, new arrivals.
+
+    Built for the sourcing workflow: a broad $20–500 sweep (US is the lead
+    market — products surface here first — and the same items become candidates
+    to resell in DE/AE). Each returned record is tagged **Bestseller / Rising /
+    New**, scored by momentum, and carries a clickable Amazon link plus a ready
+    **Alibaba supplier-search link**. Results are ordered most-interesting-first.
+
+    Args:
+        title: Optional keyword(s) to scope the sweep (omit for a category-wide
+            or whole-market sweep — category ids differ per market).
+        category_id: Optional Keepa root category id (find via ``find_categories``).
+        min_price / max_price: Sourcing band in dollars (defaults $20–500).
+        min_rating: Minimum star rating (default 4.0; pass null to disable).
+        max_sales_rank: Cap on current sales rank (default 80000).
+        min_review_count / max_offer_count / min_monthly_sold: Optional extra cuts.
+        min_rank_drops_30: Require ≥ N sales-rank drops in 30 days (momentum floor).
+        focus: Filter to one bucket — "bestsellers" | "rising" | "new" | "all".
+        extra_filters: Raw Keepa Product Finder keys merged on top.
+        limit: Max products to pull (also costs Keepa tokens).
+        domain: Marketplace (default US, the lead market).
+        stats_days: Window for stats/trend; defaults to configured.
+    """
+    sd = stats_days or config.DEFAULT_STATS_DAYS
+    selection = keepa_client.build_selection(
+        title=title,
+        category_id=category_id,
+        min_price=min_price,
+        max_price=max_price,
+        min_rating=min_rating,
+        max_sales_rank=max_sales_rank,
+        min_review_count=min_review_count,
+        max_offer_count=max_offer_count,
+        min_monthly_sold=min_monthly_sold,
+        min_rank_drops_30=min_rank_drops_30,
+        extra_filters=extra_filters,
+    )
+    asins = keepa_client.product_finder(selection, domain=domain, limit=limit)
+    if not asins:
+        return {"asins_found": 0, "records": [], "guidance": analysis.DISCOVERY_GUIDANCE}
+    records = _records_for(asins, domain, sd)
+
+    bucket = {"bestsellers": "Bestseller", "rising": "Rising", "new": "New"}.get(
+        (focus or "all").lower()
+    )
+    if bucket:
+        records = [
+            r for r in records if bucket in (r.get("discovery") or {}).get("tags", [])
+        ]
+    records.sort(
+        key=lambda r: (r.get("discovery") or {}).get("momentum_score") or 0,
+        reverse=True,
+    )
+    return {
+        "asins_found": len(asins),
+        "returned": len(records),
+        "focus": focus,
+        "records": records,
+        "guidance": analysis.DISCOVERY_GUIDANCE,
+    }
+
+
+@mcp.tool()
 def save_report(
     records: list[dict[str, Any]],
     report_name: str | None = None,
@@ -243,6 +323,40 @@ def save_report(
     )
     return {
         "saved_to": str(path),
+        "products": len(records),
+        "output_dir": str(config.OUTPUT_DIR),
+    }
+
+
+@mcp.tool()
+def save_buyer_report(
+    records: list[dict[str, Any]],
+    report_name: str | None = None,
+    query_summary: str | None = None,
+    report_format: str = "both",
+) -> dict[str, Any]:
+    """Write the buyer/purchaser deliverable: a data XLSX and/or a visual DOCX brief.
+
+    Same records as the other tools (ideally from ``discover_products``, each
+    optionally enriched with verdict/confidence/rationale). Both formats carry,
+    per product, its discovery bucket, momentum, key demand metrics, a clickable
+    Amazon link and a clickable **Alibaba supplier-search link** so the buyer can
+    source immediately.
+
+    Args:
+        report_format: "both" (default) | "xlsx" | "docx".
+    Returns the saved file path(s).
+    """
+    fmt = (report_format or "both").lower()
+    formats = ("xlsx", "docx") if fmt == "both" else (fmt,)
+    paths = reports.generate_reports(
+        records,
+        report_name=report_name or "buyer_sourcing",
+        query_summary=query_summary,
+        formats=formats,
+    )
+    return {
+        "saved": paths,
         "products": len(records),
         "output_dir": str(config.OUTPUT_DIR),
     }

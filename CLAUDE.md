@@ -11,9 +11,11 @@
    Подключается через `/mcp` (см. `.mcp.json`). Ищет товары, считает
    purchase-decision метрики, выносит вердикты и пишет XLSX-отчёты в `Products/`.
    - `server.py` — MCP-инструменты (`search_products`, `search_multi_market`,
-     `category_best_sellers`, `get_products`, `analyze_and_report`,
-     `save_report`, `run_auto_search`, `find_categories`, `token_status`,
-     `server_info`).
+     `discover_products`, `category_best_sellers`, `get_products`,
+     `analyze_and_report`, `save_report`, `save_buyer_report`,
+     `run_auto_search`, `find_categories`, `token_status`, `server_info`).
+   - `sourcing.py` — ссылки на поиск поставщиков Alibaba по ключевым словам
+     из тайтла (для отчёта закупщику).
    - `analysis.py` — извлечение метрик, `auto_verdict` (правила вердиктов),
      `DECISION_GUIDANCE` (что вернуть пользователю).
    - `reports.py` — генерация XLSX (листы «Анализ», «Характеристики», «Сводка»).
@@ -72,6 +74,43 @@
 цена $15–60, рейтинг ≥ 4.2, отзывы ≥ 200, sales rank ≤ 60 000, офферы ≤ 15.
 Маркеты в порядке приоритета: **US, UK, DE, FR, IT, ES**. ID категорий разные
 на каждом рынке — сперва `find_categories` для нужного маркета.
+
+## Discovery / сорсинг ($20–500)
+
+Отдельный режим «что закупать» — инструмент `discover_products` (и
+`analysis.discovery_signals`). Профиль по умолчанию: цена **$20–500**, рейтинг
+≥ 4.0, sales rank ≤ 80 000, домен **US** (рынок-первоисточник). Категории
+разные/много — поиск широкий (по фильтрам, не по одной нише).
+
+Каждый товар получает теги-бакеты (может быть несколько) и `momentum_score`
+для сортировки «что смотреть первым». Пороги — именованные константы в
+`analysis.py`:
+- **Bestseller** — sales rank ≤ `BESTSELLER_RANK_MAX` (15 000) **или**
+  monthlySold ≥ `BESTSELLER_MONTHLY` (300): уже продаётся.
+- **Rising** — тренд ранга вверх ≥ `RISING_TREND_PCT` (20 %) **или**
+  просадок/30д ≥ `RISING_DROPS_30` (8): набирает обороты (`trend_pct` в
+  `metrics.sales_rank`, считается из истории, а не из Keepa-finder).
+- **New** — листинг моложе `NEW_LISTING_DAYS` (180) дней (`trackingSince`).
+
+`focus` в `discover_products`: `"bestsellers" | "rising" | "new" | "all"`.
+
+## Отчёт для закупщика (XLSX + DOCX)
+
+`save_buyer_report` пишет два файла: **XLSX** (фильтруемая таблица) и **DOCX**
+(наглядный бриф). На каждый товар: бакет, momentum, ключевые метрики спроса,
+**кликабельный ASIN → Amazon** и **кликабельная ссылка на поиск поставщика в
+Alibaba** (`alibaba_url` по ключевым словам из тайтла), плюс ссылка на
+картинку (в DOCX — встроенная миниатюра, best-effort). Генераторы —
+`reports.generate_reports(formats=("xlsx","docx"))`, `generate_docx_report`.
+Правило активной ссылки на ASIN (см. выше) распространяется и сюда.
+
+## Стратегия рынков: US → DE/ОАЭ
+
+США — основа поиска (товары появляются здесь первыми). Найденное везём и
+продаём в Германию и ОАЭ. Спрос по **DE** валидируем через Keepa (domain=3).
+**ОАЭ (AE) Keepa не покрывает** (см. `niche_analyzer/notes/AE.md`) — это
+целевой рынок сбыта без собственных Keepa-метрик; для данных по AE нужен
+сторонний источник (Bright Data/Apify).
 
 ## Конфигурация
 
