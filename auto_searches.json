@@ -1,58 +1,76 @@
 {
-  "_comment": "Сохранённые поиски для авторежима (keepa-auto, каждые 2 дня). Формат описан в SEARCH_GUIDE.md. Допустимые filters: title, category_id, brand, min_price, max_price, min_rating, max_sales_rank, min_review_count, max_offer_count, min_monthly_sold. Сырые ключи Keepa Product Finder — в extra_filters.",
+  "_comment": "Авто-мониторинг ниш Home & Kitchen (keepa-auto). Запуск раз в 5 дней (см. SEARCH_GUIDE.md). Корень Home & Kitchen (US=1055398) задаётся через extra_filters.rootCategory как список строк — иначе пакет keepa падает. Допустимые ключи filters: title, category_id, brand, min_price, max_price, min_rating, max_sales_rank, min_review_count, max_offer_count, min_monthly_sold. Сырые ключи Keepa — в extra_filters.",
+  "_base_filters": "US Home & Kitchen, $20-500, рейтинг>=4.2, отзывы>=200, ранг<=80k, офферы<=25",
   "searches": [
     {
-      "name": "US_kitchen_gadgets",
+      "name": "US_milk_frother",
       "domain": "US",
-      "filters": {
-        "title": "kitchen gadget",
-        "min_price": 15,
-        "max_price": 50,
-        "min_rating": 4.2,
-        "min_review_count": 200,
-        "max_sales_rank": 60000,
-        "max_offer_count": 15
-      },
-      "limit": 15
+      "filters": {"title": "milk frother", "min_price": 20, "max_price": 500, "min_rating": 4.2, "min_review_count": 200, "max_sales_rank": 80000, "max_offer_count": 25},
+      "extra_filters": {"rootCategory": ["1055398"]},
+      "limit": 12
     },
     {
-      "name": "US_home_organization",
+      "name": "US_shower_caddy",
       "domain": "US",
-      "filters": {
-        "title": "storage organizer",
-        "min_price": 18,
-        "max_price": 60,
-        "min_rating": 4.3,
-        "min_review_count": 300,
-        "max_sales_rank": 50000
-      },
-      "limit": 15
+      "filters": {"title": "shower caddy", "min_price": 20, "max_price": 500, "min_rating": 4.2, "min_review_count": 200, "max_sales_rank": 80000, "max_offer_count": 25},
+      "extra_filters": {"rootCategory": ["1055398"]},
+      "limit": 12
     },
     {
-      "name": "UK_pet_supplies",
-      "domain": "UK",
-      "filters": {
-        "title": "pet",
-        "min_price": 12,
-        "max_price": 45,
-        "min_rating": 4.2,
-        "min_review_count": 150,
-        "max_sales_rank": 40000
-      },
-      "limit": 10
+      "name": "US_bathroom_organizer",
+      "domain": "US",
+      "filters": {"title": "bathroom organizer countertop", "min_price": 20, "max_price": 500, "min_rating": 4.2, "min_review_count": 200, "max_sales_rank": 80000, "max_offer_count": 25},
+      "extra_filters": {"rootCategory": ["1055398"]},
+      "limit": 12
     },
     {
-      "name": "DE_sport_fitness",
-      "domain": "DE",
-      "filters": {
-        "title": "fitness",
-        "min_price": 15,
-        "max_price": 55,
-        "min_rating": 4.2,
-        "min_review_count": 150,
-        "max_sales_rank": 40000
-      },
-      "limit": 10
+      "name": "US_under_bed_storage",
+      "domain": "US",
+      "filters": {"title": "under bed storage bag", "min_price": 20, "max_price": 500, "min_rating": 4.2, "min_review_count": 200, "max_sales_rank": 80000, "max_offer_count": 25},
+      "extra_filters": {"rootCategory": ["1055398"]},
+      "limit": 12
+    },
+    {
+      "name": "US_knife_sharpener",
+      "domain": "US",
+      "filters": {"title": "knife sharpener", "min_price": 20, "max_price": 500, "min_rating": 4.2, "min_review_count": 200, "max_sales_rank": 80000, "max_offer_count": 25},
+      "extra_filters": {"rootCategory": ["1055398"]},
+      "limit": 12
+    },
+    {
+      "name": "US_cutting_board",
+      "domain": "US",
+      "filters": {"title": "bamboo cutting board", "min_price": 20, "max_price": 500, "min_rating": 4.2, "min_review_count": 200, "max_sales_rank": 80000, "max_offer_count": 25},
+      "extra_filters": {"rootCategory": ["1055398"]},
+      "limit": 12
+    },
+    {
+      "name": "US_pantry_organization",
+      "domain": "US",
+      "filters": {"title": "pantry organizer bins", "min_price": 20, "max_price": 500, "min_rating": 4.2, "min_review_count": 200, "max_sales_rank": 80000, "max_offer_count": 25},
+      "extra_filters": {"rootCategory": ["1055398"]},
+      "limit": 12
+    },
+    {
+      "name": "US_closet_organizer",
+      "domain": "US",
+      "filters": {"title": "closet organizer hanging", "min_price": 20, "max_price": 500, "min_rating": 4.2, "min_review_count": 200, "max_sales_rank": 80000, "max_offer_count": 25},
+      "extra_filters": {"rootCategory": ["1055398"]},
+      "limit": 12
+    },
+    {
+      "name": "US_gooseneck_kettle",
+      "domain": "US",
+      "filters": {"title": "gooseneck kettle", "min_price": 20, "max_price": 500, "min_rating": 4.2, "min_review_count": 200, "max_sales_rank": 80000, "max_offer_count": 25},
+      "extra_filters": {"rootCategory": ["1055398"]},
+      "limit": 12
+    },
+    {
+      "name": "US_mattress_topper",
+      "domain": "US",
+      "filters": {"title": "mattress topper", "min_price": 20, "max_price": 500, "min_rating": 4.2, "min_review_count": 200, "max_sales_rank": 80000, "max_offer_count": 25},
+      "extra_filters": {"rootCategory": ["1055398"]},
+      "limit": 12
     }
   ]
 }
