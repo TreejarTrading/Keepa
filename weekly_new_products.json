@@ -1,0 +1,89 @@
+{
+  "_comment": "Еженедельный поиск НОВИНОК в US и UK (запуск каждый понедельник и вторник, см. SEARCH_GUIDE.md, раздел 'Еженедельный поиск новинок'). Критерии: листинг создан не раньше февраля 2026 (listedSince_gte=7934400 — это 2026-02-01 в Keepa-минутах: unix_секунды/60 - 21564000), рейтинг от 4.1, продажи уже подтверждены (monthlySold). Категории: мебель, аксессуары для дома/сада/офиса, инструмент, товары для хранения. Запуск: uv run keepa-auto weekly_new_products.json (или run_auto_search с searches_file).",
+  "searches": [
+    {
+      "name": "US_new_home_kitchen",
+      "domain": "US",
+      "filters": {
+        "category_id": 1055398,
+        "min_rating": 4.1,
+        "min_review_count": 15,
+        "min_monthly_sold": 150
+      },
+      "extra_filters": { "listedSince_gte": 7934400 },
+      "limit": 20
+    },
+    {
+      "name": "US_new_tools_home_improvement",
+      "domain": "US",
+      "filters": {
+        "category_id": 228013,
+        "min_rating": 4.1,
+        "min_review_count": 15,
+        "min_monthly_sold": 150
+      },
+      "extra_filters": { "listedSince_gte": 7934400 },
+      "limit": 20
+    },
+    {
+      "name": "US_new_garden",
+      "domain": "US",
+      "filters": {
+        "category_id": 2972638011,
+        "min_rating": 4.1,
+        "min_review_count": 15,
+        "min_monthly_sold": 150
+      },
+      "extra_filters": { "listedSince_gte": 7934400 },
+      "limit": 20
+    },
+    {
+      "name": "US_new_office",
+      "domain": "US",
+      "filters": {
+        "category_id": 1064954,
+        "min_rating": 4.1,
+        "min_review_count": 15,
+        "min_monthly_sold": 150
+      },
+      "extra_filters": { "listedSince_gte": 7934400 },
+      "limit": 20
+    },
+    {
+      "name": "UK_new_home_garden",
+      "domain": "UK",
+      "filters": {
+        "category_id": 3146281,
+        "min_rating": 4.1,
+        "min_review_count": 15,
+        "min_monthly_sold": 100
+      },
+      "extra_filters": { "listedSince_gte": 7934400 },
+      "limit": 15
+    },
+    {
+      "name": "UK_new_diy_tools",
+      "domain": "UK",
+      "filters": {
+        "category_id": 79903031,
+        "min_rating": 4.1,
+        "min_review_count": 15,
+        "min_monthly_sold": 100
+      },
+      "extra_filters": { "listedSince_gte": 7934400 },
+      "limit": 15
+    },
+    {
+      "name": "UK_new_office",
+      "domain": "UK",
+      "filters": {
+        "category_id": 192413031,
+        "min_rating": 4.1,
+        "min_review_count": 15,
+        "min_monthly_sold": 100
+      },
+      "extra_filters": { "listedSince_gte": 7934400 },
+      "limit": 15
+    }
+  ]
+}

@@ -180,7 +180,8 @@ def build_selection(
     if title:
         sel["title"] = title
     if category_id is not None:
-        sel["rootCategory"] = category_id
+        # keepa >= 1.5 validates the selection: rootCategory must be str/list[str].
+        sel["rootCategory"] = str(category_id)
     if brand:
         sel["brand"] = [brand]
 
