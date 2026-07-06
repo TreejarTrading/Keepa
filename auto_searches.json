@@ -1,58 +1,75 @@
 {
-  "_comment": "Сохранённые поиски для авторежима (keepa-auto, каждые 2 дня). Формат описан в SEARCH_GUIDE.md. Допустимые filters: title, category_id, brand, min_price, max_price, min_rating, max_sales_rank, min_review_count, max_offer_count, min_monthly_sold. Сырые ключи Keepa Product Finder — в extra_filters.",
+  "_comment": "Сохранённые поиски для авторежима (keepa-auto, каждые 2 дня). Профиль сорсинга: новые листинги (трекинг с 2026-02-01, keepa-минута 7934400), рейтинг ≥4.1, подтверждённые продажи. Пул накапливается к цели топ-1000 по US/UK; экономика пересчитывается sourcing/economics.py. rootCategory задаётся строкой в extra_filters (пакет keepa не принимает int).",
   "searches": [
     {
-      "name": "US_kitchen_gadgets",
+      "name": "US_home_kitchen_new2026",
       "domain": "US",
-      "filters": {
-        "title": "kitchen gadget",
-        "min_price": 15,
-        "max_price": 50,
-        "min_rating": 4.2,
-        "min_review_count": 200,
-        "max_sales_rank": 60000,
-        "max_offer_count": 15
-      },
-      "limit": 15
+      "filters": {"min_price": 15, "max_price": 70, "min_rating": 4.1, "min_monthly_sold": 100},
+      "extra_filters": {"rootCategory": "1055398", "trackingSince_gte": 7934400, "sort": [["monthlySold", "desc"]]},
+      "limit": 50
     },
     {
-      "name": "US_home_organization",
+      "name": "US_tools_diy_new2026",
       "domain": "US",
-      "filters": {
-        "title": "storage organizer",
-        "min_price": 18,
-        "max_price": 60,
-        "min_rating": 4.3,
-        "min_review_count": 300,
-        "max_sales_rank": 50000
-      },
-      "limit": 15
+      "filters": {"min_price": 15, "max_price": 70, "min_rating": 4.1, "min_monthly_sold": 100},
+      "extra_filters": {"rootCategory": "228013", "trackingSince_gte": 7934400, "sort": [["monthlySold", "desc"]]},
+      "limit": 50
     },
     {
-      "name": "UK_pet_supplies",
+      "name": "US_garden_new2026",
+      "domain": "US",
+      "filters": {"min_price": 15, "max_price": 70, "min_rating": 4.1, "min_monthly_sold": 100},
+      "extra_filters": {"rootCategory": "2972638011", "trackingSince_gte": 7934400, "sort": [["monthlySold", "desc"]]},
+      "limit": 50
+    },
+    {
+      "name": "US_office_new2026",
+      "domain": "US",
+      "filters": {"min_price": 15, "max_price": 70, "min_rating": 4.1, "min_monthly_sold": 50},
+      "extra_filters": {"rootCategory": "1064954", "trackingSince_gte": 7934400, "sort": [["monthlySold", "desc"]]},
+      "limit": 50
+    },
+    {
+      "name": "US_storage_new2026",
+      "domain": "US",
+      "filters": {"title": "storage", "min_price": 15, "max_price": 70, "min_rating": 4.1, "min_monthly_sold": 100},
+      "extra_filters": {"rootCategory": "1055398", "trackingSince_gte": 7934400, "sort": [["monthlySold", "desc"]]},
+      "limit": 30
+    },
+    {
+      "name": "US_organizer_new2026",
+      "domain": "US",
+      "filters": {"title": "organizer", "min_price": 15, "max_price": 70, "min_rating": 4.1, "min_monthly_sold": 100},
+      "extra_filters": {"rootCategory": "1055398", "trackingSince_gte": 7934400, "sort": [["monthlySold", "desc"]]},
+      "limit": 30
+    },
+    {
+      "name": "UK_home_kitchen_new2026",
       "domain": "UK",
-      "filters": {
-        "title": "pet",
-        "min_price": 12,
-        "max_price": 45,
-        "min_rating": 4.2,
-        "min_review_count": 150,
-        "max_sales_rank": 40000
-      },
-      "limit": 10
+      "filters": {"min_price": 12, "max_price": 55, "min_rating": 4.1, "min_monthly_sold": 30},
+      "extra_filters": {"rootCategory": "11052681", "trackingSince_gte": 7934400, "sort": [["monthlySold", "desc"]]},
+      "limit": 40
     },
     {
-      "name": "DE_sport_fitness",
-      "domain": "DE",
-      "filters": {
-        "title": "fitness",
-        "min_price": 15,
-        "max_price": 55,
-        "min_rating": 4.2,
-        "min_review_count": 150,
-        "max_sales_rank": 40000
-      },
-      "limit": 10
+      "name": "UK_tools_diy_new2026",
+      "domain": "UK",
+      "filters": {"min_price": 12, "max_price": 55, "min_rating": 4.1, "min_monthly_sold": 50},
+      "extra_filters": {"rootCategory": "79903031", "trackingSince_gte": 7934400, "sort": [["monthlySold", "desc"]]},
+      "limit": 40
+    },
+    {
+      "name": "UK_garden_new2026",
+      "domain": "UK",
+      "filters": {"min_price": 12, "max_price": 55, "min_rating": 4.1, "min_monthly_sold": 30},
+      "extra_filters": {"rootCategory": "11052591", "trackingSince_gte": 7934400, "sort": [["monthlySold", "desc"]]},
+      "limit": 40
+    },
+    {
+      "name": "UK_office_new2026",
+      "domain": "UK",
+      "filters": {"min_price": 12, "max_price": 55, "min_rating": 4.1, "min_monthly_sold": 50},
+      "extra_filters": {"rootCategory": "192413031", "trackingSince_gte": 7934400, "sort": [["monthlySold", "desc"]]},
+      "limit": 40
     }
   ]
 }
