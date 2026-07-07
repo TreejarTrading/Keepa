@@ -45,6 +45,8 @@ _COLUMNS: list[tuple[str, str]] = [
     ("Verdict", "verdict"),
     ("Confidence", "confidence"),
     ("Rationale", "rationale"),
+    ("UAE (ae)", "uae.status"),
+    ("UAE price (AED)", "uae.price_aed"),
     ("Amazon URL", "url"),
 ]
 

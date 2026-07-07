@@ -1,5 +1,5 @@
 {
-  "_comment": "Еженедельный поиск НОВИНОК в US и UK (запуск каждый понедельник и вторник, см. SEARCH_GUIDE.md, раздел 'Еженедельный поиск новинок'). Критерии: листинг создан не раньше февраля 2026 (listedSince_gte=7934400 — это 2026-02-01 в Keepa-минутах: unix_секунды/60 - 21564000), рейтинг от 4.1, продажи уже подтверждены (monthlySold). Категории: мебель, аксессуары для дома/сада/офиса, инструмент, товары для хранения. Запуск: uv run keepa-auto weekly_new_products.json (или run_auto_search с searches_file).",
+  "_comment": "Еженедельный поиск НОВИНОК (запуск каждый понедельник и вторник, см. SEARCH_GUIDE.md, раздел 'Еженедельный поиск новинок'). Пайплайн: спрос подтверждаем на US/UK/DE, запуск всегда первично в ОАЭ — поэтому check_uae: true добавляет проверку кандидатов BUY/WATCH на amazon.ae (not_listed = ниша свободна). Критерии: листинг создан не раньше февраля 2026 (listedSince_gte=7934400 — это 2026-02-01 в Keepa-минутах: unix_секунды/60 - 21564000), рейтинг от 4.1, продажи уже подтверждены (monthlySold). Категории: мебель, аксессуары для дома/сада/офиса, инструмент, товары для хранения. Запуск: uv run keepa-auto weekly_new_products.json (или run_auto_search с searches_file).",
   "searches": [
     {
       "name": "US_new_home_kitchen",
@@ -11,7 +11,8 @@
         "min_monthly_sold": 150
       },
       "extra_filters": { "listedSince_gte": 7934400 },
-      "limit": 20
+      "limit": 20,
+      "check_uae": true
     },
     {
       "name": "US_new_tools_home_improvement",
@@ -23,7 +24,8 @@
         "min_monthly_sold": 150
       },
       "extra_filters": { "listedSince_gte": 7934400 },
-      "limit": 20
+      "limit": 20,
+      "check_uae": true
     },
     {
       "name": "US_new_garden",
@@ -35,7 +37,8 @@
         "min_monthly_sold": 150
       },
       "extra_filters": { "listedSince_gte": 7934400 },
-      "limit": 20
+      "limit": 20,
+      "check_uae": true
     },
     {
       "name": "US_new_office",
@@ -47,7 +50,8 @@
         "min_monthly_sold": 150
       },
       "extra_filters": { "listedSince_gte": 7934400 },
-      "limit": 20
+      "limit": 20,
+      "check_uae": true
     },
     {
       "name": "UK_new_home_garden",
@@ -59,7 +63,8 @@
         "min_monthly_sold": 100
       },
       "extra_filters": { "listedSince_gte": 7934400 },
-      "limit": 15
+      "limit": 15,
+      "check_uae": true
     },
     {
       "name": "UK_new_diy_tools",
@@ -71,7 +76,8 @@
         "min_monthly_sold": 100
       },
       "extra_filters": { "listedSince_gte": 7934400 },
-      "limit": 15
+      "limit": 15,
+      "check_uae": true
     },
     {
       "name": "UK_new_office",
@@ -83,7 +89,60 @@
         "min_monthly_sold": 100
       },
       "extra_filters": { "listedSince_gte": 7934400 },
-      "limit": 15
+      "limit": 15,
+      "check_uae": true
+    },
+    {
+      "name": "DE_new_home_kitchen",
+      "domain": "DE",
+      "filters": {
+        "category_id": 3167641,
+        "min_rating": 4.1,
+        "min_review_count": 15,
+        "min_monthly_sold": 100
+      },
+      "extra_filters": { "listedSince_gte": 7934400 },
+      "limit": 15,
+      "check_uae": true
+    },
+    {
+      "name": "DE_new_baumarkt",
+      "domain": "DE",
+      "filters": {
+        "category_id": 80084031,
+        "min_rating": 4.1,
+        "min_review_count": 15,
+        "min_monthly_sold": 100
+      },
+      "extra_filters": { "listedSince_gte": 7934400 },
+      "limit": 15,
+      "check_uae": true
+    },
+    {
+      "name": "DE_new_garten",
+      "domain": "DE",
+      "filters": {
+        "category_id": 10925031,
+        "min_rating": 4.1,
+        "min_review_count": 15,
+        "min_monthly_sold": 100
+      },
+      "extra_filters": { "listedSince_gte": 7934400 },
+      "limit": 15,
+      "check_uae": true
+    },
+    {
+      "name": "DE_new_office",
+      "domain": "DE",
+      "filters": {
+        "category_id": 192416031,
+        "min_rating": 4.1,
+        "min_review_count": 15,
+        "min_monthly_sold": 100
+      },
+      "extra_filters": { "listedSince_gte": 7934400 },
+      "limit": 15,
+      "check_uae": true
     }
   ]
 }

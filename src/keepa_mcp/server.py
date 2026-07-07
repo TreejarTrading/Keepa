@@ -276,6 +276,21 @@ def analyze_and_report(
 
 
 @mcp.tool()
+def check_uae_market(asins: list[str]) -> dict[str, Any]:
+    """Check candidate ASINs on Amazon.ae (UAE) — the primary launch market.
+
+    Keepa does not track amazon.ae, so this queries the storefront directly.
+    Per ASIN: ``not_listed`` (niche free in the UAE — prime launch candidate),
+    ``listed`` (+ current AED price when detectable), ``blocked`` (anti-bot,
+    verify manually). Use for BUY/WATCH candidates whose demand is already
+    confirmed on US/UK/DE — the launch itself always starts in the UAE.
+    """
+    from . import uae_check
+
+    return uae_check.check_asins(asins)
+
+
+@mcp.tool()
 def run_auto_search(searches_file: str | None = None) -> dict[str, Any]:
     """Execute the saved auto searches (auto_searches.json) right now.
 

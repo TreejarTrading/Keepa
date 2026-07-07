@@ -72,6 +72,7 @@ def load_searches(searches_file: str | Path | None = None) -> list[dict[str, Any
                 "filters": filters,
                 "extra_filters": raw.get("extra_filters") or {},
                 "limit": int(raw.get("limit") or 15),
+                "check_uae": bool(raw.get("check_uae")),
             }
         )
     return cleaned
@@ -91,6 +92,19 @@ def run_search(search: dict[str, Any]) -> dict[str, Any]:
     records = [
         analysis.auto_verdict(analysis.build_record(p, domain=domain)) for p in products
     ]
+
+    # UAE-first launch pipeline: demand is confirmed on US/UK/DE above, the
+    # actual launch always happens on amazon.ae — check the candidates there.
+    if search.get("check_uae"):
+        from . import uae_check  # local import: requests only needed here
+
+        candidates = [r["asin"] for r in records if r.get("verdict") in ("BUY", "WATCH")]
+        if candidates:
+            by_asin = {c["asin"]: c for c in uae_check.check_asins(candidates)["checks"]}
+            for r in records:
+                if r["asin"] in by_asin:
+                    r["uae"] = by_asin[r["asin"]]
+
     path = reports.generate_report(
         records,
         report_name=f"auto_{search['name']}_{domain}",
@@ -103,13 +117,21 @@ def run_search(search: dict[str, Any]) -> dict[str, Any]:
     verdicts = {"BUY": 0, "WATCH": 0, "SKIP": 0}
     for r in records:
         verdicts[r["verdict"]] = verdicts.get(r["verdict"], 0) + 1
-    return {
+    summary = {
         "name": search["name"],
         "domain": domain,
         "asins_found": len(asins),
         "verdicts": verdicts,
         "saved_to": str(path),
     }
+    if search.get("check_uae"):
+        uae_counts: dict[str, int] = {}
+        for r in records:
+            status = (r.get("uae") or {}).get("status")
+            if status:
+                uae_counts[status] = uae_counts.get(status, 0) + 1
+        summary["uae"] = uae_counts
+    return summary
 
 
 def run_all(searches_file: str | Path | None = None) -> dict[str, Any]:

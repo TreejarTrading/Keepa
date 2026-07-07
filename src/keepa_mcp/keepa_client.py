@@ -127,11 +127,15 @@ def product_finder(
     :func:`build_selection` for a convenience builder over common filters.
     """
     api = get_client()
-    return api.product_finder(
+    n = limit or config.DEFAULT_SEARCH_LIMIT
+    asins = api.product_finder(
         selection,
         domain=normalize_domain(domain),
-        n_products=limit or config.DEFAULT_SEARCH_LIMIT,
+        n_products=n,
     )
+    # Keepa clamps perPage to a minimum of 50, so a smaller limit must be
+    # applied client-side or every downstream product fetch overspends tokens.
+    return list(asins)[:n]
 
 
 def search_categories(searchterm: str, *, domain: str | None = None) -> dict[str, Any]:
