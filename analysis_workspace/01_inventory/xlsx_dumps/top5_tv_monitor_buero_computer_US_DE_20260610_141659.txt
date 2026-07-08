@@ -1,0 +1,66 @@
+
+===== SHEET: Анализ (52x23) =====
+ВНИМАНИЕ! ПРОВЕРИТЬ СПРОС ДАННЫХ И ПОХОЖИХ ТОВАРОВ НА ОАЭ АМАЗОН! СФОРМИРОВАТЬ В
+ASIN | Title | Brand | Category | Rating | Reviews | Review/mo | Monthly sold | Price (New) | New avg | New min | New max | Price volat. | Buy Box | BB=Amazon | Offers | Sales rank | Rank drops/30d | Rank drops/90d | Verdict | Confidence | Rationale | Amazon URL
+B08YN9BW51 | Perlegear Mobile TV Cart for 32-82 Inch Flat/Curved LED/LCD/OLED TVs Rolling TV  | Perlegear | AV Carts & Stands | 4.6 | 1726 | 21.3 | 1000 | 169.99 | 134.99 | 109.98 | 169.99 | 0.45 | 169.99 |  | 1 | 3927 | 3 | 14 | BUY | high | TV Standfüße [US]: ТОП-1 по выручке (~169,990 $/мес); ТОП-2 по штукам (1000/мес) | https://www.amazon.com/dp/B08YN9BW51
+B082YFK1T5 | PERLESMITH Rolling TV Stand on Wheels for 32-83 Inch Screens up to 110lbs, Mobil | PERLESMITH | AV Carts & Stands | 4.6 | 14617 | 4043.3 | 1000 | 109.99 | 106.83 | 89.97 | 129.99 | 0.38 | 109.99 |  | 1 | 399 | 11 | 25 | BUY | high | TV Standfüße [US]: ТОП-2 по выручке (~109,990 $/мес); ТОП-1 по штукам (1000/мес) | https://www.amazon.com/dp/B082YFK1T5
+B083Q34LQC | Perlegear Mobile TV Stand with Power Outlet, Tilt & Swivel Rolling TV Stand for  | Perlegear | AV Carts & Stands | 4.4 | 641 | 68.3 | 500 | 129.99 | 124.99 | 109.98 | 149.99 | 0.32 | 129.99 |  | 2 | 8306 | 7 | 28 | BUY | high | TV Standfüße [US]: ТОП-3 по выручке (~64,995 $/мес) | https://www.amazon.com/dp/B083Q34LQC
+B0CZ8MBV8Q | Rfiver Swivel Floor TV Stand with Mount for 32-65 inch TVs up to 88 lbs, Height  | Rfiver | TV Mount Stands | 4.6 | 894 | 54.3 | 1000 | 64.99 | 61.02 | 53.18 | 67.99 | 0.24 | 64.99 |  | 1 | 1923 | 8 | 16 | BUY | high | TV Standfüße [US]: ТОП-4 по выручке (~64,990 $/мес); ТОП-3 по штукам (1000/мес) | https://www.amazon.com/dp/B0CZ8MBV8Q
+B0DWRTSFQN | ECOTINY Heavy-Duty Rolling TV Stand for 32–85" Screens — Supports 187 lbs (154 l | ECOTINY | AV Carts & Stands | 4.6 | 200 | 18.3 | 500 | 115.99 | 107.41 | 93.49 | 115.99 | 0.21 | 115.99 |  | 1 | 6924 | 10 | 27 | BUY | high | TV Standfüße [US]: ТОП-5 по выручке (~57,995 $/мес) | https://www.amazon.com/dp/B0DWRTSFQN
+B0G5YBZR67 | Perlegear Rolling TV Stand for 30-75 Inch, Mobile TV Cart Holds up to 110 lbs, T | Perlegear | AV Carts & Stands | 4.7 | 25 | 8 | 600 | 79.99 | 79.39 | 59.99 | 99.99 | 0.5 | 79.99 |  | 1 | 23494 | 12 | 29 | BUY | high | TV Standfüße [US]: ТОП-4 по штукам (600/мес) | https://www.amazon.com/dp/B0G5YBZR67
+B00TFXO4Q4 | VIVO Mobile TV Cart for 32 to 83 inch Screens up to 110 lbs, LCD LED OLED 4K Sma | VIVO | AV Carts & Stands | 4.7 | 11425 | 17.7 | 500 | 99.99 | 92.49 | 84.99 | 99.99 | 0.16 | 99.99 |  | 1 | 3542 | 8 | 15 | BUY | high | TV Standfüße [US]: ТОП-5 по штукам (500/мес) | https://www.amazon.com/dp/B00TFXO4Q4
+B0DLB5TJTT | AOKCOS TV Ständer Rollbar mit Holzablage, 32-65 Zoll, höhenverstellbar (Weiß+Nat | AOKCOS | Standfüße | 4.6 | 548 |  | 300 | 50.49 |  |  |  |  | 50.49 |  |  |  |  |  | BUY | high | TV Standfüße [DE]: ТОП-1 по выручке (~15,147 €/мес); ТОП-1 по штукам (300/мес) | https://www.amazon.de/dp/B0DLB5TJTT
+B08SQ6PKM3 | TV Ständer Rollbar Fernsehständer Bodenständer, RFIVER TV Rollwagen mit Rollen f | Rfiver | Standfüße | 4.7 | 1602 |  | 200 | 62.99 |  |  |  |  | 62.99 |  |  |  |  |  | BUY | high | TV Standfüße [DE]: ТОП-2 по выручке (~12,598 €/мес); ТОП-2 по штукам (200/мес) | https://www.amazon.de/dp/B08SQ6PKM3
+B0DKXK11HF | BONTEC Rollbarer TV Ständer mit feststellbaren Rollen, höhenverstellbar 32-85 Zo | BONTEC | Standfüße | 4.4 | 300 |  | 100 | 85.99 |  |  |  |  | 85.99 |  |  |  |  |  | BUY | high | TV Standfüße [DE]: ТОП-3 по выручке (~8,599 €/мес); ТОП-5 по штукам (100/мес) | https://www.amazon.de/dp/B0DKXK11HF
+B08CK8DY4J | FITUEYES TV Bodenständer Rollbar mit Holzablage TV Standfuß TV Ständer Fernsehst | FITUEYES | Standfüße | 4.7 | 1236 |  | 100 | 67.99 |  |  |  |  | 67.99 |  |  |  |  |  | BUY | high | TV Standfüße [DE]: ТОП-4 по выручке (~6,799 €/мес); ТОП-3 по штукам (100/мес) | https://www.amazon.de/dp/B08CK8DY4J
+B0DJQHB8X1 | AOKCOS TV Bodenständer Rollbar mit Holzregal, TV Ständer mit Rollen für 43-75 Zo | AOKCOS | Standfüße | 4.6 | 328 |  | 100 | 65.53 |  |  |  |  | 65.53 |  |  |  |  |  | BUY | high | TV Standfüße [DE]: ТОП-5 по выручке (~6,553 €/мес); ТОП-4 по штукам (100/мес) | https://www.amazon.de/dp/B0DJQHB8X1
+B07T5SY43L | HUANUO FlowLift™ Dual Monitor Stand, Fully Adjustable Gaming Monitor Desk Mount  | HUANUO | Monitor Arms | 4.6 | 34181 | 275.7 | 10000 | 69.99 | 66.53 | 54.99 | 69.99 | 0.23 | 69.99 |  | 1 | 583 | 4 | 46 | BUY | high | Monitor Arm [US]: ТОП-1 по выручке (~699,900 $/мес); ТОП-1 по штукам (10000/мес) | https://www.amazon.com/dp/B07T5SY43L
+B07X262MRK | HUANUO Dual Monitor Stand for 13″–40″, Premium Dual Monitor Mount with USB, Heig | HUANUO | Monitor Arms | 4.6 | 5561 | 12 | 1000 | 149.99 | 133.32 | 109.99 | 149.99 | 0.3 | 149.99 |  | 1 | 6917 | 33 | 89 | BUY | high | Monitor Arm [US]: ТОП-2 по выручке (~149,990 $/мес); ТОП-3 по штукам (1000/мес) | https://www.amazon.com/dp/B07X262MRK
+B0CTMHHJJC | HUANUO Dual Monitor Stand - Full Adjustable Monitor Desk Mount Swivel Vesa Brack | HUANUO | Monitor Arms | 4.6 | 34181 | 208.7 | 2000 | 69.99 | 65.56 | 59.49 | 69.99 | 0.16 | 69.99 |  | 1 |  |  |  | BUY | high | Monitor Arm [US]: ТОП-3 по выручке (~139,980 $/мес); ТОП-2 по штукам (2000/мес) | https://www.amazon.com/dp/B0CTMHHJJC
+B0DQ19YC9H | HUANUO TitanLift Heavy Duty Monitor Arm for Screens up to 49", Holds 44 lbs, Alu | HUANUO | Monitor Arms | 4.7 | 370 | 33 | 1000 | 105.99 | 97.98 | 89.97 | 105.99 | 0.16 | 105.99 |  | 1 |  |  |  | BUY | high | Monitor Arm [US]: ТОП-4 по выручке (~105,990 $/мес); ТОП-5 по штукам (1000/мес) | https://www.amazon.com/dp/B0DQ19YC9H
+B07Q8TJ2KL | Ergotron – LX Monitor Arm, Single Monitor Desk Mount – fits Flat Curved Ultrawid | Ergotron | Monitor Arms | 4.6 | 10905 | 37.7 | 400 | 190 | 180.07 | 168.99 | 194.99 | 0.14 | 219 |  | 6 | 6814 | 10 | 16 | BUY | high | Monitor Arm [US]: ТОП-5 по выручке (~87,600 $/мес) | https://www.amazon.com/dp/B07Q8TJ2KL
+B0C7KQ7MX8 | ErGear Dual Monitor Stand up to 33 inches Screen, Load-Bearing Max 22 lbs Each A | ErGear | Monitor Arms | 4.5 | 9514 | 442 | 1000 | 59.99 | 50.62 | 36.98 | 59.99 | 0.46 | 59.99 |  | 1 |  |  |  | BUY | high | Monitor Arm [US]: ТОП-4 по штукам (1000/мес) | https://www.amazon.com/dp/B0C7KQ7MX8
+B09CQCYH75 | Invision Monitor Halterung für 19-32 Zoll Bildschirme - VESA 75 & 100 mm - Schre | Invision | Monitorarm | 4.7 | 16276 | 154.3 | 300 | 69.99 | 69.04 | 53.19 | 89.99 | 0.53 | 69.99 |  | 2 | 1017 | 9 | 26 | BUY | high | Monitor Arm [DE]: ТОП-1 по выручке (~20,997 €/мес); ТОП-2 по штукам (300/мес) | https://www.amazon.de/dp/B09CQCYH75
+B08B8X4KBV | Invision Monitorarm Halterung fur Monitore von 24"-40" VESA 75/100mm ergonomisch | Invision | Monitorarm | 4.6 | 7682 | 60 | 300 | 59.99 | 54.7 | 49.99 | 59.99 | 0.18 | 59.99 |  | 2 | 1919 | 4 | 14 | BUY | high | Monitor Arm [DE]: ТОП-2 по выручке (~17,997 €/мес); ТОП-1 по штукам (300/мес) | https://www.amazon.de/dp/B08B8X4KBV
+B0861284GB | HUANUO Monitor Halterung 2 Monitore für 13-32 Zoll Bildschirm, Gaming Monitorhal | HUANUO | Monitorarm | 4.6 | 2827 | 5.7 | 100 | 69.99 | 66.76 | 50.97 | 89.99 | 0.58 | 69.99 |  | 1 | 3530 | 8 | 21 | BUY | high | Monitor Arm [DE]: ТОП-3 по выручке (~6,999 €/мес); ТОП-3 по штукам (100/мес) | https://www.amazon.de/dp/B0861284GB
+B01FV0F13E | Amazon Basics Multipurpose Copy Printer Paper, 20 lb, 8.5 x 11 Inches, 10 Reams  | Amazon Basics | Copy & Multipurpose Paper | 4.8 | 221544 | 2278 | 70000 | 56.97 | 53.29 | 44.99 | 56.97 | 0.23 | 56.97 |  | 1 | 1 | 0 | 1 | BUY | high | Büro [US]: ТОП-1 по выручке (~3,987,900 $/мес); ТОП-1 по штукам (70000/мес) | https://www.amazon.com/dp/B01FV0F13E
+B0CJCG8QKB | HP 936 Black, Cyan, Magenta, Yellow Ink Cartridges (4-Pack) | Works with OfficeJ | HP | Inkjet Ink Cartridges | 4.6 | 1747 | 74.3 | 10000 | 145.89 | 142.1 | 135.89 | 145.89 | 0.07 | 145.89 |  | 27 | 143 | 8 | 22 | BUY | high | Büro [US]: ТОП-2 по выручке (~1,458,900 $/мес) | https://www.amazon.com/dp/B0CJCG8QKB
+... (27 more rows)
+
+===== SHEET: Характеристики (51x7) =====
+ASIN | Title | Features | Description | Dimensions | Weight (g) | Variations
+B08YN9BW51 | Perlegear Mobile TV Cart for 32-82 Inch Flat/Curved LED/LCD/OLED TVs Rolling TV  | [Versatile] This rolling TV stand is absolutely an innovation in TV mounting. Pe |  | 940 x 622 x 127 | 15604 | 6
+B082YFK1T5 | PERLESMITH Rolling TV Stand on Wheels for 32-83 Inch Screens up to 110lbs, Mobil | 【Rolling TV Stand Holds 32-83 inch TVS】The mobile TV Stand fit most of 32-83" (i |  | 914 x 381 x 76 | 11408 | 6
+B083Q34LQC | Perlegear Mobile TV Stand with Power Outlet, Tilt & Swivel Rolling TV Stand for  | 【Mobile TV Cart with Power Outlet-Say Goodbye to Messy Wires】This Perlegear TV c |  | 724 x 470 x 117 | 11952 | 4
+B0CZ8MBV8Q | Rfiver Swivel Floor TV Stand with Mount for 32-65 inch TVs up to 88 lbs, Height  | 70°-SWIVEL - DELIVERS OPTIMAL VIEWING ANGLES: Our floor-standing TV stand rotate |  | 456 x 332 x 119 | 6332 | 4
+B0DWRTSFQN | ECOTINY Heavy-Duty Rolling TV Stand for 32–85" Screens — Supports 187 lbs (154 l | Stronger Rolling TV Stand: With a 154 lbs weight capacity for your TV and a rein |  | 790 x 305 x 150 | 11060 | 3
+B0G5YBZR67 | Perlegear Rolling TV Stand for 30-75 Inch, Mobile TV Cart Holds up to 110 lbs, T | 【Rolling TV Cart Fits 30-75 inch TVs】: The portable TV stand fits 30″, 32″, 40″, |  | 724 x 470 x 102 | 11952 | 0
+B00TFXO4Q4 | VIVO Mobile TV Cart for 32 to 83 inch Screens up to 110 lbs, LCD LED OLED 4K Sma | TV Compatibility: Supports 32" to 83" screens weighing up to 110 lbs with VESA 7 |  | 764 x 332 x 156 | 15960 | 4
+B0DLB5TJTT | AOKCOS TV Ständer Rollbar mit Holzablage, 32-65 Zoll, höhenverstellbar (Weiß+Nat
+B08SQ6PKM3 | TV Ständer Rollbar Fernsehständer Bodenständer, RFIVER TV Rollwagen mit Rollen f
+B0DKXK11HF | BONTEC Rollbarer TV Ständer mit feststellbaren Rollen, höhenverstellbar 32-85 Zo
+B08CK8DY4J | FITUEYES TV Bodenständer Rollbar mit Holzablage TV Standfuß TV Ständer Fernsehst
+B0DJQHB8X1 | AOKCOS TV Bodenständer Rollbar mit Holzregal, TV Ständer mit Rollen für 43-75 Zo
+B07T5SY43L | HUANUO FlowLift™ Dual Monitor Stand, Fully Adjustable Gaming Monitor Desk Mount  | Compatible with Wide Screens - To ensure compatibility with the dual monitor mou |  | 435 x 200 x 135 | 4920 | 4
+B07X262MRK | HUANUO Dual Monitor Stand for 13″–40″, Premium Dual Monitor Mount with USB, Heig | Improved Stability for Ultrawide Monitors: The upgraded dual monitor stand combi |  | 443 x 295 x 142 | 8292 | 1
+B0CTMHHJJC | HUANUO Dual Monitor Stand - Full Adjustable Monitor Desk Mount Swivel Vesa Brack | Compatibility: To ensure compatibility with the dual monitor mount, your each mo |  | 436 x 203 x 143 | 5021 | 4
+B0DQ19YC9H | HUANUO TitanLift Heavy Duty Monitor Arm for Screens up to 49", Holds 44 lbs, Alu | Fits up to 49" Ultrawide Screens: Ensure your monitor is compatible with the HUA |  | 447 x 246 x 163 | 5439 | 1
+B07Q8TJ2KL | Ergotron – LX Monitor Arm, Single Monitor Desk Mount – fits Flat Curved Ultrawid | Broad compatibility: Fits single screens up to 34 inches diagonal and 7 to 25 po |  | 561 x 229 x 152 | 4672 | 8
+B0C7KQ7MX8 | ErGear Dual Monitor Stand up to 33 inches Screen, Load-Bearing Max 22 lbs Each A | Computer Compatibility - To ensure compatibility of the dual monitor stand, each |  | 408 x 260 x 108 | 4080 | 8
+B09CQCYH75 | Invision Monitor Halterung für 19-32 Zoll Bildschirme - VESA 75 & 100 mm - Schre | Invision ist der führende britische Hersteller von Monitorhalterungen. Originell |  | 422 x 201 x 137 | 5289 | 2
+B08B8X4KBV | Invision Monitorarm Halterung fur Monitore von 24"-40" VESA 75/100mm ergonomisch | Breiter Bewegungsbereich im Vergleich zu Stangen oder Nicht-Gasarmen: Der MX450  |  | 427 x 299 x 113 | 3720 | 1
+B0861284GB | HUANUO Monitor Halterung 2 Monitore für 13-32 Zoll Bildschirm, Gaming Monitorhal | Breite Kompatibilität und hohe Belastbarkeit – Die Monitor Halterung für 2 Monit |  | 443 x 324 x 132 | 6240 | 0
+B01FV0F13E | Amazon Basics Multipurpose Copy Printer Paper, 20 lb, 8.5 x 11 Inches, 10 Reams  | 10 ream case (5,000 sheets) of 8.5 x 11 white copier and printer paper for home  | Product Description
+
+Amazon Basics Multipurpose Copy Printer Paper, 8.5 x 11 Inc | 444 x 292 x 267 | 23541 | 10
+B0CJCG8QKB | HP 936 Black, Cyan, Magenta, Yellow Ink Cartridges (4-Pack) | Works with OfficeJ | HP Ink Cartridges are engineered to work with HP printers to provide consistent  | Ensure your printing is right the first time and every time with this Original H | 153 x 130 x 57 | 220 | 0
+B07N3FYTW5 | HP 910XL Black High-Yield Ink Cartridge | Works with OfficeJet 8010, 8020 Series | HP Ink Cartridges are engineered to work with HP printers to provide consistent  | Ensure your printing is right the first time and every time with this Original H | 113 x 100 x 44 | 68 | 3
+... (26 more rows)
+
+===== SHEET: Сводка (6x2) =====
+Generated | 2026-06-10T14:16:59
+Products analysed | 50
+Query / context | Категории: TV Standfüße, Monitor Arm, Büro, Computer-Zubehör. Рынки: US (от $50)
+BUY | 50
+WATCH | 0
+SKIP | 0

@@ -1,0 +1,108 @@
+
+===== SHEET: Конкуренты 4-6л (11x8) =====
+Бренд | Товар | Объём | Цена Buy Box, € | Продажи, шт/мес | Рейтинг | Отзывы | Комментарий
+FOHERE | Mini Kühlschrank 5L/6 Dosen | 5L | 41.59 | 100 | 4.1 | 920 | ещё 2 варианта по 50 шт/мес
+Enventor | Mini Kühlschrank 6L/8 Dosen | 6L | 46.99 | 100 | 4.4 | 160 | 2 листинга по 100 и 50 шт/мес
+Citybee | Mini Kühlschrank 4L Kühl+Heiz | 4L | 36.99 | 100 | 4.7 | 36 | новичок, BSR 176 — образец входа
+BEICHEN | Mini Kühlschrank 4L, RGB | 4L | 62.99 | 100 | 4.2 | 206 | премиум за счёт RGB-подсветки
+AstroAI | Mini Kühlschrank 6L/8 Dosen | 6L | 69.99 | 100 | 4.2 | 1258 | верх рынка, бренд с историей
+AstroAI | Mini Kühlschrank 4L/6 Dosen | 4L | 49.99 | 50 | 4.2 | 1495
+Enventor | Mini-Kühlschrank 4L, LED | 4L | 45.99 | 50 | 4.6 | 51
+Olvy | Kosmetik Kühlschrank 4L, LED-Spiegel | 4L | 39.99 | 100 | 3.6 | 204 | 2 варианта; слабый рейтинг — уязвим
+Reemix | Mini-Kühlschrank 4L/6 Dosen | 4L | 37.99 | 50 | 3.7 | 323 | слабый рейтинг — уязвим
+Duronic | MFW4 Mini Kühlschrank 4L | 4L | 34.99 | 50 | 4.8 | 6 | свежий листинг бренда
+
+===== SHEET: Крупный формат 15-24л (6x8) =====
+Бренд | Товар | Объём | Цена Buy Box, € | Продажи, шт/мес | Рейтинг | Отзывы | Комментарий
+FOHERE | 2in1 Mini Kühlschrank 15L | 15L | 69.99 | 500 | 4.3 | 621 | лидер категории, BSR 48
+NORTHCLAN | Mini Kühlschrank 15L | 15L | 67.99 | 100 | 4.4 | 1287
+KESSER | 2in1 Kühlbox 15L | 15L | 74.8 | 100 | 4.1 | 1249
+Cumeod | Mini Kühlschrank 15L/21 Dosen | 15L | 69.99 | 100 | 4.1 | 1895
+Puremy | Kühlbox 24L 12V/230V | 24L | 55.24 | 100 | 4.5 | 55
+
+===== SHEET: Юнит-экономика (11x8) =====
+Сценарий | Цена, € | Нетто без VAT 19%, € | Комиссия Amazon 15%, € | FBA-сбор, € | Себестоимость на FBA, € | Прибыль/шт до PPC, € | Комментарий
+РРЦ продавца, 4–5 л | 59 | 49.58 | 8.85 | 4.6 | 17.5 | 18.63 | Маржа отличная, но продаж по этой цене не будет
+Рыночная цена, 4–5 л | 44.99 | 37.81 | 6.75 | 4.6 | 17.5 | 8.96 | Реалистичный сценарий
+Нижняя граница, 4–5 л | 39.99 | 33.6 | 6 | 4.6 | 17.5 | 5.5 | Цена быстрого набора отзывов
+Безубыточность, 4–5 л | 32.2 | 27.06 | 4.83 | 4.6 | 17.5 | 0.13 | Пол рынка €34–37 — запас тонкий
+РРЦ продавца, 6 л | 69 | 57.98 | 10.35 | 5.3 | 20.5 | 21.83 | Только AstroAI (1258 отзывов) держит этот уровень
+Рыночная цена, 6 л | 49.99 | 42.01 | 7.5 | 5.3 | 20.5 | 8.71 | Реалистичный сценарий
+
+Себестоимость: закупка $15.5/$18.5 (€14.3/€17.0 по курсу 0.92) + фрахт ~€2 + пош
+Импортный НДС 19% — к вычету. PPC на разгоне: ещё €4–6/шт. 
+Если Amazon отнесёт товар к комиссии Elektro-Großgeräte 7% вместо 15% — прибыль 
+
+===== SHEET: Рекомендации (10x2) =====
+# | Рекомендация
+1 | ВЕРДИКТ: завозить можно, но РРЦ €59/€69 выше рынка — реалистичные цены €39.99–44
+2 | Первая партия: 400–600 шт (≈300 шт 4–5 л + 200 шт 6 л) = 3–4 месяца продаж при т
+3 | Полный контейнер (~1400+ шт) — это год стока: замороженный капитал + долгосрочны
+4 | Тайминг: заказ сейчас → Гамбург в августе → полка в сентябре. Летний пик упущен;
+5 | В FBA подавать партиями по 100–150 шт со склада в Бремене — дешевле хранение, ни
+6 | Слабое место конкурентов Olvy/Reemix (€38–40): рейтинг 3.6–3.7 — обыгрывать каче
+7 | До завоза: WEEE (ElektroG/stiftung ear), VerpackG (LUCID), CE + GPSR-ответственн
+8 | Объём ниши 4–6 л: ~900–1200 шт/мес на ~14 листингов. Формат 15 л живее (лидер 50
+9 | Если партия пойдёт: Pan-EU FBA (UK/FR/IT/ES) может удвоить сбыт той же поставки 
+
+===== SHEET: Анализ (25x23) =====
+ASIN | Title | Brand | Category | Rating | Reviews | Review/mo | Monthly sold | Price (New) | New avg | New min | New max | Price volat. | Buy Box | BB=Amazon | Offers | Sales rank | Rank drops/30d | Rank drops/90d | Verdict | Confidence | Rationale | Amazon URL
+B0823W2XCP | AstroAI Mini Kühlschrank, 4 Liter Fridge 6 Dosen, Kleiner Kühlschrank mit 220V A | AstroAI | Mini-Kühlschränke | 4.2 | 1495 | 6.7 | 50 | 49.99 | 45.98 | 37.98 | 49.99 | 0.26 | 49.99 |  | 1 | 551 | 13 | 40 | WATCH | medium | Прямой конкурент (4L): 50шт/мес @ €49.99, рейтинг 4.2 | https://www.amazon.de/dp/B0823W2XCP
+B09MQF9CHJ | NORTHCLAN Mini Kühlschrank für Zimmer 15L, mit 220V AC/12V DC für den Auto- und  | NORTHCLAN | Mini-Kühlschränke | 4.4 | 1287 | 19.3 | 100 | 67.99 | 72.5 | 64.59 | 79.99 | 0.21 | 67.99 |  | 2 | 180 | 13 | 26 | SKIP | high | Другой формат (15-24L), для сравнения спроса: 100шт/мес @ €67.99 | https://www.amazon.de/dp/B09MQF9CHJ
+B09RPYL8C7 | KESSER® 2in1 Mini Kühlschrank Kühlbox 15 Liter Kühl und Heizfunktion Tragbarer A | KESSER | Kühlschränke | 4.1 | 1249 | 19 | 100 | 74.8 | 67.42 | 56.8 | 74.8 | 0.27 | 74.8 |  | 1 | 343 | 14 | 41 | SKIP | high | Другой формат (15-24L), для сравнения спроса: 100шт/мес @ €74.8 | https://www.amazon.de/dp/B09RPYL8C7
+B09RPYSFY6 | KESSER® 2in1 Mini Kühlschrank Kühlbox 15 Liter Kühl und Heizfunktion Tragbarer A | KESSER | Kühlschränke | 4.1 | 1249 | 19.3 | 50 | 74.8 | 67.42 | 56.8 | 74.8 | 0.27 | 74.8 |  | 1 | 343 | 11 | 32 | SKIP | high | Другой формат (15-24L), для сравнения спроса: 50шт/мес @ €74.8 | https://www.amazon.de/dp/B09RPYSFY6
+B0B81RCFGL | FOHERE 2 in 1 Mini Kühlschrank, 15L Kühlschrank für Zimmer mit Kühl- und Heizfun | FOHERE | Mini-Kühlschränke | 4.3 | 621 | 0 | 500 | 69.99 | 69.2 | 64.59 | 75.99 | 0.17 | 69.99 |  | 1 | 48 | 9 | 27 | SKIP | high | Другой формат (15-24L), для сравнения спроса: 500шт/мес @ €69.99 | https://www.amazon.de/dp/B0B81RCFGL
+B0BSL4SD9B | Cumeod 15 Liter/ 21 Dosen Mini Kühlschrank, 2 in 1 Kleiner Kühlschrank mit Kühl- | Cumeod | Mini-Kühlschränke | 4.1 | 1895 | 21.7 | 100 | 69.99 | 73.06 | 64.59 | 79.99 | 0.21 | 69.99 |  | 1 | 172 | 11 | 32 | SKIP | high | Другой формат (15-24L), для сравнения спроса: 100шт/мес @ €69.99 | https://www.amazon.de/dp/B0BSL4SD9B
+B0CHRGQQVZ | AstroAI Mini Kühlschrank, Mini Fridge 6 Liter / 8 Dosen mit Kühl- und Heizfunkti | AstroAI | Mini-Kühlschränke | 4.2 | 1258 | 33.7 | 100 | 69.99 | 61.49 | 52.98 | 69.99 | 0.28 | 69.99 |  | 1 | 208 | 9 | 29 | BUY | high | Прямой конкурент (6L): 100шт/мес @ €69.99, рейтинг 4.2 | https://www.amazon.de/dp/B0CHRGQQVZ
+B0CPLYKNG2 | FOHERE Mini Kühlschrank 5 Liter /6 Dosen, Kühlung und Erwärmung, 220V AC/12V DC  | FOHERE | Mini-Kühlschränke | 4.1 | 920 | 65 | 100 | 41.59 | 42.03 | 38.99 | 43.99 | 0.12 | 41.59 |  | 1 | 126 | 8 | 24 | WATCH | high | Прямой конкурент (5L): 100шт/мес @ €41.59, рейтинг 4.1 | https://www.amazon.de/dp/B0CPLYKNG2
+B0D3D5JMWC | FOHERE 2 in 1 Mini Kühlschrank, 15L Kühlschrank für Zimmer mit Kühl- und Heizfun | FOHERE | Mini-Kühlschränke | 4.6 | 45 | 0 | 50 | 72.99 | 70.77 | 64.59 | 79.99 | 0.22 | 72.99 |  | 1 | 59 | 9 | 27 | SKIP | high | Другой формат (15-24L), для сравнения спроса: 50шт/мес @ €72.99 | https://www.amazon.de/dp/B0D3D5JMWC
+B0D6YQF623 | NORTHCLAN Mini Kühlschrank 15L/ 21 Dosen für Schlafzimmer | 2 in 1 Kleiner Kühls | NORTHCLAN | Mini-Kühlschränke | 4.4 | 117 | 32.3 | 50 | 69.99 | 71.28 | 63.99 | 79.99 | 0.22 | 69.99 |  | 1 | 857 | 15 | 30 | SKIP | high | Другой формат (15-24L), для сравнения спроса: 50шт/мес @ €69.99 | https://www.amazon.de/dp/B0D6YQF623
+B0D8PTDRMT | FOHERE Mini Kühlschrank 5 Liter /6 Dosen, Kühlung und Erwärmung, 220V AC/12V DC  | FOHERE | Mini-Kühlschränke | 4.1 | 920 | 62.7 | 50 | 42.99 | 41.56 | 39.99 | 42.99 | 0.07 | 42.99 |  | 1 | 126 | 8 | 24 | WATCH | medium | Прямой конкурент (5L): 50шт/мес @ €42.99, рейтинг 4.1 | https://www.amazon.de/dp/B0D8PTDRMT
+B0D8PTKSZM | FOHERE Mini Kühlschrank 5 Liter/6 Dosen, Mini-Kühlschranke 220V AC/12V DC, Kühle | FOHERE | Mini-Kühlschränke | 4.1 | 920 | 63 | 50 | 42.99 | 41.04 | 37.39 | 42.99 | 0.14 | 42.99 |  | 1 | 126 | 8 | 23 | WATCH | medium | Прямой конкурент (5L): 50шт/мес @ €42.99, рейтинг 4.1 | https://www.amazon.de/dp/B0D8PTKSZM
+B0DN1F6TCG | Aikku Mini Kühlschrank 2 in 1 Mini Kühlschrank mit Kühlen und Wärmenfunktion 15L | Aikku | Mini-Kühlschränke | 4.2 | 121 | 9.3 | 100 | 75.99 | 67.74 | 59.49 | 75.99 | 0.24 | 75.99 |  | 2 | 336 | 15 | 41 | SKIP | high | Другой формат (15-24L), для сравнения спроса: 100шт/мес @ €75.99 | https://www.amazon.de/dp/B0DN1F6TCG
+B0DZWTL2FV | Enventor Mini Kühlschrank, 6 Liter/8 Dosen, AC+12V DC-Stromversorgung, Tragbarer | Enventor | Mini-Kühlschränke | 4.4 | 160 | 22 | 100 | 46.99 | 44.72 | 37.39 | 46.99 | 0.21 | 46.99 |  | 1 | 302 | 9 | 26 | BUY | high | Прямой конкурент (6L): 100шт/мес @ €46.99, рейтинг 4.4 | https://www.amazon.de/dp/B0DZWTL2FV
+B0DZWW69XJ | Enventor Mini-Kühlschrank 4L/6 Dosen, Kosmetik Kühlschrank mit Dimmbarem LED-Lic | Enventor | Mini-Kühlschränke | 4.6 | 51 | 4.7 | 50 | 45.99 | 43.13 | 36.54 | 45.99 | 0.22 | 45.99 |  | 1 | 911 | 12 | 30 | WATCH | medium | Прямой конкурент (4L): 50шт/мес @ €45.99, рейтинг 4.6000000000000005 | https://www.amazon.de/dp/B0DZWW69XJ
+B0DZWWZJSP | Enventor Mini Kühlschrank, 6 Liter/8 Dosen, AC+12V DC-Stromversorgung, Tragbarer | Enventor | Mini-Kühlschränke | 4.4 | 160 | 22 | 50 | 46.99 | 43.79 | 37.39 | 46.99 | 0.22 | 46.99 |  | 1 | 340 | 9 | 26 | WATCH | medium | Прямой конкурент (6L): 50шт/мес @ €46.99, рейтинг 4.4 | https://www.amazon.de/dp/B0DZWWZJSP
+B0F2T16FFY | Puremy 24 Liter Kühlbox, 2 in1 elektrische Kühlbox 12V 230V Kühlen und Wärmen Mi | Puremy | Mini-Kühlschränke | 4.5 | 55 | 0.3 | 100 | 55.24 | 62.94 | 55.24 | 69.99 | 0.23 | 55.24 |  | 1 | 139 | 16 | 22 | SKIP | high | Другой формат (15-24L), для сравнения спроса: 100шт/мес @ €55.24 | https://www.amazon.de/dp/B0F2T16FFY
+B0FKGGY4VT | BEICHEN Mini Kühlschrank, 4L / 6 Dosen Leise Minikühlschrank, 7 RGB Lichtmodi, 2 | BEICHEN | Mini-Kühlschränke | 4.2 | 206 | 47 | 100 | 62.99 | 64.3 | 59.48 | 69.99 | 0.16 | 62.99 |  | 1 | 353 | 9 | 35 | BUY | high | Прямой конкурент (4L): 100шт/мес @ €62.99, рейтинг 4.2 | https://www.amazon.de/dp/B0FKGGY4VT
+B0FQBW9JXX | Mini Kühlschrank, 22L/30 Dosen Kleiner Kühlschrank mit Kühl- und Heizfunktion, M | Rebonique | Mini-Kühlschränke | 4.3 | 31 | 5 | 50 | 79.9 | 79.9 | 79.9 | 79.9 | 0 | 79.9 |  | 1 | 392 | 11 | 27 | SKIP | high | Другой формат (15-24L), для сравнения спроса: 50шт/мес @ €79.9 | https://www.amazon.de/dp/B0FQBW9JXX
+B0C28VBP14 | Olvy Kosmetik Kühlschrank 4L LED Spiegel, Rosa | Olvy | Mini-Kühlschränke | 3.6 | 204 |  | 50 | 39.99 |  |  |  |  | 39.99 |  |  |  |  |  | WATCH | medium | Прямой конкурент (4L): 50шт/мес @ €39.99, рейтинг 3.6 | https://www.amazon.de/dp/B0C28VBP14
+B0CH5B8K2G | Olvy Kosmetik Kühlschrank 4L LED Spiegel, Schwarz | Olvy | Mini-Kühlschränke | 3.6 | 204 |  | 50 | 39.99 |  |  |  |  | 39.99 |  |  |  |  |  | WATCH | medium | Прямой конкурент (4L): 50шт/мес @ €39.99, рейтинг 3.6 | https://www.amazon.de/dp/B0CH5B8K2G
+B0CYH5HGN7 | Reemix Mini-Kühlschrank 4L/6 Dosen Kühler+Wärmer | Reemix | Mini-Kühlschränke | 3.7 | 323 |  | 50 | 37.99 |  |  |  |  | 37.99 |  |  |  |  |  | WATCH | medium | Прямой конкурент (4L): 50шт/мес @ €37.99, рейтинг 3.7 | https://www.amazon.de/dp/B0CYH5HGN7
+B0GWDRHQP3 | Duronic MFW4 BK Mini Kühlschrank 4L, 12V/230V Retro | Duronic | Mini-Kühlschränke | 4.8 | 6 |  | 50 | 34.99 |  |  |  |  | 34.99 |  |  |  |  |  | WATCH | medium | Прямой конкурент (4L): 50шт/мес @ €34.99, рейтинг 4.8 | https://www.amazon.de/dp/B0GWDRHQP3
+B0GXQRFXS2 | Citybee Mini Kühlschrank 4L Kühl-&Heizfunktion, Rosa | Citybee | Mini-Kühlschränke | 4.7 | 36 |  | 100 | 36.99 |  |  |  |  | 36.99 |  |  |  |  |  | BUY | high | Прямой конкурент (4L): 100шт/мес @ €36.99, рейтинг 4.7 | https://www.amazon.de/dp/B0GXQRFXS2
+
+===== SHEET: Характеристики (25x7) =====
+ASIN | Title | Features | Description | Dimensions | Weight (g) | Variations
+B0823W2XCP | AstroAI Mini Kühlschrank, 4 Liter Fridge 6 Dosen, Kleiner Kühlschrank mit 220V A | 【Ihr persönlicher Mini Kühlschrank】Der kleine Kühlschrank mit 4 Litern Fassungsv |  | 270 x 249 x 187 | 2000 | 1
+B09MQF9CHJ | NORTHCLAN Mini Kühlschrank für Zimmer 15L, mit 220V AC/12V DC für den Auto- und  | 【15L großes Fassungsvermögen】: Unser Mini-Kühlschrank 15L Fassungsvermögen kann  |  | 465 x 350 x 316 | 4790 | 3
+B09RPYL8C7 | KESSER® 2in1 Mini Kühlschrank Kühlbox 15 Liter Kühl und Heizfunktion Tragbarer A | 𝐋𝐀𝐍𝐆𝐋𝐄𝐁𝐈𝐆 𝐔𝐍𝐃 𝐄𝐍𝐄𝐑𝐆𝐈𝐄𝐒𝐏𝐀𝐑𝐄𝐍𝐃: Für den Getränkekühlschrank aus dem Hause KESSER w |  | 465 | 0 | 8
+B09RPYSFY6 | KESSER® 2in1 Mini Kühlschrank Kühlbox 15 Liter Kühl und Heizfunktion Tragbarer A | 𝐋𝐀𝐍𝐆𝐋𝐄𝐁𝐈𝐆 𝐔𝐍𝐃 𝐄𝐍𝐄𝐑𝐆𝐈𝐄𝐒𝐏𝐀𝐑𝐄𝐍𝐃: Für den Getränkekühlschrank aus dem Hause KESSER w |  | 465 | 0 | 8
+B0B81RCFGL | FOHERE 2 in 1 Mini Kühlschrank, 15L Kühlschrank für Zimmer mit Kühl- und Heizfun | 【Vielseitiger Mini Kühlschrank】Unser 15L Mini-Kühlschrank von FOHERE ist äußerst |  | 456 x 355 x 314 | 4720 | 0
+B0BSL4SD9B | Cumeod 15 Liter/ 21 Dosen Mini Kühlschrank, 2 in 1 Kleiner Kühlschrank mit Kühl- | 【Kühl- und Heizfunktion】Kühlen Sie 18 ° C-22 ° C unter der Umgebungstemperatur ( |  | 463 x 356 x 318 | 4820 | 2
+B0CHRGQQVZ | AstroAI Mini Kühlschrank, Mini Fridge 6 Liter / 8 Dosen mit Kühl- und Heizfunkti | 【Praktisch und stilvoll】Der mini Kühlschrank hat eine futuristische Ästhetik, vi |  | 321 x 263 x 194 | 2560 | 2
+B0CPLYKNG2 | FOHERE Mini Kühlschrank 5 Liter /6 Dosen, Kühlung und Erwärmung, 220V AC/12V DC  | 【Multifunktionaler Mini-Kühlschrank】Dieser kompakte Kühlschrank hat ein Fassungs |  | 305 x 285 x 205 | 2100 | 4
+B0D3D5JMWC | FOHERE 2 in 1 Mini Kühlschrank, 15L Kühlschrank für Zimmer mit Kühl- und Heizfun | FOHERE 2 in 1 Mini Kühlschrank, 15L Kühlschrank für Zimmer mit Kühl- und Heizfun |  | 465 x 355 x 312 | 4780 | 0
+B0D6YQF623 | NORTHCLAN Mini Kühlschrank 15L/ 21 Dosen für Schlafzimmer | 2 in 1 Kleiner Kühls | [15L GROSSES FASSUNGSVERMÖGEN & VERSATIL]- Suchen Sie einen kompakten Minikühlsc |  | 460 x 350 x 310 | 4850 | 2
+B0D8PTDRMT | FOHERE Mini Kühlschrank 5 Liter /6 Dosen, Kühlung und Erwärmung, 220V AC/12V DC  | 【Multifunktionaler Mini-Kühlschrank】Dieser kompakte Kühlschrank hat ein Fassungs |  | 302 x 287 x 204 | 2160 | 4
+B0D8PTKSZM | FOHERE Mini Kühlschrank 5 Liter/6 Dosen, Mini-Kühlschranke 220V AC/12V DC, Kühle | 【Multifunktionaler Mini-Kühlschrank】Dieser kompakte Kühlschrank hat ein Fassungs |  | 303 x 290 x 202 | 2120 | 4
+B0DN1F6TCG | Aikku Mini Kühlschrank 2 in 1 Mini Kühlschrank mit Kühlen und Wärmenfunktion 15L | 15 L IDEALE KAPAZITÄT: Der Mini-Kühlschrank von AIKKU kann problemlos 21 Getränk |  | 465 x 355 x 312 | 4850 | 0
+B0DZWTL2FV | Enventor Mini Kühlschrank, 6 Liter/8 Dosen, AC+12V DC-Stromversorgung, Tragbarer | ➤【6 Liter Minikühlschrank】Bietet Platz für 8 Dosen à 330 ml. Die Innenmaße betra |  | 360 x 318 x 197 | 2820 | 2
+B0DZWW69XJ | Enventor Mini-Kühlschrank 4L/6 Dosen, Kosmetik Kühlschrank mit Dimmbarem LED-Lic | ➤【4 Liter Minikühlschrank】Bietet Platz für 6 Dosen à 330 ml. Die Innenmaße betra |  | 312 x 284 x 207 | 2510 | 2
+B0DZWWZJSP | Enventor Mini Kühlschrank, 6 Liter/8 Dosen, AC+12V DC-Stromversorgung, Tragbarer | ➤【6 Liter Minikühlschrank】Bietet Platz für 8 Dosen à 330 ml. Die Innenmaße betra |  | 357 x 318 x 199 | 2860 | 2
+B0F2T16FFY | Puremy 24 Liter Kühlbox, 2 in1 elektrische Kühlbox 12V 230V Kühlen und Wärmen Mi | KALT UND WARM: Diese Kühlbox für Auto kann kühlen und warm halten. Sie können ih |  | 452 x 412 x 254 | 4420 | 0
+B0FKGGY4VT | BEICHEN Mini Kühlschrank, 4L / 6 Dosen Leise Minikühlschrank, 7 RGB Lichtmodi, 2 | 【Spiegeleffekt mit RGB-Lichtern】7 voreingestellte Lichteffekte (Rot, Blau, Grün, |  | 300 x 287 x 198 | 2170 | 2
+B0FQBW9JXX | Mini Kühlschrank, 22L/30 Dosen Kleiner Kühlschrank mit Kühl- und Heizfunktion, M | 【22L großes Fassungsvermögen】Mit einem Volumen von 22 Litern fasst dieser Minikü |  | -1 x -1 x -1 | -1 | 2
+B0C28VBP14 | Olvy Kosmetik Kühlschrank 4L LED Spiegel, Rosa
+B0CH5B8K2G | Olvy Kosmetik Kühlschrank 4L LED Spiegel, Schwarz
+B0CYH5HGN7 | Reemix Mini-Kühlschrank 4L/6 Dosen Kühler+Wärmer
+B0GWDRHQP3 | Duronic MFW4 BK Mini Kühlschrank 4L, 12V/230V Retro
+B0GXQRFXS2 | Citybee Mini Kühlschrank 4L Kühl-&Heizfunktion, Rosa
+
+===== SHEET: Сводка (6x2) =====
+Generated | 2026-06-11T08:13:38
+Products analysed | 24
+Query / context | Mini-Kühlschränke DE (категория 340897031), Buy Box €20-90, продажи ≥50шт/мес. А
+BUY | 4
+WATCH | 10
+SKIP | 10

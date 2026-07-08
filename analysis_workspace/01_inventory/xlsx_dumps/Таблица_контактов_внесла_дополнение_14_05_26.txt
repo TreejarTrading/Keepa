@@ -1,0 +1,43 @@
+
+===== SHEET: Лист1 (1000x18) =====
+Основной Продукт | Категория продукта | Фабрика | Менеджер  | Контакт | Каталог \ прайс | Действия  | комментарий |  |  |  |  |  |  | Target Price Amazon = cost price Dubai * 2 | Link to Amazon
+Офисные кресла | Эргономика | Enova | hannah
+ | 86 188 1410 9773 | нет | запросить quot на новинки | сделано
+Офисная мебель | Металлическая  | DEYUOF |  | Aida13Zurqa | https://drive.google.com/file/d/1jfFTJKKZc918s63krhkq7agTifbnoTxV/view?usp=drive | Показать Зияду
+Офисные кресла | Эргономика | UE | Bella   | wl1095766868 | https://drive.google.com/file/d/1MUJwaicgsabyYpUiNfNu35HuFomBn5tB/view?usp=drive | Показать продажам | Gaming - есть интересные позиции, запросить цены |  |  |  | эксклюзив на эту модель в Дубае |  |  | 990 | https://www.amazon.ae/AFTERWORK-Xyrion-Ergonomic-Gaming-Footrest/dp/B0DF5MZRCX/?
+Электро столы, рамы | дорогие | UE | Bella   | wl1095766868 | https://drive.google.com/file/d/1MUJwaicgsabyYpUiNfNu35HuFomBn5tB/view?usp=drive | Запросить цены | сделано |  |  |  |  |  |  | 500? | https://www.amazon.ae/PZDO-Computer-Ergonomic-Reclining-Deep-Grey/dp/B0F3CSFY2T/
+Офисные кресла | Эргономика | Bosun | Candy | 86 195 4020 5896 | https://drive.google.com/file/d/1zyw13sPOQx95086-rkfSZi3w3WUn9fuj/view?usp=drive | Показать продажам |  |  |  |  |  |  |  |  | https://www.amazon.ae/Anovara-Oversized-Ergonomic-Adjustable-Breathing/dp/B0F5B3
+Офисные кресла | Офис | XIFULAI | Sumin   |  sumin_xue | https://drive.google.com/file/d/1cvvJxjDmy7F7G-Q2AVQrueLg5enFUGIG/view?usp=drive | Показать продажам | кресло с подставкой отдельной |  |  |  |  |  | спрос будет ли? | 1600 | https://www.amazon.ae/Mahmayi-Modern-Recliner-Chair-Ottoman/dp/B0BXDK1MCK/ref=sr
+Офисные кресла | разные  | WEILESI FURNITURE | Ben   | zbx521000 | https://docs.google.com/spreadsheets/d/1WghPImmr1Zy8Ug8Q6NKE1QUqJ9zJp6wa/edit?us | цена в прайсе
+Электро столы, рамы | дорогие | Hollin Furniture (Workhere) | Paxton | Paxton-Hollin | https://drive.google.com/file/d/1TU2xtKc5qO8FsV8iZ_3tNGuZQxOIdI5L/view?usp=drive | показать е-ком
+Офисные кресла | эконом эргономика | Haworks | Alec | hanhuangjiaju | https://drive.google.com/file/d/1inGVp8SP1D-0vcfVwh_dEplmdbeEG2k6/view?usp=drive | Показать продажам |  | что по цене? | цена 22-25 $ | проанализировать на Amazon | Себестоимость Дубай - черн. - 107 aed,  |  |  | 500 | https://www.amazon.ae/HOLLUDLE-Backrest-Ergonomic-Computer-Headrest/dp/B0CDW7PGN
+Офисные кресла | домашний офис | Anji Zongda | Ivy | ivy-qiao | https://drive.google.com/file/d/1xEUPXLOOjAl4vgW4mFnQAOpm4y9Qiw-r/view?usp=drive | Показать продажам |  |  |  |  |  |  |  | 500-700
+Офисные кресла | домашний офис | Anji Haoxin | Jessica | jessica6574 | https://drive.google.com/file/d/1zKoRhaeplVKvHV3wZT-lo9pkHTRu-Axa/view?usp=drive | Показать продажам
+Офисные кресла | офис | Ruixing | Hailey | Nice2cuY626 | https://drive.google.com/file/d/1l9xMd2fyOkbyk085mF5L9Cs_G3QMZuwm/view?usp=drive | показать е-ком
+Офисные кресла | домашний офис | Anji Meiku | Ella | wxid_k5nk7fqx9q4n22 | https://drive.google.com/file/d/1eFAAVwHxuW5Ny1RVaM4q4gMsGnDAD3d7/view?usp=drive | показать е-ком
+Офисные кресла | эргономика | Tianchi | Mike | mikesinger | https://drive.google.com/file/d/1iZmOm0W6jjCVcYi4WloZOiIBybB1qghU/view?usp=drive | показать е-ком
+Офисные кресла | домашний офис | Wanze | Erika | wxid_7zdogel0ounh22 | https://drive.google.com/file/d/1kqIgewPf1Psm3FtHbL32oxg9e8JdnWGK/view?usp=drive | показать е-ком | очень много | пухшляши! |  |  |  |  |  | 559 | https://www.amazon.ae/DROGO-Ergonomic-Armrest-Computer-Adjustable/dp/B0GQHZGMSR/
+Офисные кресла | эргономика | Reasit | Miya | wxid_nqrclcsmgt0g22 | https://drive.google.com/file/d/1MCBl-iHLnN2Zs_QhtnA2ECHv-Ou3iErV/view?usp=drive | показать продажам |  |  |  |  |  |  |  | 650-700
+Офисные кресла | эргономика | AJHH | Sherry | wxid_f1e7q54mj81g12 | https://drive.google.com/file/d/1PIKHSrhTBrk0l2oNLMe1XOSTxo1AAt5a/view?usp=drive | показать продажам | много разного
+Офисные кресла | офис | Juexing | Angie |  | https://drive.google.com/file/d/136JcNqI_2VUagXQqdFuqlexXyCF-_xm9/view?usp=drive | показать продажам | Lounge + Bar |  |  |  |  |  |  |  | Классное красло (ссылка внизу)
+Электро столы, рамы | средний  | V-Mount | Karen |  | https://drive.google.com/file/d/1OhD-FPV6Y_7mrI_1QSYR3LqXFIy5Xj_8/view?usp=drive | показать е-ком | реклайнеры |  |  |  |  |  |  | 1000-1200 | https://www.amazon.ae/GAIA-HOME-Upholstered-Adjustable-Retractable/dp/B0GXPXCS4G
+Электро столы, рамы | средний  | Jiecang |  |  | https://drive.google.com/file/d/1FSzUsETP3uTDCyWSaEbiYSFnZdm0af2y/view?usp=drive | показать продажам | много разных | а где прям умные?
+Офисная мебель | средний  | Xinda Clover | Summer | Yukiii-Harry08020109 | https://drive.google.com/file/d/1D3bl0zgsDXXN57JzXrCaB5L1sgowC6zG/view?usp=drive | Показать Зияду
+Офисные кресла | эконом | Furnee | Edith | samidu777 | https://drive.google.com/file/d/1lPCvDvTtWZrI-1xWY9DRL3GvrzzerRDY/view?usp=drive | Показать Зияду | серое 615 20,4$
+Офисная мебель | эконом | Jin Mai Da |  |  | https://drive.google.com/file/d/1TaNTgZ8y-WIiMQPC4HBQ9pNOp1L_DlGD/view?usp=drive | Показать Зияду | foldable tables |  |  |  |  | вот такой есть в темном цвете?
+Офисная мебель | Металлическая  | Green | Andre | Gin-Zikzzxx | https://drive.google.com/file/d/1RlOh4GAI1ZveAdaK2B-c8urNa8nWuVaK/view?usp=drive | Показать Зияду
+... (975 more rows)
+
+===== SHEET: Цены кресла (12x8) =====
+Фабрика | Фото | fob $ | cost AED | Комментарий |  |  | Фото\видео
+UE |  | 99 | 479.5956 | готова цена  |  |  | https://drive.google.com/file/d/1-w3Gsi6CVcJlMXZpX4a0AJJza46v7yrB/view?usp=drive
+Haworks |  | 22.5 | 108.999 | 239.7978 | MOQ? есть видео? Больше фото? | заказываем | https://drive.google.com/drive/folders/1x1uuV1eTGHQlX566M1L0YrwLy1dP2sHX?usp=sha
+ |  | 25.5 | 123.5322 | 271.77084
+Anji Zongda |  | 42.5 | 205.887 | 452.9514 | MOQ? есть видео? Больше фото?Есть сомнения насчет качества конечно |  | https://drive.google.com/drive/folders/16Cde5yR_IeSsdM0HwSot6yEM1gbgDgMF?usp=sha
+Anji Haoxin |  | 53.5 | 259.1754 | 570.18588 | по цене проходим, MOQ? есть видео? Больше фото? |  | https://drive.google.com/drive/folders/1pLYX069Ls_XqIRCzKl-vndTgdAlbThqP?usp=sha
+Wanze |  | 42 | 203.4648 | 447.62256 | по цене проходим, MOQ? есть видео? Больше фото? |  | https://drive.google.com/drive/folders/1Hp4lRFSlyeF-SN1yvaC79HXUtr8EjJ3o?usp=sha
+Wanze |  | 66 | 319.7304 | 703.40688 | по цене проходим, MOQ? есть видео? Больше фото?
+V-Mount |  | 180 | 871.992 | 1918.3824 | MOQ? есть видео? Больше фото? |  | https://drive.google.com/drive/folders/1siUuOt3FnVMN4rZHnR5Scs8Zj-VyEyVt?usp=dri
+WCJ |  | 99.4 | 481.53336 | 1059.373392 | MOQ? есть видео? Больше фото? |  | https://drive.google.com/drive/folders/1tktDSysaeNhgbaRt9Hem6wscdXdDb1fp?usp=sha
+Zopo |  | 95 | 460.218 | 1012.4796 | я думаю лучше то, что ниже, поинтереснее выглядит |  | https://drive.google.com/drive/folders/1vOhI9iRcEh6L7REyaJF_bEsW2hrIWxiK?usp=dri
+Zopo |  | 99 | 479.5956 | 1055.11032 | MOQ? есть видео? Больше фото?

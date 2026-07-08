@@ -1,0 +1,56 @@
+
+===== SHEET: Анализ (181x16) =====
+Вердикт | Conf | ASIN | Бренд | Ключ | Цена$ | Sold/мес | Отзывы | ★ | Офферов | Drops90 | Вес,г | FBA$ | URL | Обоснование | Title
+BUY | medium | B0CXLK9PJ9 | Vtopmart | vanity organizer | 44.99 | 10000 | 3911 | 4.8 | 2 | 7 | 4290 | 10.11 | https://www.amazon.com/dp/B0CXLK9PJ9 | Доказанный спрос (≥2k/мес) при низком review-moat (<6k) и слабой конкуренции | Vtopmart Stackable Storage Drawers Set of 5, Clear Plastic Organizer Bins for Ba
+BUY | medium | B0FD34T1NB | A-LuGei | makeup organizer,vanity organizer | 14.99 | 8000 | 3980 | 4.4 | 1 | 14 | 760 | 6.48 | https://www.amazon.com/dp/B0FD34T1NB | Доказанный спрос (≥2k/мес) при низком review-moat (<6k) и слабой конкуренции | A-LuGei 【Military Grade】 Drawer Organizer, 【𝟱𝗦𝗶𝘇𝗲】 Makeup organizer, 【Holds 177 
+BUY | medium | B0CJQWNQ6P | Lifewit | acrylic makeup organizer | 11.99 | 3000 | 4165 | 4.7 | 1 | 22 | 610 | 5.52 | https://www.amazon.com/dp/B0CJQWNQ6P | Доказанный спрос (≥2k/мес) при низком review-moat (<6k) и слабой конкуренции | Lifewit Floating Shelves for Bathroom, Acrylic Display Shelf Wall Mounted for Ma
+BUY | medium | B0CDXMVLVK | Vtopmart | vanity organizer | 25.99 | 2000 | 3911 | 4.8 | 3 | 6 | 2159 | 7.96 | https://www.amazon.com/dp/B0CDXMVLVK | Доказанный спрос (≥2k/мес) при низком review-moat (<6k) и слабой конкуренции | Vtopmart Stackable Storage Drawers Set of 3,Clear Plastic Organizer Bins for Mak
+BUY | medium | B0D7Q1DWPF | ARSTPEOE | acrylic makeup organizer | 31.99 | 2000 | 907 | 4.7 | 5 | 21 | 3121 | 8.95 | https://www.amazon.com/dp/B0D7Q1DWPF | Доказанный спрос (≥2k/мес) при низком review-moat (<6k) и слабой конкуренции | Acrylic Makeup Organizer with 13 Drawers, Bathroom Counter Organizer, Acrylic Or
+WATCH | low | B0B1M6ML2J | WOWBOX | makeup organizer | 19.99 | 10000 | 14279 | 4.4 | 2 | 24 | 1778 | 7.55 | https://www.amazon.com/dp/B0B1M6ML2J | Есть спрос, но moat/конкуренция выше — наблюдать | WOWBOX 25 PCS Clear Plastic Drawer Organizer Set, 4 Sizes Desk Drawer Divider Or
+WATCH | low | B09ZKYQMVD | Vtopmart | acrylic makeup organizer | 21.99 | 10000 | 17081 | 4.6 | 5 | 5 | 2390 | 8.54 | https://www.amazon.com/dp/B09ZKYQMVD | Есть спрос, но moat/конкуренция выше — наблюдать | Vtopmart 4 Pack Small Clear Stackable Storage Drawers,Acrylic Bathroom Makeup Or
+WATCH | medium | B0BZCMRNB9 | Vtopmart | vanity organizer | 25.99 | 2000 | 6840 | 4.6 | 1 | 8 | 2020 | 8.04 | https://www.amazon.com/dp/B0BZCMRNB9 | Растущий спрос при умеренном moat — кандидат на вход | Vtopmart 2 Tier Bathroom Storage Organizer, 2 Pack Clear Under Sink Organizers V
+WATCH | low | B09J2QWHC2 | Vtopmart | acrylic makeup organizer | 18.05 | 2000 | 17081 | 4.6 | 2 | 5 | 1190 | 6.9 | https://www.amazon.com/dp/B09J2QWHC2 | Есть спрос, но moat/конкуренция выше — наблюдать | Vtopmart 2 Pack Small Clear Stackable Storage Drawers,Acrylic Bathroom Makeup Or
+WATCH | medium | B0D9HHCJW9 | Vtopmart | vanity organizer | 43.4 | 1000 | 3911 | 4.8 | 1 | 6 | 4090 | 9.55 | https://www.amazon.com/dp/B0D9HHCJW9 | Растущий спрос при умеренном moat — кандидат на вход | Vtopmart Clear Stackable Storage Drawers Set of 4, Plastic Organizer Bins for Ma
+WATCH | low | B0CGV3QXPH | Vtopmart | acrylic makeup organizer | 40.99 | 1000 | 17081 | 4.6 | 1 | 5 | 3647 | 9.22 | https://www.amazon.com/dp/B0CGV3QXPH | Есть спрос, но moat/конкуренция выше — наблюдать | Vtopmart 6 Pack Small Clear Stackable Storage Drawers,Acrylic Bathroom Makeup Or
+WATCH | low | B0DSBPWK7Z | EACHY | cosmetic organizer | 23.99 | 1000 | 12155 | 4.7 | 1 | 7 | 272 | 6.01 | https://www.amazon.com/dp/B0DSBPWK7Z | Есть спрос, но moat/конкуренция выше — наблюдать | EACHY Travel Makeup Bag,Large Capacity Cosmetic Bags for Women,Portable Pouch Op
+WATCH | low | B0CGV3LT2H | Vtopmart | acrylic makeup organizer | 52.99 | 800 | 17081 | 4.6 | 1 | 5 | 5098 | 10.4 | https://www.amazon.com/dp/B0CGV3LT2H | Есть спрос, но moat/конкуренция выше — наблюдать | Vtopmart 8 Pack Small Clear Stackable Storage Drawers, Acrylic Bathroom Makeup O
+WATCH | low | B0F2HGTZB7 | STARLATTA | acrylic makeup organizer | 29.99 | 800 | 1006 | 4.5 | 1 | 10 | 1393 | 7.71 | https://www.amazon.com/dp/B0F2HGTZB7 | Есть спрос, но moat/конкуренция выше — наблюдать | STARLATTA Acrylic Cabinet Organizer Shelf,4 Pcs Stackable Kitchen Counter Shelve
+WATCH | low | B0D9HGLFKY | Vtopmart | vanity organizer | 43.99 | 600 | 3911 | 4.8 | 1 | 6 | 4559 | 9.86 | https://www.amazon.com/dp/B0D9HGLFKY | Есть спрос, но moat/конкуренция выше — наблюдать | Vtopmart Clear Stackable Storage Drawers Set of 5, Plastic Organizer Bins for Ma
+WATCH | low | B0CNRP5WXG | caktraie | acrylic makeup organizer | 34.99 | 500 | 2907 | 4.7 | 2 | 21 | 2522 | 8.7 | https://www.amazon.com/dp/B0CNRP5WXG | Есть спрос, но moat/конкуренция выше — наблюдать | caktraie Acrylic Makeup Organizer, 4 Pack Drawer Organizer - Transparent Desktop
+WATCH | low | B0DSBL5N73 | EACHY | cosmetic organizer | 24.64 | 500 | 12155 | 4.7 | 1 | 8 | 349 | 7.07 | https://www.amazon.com/dp/B0DSBL5N73 | Есть спрос, но moat/конкуренция выше — наблюдать | EACHY Travel Makeup Bag,Large Capacity Cosmetic Bags for Women,Portable Pouch Op
+WATCH | low | B0DSBLDB41 | EACHY | cosmetic organizer | 20.39 | 500 | 12155 | 4.7 | 1 | 8 | 272 | 6.01 | https://www.amazon.com/dp/B0DSBLDB41 | Есть спрос, но moat/конкуренция выше — наблюдать | EACHY Travel Makeup Bag,Large Capacity Cosmetic Bags for Women,Portable Pouch Op
+WATCH | low | B0CHNZ3Q9B | WOWBOX | makeup organizer | 21.99 | 400 | 14279 | 4.4 | 2 | 22 | 1302 | 6.9 | https://www.amazon.com/dp/B0CHNZ3Q9B | Есть спрос, но moat/конкуренция выше — наблюдать | WOWBOX 25 PCS Plastic Drawer Organizer Set, Desk Drawer Divider Organizers and S
+WATCH | low | B0FD37LM3D | A-LuGei | makeup organizer,vanity organizer | 12.99 | 400 | 3980 | 4.4 | 1 | 14 | 821 | 6.48 | https://www.amazon.com/dp/B0FD37LM3D | Есть спрос, но moat/конкуренция выше — наблюдать | A-LuGei 【Military Grade Drawer Organizer, 【𝟱𝗦𝗶𝘇𝗲】 Makeup organizer, 【Holds 177 I
+WATCH | low | B0GCYD7LBQ | Vtopmart | vanity organizer | 42.99 | 400 | 6840 | 4.6 | 1 | 7 | 2050 | 7.98 | https://www.amazon.com/dp/B0GCYD7LBQ | Есть спрос, но moat/конкуренция выше — наблюдать | Vtopmart 2 Pack Higher Bathroom Organizer, 2 Tier White Under Sink Organizers Va
+WATCH | low | B0BDRVQJPM | WOWBOX | makeup organizer | 21.99 | 300 | 14279 | 4.4 | 2 | 23 | 1288 | 6.9 | https://www.amazon.com/dp/B0BDRVQJPM | Есть спрос, но moat/конкуренция выше — наблюдать | WOWBOX 25 PCS Plastic Drawer Organizer Set, 4 Sizes Desk Drawer Divider Organize
+WATCH | low | B0CGHKSMRM | SKYDUE | makeup organizer | 12.98 | 300 | 5734 | 4.8 | 1 | 11 | 290 | 5.52 | https://www.amazon.com/dp/B0CGHKSMRM | Есть спрос, но moat/конкуренция выше — наблюдать | SKYDUE Makeup Organizer, Rotating Pencil Pen Holder for Desk, Dual-Purpose Deskt
+WATCH | low | B0F388ZBX4 | WOWBOX | makeup organizer | 24.99 | 300 | 14279 | 4.4 | 1 | 23 | 1302 | 6.9 | https://www.amazon.com/dp/B0F388ZBX4 | Есть спрос, но moat/конкуренция выше — наблюдать | WOWBOX 25 PCS Plastic Drawer Organizer Set, 4 Sizes Desk Drawer Divider Organize
+... (156 more rows)
+
+===== SHEET: Сводка (28x3) =====
+Makeup/Cosmetic Organizer — Amazon US (расширенная выборка)
+Дата | 2026-06-26
+Ключи | makeup organizer, cosmetic organizer, vanity organizer, acrylic makeup organizer
+Уникальных ASIN | 180
+
+Вердикт | Кол-во
+BUY | 5
+WATCH | 21
+SKIP | 154
+
+Бренд | Listings | Sold/мес (proxy)
+Vtopmart | 27 | 54900
+BAGSMART | 41 | 27100
+WOWBOX | 15 | 12150
+AOZITA | 9 | 11850
+A-LuGei | 28 | 8950
+Akro-Mils | 15 | 7850
+Lifewit | 4 | 3400
+ARSTPEOE | 4 | 2700
+EACHY | 7 | 2200
+STARLATTA | 2 | 850
+Prsildan | 11 | 850
+caktraie | 2 | 700
+SKYDUE | 1 | 300
+LAMU | 5 | 150
+... (3 more rows)

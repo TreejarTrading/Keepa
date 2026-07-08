@@ -1,0 +1,30 @@
+
+===== SHEET: План закупок 1-2-3 (10x16) =====
+Закупка | # | Товар (референс US) | Ниша | Amazon URL | Прод/мес US | Цена US $ | Маржа п.рекл US % | Маржа п.рекл ОАЭ % (модель) | FOB $/шт | MOQ-1 (тест) | MOQ-2 (повтор) | Бюджет MOQ-1 FOB ~$ | Alibaba — аналог (ссылки) | Сертификация / риски | Дифференциация
+Закупка 1 — ОАЭ старт | 1.1 | Клейкий shower caddy без сверления, нерж., 3-6 полок (реф. Veken 6-Pack $33.99,  | Shower caddy | https://www.amazon.com/dp/B0GCNR7PN7 | 300–2000 | 24–34 | 27 | 28.4 | 2.5–6 | 500 | 1500–2000 | 2000–3000 | https://www.alibaba.com/product-detail/No-Drill-Corner-Shower-Caddy-Rustproof_16 | Без сертификации. Проверить клей (3M) и антикоррозию на образце | Антикоррозия, клей 3M, крючки, 6-pack
+Закупка 1 — ОАЭ старт | 1.2 | Органайзер под раковину 2 яруса выдвижной (реф. Vtopmart 2-Pack Higher $42.99, Н | Bathroom organizer | https://www.amazon.com/dp/B0GCYD7LBQ | 400 (альт.SKU до 10000) | 43–45 | 26.4 | 26.8 | 2–6 | 500 | 1000–1500 | 2000–3000 | https://www.alibaba.com/product-detail/Hole-Free-2-Tier-Under-Sink_1601443463974 | Без сертификации | Повышенный ярус, прозрачные выдвижные ящики
+Закупка 1 — ОАЭ старт | 1.3 | Сумки под кровать, прозр. окно, усил. ручки, 2-pack (реф. Lifewit $24.99) | Under-bed storage | https://www.amazon.com/dp/B09GVFPNKD | 5000 | 25 | 19.7 | 31.2 | 1.5–4 | 1000 | 2000–3000 | 2000–3000 | https://www.alibaba.com/showroom/under-bed-storage-bag.html | https://www.alibab | OEKO-TEX желателен (текстиль). Лёгкий = дешёвый фрахт | Окно, молния по периметру, усиленные ручки
+Закупка 2 — денежные ниши | 2.1 | Ручной молочный фрозер USB-C, подставка-зарядка, 3 насадки (реф. CIRCLE JOY $24. | Milk frother (ниша №1, Score 80.7) | https://www.amazon.com/dp/B0G3PDFXJS | 5000 | 25 | 25.5 | 33.6 | 2.5–6 | 500–1000 | 2000–3000 | 2000–4000 | https://www.alibaba.com/product-detail/Milk-Frother-Handheld-USB-C-Rechargeable_ | CE/CB + ESMA (ОАЭ), USB-электрика — самый простой вход в электронику | USB-C, подставка-зарядка, 2-3 венчика, тихий мотор
+Закупка 2 — денежные ниши | 2.2 | Набор ножей 14-15 шт с блоком и встроенной точилкой (реф. Astercook 15pc $59.99  | Knife set (Score 77.4, выручка $1.2M/мес) | https://www.amazon.com/dp/B0C1YBPJ43 | https://www.amazon.com/dp/B0FRMKXQ7J | 3000–10000 | 60–130 | 30–37 | 40.2 | 8–15 за набор | 300–500 наборов | 1000 наборов | 3000–6000 | https://www.alibaba.com/kitchen-knife-set-with-block-suppliers.html | https://ww | LFGB/FDA (контакт с едой); тяжёлый груз — морем; проверить импорт ножей в ОАЭ | Блок с точилкой, немецкая сталь, полный tang
+Закупка 2 — денежные ниши | 2.3 | Прозрачные штабелируемые контейнеры 12-pack с крышками (реф. Vtopmart $71.99, но | Pantry organization | https://www.amazon.com/dp/B0FPFNJCXK | 200 (медиана ниши 650) | 56–72 | 28.9 | 26.2 | 2.5–7 | 500 | 1000–1500 | 2500 | https://www.alibaba.com/showroom/clear-stackable-storage-bins-with-lids.html | h | FDA/LFGB (пищевой пластик, BPA-free) | Штабелируемые, набор+этикетки, высокий средний чек
+Закупка 3 — премиум/масштаб | 3.1 | Gooseneck-чайник, темп. контроль, матовый, 0.8-1л (реф. Fellow Stagg EKG Pro $17 | Gooseneck kettle (маржа 39-43%) | https://www.amazon.com/dp/B0BF7DXLBF | 100–600 | 180–230 | 39.3 | 42.9 | 9–18 | 200–300 | 500 | 3000–5000 | https://www.alibaba.com/product-detail/Wuming-electric-kettle-temperature-contro | ESMA + вилка G (ОАЭ), CE/GS (DE); +6-8 недель на сертификацию; в DE спрос слабый | Темп.контроль, мат. покрытие, 0.8-1.2л пуровер
+Закупка 3 — премиум/масштаб | 3.2 | Бамбуковые доски, набор 3 шт с сок-канавкой (реф. ROYAL CRAFT WOOD $45.99, НОВ-П | Cutting board | https://www.amazon.com/dp/B0D2P1HSCV | https://www.amazon.com/dp/B0GWNK6DX9 | 600–4000 | 46–50 | 28–30 | 32.9 | 3.5–9 | 300–500 наборов | 1000 | 2000–4000 | https://www.alibaba.com/product-detail/3-Pieces-Cutting-Board-Set-Kitchen_110000 | FDA/LFGB; дерево: влажность/плесень — QC обязателен | Сок-канавки, набор размеров, гравировка лого
+Закупка 3 — премиум/масштаб | 3.3 | (ТЕСТ) Mattress topper Twin/Twin XL, резинки по углам (реф. Niagara $54.99-59.99 | Mattress topper | https://www.amazon.com/dp/B0FVY587FC | 600–1000 | 55–60 | 30–31.5 | 31.6 | 12–35 | 200 (тест) | 500 | 3000–5000 | https://www.alibaba.com/trade/search?SearchText=mattress+topper+bamboo+elastic+c | OEKO-TEX; объёмный → дорогой FBA/фрахт; DE слабо; сверить размеры кроватей ОАЭ | Бамбук-район, охлаждение, резинки по углам
+
+===== SHEET: Правила MOQ и чек-лист (16x1) =====
+ПРАВИЛА MOQ ДЛЯ ОТДЕЛА ЗАКУПОК
+MOQ-1 = тестовая партия у нижней границы фабричного MOQ. Цель — валидация листин
+MOQ-2 = повторный заказ 2-3× MOQ-1 после подтверждения продаж. Сразу запросить п
+3-5 котировок на SKU; сравнивать FOB при вашем MOQ и при 2× MOQ.
+
+ЧЕК-ЛИСТ ПОСТАВЩИКА
+Verified/Gold Supplier ≥3-5 лет, Trade Assurance включён
+Образцы ДО заказа: качество, вес, упаковка, запах
+Сертификаты: FDA/LFGB (еда), CE/CB/ESMA + вилка G (электро для ОАЭ), OEKO-TEX (т
+Private label: доплата и MOQ на лого/упаковку
+Инкотермс FOB vs DDP; фрахт + пошлина: ОАЭ 5% duty + 5% VAT; DE НДС 19% + EPR/LU
+QC-инспекция до отгрузки; первый заказ — тестовая партия
+
+БЮДЖЕТ (FOB, ориентир): Закупка 1 ≈ $6-9k · Закупка 2 ≈ $8-12k · Закупка 3 ≈ $8-
+ОАЭ-экономика — модель (Keepa не покрывает amazon.ae). Спрос ОАЭ подтвердить в H
+ЧЕГО ИЗБЕГАТЬ: insulated tumbler (Amazon BB 100%), water filter pitcher (Brita 9

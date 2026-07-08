@@ -1,0 +1,76 @@
+
+===== SHEET: Анализ (51x23) =====
+ASIN | Title | Brand | Category | Rating | Reviews | Review/mo | Monthly sold | Price (New) | New avg | New min | New max | Price volat. | Buy Box | BB=Amazon | Offers | Sales rank | Rank drops/30d | Rank drops/90d | Verdict | Confidence | Rationale | Amazon URL
+B08HV324MP | Phomemo Label Maker Machine with Tapes - White/Clear/Gold Labels, D30 Portable H | Phomemo | Label Printers | 4.3 | 26854 | 518.7 | 1000 | 29.99 | 34.91 | 29.99 | 39.99 | 0.29 | 29.99 |  | 1 | 204 | 5 | 16 | BUY | medium | + healthy sales velocity (drops30=5, monthly≈1000); + moderate competition (1 of | https://www.amazon.com/dp/B08HV324MP
+B08XQDD1TH | Bonsaii Paper Shredder for Home Use, 3.4 Gal Wastebasket, 6 Sheet Crosscut Paper | bonsaii | Shredders | 4.4 | 63920 | 565.7 | 200 | 38.99 | 42.32 | 37.99 | 49.99 | 0.28 | 38.99 |  | 1 | 151 | 10 | 27 | BUY | medium | + healthy sales velocity (drops30=10, monthly≈200); + moderate competition (1 of | https://www.amazon.com/dp/B08XQDD1TH
+B0FPHSY6CN | BLIEVE Bible Highlighters No Bleed Through, Pastel Colors, Dual Tip, 8 Pack | BLIEVE | Highlighters | 4.7 | 2593 | 829.7 | 500 | 9.99 | 8.55 | 6.99 | 9.99 | 0.35 | 9.99 |  | 1 | 394 | 4 | 14 | BUY | medium | + healthy sales velocity (drops30=4, monthly≈500); + moderate competition (1 off | https://www.amazon.com/dp/B0FPHSY6CN
+B0G2X9NK58 | MROCO Ergonomic Mouse Pad with Gel Wrist Rest, 9.4 x 8.1 in, Blue Gradient | MROCO | Mouse Pads | 4.6 | 34038 | 190 | 500 | 9.99 | 9.99 | 9.99 | 9.99 | 0 | 9.99 |  | 1 | 119 | 6 | 12 | BUY | high | + stable price (volatility 0.0); + healthy sales velocity (drops30=6, monthly≈50 | https://www.amazon.com/dp/B0G2X9NK58
+B0G2XBM1JT | MROCO Ergonomic Mouse Pad with Gel Wrist Rest, 9.4 x 8.1 in, Green Gradient | MROCO | Mouse Pads | 4.6 | 34038 | 244 | 200 | 9.99 | 9.99 | 9.99 | 9.99 | 0 | 9.99 |  | 1 | 119 | 7 | 14 | BUY | medium | + stable price (volatility 0.0); + moderate competition (1 offers); + strong rat | https://www.amazon.com/dp/B0G2XBM1JT
+B0G4DRDFG1 | Super Sticky Magnetic Tape (20 Feet x 1/2 Inch / 6m x 1.25cm) - Strong Magnet St | X-bet MAGNET | Magnetic Tape | 4.1 | 9418 | 3133 | 300 | 8.98 | 10.92 | 8.98 | 12.99 | 0.37 | 8.98 |  | 1 | 450 | 7 | 23 | WATCH | medium | + healthy sales velocity (drops30=7, monthly≈300); + moderate competition (1 off | https://www.amazon.com/dp/B0G4DRDFG1
+B0G4DVY9NZ | Super Sticky Magnetic Tape (7 Feet x 1/2 Inch / 2m x 1.25cm) - Strong Magnet Str | X-bet MAGNET | Magnetic Tape | 4.1 | 9418 | 24.3 | 300 | 5.48 | 6.67 | 5.48 | 7.99 | 0.38 | 5.48 |  | 1 | 424 | 8 | 27 | WATCH | medium | + healthy sales velocity (drops30=8, monthly≈300); + moderate competition (1 off | https://www.amazon.com/dp/B0G4DVY9NZ
+B0GCF7VWSB | UPAFEXXI-Bible Tabs with Book Summaries(Gold Foil Embossed Lettering), Bible Tab | UPAFEXXI | Filing Products | 4.7 | 1546 | 84 | 400 | 7.99 | 11.13 | 7.99 | 13.99 | 0.54 | 7.99 |  | 1 | 406 | 8 | 23 | BUY | high | + healthy sales velocity (drops30=8, monthly≈400); + moderate competition (1 off | https://www.amazon.com/dp/B0GCF7VWSB
+B0GGY88H2F | OPNICE Dual Monitor Stand Riser with Drawer and 2 Pen Holders, Desk Organizer fo | OPNICE | Computer Workstations | 4.7 | 4930 | 1640.7 | 300 | 29.99 | 31.32 | 26.99 | 35.99 | 0.29 | 29.99 |  | 1 | 260 | 4 | 16 | BUY | medium | + healthy sales velocity (drops30=4, monthly≈300); + moderate competition (1 off | https://www.amazon.com/dp/B0GGY88H2F
+B0GH5JFYF1 | Planner 2026-2027, Academic Year Monthly and Weekly Calendar Planner, Jul 2026 - | Taja | Planners | 4.7 | 1602 | 348 | 300 | 9.99 | 9.56 | 8.99 | 9.99 | 0.1 | 9.99 |  | 1 | 128 | 6 | 18 | BUY | high | + stable price (volatility 0.105); + healthy sales velocity (drops30=6, monthly≈ | https://www.amazon.com/dp/B0GH5JFYF1
+B0GLF5C9YC | Bribobo 6 Pack Ballpoint Pen 2-in-1 Stylus Retractable Ballpoint Pen with Stylus | Bribobo | Ballpoint Pens | 4.6 | 8001 | 244 | 700 | 6.99 | 7.49 | 6.99 | 7.99 | 0.13 | 6.99 |  | 1 | 342 | 2 | 7 | BUY | high | + stable price (volatility 0.134); + healthy sales velocity (drops30=2, monthly≈ | https://www.amazon.com/dp/B0GLF5C9YC
+B0GLPSF7CJ | HORTIX Sea Turtle Pop-Up Sticky Note Dispenser with 100 Sheets 3 x 3 Inch Notes, | HORTIX | Self-Stick Note Pad Holders | 4.8 | 82 | 26 | 200 | 26.88 | 25.88 | 24.88 | 26.88 | 0.08 | 26.88 |  | 1 | 219 | 10 | 34 | BUY | medium | + stable price (volatility 0.077); + healthy sales velocity (drops30=10, monthly | https://www.amazon.com/dp/B0GLPSF7CJ
+B0GLT8QTT8 | Official Spiral Bible™ Bible in a Year Essentials Bundle Hardcover | 365-Day Gui | SPIRAL BIBLE | Reading & Writing Materials | 4.6 | 928 | 65.3 | 400 | 59.99 | 59.99 | 59.99 | 59.99 | 0 | 59.99 |  | 1 | 397 | 8 | 24 | BUY | high | + stable price (volatility 0.0); + healthy sales velocity (drops30=8, monthly≈40 | https://www.amazon.com/dp/B0GLT8QTT8
+B0GLTX2PNR | HP 63XL/65XL Black High-Yield Ink Cartridge (Replaces and Works with Both 63XL & | HP | Inkjet Ink Cartridges | 4.7 | 235542 | 160 | 20000 | 46.89 | 51.1 | 45.89 | 57.64 | 0.23 | 46.89 |  | 25 | 57 | 14 | 39 | BUY | high | + stable price (volatility 0.23); + healthy sales velocity (drops30=14, monthly≈ | https://www.amazon.com/dp/B0GLTX2PNR
+B0GLVQP6J4 | HP 61XL Black High-Yield Ink | Works with DeskJet 1000, 1010, 1050, 1510, 2050,  | HP | Inkjet Ink Cartridges | 4.7 | 90450 | 46.3 | 9000 | 49.89 | 49.94 | 49.89 | 49.99 | 0 | 49.89 |  | 21 | 363 | 1 | 10 | BUY | medium | + stable price (volatility 0.002); + healthy sales velocity (drops30=1, monthly≈ | https://www.amazon.com/dp/B0GLVQP6J4
+B0GLWT7PR4 | HP 63/65 Tri-Color Ink Cartridge (Replaces and Works with Both 63 & 65) | Works  | HP | Inkjet Ink Cartridges | 4.7 | 89887 | 75.3 | 10000 | 26.89 | 28.99 | 26.89 | 33.1 | 0.21 | 26.89 |  | 22 | 243 | 7 | 17 | BUY | medium | + stable price (volatility 0.214); + healthy sales velocity (drops30=7, monthly≈ | https://www.amazon.com/dp/B0GLWT7PR4
+B0GMQ4T66W | TICONN 1Pk Stretch Wrap Stretch Film Roll, 1000ft Industrial Strength 15 inch Wi | TICONN | Stretch Film | 4.6 | 4387 | 60 | 200 | 21.95 | 21.95 | 21.95 | 21.95 | 0 | 21.95 |  | 1 | 193 | 9 | 15 | BUY | high | + stable price (volatility 0.0); + healthy sales velocity (drops30=9, monthly≈20 | https://www.amazon.com/dp/B0GMQ4T66W
+B0GN4RH5VG | Five Star 2-Pocket Folder, Plastic Folder with Stay-Put Tabs and Prong Fasteners | Five Star | Colored | 4.8 | 9584 | 29.7 | 500 | 4.99 | 7.59 | 4.99 | 9.99 | 0.66 | 4.99 |  | 1 | 99 | 11 | 47 | BUY | high | + healthy sales velocity (drops30=11, monthly≈500); + moderate competition (1 of | https://www.amazon.com/dp/B0GN4RH5VG
+B0GN58D2MT | Five Star 2-Pocket Folder, Plastic Folder with Stay-Put Tabs and Prong Fasteners | Five Star | Colored | 4.8 | 9584 | 29.7 | 300 | 4.99 | 8.53 | 4.99 | 10 | 0.59 | 4.99 |  | 2 | 99 | 12 | 46 | BUY | high | + healthy sales velocity (drops30=12, monthly≈300); + moderate competition (2 of | https://www.amazon.com/dp/B0GN58D2MT
+B0GN5DPQ6B | Five Star 2-Pocket Folder, Plastic Folder with Stay-Put Tabs and Prong Fasteners | Five Star | Colored | 4.8 | 9584 | 29.3 | 300 | 4.99 | 9.51 | 4.99 | 11.25 | 0.66 | 4.99 |  | 2 | 99 | 11 | 42 | BUY | high | + healthy sales velocity (drops30=11, monthly≈300); + moderate competition (2 of | https://www.amazon.com/dp/B0GN5DPQ6B
+B0GN5R85MQ | Five Star 2-Pocket Folder, Plastic Folder with Stay-Put Tabs, Fits 3-Ring Binder | Five Star | Colored | 4.8 | 2428 | 38 | 600 | 2.39 | 5.06 | 2.39 | 7.8 | 1.07 | 2.39 |  | 1 | 336 | 6 | 45 | BUY | high | + healthy sales velocity (drops30=6, monthly≈600); + moderate competition (1 off | https://www.amazon.com/dp/B0GN5R85MQ
+B0GP84G9V7 | Paper Mate Profile Retractable Ballpoint Pens, Bold Point (1.4mm), 12 Assorted C | Paper Mate | Ballpoint Pens | 4.7 | 25419 | 8390.3 | 300 | 24.99 | 24.99 | 24.99 | 24.99 | 0 | 24.99 |  | 2 | 67 | 10 | 25 | BUY | high | + stable price (volatility 0.0); + healthy sales velocity (drops30=10, monthly≈3 | https://www.amazon.com/dp/B0GP84G9V7
+B0GP88MWDL | Sharpie Permanent Markers, Toy Story 5 Packaging, Assorted, Fine Point, 24 Count | Sharpie | Permanent Markers | 4.8 | 33 | 10.7 | 800 | 17.48 | 21.15 | 15.81 | 26.99 | 0.53 | 17.48 |  | 2 | 246 | 7 | 15 | WATCH | medium | + healthy sales velocity (drops30=7, monthly≈800); + moderate competition (2 off | https://www.amazon.com/dp/B0GP88MWDL
+B0GP9NBQG5 | Sharpie® Permanent Markers, Fine and Ultra-Fine Points, Assorted, 10 Count, USA  | Sharpie | Permanent Markers | 4.8 | 32978 | 68.3 | 500 | 8.91 | 8.91 | 8.91 | 8.91 | 0 | 8.91 |  | 1 | 34 | 8 | 9 | BUY | high | + stable price (volatility 0.0); + healthy sales velocity (drops30=8, monthly≈50 | https://www.amazon.com/dp/B0GP9NBQG5
+... (26 more rows)
+
+===== SHEET: Характеристики (51x7) =====
+ASIN | Title | Features | Description | Dimensions | Weight (g) | Variations
+B08HV324MP | Phomemo Label Maker Machine with Tapes - White/Clear/Gold Labels, D30 Portable H | Item Include: D30 Label Laker with 3 Tapes - 1 White Tape + 1 Gold Tape and 1 Cl |  | 156 x 88 x 57 | 310 | 7
+B08XQDD1TH | Bonsaii Paper Shredder for Home Use, 3.4 Gal Wastebasket, 6 Sheet Crosscut Paper | 【Cross Cut & Credit Card Paper Shredder】The cross cut shredder shreds paper into |  | 326 x 306 x 182 | 3250 | 5
+B0FPHSY6CN | BLIEVE Bible Highlighters No Bleed Through, Pastel Colors, Dual Tip, 8 Pack | No Bleed Through Bible Highlighters: Unlike ordinary highlighters, these are spe |  | 179 x 167 x 14 | 141 | 7
+B0G2X9NK58 | MROCO Ergonomic Mouse Pad with Gel Wrist Rest, 9.4 x 8.1 in, Blue Gradient | Comfortable Gel Cushioning with Stylish Patterns: The ergonomic wrist rest conta |  | 247 x 208 x 32 | 259 | 24
+B0G2XBM1JT | MROCO Ergonomic Mouse Pad with Gel Wrist Rest, 9.4 x 8.1 in, Green Gradient | Comfortable Gel Cushioning with Stylish Patterns: The ergonomic wrist rest conta |  | 248 x 206 x 32 | 272 | 24
+B0G4DRDFG1 | Super Sticky Magnetic Tape (20 Feet x 1/2 Inch / 6m x 1.25cm) - Strong Magnet St | STRONG ADHESIVE FOR LIGHTWEIGHT USE: Features a durable adhesive backing designe | Super Sticky Magnetic Tape (20 Feet x 1/2 Inch / 6m x 1.25cm) - Strong Magnet St | 138 x 133 x 12 | 422 | 18
+B0G4DVY9NZ | Super Sticky Magnetic Tape (7 Feet x 1/2 Inch / 2m x 1.25cm) - Strong Magnet Str | STRONG ADHESIVE FOR LIGHTWEIGHT USE: Features a durable adhesive backing designe | Super Sticky Magnetic Tape (7 Feet x 1/2 Inch / 2m x 1.25cm) - Strong Magnet Str | 100 x 96 x 12 | 150 | 18
+B0GCF7VWSB | UPAFEXXI-Bible Tabs with Book Summaries(Gold Foil Embossed Lettering), Bible Tab | Unique: Bible tabs with summary descriptions and Gold Foil Embossed Lettering.Th |  | 234 x 180 x 17 | 118 | 19
+B0GGY88H2F | OPNICE Dual Monitor Stand Riser with Drawer and 2 Pen Holders, Desk Organizer fo | 【Ergonomic Design】：OPNICE newly releases the monitor stand for desk organizer! T |  | 386 x 241 x 142 | 3048 | 14
+B0GH5JFYF1 | Planner 2026-2027, Academic Year Monthly and Weekly Calendar Planner, Jul 2026 - | Stay Organized Effortlessly：The Taja Academic Planner 2026–2027 helps bring stru |  | 216 x 162 x 17 | 331 | 56
+B0GLF5C9YC | Bribobo 6 Pack Ballpoint Pen 2-in-1 Stylus Retractable Ballpoint Pen with Stylus | Quality Material: Penholder is made of high quality metal material, comfortable  | Specifications:
+
+Material: Plastic
+
+Color:Rose Gold
+
+Refills Tip Size: 1.0 mm (m | 140 x 96 x 14 | 109 | 8
+B0GLPSF7CJ | HORTIX Sea Turtle Pop-Up Sticky Note Dispenser with 100 Sheets 3 x 3 Inch Notes, | Cute Sea Turtle Desk Decor: Bring a calming coastal touch to your workspace with |  | 176 x 115 x 114 | 440 | 13
+B0GLT8QTT8 | Official Spiral Bible™ Bible in a Year Essentials Bundle Hardcover | 365-Day Gui | ALL-IN-ONE BIBLE IN A YEAR ESSENTIALS BUNDLE: Stay consistent and inspired with  |  | 279 x 216 x 51 | 771 | 4
+B0GLTX2PNR | HP 63XL/65XL Black High-Yield Ink Cartridge (Replaces and Works with Both 63XL & | Now Combined: Replaces HP 63 & 65 cartridges while delivering the same trusted p | Ensure your printing is right the first time and every time with this Original 6 | 112 x 102 x 37 | 50 | 6
+B0GLVQP6J4 | HP 61XL Black High-Yield Ink | Works with DeskJet 1000, 1010, 1050, 1510, 2050,  | HP Ink Cartridges are engineered to work with HP printers to provide consistent  | Ensure your printing is right the first time and every time with this Original 6 | 112 x 102 x 37 | 91 | 4
+B0GLWT7PR4 | HP 63/65 Tri-Color Ink Cartridge (Replaces and Works with Both 63 & 65) | Works  | Now Combined: Replaces HP 63 & 65 cartridges while delivering the same trusted p | Ensure your printing is right the first time and every time with this Original H | 111 x 103 x 37 | 41 | 3
+B0GMQ4T66W | TICONN 1Pk Stretch Wrap Stretch Film Roll, 1000ft Industrial Strength 15 inch Wi | [PREMIUM QUALITY] Our stretch film inherited the superior quality of other TICON |  | 408 x 152 x 100 | 2091 | 18
+B0GN4RH5VG | Five Star 2-Pocket Folder, Plastic Folder with Stay-Put Tabs and Prong Fasteners | LASTS ALL YEAR. GUARANTEED!
+Pockets and stay-put tabs hold 8-1/2" x 11" papers.  | LASTS ALL YEAR. GUARANTEED! The Five Star Stay-Put Plastic Pocket and Prong Fold | 291 x 235 x 13 | 86 | 17
+B0GN58D2MT | Five Star 2-Pocket Folder, Plastic Folder with Stay-Put Tabs and Prong Fasteners | LASTS ALL YEAR. GUARANTEED!
+Pockets and stay-put tabs hold 8-1/2" x 11" papers.  | LASTS ALL YEAR. GUARANTEED! The Five Star Stay-Put Plastic Pocket and Prong Fold | 293 x 235 x 15 | 86 | 17
+B0GN5DPQ6B | Five Star 2-Pocket Folder, Plastic Folder with Stay-Put Tabs and Prong Fasteners | LASTS ALL YEAR. GUARANTEED!
+Pockets and stay-put tabs hold 8-1/2" x 11" papers.  | LASTS ALL YEAR. GUARANTEED! The Five Star Stay-Put Plastic Pocket and Prong Fold | 293 x 235 x 19 | 86 | 17
+B0GN5R85MQ | Five Star 2-Pocket Folder, Plastic Folder with Stay-Put Tabs, Fits 3-Ring Binder | LASTS ALL YEAR. GUARANTEED!
+Pockets and stay-put tabs keep 8-1/2" x 11" papers i | LASTS ALL YEAR. GUARANTEED! The Five Star Stay-Put Plastic Folder helps keep you | 298 x 241 x 13 | 68 | 11
+B0GP84G9V7 | Paper Mate Profile Retractable Ballpoint Pens, Bold Point (1.4mm), 12 Assorted C | Ballpoint pens with medium point produce smooth, crisp lines
+Soft grip for comfo | Make smooth, crisp lines with Paper Mate Profile ballpoint pens. These retractab | 153 x 83 x 72 | 331 | 5
+B0GP88MWDL | Sharpie Permanent Markers, Toy Story 5 Packaging, Assorted, Fine Point, 24 Count | Sharpie permanent markers with ink that marks on paper, plastic, metal, and most | The Toy Story characters you love meet the marker that never fades in this speci | 228 x 225 x 24 | 260 | 8
+B0GP9NBQG5 | Sharpie® Permanent Markers, Fine and Ultra-Fine Points, Assorted, 10 Count, USA  | Proudly permanent ink marks on paper, plastic, metal, and most other surfaces
+In | Bold to the max and permanent to the core, Sharpie Permanent Markers inspire you | 192 x 170 x 17 | 109 | 2
+... (26 more rows)
+
+===== SHEET: Сводка (6x2) =====
+Generated | 2026-07-06T10:47:08
+Products analysed | 50
+Query / context | AUTO 2026-07-06 10:47 | market=US | filters={"category_id": 1064954, "min_rating
+BUY | 45
+WATCH | 5
+SKIP | 0

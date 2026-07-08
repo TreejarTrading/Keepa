@@ -1,0 +1,602 @@
+[
+ {
+  "file": "01a387f3-top5_tv_monitor_buero_computer_US_DE_20260610_141659.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/01a387f3-top5_tv_monitor_buero_computer_US_DE_20260610_141659.xlsx",
+  "size": 52010,
+  "md5": "e657d4a2",
+  "duplicate_of": null,
+  "sheets": {
+   "Анализ": "52x23",
+   "Характеристики": "51x7",
+   "Сводка": "6x2"
+  },
+  "dump": "xlsx_dumps/top5_tv_monitor_buero_computer_US_DE_20260610_141659.txt"
+ },
+ {
+  "file": "075db93b-auto_US_new_home_kitchen_US_20260706_100105.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/075db93b-auto_US_new_home_kitchen_US_20260706_100105.xlsx",
+  "size": 26229,
+  "md5": "d076227b",
+  "duplicate_of": null,
+  "sheets": {
+   "Анализ": "51x23",
+   "Характеристики": "51x7",
+   "Сводка": "6x2"
+  },
+  "dump": "xlsx_dumps/auto_US_new_home_kitchen_US_20260706_100105.txt"
+ },
+ {
+  "file": "0a8b2d2e-Home_Kitchen_US_Sourcing.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/0a8b2d2e-Home_Kitchen_US_Sourcing.xlsx",
+  "size": 86495,
+  "md5": "1eb9b281",
+  "duplicate_of": null,
+  "sheets": {
+   "Обзор": "34x2",
+   "Скоринг ниш": "27x18",
+   "A-лист (закупать)": "48x22",
+   "Новинки и тренды": "83x14",
+   "США — все товары": "243x21",
+   "Германия — спрос": "15x8",
+   "ОАЭ — модель": "16x11",
+   "Юнит-экономика": "27x10",
+   "Alibaba — закупка": "37x8",
+   "Методика": "14x2"
+  },
+  "dump": "xlsx_dumps/Home_Kitchen_US_Sourcing.txt"
+ },
+ {
+  "file": "0e0844e2-China_Sourcing_Report.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/0e0844e2-China_Sourcing_Report.docx",
+  "size": 271593,
+  "md5": "961a6d13",
+  "duplicate_of": null,
+  "dump": "docx_dumps/China_Sourcing_Report.txt (110 lines)"
+ },
+ {
+  "file": "11b7a4dc-Amazon_UAE_China_Sourcing.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/11b7a4dc-Amazon_UAE_China_Sourcing.xlsx",
+  "size": 12502,
+  "md5": "34564f63",
+  "duplicate_of": null,
+  "sheets": {
+   "Шортлист сорсинга": "11x13",
+   "Юнит-экономика": "11x12",
+   "FOB и поставщики": "11x5",
+   "Допущения": "13x2"
+  },
+  "dump": "xlsx_dumps/Amazon_UAE_China_Sourcing.txt"
+ },
+ {
+  "file": "1600a7cf-DE_PrivateLabel_Top10_2026.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/1600a7cf-DE_PrivateLabel_Top10_2026.docx",
+  "size": 46768,
+  "md5": "c561689b",
+  "duplicate_of": null,
+  "dump": "docx_dumps/DE_PrivateLabel_Top10_2026.txt (123 lines)"
+ },
+ {
+  "file": "167aa688-AE_AMAZON_blackBox_Monitor_Arm_Monitor_Stand.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/167aa688-AE_AMAZON_blackBox_Monitor_Arm_Monitor_Stand.xlsx",
+  "size": 1096092,
+  "md5": "e5ae6cd6",
+  "duplicate_of": null,
+  "sheets": {
+   "Table": "?x?"
+  },
+  "dump": "xlsx_dumps/AE_AMAZON_blackBox_Monitor_Arm_Monitor_Stand.txt"
+ },
+ {
+  "file": "1f1b3bff-Home_Kitchen_Procurement_Conclusions_202607.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/1f1b3bff-Home_Kitchen_Procurement_Conclusions_202607.docx",
+  "size": 44084,
+  "md5": "33c11ff2",
+  "duplicate_of": null,
+  "dump": "docx_dumps/Home_Kitchen_Procurement_Conclusions_202607.txt (53 lines)"
+ },
+ {
+  "file": "2096a04f-DE_AMAZON_blackBoxProducts_1_20260624.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/2096a04f-DE_AMAZON_blackBoxProducts_1_20260624.xlsx",
+  "size": 1149708,
+  "md5": "c400a168",
+  "duplicate_of": null,
+  "sheets": {
+   "Table": "?x?"
+  },
+  "dump": "xlsx_dumps/DE_AMAZON_blackBoxProducts_1_20260624.txt"
+ },
+ {
+  "file": "28a7eb83-auto_UK_new_office_GB_20260706_094606.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/28a7eb83-auto_UK_new_office_GB_20260706_094606.xlsx",
+  "size": 43344,
+  "md5": "21b52521",
+  "duplicate_of": null,
+  "sheets": {
+   "Анализ": "51x23",
+   "Характеристики": "51x7",
+   "Сводка": "6x2"
+  },
+  "dump": "xlsx_dumps/auto_UK_new_office_GB_20260706_094606.txt"
+ },
+ {
+  "file": "3423285f-DE_Amazon_Analyse_Keepa_copy_1.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/3423285f-DE_Amazon_Analyse_Keepa_copy_1.xlsx",
+  "size": 218558,
+  "md5": "f0e7e825",
+  "duplicate_of": null,
+  "sheets": {
+   "Dashboard": "17x2",
+   "Nischen-Ranking": "56x12",
+   "Top-Chancen (A-Liste)": "31x36",
+   "Alle Produkte (Analyse)": "501x36",
+   "Eher meiden": "121x36",
+   "Methodik & Annahmen": "15x1"
+  },
+  "dump": "xlsx_dumps/DE_Amazon_Analyse_Keepa_copy_1.txt"
+ },
+ {
+  "file": "38cf80d6-auto_US_new_tools_home_improvement_US_20260706_101714.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/38cf80d6-auto_US_new_tools_home_improvement_US_20260706_101714.xlsx",
+  "size": 45744,
+  "md5": "2cfed12c",
+  "duplicate_of": null,
+  "sheets": {
+   "Анализ": "51x23",
+   "Характеристики": "51x7",
+   "Сводка": "6x2"
+  },
+  "dump": "xlsx_dumps/auto_US_new_tools_home_improvement_US_20260706_101714.txt"
+ },
+ {
+  "file": "3a7de667-China_Sourcing_Alibaba.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/3a7de667-China_Sourcing_Alibaba.xlsx",
+  "size": 15293,
+  "md5": "44dc45b0",
+  "duplicate_of": null,
+  "sheets": {
+   "Рейтинг сорсинга": "11x24",
+   "Калькулятор маржи": "13x15",
+   "Поставщики и поиск": "11x6",
+   "Чек-лист поставщика": "15x3"
+  },
+  "dump": "xlsx_dumps/China_Sourcing_Alibaba.txt"
+ },
+ {
+  "file": "4907283e-_____________________TV_Stand.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/4907283e-_____________________TV_Stand.docx",
+  "size": 41442,
+  "md5": "d77de18f",
+  "duplicate_of": null,
+  "dump": "docx_dumps/_____________________TV_Stand.txt (74 lines)"
+ },
+ {
+  "file": "4b963601-AE_AMAZON_all.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/4b963601-AE_AMAZON_all.xlsx",
+  "size": 1090513,
+  "md5": "085f1498",
+  "duplicate_of": null,
+  "sheets": {
+   "Table": "?x?"
+  },
+  "dump": "xlsx_dumps/AE_AMAZON_all.txt"
+ },
+ {
+  "file": "56407641-Amazon_UAE_Analysis.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/56407641-Amazon_UAE_Analysis.xlsx",
+  "size": 265010,
+  "md5": "697f9ef2",
+  "duplicate_of": null,
+  "sheets": {
+   "Выводы": "15x8",
+   "Сравнение рынков": "20x3",
+   "Скоринг ниш (Home)": "32x16",
+   "Лёгкие победы": "93x12",
+   "Топ продаж Home": "33x14",
+   "Ниша мониторов": "37x9",
+   "Комиссии и COGS": "16x7",
+   "Допущения": "14x3",
+   "Данные Home (500)": "503x28",
+   "Данные Monitor (500)": "503x28"
+  },
+  "dump": "xlsx_dumps/Amazon_UAE_Analysis.txt"
+ },
+ {
+  "file": "59034fe4-Amazon_UAE_Analysis.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/59034fe4-Amazon_UAE_Analysis.docx",
+  "size": 616133,
+  "md5": "e55d1c9d",
+  "duplicate_of": null,
+  "dump": "docx_dumps/Amazon_UAE_Analysis.txt (159 lines)"
+ },
+ {
+  "file": "5febc816-Monitor_Arm_Analysis_DE.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/5febc816-Monitor_Arm_Analysis_DE.xlsx",
+  "size": 13622,
+  "md5": "04821452",
+  "duplicate_of": null,
+  "sheets": {
+   "Сводка и вердикт": "19x8",
+   "Анализ конкурентов": "20x13",
+   "Рентабельность (база)": "18x8",
+   "Сценарии и безубыток": "12x8"
+  },
+  "dump": "xlsx_dumps/Monitor_Arm_Analysis_DE.txt"
+ },
+ {
+  "file": "6b5535df-______________________TV_Stand.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/6b5535df-______________________TV_Stand.xlsx",
+  "size": 14447,
+  "md5": "ae09d478",
+  "duplicate_of": null,
+  "sheets": {
+   "Параметры": "10x3",
+   "Юнит-экономика": "48x6",
+   "Объемы и прибыль в мес": "8x10",
+   "Пилотная партия": "11x10",
+   "Исходные данные": "14x12"
+  },
+  "dump": "xlsx_dumps/______________________TV_Stand.txt"
+ },
+ {
+  "file": "6c8b6b0a-Amazon_DE_Analyse_RU.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/6c8b6b0a-Amazon_DE_Analyse_RU.xlsx",
+  "size": 252893,
+  "md5": "b0082f1e",
+  "duplicate_of": null,
+  "sheets": {
+   "Сводка": "17x2",
+   "Рейтинг ниш": "56x13",
+   "Топ-возможности (A)": "31x38",
+   "Все товары": "501x38",
+   "Лучше избегать": "121x38",
+   "Методика": "16x1"
+  },
+  "dump": "xlsx_dumps/Amazon_DE_Analyse_RU.txt"
+ },
+ {
+  "file": "6f246e71-DE_Amazon_Analyse_Report.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/6f246e71-DE_Amazon_Analyse_Report.docx",
+  "size": 512325,
+  "md5": "1286e9b2",
+  "duplicate_of": null,
+  "dump": "docx_dumps/DE_Amazon_Analyse_Report.txt (148 lines)"
+ },
+ {
+  "file": "7a987eae-______Makeup_Organizer_US_UAE.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/7a987eae-______Makeup_Organizer_US_UAE.docx",
+  "size": 38880,
+  "md5": "2b2a06a4",
+  "duplicate_of": null,
+  "dump": "docx_dumps/______Makeup_Organizer_US_UAE.txt (28 lines)"
+ },
+ {
+  "file": "83728ad2-Monitor_Arm11.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/83728ad2-Monitor_Arm11.xlsx",
+  "size": 887906,
+  "md5": "fff44627",
+  "duplicate_of": null,
+  "sheets": {
+   "sheet1": "58x16384"
+  },
+  "dump": "xlsx_dumps/Monitor_Arm11.txt"
+ },
+ {
+  "file": "8d438954-auto_US_new_garden_US_20260706_090537.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/8d438954-auto_US_new_garden_US_20260706_090537.xlsx",
+  "size": 40073,
+  "md5": "2a5db019",
+  "duplicate_of": null,
+  "sheets": {
+   "Анализ": "51x23",
+   "Характеристики": "51x7",
+   "Сводка": "6x2"
+  },
+  "dump": "xlsx_dumps/auto_US_new_garden_US_20260706_090537.txt"
+ },
+ {
+  "file": "976d933f-mini_kuehlschrank_DE_otchet_20260611.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/976d933f-mini_kuehlschrank_DE_otchet_20260611.xlsx",
+  "size": 29512,
+  "md5": "52f2eaca",
+  "duplicate_of": null,
+  "sheets": {
+   "Конкуренты 4-6л": "11x8",
+   "Крупный формат 15-24л": "6x8",
+   "Юнит-экономика": "11x8",
+   "Рекомендации": "10x2",
+   "Анализ": "25x23",
+   "Характеристики": "25x7",
+   "Сводка": "6x2"
+  },
+  "dump": "xlsx_dumps/mini_kuehlschrank_DE_otchet_20260611.txt"
+ },
+ {
+  "file": "9b6d6fbd-demity_metallmoebel_DE_analiz_20260612.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/9b6d6fbd-demity_metallmoebel_DE_analiz_20260612.docx",
+  "size": 41293,
+  "md5": "f2f89f12",
+  "duplicate_of": null,
+  "dump": "docx_dumps/demity_metallmoebel_DE_analiz_20260612.txt (61 lines)"
+ },
+ {
+  "file": "9cc31cf9-mini_kuehlschrank_DE_otchet_20260611.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/9cc31cf9-mini_kuehlschrank_DE_otchet_20260611.docx",
+  "size": 40101,
+  "md5": "1d6f5360",
+  "duplicate_of": null,
+  "dump": "docx_dumps/mini_kuehlschrank_DE_otchet_20260611.txt (45 lines)"
+ },
+ {
+  "file": "a30cc134-Home_Kitchen_Procurement_Plan_202607.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/a30cc134-Home_Kitchen_Procurement_Plan_202607.xlsx",
+  "size": 10984,
+  "md5": "d752b568",
+  "duplicate_of": null,
+  "sheets": {
+   "План закупок 1-2-3": "10x16",
+   "Правила MOQ и чек-лист": "16x1"
+  },
+  "dump": "xlsx_dumps/Home_Kitchen_Procurement_Plan_202607.txt"
+ },
+ {
+  "file": "a44177c2-DE_Amazon_Analyse_Report_copy_1.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/a44177c2-DE_Amazon_Analyse_Report_copy_1.docx",
+  "size": 512325,
+  "md5": "1286e9b2",
+  "duplicate_of": "6f246e71-DE_Amazon_Analyse_Report.docx"
+ },
+ {
+  "file": "a93792da-Home_Kitchen_Brief_Komitet.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/a93792da-Home_Kitchen_Brief_Komitet.docx",
+  "size": 17930,
+  "md5": "447eebf7",
+  "duplicate_of": null,
+  "dump": "docx_dumps/Home_Kitchen_Brief_Komitet.txt (43 lines)"
+ },
+ {
+  "file": "a9979613-_______5_____US_UK_DE_AE_20260706.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/a9979613-_______5_____US_UK_DE_AE_20260706.xlsx",
+  "size": 111631,
+  "md5": "8ba99abd",
+  "duplicate_of": null,
+  "sheets": {
+   "Выводы": "27x1",
+   "ТОП-50 ходовые": "50x30",
+   "Новинки с 02.2026": "51x30",
+   "Все товары (241)": "240x30",
+   "Запуск ОАЭ (расчёт)": "50x21",
+   "Комиссии и тарифы": "26x6",
+   "Методика и оговорки": "17x1"
+  },
+  "dump": "xlsx_dumps/_______5_____US_UK_DE_AE_20260706.txt"
+ },
+ {
+  "file": "aa22e361-makeup_organizer_US_FULL_20260626.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/aa22e361-makeup_organizer_US_FULL_20260626.xlsx",
+  "size": 28039,
+  "md5": "099bb0a0",
+  "duplicate_of": null,
+  "sheets": {
+   "Анализ": "181x16",
+   "Сводка": "28x3"
+  },
+  "dump": "xlsx_dumps/makeup_organizer_US_FULL_20260626.txt"
+ },
+ {
+  "file": "b0fc3b70-auto_UK_new_home_garden_GB_20260706_111624.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/b0fc3b70-auto_UK_new_home_garden_GB_20260706_111624.xlsx",
+  "size": 40709,
+  "md5": "4b122d84",
+  "duplicate_of": null,
+  "sheets": {
+   "Анализ": "51x23",
+   "Характеристики": "51x7",
+   "Сводка": "6x2"
+  },
+  "dump": "xlsx_dumps/auto_UK_new_home_garden_GB_20260706_111624.txt"
+ },
+ {
+  "file": "ba644e03-Monitor_Arm.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/ba644e03-Monitor_Arm.xlsx",
+  "size": 886642,
+  "md5": "13f3c97c",
+  "duplicate_of": null,
+  "sheets": {
+   "sheet1": "58x16384"
+  },
+  "dump": "xlsx_dumps/Monitor_Arm.txt"
+ },
+ {
+  "file": "c7df4835-auto_US_new_home_kitchen_US_20260706_100105.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/c7df4835-auto_US_new_home_kitchen_US_20260706_100105.xlsx",
+  "size": 26229,
+  "md5": "d076227b",
+  "duplicate_of": "075db93b-auto_US_new_home_kitchen_US_20260706_100105.xlsx"
+ },
+ {
+  "file": "d3294ad7-______Makeup_Organizer_US.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/d3294ad7-______Makeup_Organizer_US.docx",
+  "size": 38155,
+  "md5": "6256325d",
+  "duplicate_of": null,
+  "dump": "docx_dumps/______Makeup_Organizer_US.txt (17 lines)"
+ },
+ {
+  "file": "d53ae7a2-Amazon_UAE_China_Sourcing.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/d53ae7a2-Amazon_UAE_China_Sourcing.docx",
+  "size": 285537,
+  "md5": "3d95c763",
+  "duplicate_of": null,
+  "dump": "docx_dumps/Amazon_UAE_China_Sourcing.txt (77 lines)"
+ },
+ {
+  "file": "d574cf3d-DE_Amazon_Analyse_Keepa.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/d574cf3d-DE_Amazon_Analyse_Keepa.xlsx",
+  "size": 218558,
+  "md5": "f0e7e825",
+  "duplicate_of": "3423285f-DE_Amazon_Analyse_Keepa_copy_1.xlsx"
+ },
+ {
+  "file": "d7c695ad-Home_Kitchen_US_Sourcing.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/d7c695ad-Home_Kitchen_US_Sourcing.docx",
+  "size": 41817,
+  "md5": "7c62b799",
+  "duplicate_of": null,
+  "dump": "docx_dumps/Home_Kitchen_US_Sourcing.txt (67 lines)"
+ },
+ {
+  "file": "d9f8c1e9-AE_AMAZON_Office_Furniture.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/d9f8c1e9-AE_AMAZON_Office_Furniture.xlsx",
+  "size": 1098137,
+  "md5": "6ed07ff1",
+  "duplicate_of": null,
+  "sheets": {
+   "Table": "?x?"
+  },
+  "dump": "xlsx_dumps/AE_AMAZON_Office_Furniture.txt"
+ },
+ {
+  "file": "db02d9bc-makeup_organizer_US_analysis_20260626_084721.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/db02d9bc-makeup_organizer_US_analysis_20260626_084721.xlsx",
+  "size": 9735,
+  "md5": "10d046b8",
+  "duplicate_of": null,
+  "sheets": {
+   "Анализ": "13x23",
+   "Характеристики": "13x7",
+   "Сводка": "6x2"
+  },
+  "dump": "xlsx_dumps/makeup_organizer_US_analysis_20260626_084721.txt"
+ },
+ {
+  "file": "e23cb690-Monitor_Arm________DE.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/e23cb690-Monitor_Arm________DE.docx",
+  "size": 40232,
+  "md5": "7c6b0489",
+  "duplicate_of": null,
+  "dump": "docx_dumps/Monitor_Arm________DE.txt (48 lines)"
+ },
+ {
+  "file": "e2e43935-DE_Amazon_Analyse_Report.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/e2e43935-DE_Amazon_Analyse_Report.docx",
+  "size": 512325,
+  "md5": "1286e9b2",
+  "duplicate_of": "6f246e71-DE_Amazon_Analyse_Report.docx"
+ },
+ {
+  "file": "eee02b6a-auto_UK_new_diy_tools_GB_20260706_114525.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/eee02b6a-auto_UK_new_diy_tools_GB_20260706_114525.xlsx",
+  "size": 44484,
+  "md5": "28dffac8",
+  "duplicate_of": null,
+  "sheets": {
+   "Анализ": "51x23",
+   "Характеристики": "51x7",
+   "Сводка": "6x2"
+  },
+  "dump": "xlsx_dumps/auto_UK_new_diy_tools_GB_20260706_114525.txt"
+ },
+ {
+  "file": "f2f1b865-auto_US_new_garden_US_20260706_090537.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/f2f1b865-auto_US_new_garden_US_20260706_090537.xlsx",
+  "size": 40073,
+  "md5": "2a5db019",
+  "duplicate_of": "8d438954-auto_US_new_garden_US_20260706_090537.xlsx"
+ },
+ {
+  "file": "f3cddb12-Amazon_DE_Analyse_Report_RU.docx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/f3cddb12-Amazon_DE_Analyse_Report_RU.docx",
+  "size": 506657,
+  "md5": "52d9d34e",
+  "duplicate_of": null,
+  "dump": "docx_dumps/Amazon_DE_Analyse_Report_RU.txt (148 lines)"
+ },
+ {
+  "file": "fb3a1cbd-auto_US_new_office_US_20260706_104708.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/fb3a1cbd-auto_US_new_office_US_20260706_104708.xlsx",
+  "size": 45036,
+  "md5": "be36814c",
+  "duplicate_of": null,
+  "sheets": {
+   "Анализ": "51x23",
+   "Характеристики": "51x7",
+   "Сводка": "6x2"
+  },
+  "dump": "xlsx_dumps/auto_US_new_office_US_20260706_104708.txt"
+ },
+ {
+  "file": "fc668ecc-auto_UK_new_office_GB_20260706_094606.xlsx",
+  "path": "/root/.claude/uploads/2e185e71-9c92-5dec-8bf2-5342d7fe62bb/fc668ecc-auto_UK_new_office_GB_20260706_094606.xlsx",
+  "size": 43344,
+  "md5": "21b52521",
+  "duplicate_of": "28a7eb83-auto_UK_new_office_GB_20260706_094606.xlsx"
+ },
+ {
+  "file": "Gold Apple Mini Fridges (3).xlsx",
+  "path": "/home/user/Keepa/Gold Apple Mini Fridges (3).xlsx",
+  "size": 1330703,
+  "md5": "e93365ea",
+  "duplicate_of": null,
+  "sheets": {
+   "Mini Fridges": "6x8"
+  },
+  "dump": "xlsx_dumps/Gold_Apple_Mini_Fridges_(3).txt"
+ },
+ {
+  "file": "Таблица_контактов_внесла_дополнение_14_05_26.xlsx",
+  "path": "/home/user/Keepa/Таблица_контактов_внесла_дополнение_14_05_26.xlsx",
+  "size": 4610653,
+  "md5": "b0d83489",
+  "duplicate_of": null,
+  "sheets": {
+   "Лист1": "1000x18",
+   "Цены кресла": "12x8"
+  },
+  "dump": "xlsx_dumps/Таблица_контактов_внесла_дополнение_14_05_26.txt"
+ },
+ {
+  "file": "PI for Demity_20260126174648.pdf",
+  "path": "/home/user/Keepa/PI for Demity_20260126174648.pdf",
+  "size": 458489,
+  "md5": "a32f18f0",
+  "duplicate_of": null
+ },
+ {
+  "file": "launch_shortlist_DE_UAE_20260706.xlsx",
+  "path": "/home/user/Keepa/Products/launch_shortlist_DE_UAE_20260706.xlsx",
+  "size": 22943,
+  "md5": "d5c05ad7",
+  "duplicate_of": null,
+  "sheets": {
+   "Shortlist DE+UAE": "63x22"
+  },
+  "dump": "xlsx_dumps/launch_shortlist_DE_UAE_20260706.txt"
+ },
+ {
+  "file": "sourcing_master_20260706.xlsx",
+  "path": "/home/user/Keepa/Products/sourcing_master_20260706.xlsx",
+  "size": 141370,
+  "md5": "3997aee0",
+  "duplicate_of": null,
+  "sheets": {
+   "Master": "301x35",
+   "TOP BUY": "87x35",
+   "Допущения": "12x2"
+  },
+  "dump": "xlsx_dumps/sourcing_master_20260706.txt"
+ },
+ {
+  "file": "launch_shortlist_DE_UAE_20260706.csv",
+  "path": "/home/user/Keepa/Products/launch_shortlist_DE_UAE_20260706.csv",
+  "size": 47441,
+  "md5": "26625e43",
+  "duplicate_of": null
+ },
+ {
+  "file": "sourcing_master_20260706.csv",
+  "path": "/home/user/Keepa/Products/sourcing_master_20260706.csv",
+  "size": 217586,
+  "md5": "2fb20eec",
+  "duplicate_of": null
+ }
+]

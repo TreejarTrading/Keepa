@@ -1,0 +1,38 @@
+
+===== SHEET: Анализ (13x23) =====
+ASIN | Title | Brand | Category | Rating | Reviews | Review/mo | Monthly sold | Price (New) | New avg | New min | New max | Price volat. | Buy Box | BB=Amazon | Offers | Sales rank | Rank drops/30d | Rank drops/90d | Verdict | Confidence | Rationale | Amazon URL
+B08KXKVT4K | Vtopmart 25 PCS Clear Plastic Drawer Organizers Set, 4-Size Versatile Bathroom a | Vtopmart |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | SKIP | high | Лидер ниши: 20k шт/мес, 48.5k отзывов, 4.7. Review-moat — лобовой вход против бе | https://www.amazon.com/dp/B08KXKVT4K
+B0B1M6ML2J | WOWBOX 25 PCS Clear Plastic Drawer Organizer Set, 4 Sizes Desk Drawer Divider Or | WOWBOX |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | SKIP | high | WOWBOX 25pc — №2 по объёму (10k/мес), 14.3k отзывов. Сильный укоренившийся конку | https://www.amazon.com/dp/B0B1M6ML2J
+B0FD34T1NB | A-LuGei Military Grade Drawer Organizer, 5 Size, Holds 177 Items, Makeup organiz | A-LuGei |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | BUY | medium | A-LuGei 2025: дифференциация (5 размеров, military-grade, 177 items), 8k/мес при | https://www.amazon.com/dp/B0FD34T1NB
+B0CGHKSMRM | SKYDUE Makeup Organizer, Rotating Pencil Pen Holder, Dual-Purpose Desktop Organi | SKYDUE |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | BUY | medium | Вращающийся desk-органайзер: 4.8★, 290г (FBA лишь $5.52), отдельный форм-фактор  | https://www.amazon.com/dp/B0CGHKSMRM
+B0DKFM3F7W | A-LuGei Military Grade Drawer Organizer, 5 Size, Holds 177 Items, Makeup organiz | A-LuGei |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | WATCH | medium | A-LuGei $16.99, высокий velocity отзывов (1017/мес) — активно набирает; кандидат | https://www.amazon.com/dp/B0DKFM3F7W
+B0CTFC1VJS | Vtopmart 25 PCS Office Desk Drawer Organizers Set, 4-Size Versatile Plastic Draw | Vtopmart |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | SKIP | medium | Vtopmart office-вариант того же сетапа; 1k/мес, тот же бренд-зонтик и 48.5k отзы | https://www.amazon.com/dp/B0CTFC1VJS
+B0F38725M6 | WOWBOX 25 PCS Plastic Drawer Organizer Set, 4 Sizes, Clear Dark Blue | WOWBOX |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | WATCH | low | WOWBOX цветная вариация (dark blue), 200/мес — дробление SKU цветом внутри бренд | https://www.amazon.com/dp/B0F38725M6
+B0BZV57635 | A-LuGei Military Grade Drawer Organizer, 5 Size, Holds 177 Items, Bright Pink | A-LuGei |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | WATCH | low | A-LuGei цветной SKU (pink), 1120 отзывов — точка роста бренда через цвет. | https://www.amazon.com/dp/B0BZV57635
+B003P2UOCO | Akro-Mils 44-Drawer Plastic Drawer Storage Cabinet, Bead/Hardware/Craft Organize | Akro-Mils |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | SKIP | high | Другая под-ниша (hardware/craft-кабинет), 3.5кг, FBA $14+, 25 офферов — ценовая  | https://www.amazon.com/dp/B003P2UOCO
+B003TV3NL0 | Akro-Mils 24-Drawer Plastic Drawer Storage Cabinet, Bead/Hardware/Craft Organize | Akro-Mils |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | SKIP | medium | Akro-Mils, тяжёлый (3.2кг), 33 оффера — реселл-листинг, экономика убита логистик | https://www.amazon.com/dp/B003TV3NL0
+B000LDH3JC | Akro-Mils 64-Drawer Plastic Drawer Storage Cabinet, Bead/Hardware/Craft Organize | Akro-Mils |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | SKIP | medium | Премиум-вес 3.6кг, FBA $16.7 — логистика съедает маржу. | https://www.amazon.com/dp/B000LDH3JC
+B0FD37LM3D | A-LuGei Military Grade Drawer Organizer, 5 Size, Holds 177 Items, Clear Black | A-LuGei |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | WATCH | low | A-LuGei младший цветной SKU (black), 400/мес — поддерживает основной листинг вар | https://www.amazon.com/dp/B0FD37LM3D
+
+===== SHEET: Характеристики (13x7) =====
+ASIN | Title | Features | Description | Dimensions | Weight (g) | Variations
+B08KXKVT4K | Vtopmart 25 PCS Clear Plastic Drawer Organizers Set, 4-Size Versatile Bathroom a |  |  |  | 1700
+B0B1M6ML2J | WOWBOX 25 PCS Clear Plastic Drawer Organizer Set, 4 Sizes Desk Drawer Divider Or |  |  |  | 1778
+B0FD34T1NB | A-LuGei Military Grade Drawer Organizer, 5 Size, Holds 177 Items, Makeup organiz |  |  |  | 760
+B0CGHKSMRM | SKYDUE Makeup Organizer, Rotating Pencil Pen Holder, Dual-Purpose Desktop Organi |  |  |  | 290
+B0DKFM3F7W | A-LuGei Military Grade Drawer Organizer, 5 Size, Holds 177 Items, Makeup organiz |  |  |  | 1479
+B0CTFC1VJS | Vtopmart 25 PCS Office Desk Drawer Organizers Set, 4-Size Versatile Plastic Draw |  |  |  | 1180
+B0F38725M6 | WOWBOX 25 PCS Plastic Drawer Organizer Set, 4 Sizes, Clear Dark Blue |  |  |  | 1305
+B0BZV57635 | A-LuGei Military Grade Drawer Organizer, 5 Size, Holds 177 Items, Bright Pink |  |  |  | 971
+B003P2UOCO | Akro-Mils 44-Drawer Plastic Drawer Storage Cabinet, Bead/Hardware/Craft Organize |  |  |  | 3515
+B003TV3NL0 | Akro-Mils 24-Drawer Plastic Drawer Storage Cabinet, Bead/Hardware/Craft Organize |  |  |  | 3152
+B000LDH3JC | Akro-Mils 64-Drawer Plastic Drawer Storage Cabinet, Bead/Hardware/Craft Organize |  |  |  | 3644
+B0FD37LM3D | A-LuGei Military Grade Drawer Organizer, 5 Size, Holds 177 Items, Clear Black |  |  |  | 821
+
+===== SHEET: Сводка (6x2) =====
+Generated | 2026-06-26T08:47:21
+Products analysed | 12
+Query / context | Makeup Organizer — Amazon US. Product Finder по ключу "makeup organizer", 50 ASI
+BUY | 2
+WATCH | 4
+SKIP | 6

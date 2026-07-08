@@ -1,0 +1,187 @@
+
+===== SHEET: Выводы (27x1) =====
+ВЫВОДЫ И РЕКОМЕНДАЦИИ (06.07.2026)
+
+1. РЫНОК ЗАПУСКА: ОАЭ — лучшая юнит-экономика из четырёх рынков.
+   Пошлина 5%, VAT 5%, дешёвый морской фрахт через Jebel Ali (~$1.9/кг), FBA 7.2
+   Германия — второй рынок (пошлина ~4%, но VAT 19% и фрахт дороже). Лист «Запус
+
+2. США — ТОЛЬКО ИНДИКАТОР СПРОСА, НЕ РЫНОК ЗАПУСКА: при пошлине ~35% на китайски
+   23 из 50 бестселлеров уходят в минус при типовой закупочной цене (красные стр
+
+3. КАТЕГОРИИ ДЛЯ ВХОДА С НУЛЯ (по убыванию привлекательности):
+   • Подушки на сиденье — FOB $2.5–5.5, маржа до 60%, лидер (Everlasting Comfort
+     Валидированный спрос на всех рынках. Вход: гелевые/memory foam, цена $25–45
+   • Desk pads (PU-кожа) — FOB $1.5–4, маржа 25–40%, низкий вес = дешёвая логист
+     Новинка-пример: YSAGi масштабируется в DE/UK с мая 2026 (~4 600 шт/мес).
+   • Обувницы — стабильный спрос (до 9 000 шт/мес US), FOB $4–15; выбирать лёгки
+   • Коврики под кресло — средний спрос, тяжёлые (вес режет маржу) — брать тольк
+   • Льдогенераторы — только премиум (nugget ice) и только ОАЭ/DE: GE Opal (нови
+     при закупке ≤$109. Базовые bullet-модели на грани рентабельности. В ОАЭ обя
+
+4. ПОТОЛОК ЗАКУПКИ: колонка «Закупка МАКС (FOB $)» в каждом листе — максимум, ко
+   поставщику за юнит, чтобы чистая маржа была ≥25% после ВСЕХ затрат. Если типо
+
+5. НОВИНКИ С ФЕВРАЛЯ 2026 (лист «Новинки»): 16 позиций BUY с подтверждёнными про
+   Тренды: nugget ice makers, водостойкие PU desk mats, гелевые подушки, дверные
+
+... (2 more rows)
+
+===== SHEET: ТОП-50 ходовые (50x30) =====
+№ | Категория | Товар | ASIN | Рынок | Цена (лок.) | Цена $ | Продажи/мес (оц.) | BSR | Рейтинг | Отзывы | Офферов | Вес, кг | Referral % | Referral | FBA fee | Хранение ~3% | VAT/НДС | Все fees (лок.) | Остаток после Amazon | Фрахт/юнит | Закупка МАКС (FOB $) ≤ | Типовая FOB $ (Alibaba) | Прибыль/юнит (лок.) | Маржа % | ROI % | Alibaba поиск | Дата на Amazon | Бренд | Вердикт
+1 | Подушка на сиденье | Everlasting Comfort Doctor Recommended Memory Foam Seat Cushion for Office Chair | B01EBDV9BU | US | 47.98 | 47.98 | 20000 | 40 | 4.4 | 123169 | 2 | 0.72 | 15 | 7.2 | 6.31 | 1.44 | 0 | 14.95 | 33.03 | 1.87 | 14.2 | 3.5 | 26.44 | 55.1 | 492 | Alibaba | 2016-07-17 | Everlasting Comfort | BUY
+2 | Подушка на сиденье | BlissTrends Donut Pillow Seat Cushion,Donut Chair Cushions for Postpartum Pregna | B0BZPQH141 | US | 17.99 | 17.99 | 10000 | 2582 | 4.4 | 3787 | 1 | 0.61 | 15 | 2.7 | 6.02 | 0.54 | 0 | 9.26 | 8.73 | 1.59 | 1.96 | 3.5 | 2.42 | 13.5 | 48 | Alibaba | 2023-05-17 | BlissTrends | WATCH
+3 | Подушка на сиденье | Comfortable Seat Cushion for Men Women with Dual Shock Absorbing Ball Memory Foa | B08HXQ96L5 | US | 18.99 | 18.99 | 10000 | 197 | 4.6 | 11298 | 2 | 0.79 | 15 | 2.85 | 7.71 | 0.57 | 0 | 11.13 | 7.86 | 2.05 | 0.79 | 3.5 | 1.08 | 5.7 | 19 | Alibaba | 2020-10-16 | LCYMD | SKIP
+4 | Подушка на сиденье | TushGuard Seat Cushion - Memory Foam Sitting Pillow for Office Chair, Car Seat,  | B0B5SW6381 | US | 33.99 | 33.99 | 10000 | 74 | 4.3 | 28484 | 1 | 0.57 | 15 | 5.1 | 6.13 | 1.02 | 0 | 12.25 | 21.74 | 1.48 | 8.71 | 3.5 | 15.53 | 45.7 | 312 | Alibaba | 2022-08-16 | TushGuard | BUY
+5 | Подушка на сиденье | BlissTrends Seat Cushion with Velvet Cover, Thick Memory Foam Cushions for Offic | B0BZCJRJML | US | 29.99 | 29.99 | 10000 | 163 | 4.4 | 8039 | 2 | 1.15 | 15 | 4.5 | 7.38 | 0.9 | 0 | 12.78 | 17.21 | 2.99 | 4.98 | 3.5 | 9.5 | 31.7 | 146 | Alibaba | 2023-05-09 | BlissTrends | BUY
+6 | Подушка на сиденье | OMCOZY Gel Seat Cushion, Cooling Cushion (Super Large & Thick), Breathable Honey | B08XX3W5KR | US | 24.69 | 24.69 | 9000 | 271 | 4.3 | 12688 | 2 | 1.32 | 15 | 3.7 | 7.55 | 0.74 | 0 | 11.99 | 12.7 | 3.43 | 2.29 | 3.5 | 4.54 | 18.4 | 65 | Alibaba | 2021-03-29 | OMCOZY | WATCH
+7 | Обувница / стеллаж для обуви | UVIAHOMI 20-30 Pairs Over the Door Shoe Organizer, Clear Pockets Hanging Shoe St | B0FG6MR8HJ | US | 25.98 | 25.98 | 9000 | 878 | 4.8 | 1168 | 1 | 1.03 | 15 | 3.9 | 7.3 | 0.78 | 0 | 11.98 | 14 | 2.68 | 3.58 | 7 | 1.88 | 7.2 | 19 | Alibaba | 2025-07-21 | UVIAHOMI | SKIP
+8 | Подушка на сиденье | Cushion Lab Patented Pressure Relief Seat Cushion for Long Sitting Hours on Offi | B08J88HV2P | US | 74.99 | 74.99 | 8000 | 229 | 4.4 | 20839 | 2 | 1.19 | 15 | 11.25 | 8.64 | 2.25 | 0 | 22.14 | 52.85 | 3.09 | 22.97 | 3.5 | 45.03 | 60.1 | 683 | Alibaba | 2021-01-14 | C CUSHION LAB | BUY
+9 | Подушка на сиденье | 5 STARS UNITED Donut Pillow for Tailbone Pain & Hemorrhoids – Large Memory Foam  | B0B61478T9 | US | 29.95 | 29.95 | 8000 | 1875 | 4.4 | 4295 | 1 | 0.89 | 15 | 4.49 | 6.48 | 0.9 | 0 | 11.87 | 18.08 | 2.31 | 6.13 | 3.5 | 11.04 | 36.9 | 190 | Alibaba | 2022-09-13 | 5 STARS UNITED | BUY
+10 | Настольный коврик (desk pad) | Aothia Non-Slip Waterproof PU Leather Desk Pad Protector for Mouse, Writing Desk | B086BLQZ5L | US | 9.99 | 9.99 | 8000 | 16 | 4.6 | 77821 | 2 | 0.21 | 15 | 1.5 | 3.24 | 0.3 | 0 | 5.04 | 4.95 | 0.55 | 1.41 | 2.5 | 1.03 | 10.3 | 34 | Alibaba | 2020-05-28 | Aothia | SKIP
+11 | Коврик под кресло | Office Chair Mat for Carpets, Clear Computer Desk Chair Mat for Low Carpeted Flo | B0CC1ZLDL2 | US | 29.99 | 29.99 | 8000 | 311 | 4 | 5566 | 1 | 2.9 | 15 | 4.5 | 10.17 | 0.9 | 0 | 15.57 | 14.42 | 7.54 | 0 | 8 | -3.92 | -13.1 | -25 | Alibaba | 2023-10-04 | BesWin | SKIP
+12 | Коврик под кресло | Kuyal Clear Chair mat for Hard Floors 36 x 48 inches Transparent Floor Mats Wood | B0893BD69B | US | 29.65 | 29.65 | 7000 | 149 | 4.2 | 10565 | 1 | 2.47 | 15 | 4.45 | 9.78 | 0.89 | 0 | 15.12 | 14.53 | 6.42 | 0.52 | 8 | -2.69 | -9.1 | -19 | Alibaba | 2020-05-25 | Kuyal | SKIP
+13 | Обувница / стеллаж для обуви | SONGMICS Shoe Rack, 3-Tier Shoe Organizer, Metal Storage Shelf, Upright or Upsid | B08MJMN4Q9 | US | 15.99 | 15.99 | 7000 | 1068 | 4.1 | 20797 | 2 | 1.4 | 15 | 2.4 | 7.07 | 0.48 | 0 | 9.95 | 6.04 | 3.64 | 0 | 7 | -7.05 | -44.1 | -66 | Alibaba | 2021-06-21 | SONGMICS | SKIP
+14 | Обувница / стеллаж для обуви | ROMGUAR CRAFT 3 Tier Bamboo Shoe Rack for Closet Free Standing Wood Shoe Shelf S | B0C3R76MWB | US | 23.95 | 23.95 | 7000 | 1221 | 4.4 | 6802 | 1 | 2.1 | 15 | 3.59 | 7.56 | 0.72 | 0 | 11.87 | 12.08 | 5.46 | 0.47 | 7 | -2.83 | -11.8 | -23 | Alibaba | 2023-07-10 | ROMGUAR CRAFT | SKIP
+15 | Обувница / стеллаж для обуви | SNTD Shoe Rack - Expandable Shoe Organizer for Closet, Adjustable Metal Shoe She | B0DFYFKV4C | US | 39.99 | 39.99 | 7000 | 2159 | 4.7 | 1196 | 1 | 3.44 | 15 | 6 | 8.56 | 1.2 | 0 | 15.76 | 24.23 | 8.94 | 3.92 | 7 | 5.84 | 14.6 | 37 | Alibaba | 2024-12-05 | SNTD | WATCH
+16 | Обувница / стеллаж для обуви | VTRIN 10 Tier Shoe Rack Tall Large Capacity Wide Shoe Organizer with Two Hooks S | B0CKXLKBVQ | US | 24.99 | 24.99 | 7000 | 1384 | 4.4 | 6120 | 1 | 2.83 | 15 | 3.75 | 8.06 | 0.75 | 0 | 12.56 | 12.43 | 7.36 | 0 | 7 | -4.38 | -17.5 | -30 | Alibaba | 2023-12-26 | VTRIN | SKIP
+17 | Обувница / стеллаж для обуви | Kuject X-Large Shoe Storage Boxes Organizers Clear Plastic Stackable 12 Pack, Sh | B09VC2TWQ8 | US | 31.99 | 31.99 | 7000 | 1714 | 4.2 | 20460 | 8 | 4 | 15 | 4.8 | 8.97 | 0.96 | 0 | 14.73 | 17.26 | 10.4 | 0 | 7 | -2.59 | -8.1 | -15 | Alibaba | 2022-04-22 | Kuject | SKIP
+18 | Подушка на сиденье | NEO CHAIR Office Desk Computer Chair Ergonomic Mesh Gaming Cushion Seat with Com | B0FXGB6L96 | US | 35.98 | 35.98 | 6000 | 2078 | 4.3 | 3361 | 2 | 9.45 | 15 | 5.4 | 22.3 | 1.08 | 0 | 28.78 | 7.2 | 24.57 | 0 | 3.5 | -22.09 | -61.4 | -79 | Alibaba | 2025-10-31 | NEO CHAIR | SKIP
+19 | Подушка на сиденье | SweetSlubr Seat Cushion for Tailbone Pain Relief, Office Chair Cushion, Chair Pa | B0DWMRVZVC | US | 19.99 | 19.99 | 6000 | 366 | 4.3 | 2074 | 2 | 0.92 | 15 | 3 | 6.31 | 0.6 | 0 | 9.91 | 10.08 | 2.39 | 1.99 | 3.5 | 2.96 | 14.8 | 50 | Alibaba | 2025-03-28 | SweetSlubr | WATCH
+20 | Настольный коврик (desk pad) | YSAGi Schreibtischunterlage, Mauspad mit Leder und Rutchfeste Wildleder, Multifu | B08139MY6B | DE | 17.99 | 20.51 | 5703 | 24 |  |  | 1 | 0.38 | 15 | 2.7 | 3.47 | 0.54 | 2.87 | 9.58 | 8.41 | 0.97 | 3.23 | 2.5 | 5.16 | 28.7 | 163 | Alibaba | 2020-02-10 | YSAGi | BUY
+21 | Подушка на сиденье | AUVON Ventilation Seat Cushion with Innovation Heat Dissipation Design, Wheelcha | B0CJ94RG6S | US | 24.99 | 24.99 | 5000 | 873 | 4.6 | 2437 | 2 | 0.92 | 15 | 3.75 | 7.38 | 0.75 | 0 | 11.88 | 13.11 | 2.39 | 3.31 | 3.5 | 5.99 | 24 | 102 | Alibaba | 2023-11-11 | AUVON | WATCH
+22 | Подушка на сиденье | ComfiLife Premium Gel & Memory Foam Seat Cushion – Doctor Recommended Office Cha | B08HPQVJMW | US | 41.36 | 41.36 | 5000 | 267 | 4.4 | 108606 | 2 | 1.02 | 12 | 4.96 | 8.04 | 1.24 | 0 | 14.24 | 27.12 | 2.65 | 10.46 | 3.5 | 19.74 | 47.7 | 321 | Alibaba | 2020-09-22 | ComfiLife | BUY
+23 | Настольный коврик (desk pad) | EooCoo Ergonomic Mouse Pad with Wrist Support, Mousepad with Memory Foam Wrist R | B085XRMSTT | US | 7.98 | 7.98 | 5000 | 557 | 4.6 | 15008 | 4 | 0.17 | 15 | 1.2 | 2.65 | 0.24 | 0 | 4.09 | 3.89 | 0.44 | 1.08 | 2.5 | 0.08 | 1 | 3 | Alibaba | 2020-03-27 | EooCoo | SKIP
+24 | Настольный коврик (desk pad) | LAPGEAR Home Office Pro Lap Desk with Wrist Rest, Mouse Pad, and Phone Holder -  | B07N9L5934 | US | 33.99 | 33.99 | 5000 | 173 | 4.7 | 10617 | 2 | 1.69 | 15 | 5.1 | 10.57 | 1.02 | 0 | 16.69 | 17.3 | 4.39 | 3.27 | 2.5 | 9.53 | 28 | 138 | Alibaba | 2019-02-22 | LapGear | BUY
+... (25 more rows)
+
+===== SHEET: Новинки с 02.2026 (51x30) =====
+№ | Категория | Товар | ASIN | Рынок | Цена (лок.) | Цена $ | Продажи/мес (оц.) | BSR | Рейтинг | Отзывы | Офферов | Вес, кг | Referral % | Referral | FBA fee | Хранение ~3% | VAT/НДС | Все fees (лок.) | Остаток после Amazon | Фрахт/юнит | Закупка МАКС (FOB $) ≤ | Типовая FOB $ (Alibaba) | Прибыль/юнит (лок.) | Маржа % | ROI % | Alibaba поиск | Дата на Amazon | Бренд | Вердикт
+1 | Настольный коврик (desk pad) | YSAGi Schreibtischunterlage, Mauspad mit Leder und Rutchfeste Wildleder, Multifu | B0GQL7B63V | DE | 12.99 | 14.81 | 4636 | 33 |  |  | 1 | 0.23 | 15 | 1.95 | 3.47 | 0.39 | 2.07 | 7.88 | 5.11 | 0.59 | 1.4 | 2.5 | 2.24 | 17.3 | 81 | Alibaba | 2026-05-11 | YSAGi | WATCH
+2 | Льдогенератор | GE Profile Opal Ultra, Countertop Nugget Ice Maker, 1 Gal XL Side Tank, *Amazon  | B0GSB7YQRC | US | 417.97 | 417.97 | 4000 | 13 |  |  | 1 | 22.23 | 13 | 54.34 | 40.95 | 12.54 | 0 | 107.83 | 310.14 | 57.8 | 109.52 | 52 | 182.15 | 43.6 | 166 | Alibaba | 2026-03-16 | Profile | BUY
+3 | Настольный коврик (desk pad) | YSAGi Leather Desk Mat, Large Mouse Mat, Non-Slip Desk Pad, Waterproof PU Leathe | B0GQKFNGK6 | UK | 28.99 | 38.56 | 3036 | 43 |  |  | 1 | 0.69 | 15 | 4.35 | 3.54 | 0.87 | 4.83 | 13.59 | 15.4 | 1.5 | 8.5 | 2.5 | 11.94 | 41.2 | 353 | Alibaba | 2026-05-05 | YSAGi | BUY
+4 | Подушка на сиденье | Nextcover® Bike Seat Cushion CoverPro with Memory Foam 4.0 I Ergonomic Bike Seat | B0G42Q28HN | US | 19.99 | 19.99 | 2000 | 2695 |  |  | 1 | 0.32 | 15 | 3 | 5.66 | 0.6 | 0 | 9.26 | 10.73 | 0.83 | 3.63 | 3.5 | 5.17 | 25.9 | 119 | Alibaba | 2026-05-18 | Nextcover | BUY
+5 | Настольный коврик (desk pad) | MOLMO Non-Slip Desk Mat, Waterproof Desk Pad Table Protector, Easy Clean Laptop  | B0GQT3RYXX | UK | 13.99 | 18.61 | 1950 | 85 |  |  | 1 | 0.31 | 15 | 2.1 | 3.06 | 0.42 | 2.33 | 7.91 | 6.08 | 0.68 | 2.44 | 2.5 | 3.45 | 24.7 | 135 | Alibaba | 2026-05-12 | MOLMO | WATCH
+6 | Подушка на сиденье | 5 STARS UNITED Seat Cushion for Tailbone Pain Relief – Memory Foam Cushion for C | B0GTWBPC7J | UK | 39.05 | 51.94 | 1732 | 102 |  |  | 1 | 1.38 | 15 | 5.86 | 4.43 | 1.17 | 6.51 | 17.97 | 21.08 | 3.01 | 10.63 | 3.5 | 15.34 | 39.3 | 272 | Alibaba | 2026-05-05 | 5 STARS UNITED | BUY
+7 | Подушка на сиденье | YONISEE Office Chair - Ergonomic Desk Chair with Lumbar Support Headrest Adjusta | B0GYS9WY78 | UK | 89.99 | 119.69 | 1215 | 176 |  |  | 1 | 1 | 15 | 13.5 | 2.9 | 2.7 | 15 | 34.1 | 55.89 | 2.18 | 39.92 | 3.5 | 50.98 | 56.6 | 1059 | Alibaba | 2026-04-30 | YONISEE | BUY
+8 | Льдогенератор | WELLENT Ice Maker Machine Countertop, Portable Bullet Ice Maker with Self-Cleani | B0GHV2GYQ3 | UK | 69.99 | 93.09 | 1000 | 1764 |  |  | 1 | 5.76 | 7 | 4.9 | 3.61 | 2.1 | 11.66 | 22.27 | 47.72 | 12.56 | 22.58 | 52 | -5.51 | -7.9 | -11 | Alibaba | 2026-03-23 | WELLENT | SKIP
+9 | Подушка на сиденье | Synthcore Back and Seat Cushion for Office, Back & Tailbone Pain Relief, Raised  | B0GXTJVR8S | US | 33.91 | 33.91 | 1000 | 4111 |  |  | 1 | 1.32 | 15 | 5.09 | 7.71 | 1.02 | 0 | 13.81 | 20.1 | 3.43 | 6.06 | 3.5 | 11.94 | 35.2 | 172 | Alibaba | 2026-05-18 | Synthcore | BUY
+10 | Подушка на сиденье | MEOWATES Heavy Duty Couch Cushion Support Board for Sagging Sofa, 21.5''x70''Sof | B0GKV9ZYX1 | US | 33.99 | 33.99 | 1000 | 30179 |  |  | 1 | 4.72 | 15 | 5.1 | 13.43 | 1.02 | 0 | 19.55 | 14.44 | 12.27 | 0 | 3.5 | -2.56 | -7.5 | -16 | Alibaba | 2026-03-31 | MEOWATES | SKIP
+11 | Подушка на сиденье | MTGKY Sondor Travel Cushion,Portable & Adjustable Airplane seat Cushion for Long | B0F4W1K5DW | US | 45.99 | 45.99 | 1000 | 27170 |  |  | 1 | 0.44 | 15 | 6.9 | 6.76 | 1.38 | 0 | 15.04 | 30.95 | 1.14 | 13.56 | 3.5 | 25.08 | 54.5 | 540 | Alibaba | 2026-04-10 | MTGKY | BUY
+12 | Подушка на сиденье | Seat Cushion, Office Chair Cushions for Tailbone Relief, Seat Cushions for Offic | B0H45Q4PWM | US | 39.99 | 39.99 | 1000 | 3124 |  |  | 1 | 1.03 | 15 | 6 | 6.31 | 1.2 | 0 | 13.51 | 26.48 | 2.68 | 10.23 | 3.5 | 19.08 | 47.7 | 309 | Alibaba | 2026-06-10 | SSPATIOS | BUY
+13 | Подушка на сиденье | Romswi Stadium Seats for Bleachers with Back Support 2 Pack, Lightweight Portabl | B0GR4BMDHY | US | 49.99 | 49.99 | 1000 | 11893 |  |  | 1 | 18.14 | 15 | 7.5 | 19.35 | 1.5 | 0 | 28.35 | 21.64 | 47.16 | 0 | 3.5 | -30.25 | -60.5 | -60 | Alibaba | 2026-03-04 | Romswi | SKIP
+14 | Подушка на сиденье | CASASIO Office Desk Chair with Ergonomic Lumbar Support, Extra-Thick Seat Cushio | B0H2B94R5F | US | 139.99 | 139.99 | 1000 | 60017 |  |  | 2 | 13.72 | 15 | 21 | 25.36 | 4.2 | 0 | 50.56 | 89.43 | 35.67 | 13.9 | 3.5 | 49.03 | 35 | 125 | Alibaba | 2026-05-20 | CASASIO | BUY
+15 | Подушка на сиденье | Asteraty Inflatable Seat Cushion with Press-to-Inflate Design, Airplane Seat Cus | B0GWQGKL69 | US | 44.97 | 44.97 | 1000 | 3171 |  |  | 2 | 0.44 | 8 | 3.6 | 5.76 | 1.35 | 0 | 10.71 | 34.26 | 1.14 | 16.21 | 3.5 | 28.39 | 63.1 | 611 | Alibaba | 2026-06-02 | Asteraty | BUY
+16 | Обувница / стеллаж для обуви | VASAGLE CUSTOS Collection - Shoe Rack for Closet, Stackable Shoe Organizer Shelf | B0GNDDDH1H | US | 31.99 | 31.99 | 1000 | 35218 |  |  | 1 | 7.08 | 15 | 4.8 | 15.68 | 0.96 | 0 | 21.44 | 10.55 | 18.41 | 0 | 7 | -17.31 | -54.1 | -68 | Alibaba | 2026-02-16 | VASAGLE | SKIP
+17 | Обувница / стеллаж для обуви | VASAGLE Shoe Storage Cabinet Organizer with 2 Flip Drawers, Freestanding Narrow  | B0GSVFSJ51 | US | 66.47 | 66.47 | 900 | 14330 |  |  | 1 | 20.59 | 15 | 9.97 | 30.98 | 1.99 | 0 | 42.94 | 23.53 | 53.53 | 0 | 7 | -39.46 | -59.4 | -65 | Alibaba | 2026-03-17 | VASAGLE | SKIP
+18 | Обувница / стеллаж для обуви | SAYZH Expandable Shoe Rack for Closet, Adjustable Metal Shoe Organizer with Stur | B0GKGB3QW3 | US | 37.99 | 37.99 | 900 | 43746 |  |  | 1 | 3.34 | 15 | 5.7 | 8.47 | 1.14 | 0 | 15.31 | 22.68 | 8.68 | 3.33 | 7 | 4.55 | 12 | 29 | Alibaba | 2026-03-24 | SAYZH | WATCH
+19 | Подушка на сиденье | POKAR Palettenkissen 2er Set: Sitzkissen 120x80 + Rückenkissen 120x40 Wasserabwe | B0GQ55FVX2 | DE | 48.49 | 55.28 | 847 | 451 |  |  | 1 | 11 | 15 | 7.27 | 9.77 | 1.45 | 7.74 | 26.24 | 22.25 | 27.98 | 0 | 3.5 | -8.93 | -18.4 | -29 | Alibaba | 2026-02-28 | POKAR | SKIP
+20 | Подушка на сиденье | POKAR Palettenkissen 8er Set aus Cordstoff: 3X Sitzkissen 120x80 + 3X Rückenkiss | B0GQ5H3DJV | DE | 153.99 | 175.55 | 847 | 451 |  |  | 1 | 30 | 15 | 23.1 | 18.37 | 4.62 | 24.59 | 70.67 | 83.32 | 76.32 | 0 | 3.5 | 3.81 | 2.5 | 5 | Alibaba | 2026-02-28 | POKAR | SKIP
+21 | Обувница / стеллаж для обуви | Yecaye 30 Pairs Over the Door Shoe Organizer, Large Capacity Hanging Shoe Rack f | B0GJRWDC18 | US | 24.99 | 24.99 | 800 | 35282 |  |  | 1 | 0.58 | 15 | 3.75 | 7.07 | 0.75 | 0 | 11.57 | 13.42 | 1.51 | 4.2 | 7 | 2.46 | 9.9 | 29 | Alibaba | 2026-04-30 | Yecaye | SKIP
+22 | Обувница / стеллаж для обуви | VASAGLE Shoe Rack, Shoe Storage Rack for Closet, Entryway, Living Room, Free Sta | B0G4RG38GK | US | 29.84 | 29.84 | 800 | 48718 |  |  | 1 | 5.27 | 15 | 4.48 | 10.11 | 0.9 | 0 | 15.48 | 14.36 | 13.7 | 0 | 7 | -8.79 | -29.5 | -42 | Alibaba | 2026-04-02 | VASAGLE | SKIP
+23 | Обувница / стеллаж для обуви | VASAGLE 7-Tier Rotating Shoe Rack Tower, Free Standing 360 Degree Spinning Shoe  | B0G5N9P6ZZ | US | 99.99 | 99.99 | 700 | 60064 |  |  | 1 | 22.25 | 15 | 15 | 30.87 | 3 | 0 | 48.87 | 51.12 | 57.85 | 0 | 7 | -16.18 | -16.2 | -25 | Alibaba | 2026-02-16 | VASAGLE | SKIP
+24 | Обувница / стеллаж для обуви | LANTEFUL Over the Door Shoe Organizer, Hanging Shoe Rack for Closet Door Shoe St | B0GHNDHGB6 | US | 26.99 | 26.99 | 700 | 32476 |  |  | 1 | 1.05 | 15 | 4.05 | 7.55 | 0.81 | 0 | 12.41 | 14.58 | 2.73 | 3.78 | 7 | 2.4 | 8.9 | 25 | Alibaba | 2026-03-26 | LANTEFUL | SKIP
+... (26 more rows)
+
+===== SHEET: Все товары (241) (240x30) =====
+№ | Категория | Товар | ASIN | Рынок | Цена (лок.) | Цена $ | Продажи/мес (оц.) | BSR | Рейтинг | Отзывы | Офферов | Вес, кг | Referral % | Referral | FBA fee | Хранение ~3% | VAT/НДС | Все fees (лок.) | Остаток после Amazon | Фрахт/юнит | Закупка МАКС (FOB $) ≤ | Типовая FOB $ (Alibaba) | Прибыль/юнит (лок.) | Маржа % | ROI % | Alibaba поиск | Дата на Amazon | Бренд | Вердикт
+1 | Коврик под кресло | YOLEO Hantelbank mit Bodenschutzmatte Set, Klappbare Fitnessbank (375KG Tragfähi | B0H4QXWR6Q | DE | 89.99 | 102.59 | 683 | 628 |  |  | 1 | 11.2 | 15 | 13.5 | 6.85 | 2.7 | 14.37 | 37.42 | 52.57 | 28.49 | 1.74 | 8 | 16.78 | 18.7 | 47 | Alibaba | 2026-06-11 | YOLEO | WATCH
+2 | Коврик под кресло | Office Chair Mat Carpet Protector: 36" x 48" Plastic Heavy Duty Computer Desk Ma | B0GR7XDPPR | US | 34.97 | 34.97 | 500 | 3398 |  |  | 1 | 2.86 | 15 | 5.25 | 11.85 | 1.05 | 0 | 18.14 | 16.83 | 7.44 | 0.48 | 8 | -1.41 | -4 | -9 | Alibaba | 2026-04-21 | LABETA | SKIP
+3 | Коврик под кресло | bemaxx Poolunterlage Poolmatte Unterlegmatte - 18 EVA Pool Matten Set: Bodenschu | B0H344MDGD | DE | 24.99 | 28.49 | 372 | 1597 |  |  | 1 | 1.36 | 15 | 3.75 | 5.16 | 0.75 | 3.99 | 13.65 | 11.34 | 3.46 | 1.79 | 8 | 0.58 | 2.3 | 6 | Alibaba | 2026-05-28 | BeMaxx | SKIP
+4 | Коврик под кресло | Sycoodeal Chair Mat,Office Chair Mat for Hardwood and Tile Floor, Heavy Duty Flo | B0FWJHKGFV | US | 29.99 | 29.99 | 300 | 26153 |  |  | 1 | 2.45 | 11 | 3.3 | 11.29 | 0.9 | 0 | 15.49 | 14.5 | 6.37 | 0.47 | 8 | -2.67 | -8.9 | -19 | Alibaba | 2026-02-21 | Sycoodeal | SKIP
+5 | Коврик под кресло | KAISLE Office Chair Mat for Carpet, 32x48 Heavy Duty Clear Plastic Rolling Chair | B0G7MFWNGX | US | 55.99 | 55.99 | 300 | 27524 |  |  | 1 | 4.24 | 15 | 8.4 | 21.64 | 1.68 | 0 | 31.72 | 24.27 | 11.02 | 0 | 8 | 2.45 | 4.4 | 13 | Alibaba | 2026-02-14 | KAISLE | SKIP
+6 | Коврик под кресло | Office Chair Mat for Carpet 48”x 60”, Heavy Duty Desk Chair Mat for Low Pile Car | B0GFF3Q18H | US | 42.99 | 42.99 | 300 | 9365 |  |  | 1 | 5.58 | 15 | 6.45 | 14.4 | 1.29 | 0 | 22.14 | 20.85 | 14.51 | 0 | 8 | -4.46 | -10.4 | -20 | Alibaba | 2026-03-31 | MZLCDW | SKIP
+7 | Коврик под кресло | tillvex® Premium Pool Unterlage Rechteckig 480x250 cm Geotextil 400g/m² | Bodenp | B0GVGH7W89 | DE | 69.79 | 79.56 | 200 | 971 |  |  | 1 | 1 | 15 | 10.47 | 2.9 | 2.09 | 11.14 | 26.61 | 43.18 | 2.54 | 25.42 | 8 | 33.34 | 47.8 | 349 | Alibaba | 2026-03-31 | tillvex | BUY
+8 | Коврик под кресло | Office Chair Mat for Low Pile Carpet with Lip, 48" x 60" Clear Plastic Heavy Dut | B0GF6FQDZS | US | 59.99 | 59.99 | 200 | 17194 |  |  | 1 | 5.69 | 15 | 9 | 14.4 | 1.8 | 0 | 25.2 | 34.79 | 14.79 | 3.7 | 8 | 9.2 | 15.3 | 40 | Alibaba | 2026-03-24 | Gleelake | WATCH
+9 | Коврик под кресло | HomeMall Office Chair Mat for Hardwood and Tile Floor, 55" x 35" Computer Desk C | B0GTST8HTN | US | 19.99 | 19.99 | 200 | 26599 |  |  | 1 | 0.74 | 15 | 3 | 7.38 | 0.6 | 0 | 10.98 | 9.01 | 1.92 | 1.55 | 8 | -3.71 | -18.6 | -37 | Alibaba | 2026-04-30 | HomeMall | SKIP
+10 | Коврик под кресло | Office Chair Mat for Low Pile Carpet with Lip, 36" x 48" Clear Plastic Heavy Dut | B0GF6BQGCZ | US | 49.99 | 49.99 | 200 | 17194 |  |  | 1 | 3.47 | 15 | 7.5 | 12.25 | 1.5 | 0 | 21.25 | 28.74 | 9.02 | 5.35 | 8 | 8.92 | 17.8 | 52 | Alibaba | 2026-03-19 | Gleelake | WATCH
+11 | Коврик под кресло | Office Chair Mat,Hardwood Floor Chair Mat Suitable for Hardwood and Tile Floors, | B0H1KPJBHX | US | 26.9 | 26.9 | 200 | 15469 |  |  | 1 | 0.7 | 11 | 2.96 | 6.9 | 0.81 | 0 | 10.67 | 16.23 | 1.82 | 5.7 | 8 | 3.61 | 13.4 | 37 | Alibaba | 2026-05-13 | Higoom | WATCH
+12 | Коврик под кресло | Office Chair Mat for Carpet, 36"×48" Heavy-Duty Clear PVC Carpet Protector Mat,  | B0GWZVTWWW | UK | 90.07 | 119.79 | 134 | 5228 |  |  | 1 | 3.25 | 15 | 13.51 | 4.87 | 2.7 | 15.01 | 36.09 | 53.98 | 7.09 | 31.17 | 8 | 40.63 | 45.1 | 310 | Alibaba | 2026-07-01 | LeapYouth | BUY
+13 | Коврик под кресло | 2 Pack Office Chair Mat for Carpets, 48" x 36" Clear Heavy Duty Plastic Floor Pr | B0GTDTLSSF | UK | 147.53 | 196.21 | 124 | 5911 |  |  | 1 | 6.4 | 15 | 22.13 | 5.33 | 4.43 | 24.59 | 56.47 | 91.06 | 13.95 | 51.43 | 8 | 70.85 | 48 | 355 | Alibaba | 2026-06-14 | BesWin | BUY
+14 | Коврик под кресло | WASJOYE Office Chair Mat for Hardwood Floor 135x114cm | B0GQH6H19F | UK | 30.58 | 40.67 | 108 | 7326 |  |  | 1 | 2.82 | 15 | 4.59 | 5.97 | 0.92 | 5.1 | 16.57 | 14.01 | 6.15 | 0.28 | 8 | 1.6 | 5.2 | 13 | Alibaba | 2026-03-19 | WASJOYE | SKIP
+15 | Коврик под кресло | tillvex® Premium Pool Unterlage Rechteckig 520x275 cm Geotextil 400g/m² | Bodenp | B0GVG7DY2R | DE | 77.9 | 88.81 | 100 | 781 |  |  | 1 | 1 | 15 | 11.69 | 2.9 | 2.34 | 12.44 | 29.36 | 48.54 | 2.54 | 29.07 | 8 | 38.7 | 49.7 | 405 | Alibaba | 2026-04-02 | tillvex | BUY
+16 | Коврик под кресло | tillvex® Premium Pool Unterlage Rund 580 cm Geotextil 400g/m² | Bodenplane für P | B0GVGJKC7V | DE | 134.79 | 153.66 | 100 | 971 |  |  | 1 | 1 | 15 | 20.22 | 2.9 | 4.04 | 21.52 | 48.68 | 86.11 | 2.54 | 54.66 | 8 | 76.26 | 56.6 | 798 | Alibaba | 2026-04-01 | tillvex | BUY
+17 | Коврик под кресло | PVC Office Chair Mat for Carpet Floors, 90x120 cm Non-Slip Clear Floor Protector | B0GYRY46WS | UK | 29.99 | 39.89 | 100 | 23025 |  |  | 2 | 3 | 15 | 4.5 | 4.87 | 0.9 | 5 | 15.27 | 14.72 | 6.54 | 0.88 | 8 | 1.93 | 6.4 | 15 | Alibaba | 2026-06-05 | Wenleer | SKIP
+18 | Коврик под кресло | GXTrust 715 Chair Mat Japan Black 99x120 cm, Wear-resistant Floor Protector for  | B0GXWNGCN7 | UK | 29.99 | 39.89 | 87 | 10139 |  |  | 2 | 4.1 | 15 | 4.5 | 5.02 | 0.9 | 5 | 15.42 | 14.57 | 8.94 | 0 | 8 | -0.62 | -2.1 | -4 | Alibaba | 2026-04-28 | GXTrust | SKIP
+19 | Коврик под кресло | PVC Office Chair Mat for Hard Floors, Non-Slip Clear Desk Chair Mat, Thick Plast | B0GYRTGXKB | UK | 27.99 | 37.23 | 51 | 23028 |  |  | 1 | 2.56 | 15 | 4.2 | 4.87 | 0.84 | 4.66 | 14.57 | 13.42 | 5.58 | 1.07 | 8 | 1.58 | 5.6 | 14 | Alibaba | 2026-06-19 | Wenleer | SKIP
+20 | Коврик под кресло | tillvex® Premium Pool Unterlage Rund 270 cm Geotextil 400g/m² | Bodenplane für P | B0GYP2VM2T | DE | 48.9 | 55.75 | 50 | 971 |  |  | 1 | 1 | 15 | 7.33 | 2.9 | 1.47 | 7.81 | 19.51 | 29.39 | 2.54 | 16.03 | 8 | 19.55 | 40 | 204 | Alibaba | 2026-04-30 | tillvex | BUY
+21 | Коврик под кресло | tillvex® Premium Pool Unterlage Rund 520 cm Geotextil 400g/m² | Bodenplane für P | B0GVGDH441 | DE | 119.79 | 136.56 | 50 | 971 |  |  | 1 | 1 | 15 | 17.97 | 2.9 | 3.59 | 19.13 | 43.59 | 76.2 | 2.54 | 47.91 | 8 | 66.36 | 55.4 | 694 | Alibaba | 2026-04-03 | tillvex | BUY
+22 | Коврик под кресло | WASJOYE Office Chair Mat for Carpet, 90x90 cm Round Floor Protectors Mats, PVC C | B0GH6K99WP | UK | 28.99 | 38.56 | 46 | 26726 |  |  | 1 | 2 | 15 | 4.35 | 4.72 | 0.87 | 4.83 | 14.77 | 14.22 | 4.36 | 3.34 | 8 | 3.6 | 12.4 | 35 | Alibaba | 2026-03-19 | WASJOYE | WATCH
+23 | Коврик под кресло | WASJOYE Carpet Chair Mat Large Chair Mat 117 x 152cm Non-slip 2.2mm Thick PVC Tr | B0GQGZQR9B | UK | 44.99 | 59.84 | 46 | 26726 |  |  | 1 | 5.42 | 15 | 6.75 | 6.11 | 1.35 | 7.5 | 21.71 | 23.28 | 11.82 | 0.28 | 8 | 5.21 | 11.6 | 29 | Alibaba | 2026-03-19 | WASJOYE | SKIP
+24 | Коврик под кресло | Office Chair Mat for Carpets, Clear Computer Desk Chair Mat for Low Carpeted Flo | B0CC1ZLDL2 | US | 29.99 | 29.99 | 8000 | 311 | 4 | 5566 | 1 | 2.9 | 15 | 4.5 | 10.17 | 0.9 | 0 | 15.57 | 14.42 | 7.54 | 0 | 8 | -3.92 | -13.1 | -25 | Alibaba | 2023-10-04 | BesWin | SKIP
+... (215 more rows)
+
+===== SHEET: Запуск ОАЭ (расчёт) (50x21) =====
+№ | Категория | Товар (референс) | ASIN реф. | Рынок реф. | Спрос реф., шт/мес | Оц. цена AED | Оц. цена $ | Referral % AE | Referral AED | FBA AE, AED | VAT 5% | Хранение | Остаток после Amazon, AED | Фрахт/юнит AED | Закупка МАКС FOB $ ≤ | Типовая FOB $ | Прибыль/юнит AED | Маржа % | ROI % | Alibaba
+1 | Подушка на сиденье | Everlasting Comfort Doctor Recommended Memory Foam Seat Cushion for Office Chair | B01EBDV9BU | US | 20000 | 190 | 51.74 | 15 | 28.5 | 9.5 | 9.05 | 5.7 | 137.25 | 5.02 | 21.97 | 3.5 | 118.73 | 62.5 | 664 | Alibaba
+2 | Подушка на сиденье | BlissTrends Donut Pillow Seat Cushion,Donut Chair Cushions for Postpartum Pregna | B0BZPQH141 | US | 10000 | 71 | 19.33 | 15 | 10.65 | 9.5 | 3.38 | 2.13 | 45.34 | 4.26 | 6.05 | 3.5 | 27.59 | 38.9 | 161 | Alibaba
+3 | Подушка на сиденье | Comfortable Seat Cushion for Men Women with Dual Shock Absorbing Ball Memory Foa | B08HXQ96L5 | US | 10000 | 75 | 20.42 | 15 | 11.25 | 9.5 | 3.57 | 2.25 | 48.43 | 5.51 | 6.27 | 3.5 | 29.42 | 39.2 | 160 | Alibaba
+4 | Подушка на сиденье | TushGuard Seat Cushion - Memory Foam Sitting Pillow for Office Chair, Car Seat,  | B0B5SW6381 | US | 10000 | 135 | 36.76 | 15 | 20.25 | 9.5 | 6.43 | 4.05 | 94.77 | 3.98 | 14.79 | 3.5 | 77.3 | 57.3 | 459 | Alibaba
+5 | Подушка на сиденье | BlissTrends Seat Cushion with Velvet Cover, Thick Memory Foam Cushions for Offic | B0BZCJRJML | US | 10000 | 119 | 32.4 | 15 | 17.85 | 11 | 5.67 | 3.57 | 80.91 | 8.02 | 11.19 | 3.5 | 59.39 | 49.9 | 284 | Alibaba
+6 | Подушка на сиденье | OMCOZY Gel Seat Cushion, Cooling Cushion (Super Large & Thick), Breathable Honey | B08XX3W5KR | US | 9000 | 98 | 26.68 | 15 | 14.7 | 11 | 4.67 | 2.94 | 64.69 | 9.21 | 8.03 | 3.5 | 41.99 | 42.8 | 190 | Alibaba
+7 | Обувница / стеллаж для обуви | UVIAHOMI 20-30 Pairs Over the Door Shoe Organizer, Clear Pockets Hanging Shoe St | B0FG6MR8HJ | US | 9000 | 103 | 28.05 | 15 | 15.45 | 11 | 4.9 | 3.09 | 68.56 | 7.19 | 9.24 | 7 | 34.38 | 33.4 | 105 | Alibaba
+8 | Подушка на сиденье | Cushion Lab Patented Pressure Relief Seat Cushion for Long Sitting Hours on Offi | B08J88HV2P | US | 8000 | 297 | 80.87 | 15 | 44.55 | 11 | 14.14 | 8.91 | 218.4 | 8.3 | 35.23 | 3.5 | 196.6 | 66.2 | 929 | Alibaba
+9 | Подушка на сиденье | 5 STARS UNITED Donut Pillow for Tailbone Pain & Hemorrhoids – Large Memory Foam  | B0B61478T9 | US | 8000 | 119 | 32.4 | 15 | 17.85 | 9.5 | 5.67 | 3.57 | 82.41 | 6.21 | 12.05 | 3.5 | 62.71 | 52.7 | 329 | Alibaba
+10 | Настольный коврик (desk pad) | Aothia Non-Slip Waterproof PU Leather Desk Pad Protector for Mouse, Writing Desk | B086BLQZ5L | US | 8000 | 40 | 10.89 | 14 | 5.6 | 7.2 | 1.9 | 1.2 | 24.1 | 1.47 | 3.28 | 2.5 | 12.99 | 32.5 | 122 | Alibaba
+11 | Коврик под кресло | Office Chair Mat for Carpets, Clear Computer Desk Chair Mat for Low Carpeted Flo | B0CC1ZLDL2 | US | 8000 | 119 | 32.4 | 14 | 16.66 | 12.5 | 5.67 | 3.57 | 80.6 | 20.24 | 7.94 | 8 | 29.52 | 24.8 | 59 | Alibaba
+12 | Коврик под кресло | Kuyal Clear Chair mat for Hard Floors 36 x 48 inches Transparent Floor Mats Wood | B0893BD69B | US | 7000 | 118 | 32.13 | 14 | 16.52 | 12.5 | 5.62 | 3.54 | 79.82 | 17.24 | 8.58 | 8 | 31.74 | 26.9 | 68 | Alibaba
+13 | Обувница / стеллаж для обуви | SONGMICS Shoe Rack, 3-Tier Shoe Organizer, Metal Storage Shelf, Upright or Upsid | B08MJMN4Q9 | US | 7000 | 63 | 17.15 | 15 | 9.45 | 11 | 3 | 1.89 | 37.66 | 9.77 | 3.15 | 7 | 0.9 | 1.4 | 3 | Alibaba
+14 | Обувница / стеллаж для обуви | ROMGUAR CRAFT 3 Tier Bamboo Shoe Rack for Closet Free Standing Wood Shoe Shelf S | B0C3R76MWB | US | 7000 | 95 | 25.87 | 15 | 14.25 | 12.5 | 4.52 | 2.85 | 60.88 | 14.65 | 5.83 | 7 | 19.23 | 20.2 | 48 | Alibaba
+15 | Обувница / стеллаж для обуви | SNTD Shoe Rack - Expandable Shoe Organizer for Closet, Adjustable Metal Shoe She | B0DFYFKV4C | US | 7000 | 159 | 43.29 | 15 | 23.85 | 14.5 | 7.57 | 4.77 | 108.31 | 24 | 11.55 | 7 | 57.31 | 36 | 115 | Alibaba
+16 | Обувница / стеллаж для обуви | VTRIN 10 Tier Shoe Rack Tall Large Capacity Wide Shoe Organizer with Two Hooks S | B0CKXLKBVQ | US | 7000 | 99 | 26.96 | 15 | 14.85 | 12.5 | 4.71 | 2.97 | 63.97 | 19.75 | 5.05 | 7 | 17.23 | 17.4 | 38 | Alibaba
+17 | Обувница / стеллаж для обуви | Kuject X-Large Shoe Storage Boxes Organizers Clear Plastic Stackable 12 Pack, Sh | B09VC2TWQ8 | US | 7000 | 127 | 34.58 | 15 | 19.05 | 14.5 | 6.05 | 3.81 | 83.59 | 27.91 | 6.21 | 7 | 28.69 | 22.6 | 54 | Alibaba
+18 | Подушка на сиденье | NEO CHAIR Office Desk Computer Chair Ergonomic Mesh Gaming Cushion Seat with Com | B0FXGB6L96 | US | 6000 | 143 | 38.94 | 15 | 21.45 | 19.5 | 6.81 | 4.29 | 90.95 | 65.94 | 0 | 3.5 | 11.51 | 8.1 | 15 | Alibaba
+19 | Подушка на сиденье | SweetSlubr Seat Cushion for Tailbone Pain Relief, Office Chair Cushion, Chair Pa | B0DWMRVZVC | US | 6000 | 79 | 21.51 | 15 | 11.85 | 9.5 | 3.76 | 2.37 | 51.52 | 6.42 | 6.57 | 3.5 | 31.6 | 40 | 164 | Alibaba
+20 | Настольный коврик (desk pad) | YSAGi Schreibtischunterlage, Mauspad mit Leder und Rutchfeste Wildleder, Multifu | B08139MY6B | DE | 5703 | 81 | 22.06 | 14 | 11.34 | 8 | 3.86 | 2.43 | 55.37 | 2.65 | 8.42 | 2.5 | 43.08 | 53.2 | 364 | Alibaba
+21 | Подушка на сиденье | AUVON Ventilation Seat Cushion with Innovation Heat Dissipation Design, Wheelcha | B0CJ94RG6S | US | 5000 | 99 | 26.96 | 15 | 14.85 | 9.5 | 4.71 | 2.97 | 66.97 | 6.42 | 9.28 | 3.5 | 47.05 | 47.5 | 244 | Alibaba
+22 | Подушка на сиденье | ComfiLife Premium Gel & Memory Foam Seat Cushion – Doctor Recommended Office Cha | B08HPQVJMW | US | 5000 | 164 | 44.66 | 15 | 24.6 | 11 | 7.81 | 4.92 | 115.67 | 7.12 | 17.52 | 3.5 | 95.06 | 58 | 476 | Alibaba
+23 | Настольный коврик (desk pad) | EooCoo Ergonomic Mouse Pad with Wrist Support, Mousepad with Memory Foam Wrist R | B085XRMSTT | US | 5000 | 32 | 8.71 | 14 | 4.48 | 7.2 | 1.52 | 0.96 | 17.84 | 1.19 | 2.24 | 2.5 | 7.01 | 21.9 | 68 | Alibaba
+24 | Настольный коврик (desk pad) | LAPGEAR Home Office Pro Lap Desk with Wrist Rest, Mouse Pad, and Phone Holder -  | B07N9L5934 | US | 5000 | 135 | 36.76 | 14 | 18.9 | 11 | 6.43 | 4.05 | 94.62 | 11.79 | 12.73 | 2.5 | 73.19 | 54.2 | 349 | Alibaba
+... (25 more rows)
+
+===== SHEET: Комиссии и тарифы (26x6) =====
+Справочник комиссий и допущений (июль 2026)
+
+Referral fee (комиссия Amazon) | US | UK | DE | AE (ОАЭ)
+Home & Kitchen | 15% | 15% | 15% | 15% (Home)
+Small Appliances (льдогенераторы) | 8% | 8-15% | 8-15% | 13%
+Office Products (коврики, desk pads) | 15% | 15% | 15% | 14%
+Furniture (обувницы-шкафы) | 15% | 15% | 15% | 15% ≤750 AED / 10% >750
+
+FBA fulfilment AE (AED, за юнит) | ≤0.25кг: 7.2 | ≤1кг: ~9.5 | ≤5кг: ~14.5 | ≤12кг: 19.5 | до 30кг: 41.5
+FBA скидка AE | −2 AED при цене товара <25 AED
+Хранение AE | 2 AED/куб.фут/мес
+
+VAT/НДС | US: 0% (sales tax у покупателя) | UK: 20% | DE: 19% | AE: 5%
+Импортная пошлина (Китай) | US: ~35% (Sec.301+2025) | UK: ~4% | DE/EU: ~4% | AE: 5%
+Фрахт (море), $/кг | US: 2.6 | UK: 2.9 | DE: 2.9 | AE: 1.9 (Jebel Ali)
+Курсы | EUR/USD 1.14 | GBP/USD 1.33 | USD/AED 3.6725 (фикс)
+
+Целевая чистая маржа | 25% от цены — из неё выведен потолок закупки 'не более чем'
+Формула потолка закупки | FOB_max = (Цена − Referral − FBA − Хранение − VAT − Фрахт − 0.25×Цена) / (1 + по
+
+Типовые FOB Alibaba, $ (мин–макс / типовая)
+Подушка на сиденье | 2.5–5.5 | типовая 3.5 | https://www.alibaba.com/trade/search?SearchText=memory+foam+seat+cushion+office+
+Льдогенератор | 40.0–85.0 | типовая 52.0 | https://www.alibaba.com/trade/search?SearchText=countertop+ice+maker+machine+por
+Настольный коврик (desk pad) | 1.5–4.0 | типовая 2.5 | https://www.alibaba.com/trade/search?SearchText=PU+leather+desk+pad+mat+large
+Коврик под кресло | 5.0–14.0 | типовая 8.0 | https://www.alibaba.com/trade/search?SearchText=office+chair+mat+PVC+floor+prote
+... (1 more rows)
+
+===== SHEET: Методика и оговорки (17x1) =====
+МЕТОДИКА (06.07.2026)
+
+1. Данные: Keepa API (Amazon US/UK/DE), 90-дневная статистика. Продажи/мес: точн
+   или оценка из BSR (UK/DE). ОАЭ: Keepa НЕ поддерживает amazon.ae — расчёт спро
+   (+8% импортная премия), комиссии по официальному rate card sell.amazon.ae.
+2. 'Ходовые' = рейтинг ≥4.0, отзывы ≥50-100, подтверждённые продажи (monthlySold
+3. 'Новинки' = отслеживаются Keepa с 01.02.2026 или позже, с ненулевым спросом.
+4. Потолок закупки ('не более чем', FOB $) — при котором чистая маржа 25% после 
+   комиссия Amazon + FBA + хранение 3% + VAT рынка + фрахт по весу + импортная п
+5. Маржа % и ROI % в таблицах посчитаны при ТИПОВОЙ FOB-цене Alibaba (столбец ря
+   Если 'Закупка МАКС' ниже типовой FOB — товар при целевой марже 25% не проходи
+6. US-пошлина на товары из Китая ~35% (оценка с учётом Sec.301/2025) — сильно бь
+   ОАЭ: пошлина 5%, VAT 5%, дешёвый фрахт — лучшая юнит-экономика; Германия — вт
+7. FBA fee US/UK/DE: точная из Keepa (fbaFees), при отсутствии — оценка по весов
+8. Ссылки Alibaba — поисковые (точный матч поставщика требует ручной проверки MO
+9. Льдогенераторы в ОАЭ: обязательна регистрация ESMA/ECAS (электроприбор) — зал
+10. Валюта строк — локальная валюта рынка (US $, UK £, DE €, AE AED), если не ук

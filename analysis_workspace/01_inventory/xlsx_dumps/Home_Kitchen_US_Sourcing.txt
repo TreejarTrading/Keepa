@@ -1,0 +1,247 @@
+
+===== SHEET: Обзор (34x2) =====
+HOME & KITCHEN — ПОИСК ТОВАРОВ ДЛЯ ЗАКУПКИ (США → DE → UAE)
+Источник: Keepa live (US/DE) + модель UAE • Категория Amazon Home & Kitchen • Ди
+
+Дата анализа | 2026-06-26
+Базовый рынок (источник трендов) | США — amazon.com (Keepa live)
+Проверка спроса | Германия — amazon.de (Keepa live)
+Третий рынок | ОАЭ — amazon.ae (модель: Keepa не покрывает AE)
+Категория | Home & Kitchen (root 1055398) + 24 подниши
+Ценовой диапазон | $20 – $500 (по запросу)
+Проанализировано товаров | 240 ASIN в 24 нишах
+Суммарная выручка выборки | ≈ $7,521,825 / мес
+Вердикт BUY (к закупке) | 147 товаров
+Новинки (≤12 мес) | 55 товаров
+Новинки-победители (нов.+спрос≥300/мес) | 19 — доказывают, что рынок пускает новых
+Растущий тренд продаж | 103 товаров
+Медиана цены / рейтинга / отзывов | $30 / 4.5★ / 13,860
+Медиана офферов (конкуренция) | 1 (низкая — окно для входа)
+
+ТОП-5 НИШ ДЛЯ СТАРТА (по Opportunity Score)
+Ниша | Почему
+1. Milk frother | высший скор; бренды раздроблены (топ-бренд 30%), маржа ~28%, 3 новинки-победител
+7. Shower caddy | лучший моментум: 7 новинок, 6 новичков-победителей; вход без сверления = чёткая 
+2. Knife sharpener | выручка $1.2M/мес, маржа ~37%; заходить наборами ножей или 3-ступ. точилкой
+4. Bathroom organizer | 6 новинок, выручка $0.5M/мес; прозрачные выдвижные органайзеры, низкая конкуренц
+6. Under-bed storage | 9 новинок — самый «молодой» рынок; лёгкий товар = дешёвый FBA и фрахт
+... (9 more rows)
+
+===== SHEET: Скоринг ниш (27x18) =====
+СКОРИНГ НИШ HOME & KITCHEN (США)
+Opportunity Score 0-100 = спрос + маржа + конкуренция + моментум + барьер входа.
+# | Ниша | Score | Выручка/мес ∑ | Медиана цены | Прод./мес медиана | Маржа п.рекл. медиана | Офферы | Amazon BB % | Топ-бренд | Доля бренда % | Новинки ≤12м | Новички-побед. | BUY | Дифференциация | FOB $/шт | MOQ | Alibaba
+1 | Milk frother | 80.7 | 296659 | 31.5 | 350 | 27.9 | 1 | 0 | Zulay Kitchen | 30 | 4 | 3 | 9 | USB-зарядка, 2-3 венчика, подставка, тихий мотор | $2.5–6 | 500-1000 | поиск ▸
+2 | Knife sharpener | 77.4 | 1196442 | 120 | 600 | 37 | 1 | 0 | McCook | 70 | 1 | 1 | 10 | 3-ступ., алмаз+керамика, нескольз.база; либо ножи-сет | $2–7 | 500-1000 | поиск ▸
+3 | Gooseneck kettle | 76.1 | 331916 | 199.9 | 100 | 39.7 | 1 | 0 | Fellow | 100 | 0 | 0 | 10 | Темп.контроль, мат.покрытие, 0.8-1.2л для пуровер | $9–18 | 200-500 | поиск ▸
+4 | Bathroom organizer | 72.8 | 504439 | 40.5 | 100 | 21.7 | 1 | 0 | Vtopmart | 60 | 6 | 1 | 6 | Прозр.выдвижн.ящики, под раковину/столешницу | $2–6 | 500-1000 | поиск ▸
+5 | Essential oil diffuser | 71.6 | 559740 | 45.3 | 450 | 26.9 | 1 | 80 | Levoit | 50 | 2 | 2 | 9 | Ультразвук, дерев.декор, таймер/LED, 300-500мл | $4–10 | 300-500 | поиск ▸
+6 | Under-bed storage | 71.3 | 133747 | 35 | 200 | 23.5 | 1 | 0 | Lifewit | 100 | 9 | 0 | 7 | Прозр.окно, усил.ручки, молния по периметру | $1.5–4 | 500-1000 | поиск ▸
+7 | Shower caddy | 69.1 | 133748 | 24 | 300 | 24.6 | 1.5 | 0 | Veken | 50 | 7 | 6 | 9 | Нерж.сталь, без сверления, 2-3 яруса, антикоррозия | $2.5–6 | 500-1000 | поиск ▸
+8 | Mattress topper | 67.1 | 319747 | 52.5 | 350 | 29.2 | 1 | 0 | Niagara Sleep Solution | 100 | 2 | 2 | 9 | Memory foam/охлажд.гель, резинки по углам, размеры US | $12–35 | 200-500 | поиск ▸
+9 | Pantry organization | 67 | 356695 | 38.5 | 650 | 20.5 | 1 | 0 | Vtopmart | 100 | 2 | 0 | 6 | Прозр.штабел.контейнеры, набор + этикетки/мерные | $2.5–7 | 500-1000 | поиск ▸
+10 | Closet organizer | 66 | 168297 | 35 | 450 | 24.5 | 1 | 0 | YOUDENOVA | 40 | 0 | 0 | 9 | Нетканый, бамбук-вставки, модульные секции | $2–6 | 500-1000 | поиск ▸
+11 | Cutting board | 65.8 | 266783 | 38.1 | 250 | 24 | 1 | 0 | ROYAL CRAFT WOOD | 100 | 5 | 2 | 7 | Бамбук/орех, сок-канавки, набор размеров, гравировка | $3.5–9 | 300-500 | поиск ▸
+12 | Glass food containers | 64.1 | 1511584 | 30.6 | 2500 | 17.5 | 1 | 60 | Rubbermaid | 60 | 1 | 1 | 5 | Боросиликат, защёлки, набор 8-10, для СВЧ/духовки | $4–9 | 500-1000 | поиск ▸
+13 | Adhesive wall hooks | 61.7 | 122498 | 27 | 500 | 23.5 | 1 | 0 | YASONIC | 60 | 0 | 0 | 10 | Прозрачн./нерж., разн.нагрузка, набор, без следов | $0.5–2 | 1000-2000 | поиск ▸
+14 | Drawer organizer | 58.7 | 483510 | 22.5 | 250 | 14.5 | 1 | 0 | Vtopmart | 60 | 2 | 0 | 3 | Прозр.пластик, наборы, регулируемые/стыкуемые | $1.5–5 | 500-1000 | поиск ▸
+15 | Laundry hamper | 56.8 | 31341 | 41 | 50 | 27.8 | 1 | 0 | Lifewit | 100 | 0 | 0 | 10 | Складной, ручки, разд.секции, водоотталк.ткань | $3–9 | 300-500 | поиск ▸
+16 | Insulated tumbler | 56.6 | 38250 | 45 | 200 | 31.1 | 1 | 100 | STANLEY | 100 | 5 | 0 | 0 | Двойная сталь, крышка+трубочка, под автодержатель | $3.5–8 | 500-1000 | поиск ▸
+17 | Water filter pitcher | 55.5 | 824335 | 28.3 | 2000 | 16.2 | 3 | 90 | BRITA | 100 | 0 | 0 | 1 | Совместимость с Brita-картриджами, индикатор, 10 чашек | $3.5–8 | 500-1000 | поиск ▸
+18 | Air fryer liners | 55.2 | 15785 | 25 | 75 | 18.8 | 1 | 0 | vailnd | 30 | 5 | 1 | 1 | Перфорир., разн.размеры, бумага+силикон многораз. | $0.8–2.5 | 1000-2000 | поиск ▸
+19 | Shoe rack | 52.1 | 53599 | 24.5 | 300 | 15.9 | 1 | 30 | Kitsure | 60 | 4 | 0 | 4 | Металл+ткань, штабел., узкий профиль для прихожей | $3–9 | 300-500 | поиск ▸
+20 | Throw pillow covers | 49.1 | 8937 | 23.5 | 75 | 22.5 | 1 | 0 | MIULEE | 100 | 0 | 0 | 6 | Букле/вельвет, тренд-цвета, наборы 2-4, 18x18 | $1–3.5 | 1000-2000 | поиск ▸
+21 | Spice rack organizer | 47.6 | 8548 | 30 | 50 | 19.4 | 1 | 0 | HuggieGems | 100 | 0 | 0 | 5 | Выдвижной/поворотный, бамбук, с этикетками | $3–8 | 300-500 | поиск ▸
+22 | Silicone bakeware | 45.8 | 2099 | 23 | 100 | 21 | 1 | 0 | Socisen | 70 | 0 | 0 | 5 | Пищевой LFGB-силикон, нестандартные формы, наборы | $1.5–5 | 500-1000 | поиск ▸
+... (2 more rows)
+
+===== SHEET: A-лист (закупать) (48x22) =====
+A-ЛИСТ: КОНКРЕТНЫЕ ТОВАРЫ К ЗАКУПКЕ (США)
+Отобраны BUY/сильный WATCH, без доминирования Amazon, маржа после рекламы ≥15%. 
+# | Товар | Ниша | Бренд | Вердикт | Флаги | Цена $ | Прод/мес | Выручка/мес $ | Отзывы | Рейт. | Офф. | Возр.мес | Referral | FBA $ | Комис.% | COGS~28% $ | Маржа п.рекл $ | Маржа п.р.% | FOB $/шт | Amazon | Alibaba
+1 | Knife Set,Astercook Kitchen Knife Set with Block 22-Piece Full Tang Stainless St | Knife sharpener | Astercook | BUY | НОВ-ПОБЕД, растёт | 129.99 | 300 | 38997 | 1087 | 4.8 | 1 | 7 | 19.5 | 10.71 | 23.2 | 36.4 | 47.78 | 36.8 | $2–7 | нет | поиск ▸
+2 | Aroma Country Ritzy Luxury Hotel Diffuser Oil - Luxury Hotel Scent for Diffuser  | Essential oil diffuser | AROMA COUNTRY | BUY | НОВ-ПОБЕД | 48.95 | 600 | 29370 | 243 | 4.5 | 1 | 9.3 | 7.34 | 4.76 | 24.7 | 13.71 | 17.27 | 35.3 | $4–10 | нет | поиск ▸
+3 | CIRCLE JOY Rechargeable Handheld Milk Frother Wand with Stand, 3 Variable Speeds | Milk frother | CIRCLE JOY | BUY | НОВ-ПОБЕД | 24.99 | 5000 | 124950 | 660 | 4.6 | 1 | 6.3 | 3.75 | 4.87 | 34.5 | 7 | 6.37 | 25.5 | $2.5–6 | нет | поиск ▸
+4 | McCook® Knife Sets,German Stainless Steel Knife Block Sets with Built-in Sharpen | Knife sharpener | McCook | BUY | растёт | 125.99 | 1000 | 125990 | 35887 | 4.6 | 1 | 57.3 | 18.9 | 8.89 | 22.1 | 35.28 | 47.8 | 37.9 | $2–7 | нет | поиск ▸
+5 | Fellow Stagg EKG Pro Electric Gooseneck Kettle - Pour-Over Coffee and Tea, Quick | Gooseneck kettle | Fellow | BUY | растёт | 199.95 | 300 | 59985 | 598 | 4.3 | 1 | 45.4 | 29.99 | 10.57 | 20.3 | 55.99 | 79.41 | 39.7 | $9–18 | нет | поиск ▸
+6 | McCook® Knife Sets, German Stainless Steel Kitchen Knife Block Sets with Built-i | Knife sharpener | McCook | BUY | растёт | 125.99 | 800 | 100792 | 35887 | 4.6 | 2 | 85.6 | 18.9 | 9.06 | 22.2 | 35.28 | 47.63 | 37.8 | $2–7 | нет | поиск ▸
+7 | EUDELE 2 Pack Mesh Shower Caddy Portable for College Dorm Room Essentials, Showe | Shower caddy | EUDELE | BUY | НОВ-ПОБЕД | 22.99 | 300 | 6897 | 7438 | 4.6 | 2 | 3.9 | 1.84 | 4.68 | 28.4 | 6.44 | 7.27 | 31.6 | $2.5–6 | нет | поиск ▸
+8 | McCook® Knife Sets,German Stainless Steel Knife Block Sets with Built-in Sharpen | Knife sharpener | McCook | BUY | растёт | 119.99 | 400 | 47996 | 35887 | 4.6 | 1 | 57.3 | 18 | 8.97 | 22.5 | 33.6 | 45.02 | 37.5 | $2–7 | нет | поиск ▸
+9 | Fellow Stagg EKG Pro Studio Edition Electric Gooseneck Kettle - Pour-Over Coffee | Gooseneck kettle | Fellow | BUY | растёт | 199.95 | 100 | 19995 | 204 | 4.2 | 1 | 41 | 29.99 | 10.57 | 20.3 | 55.99 | 79.41 | 39.7 | $9–18 | нет | поиск ▸
+10 | Fellow Stagg EKG Pro Electric Gooseneck Kettle - Pour-Over Coffee and Tea, Quick | Gooseneck kettle | Fellow | BUY | растёт | 199.95 | 100 | 19995 | 598 | 4.3 | 1 | 26.5 | 29.99 | 10.57 | 20.3 | 55.99 | 79.41 | 39.7 | $9–18 | нет | поиск ▸
+11 | Fellow Stagg EKG Pro Electric Gooseneck Kettle - Pour-Over Coffee and Tea, Quick | Gooseneck kettle | Fellow | BUY | растёт | 199.95 | 100 | 19995 | 598 | 4.3 | 1 | 17.7 | 29.99 | 10.57 | 20.3 | 55.99 | 79.41 | 39.7 | $9–18 | нет | поиск ▸
+12 | Fellow Stagg EKG Pro Electric Gooseneck Kettle - Pour-Over Coffee and Tea, Quick | Gooseneck kettle | Fellow | BUY | растёт | 199.95 | 100 | 19995 | 598 | 4.3 | 1 | 17.7 | 29.99 | 10.96 | 20.5 | 55.99 | 79.02 | 39.5 | $9–18 | нет | поиск ▸
+13 | McCook® Knife Sets, Golden Titanium Stainless Steel Kitchen Knife Block Sets wit | Knife sharpener | McCook | BUY | растёт | 119.99 | 300 | 35997 | 35888 | 4.6 | 1 | 49.9 | 18 | 9.39 | 22.8 | 33.6 | 44.6 | 37.2 | $2–7 | нет | поиск ▸
+14 | Fellow Stagg EKG Pro Electric Gooseneck Kettle – Precise Temperature Control, Qu | Gooseneck kettle | Fellow | BUY | — | 179.95 | 600 | 107970 | 598 | 4.3 | 1 | 45.4 | 26.99 | 10.17 | 20.7 | 50.39 | 70.81 | 39.3 | $9–18 | нет | поиск ▸
+15 | Vtopmart 2 Pack Higher Bathroom Organizer, 2 Tier White Under Sink Organizers Va | Bathroom organizer | Vtopmart | BUY | НОВ-ПОБЕД | 42.99 | 400 | 17196 | 6839 | 4.6 | 1 | 5.9 | 6.45 | 7.98 | 33.6 | 12.04 | 11.36 | 26.4 | $2–6 | нет | поиск ▸
+16 | EUDELE 2 Pack Mesh Shower Caddy Portable for College Dorm Room Essentials, Showe | Shower caddy | EUDELE | BUY | НОВ-ПОБЕД | 22.99 | 300 | 6897 | 7438 | 4.6 | 2 | 3.9 | 1.84 | 5.22 | 30.7 | 6.44 | 6.73 | 29.3 | $2.5–6 | нет | поиск ▸
+17 | Turelar Immersion Blender Handheld 1100W - 3 in 1 Hand Blenders Set with Trigger | Milk frother | turelar | BUY | НОВ-ПОБЕД | 29.99 | 1000 | 29990 | 215 | 4.4 | 1 | 11.1 | 4.5 | 6.31 | 36 | 8.4 | 7.18 | 23.9 | $2.5–6 | нет | поиск ▸
+18 | Niagara Sleep Solution Ultra Soft Twin XL Size Mattress Topper - Rayon Derived f | Mattress topper | Niagara Sleep Solution | BUY | НОВ-ПОБЕД | 59.99 | 1000 | 59990 | 50979 | 4.4 | 1 | 8.4 | 9 | 8.08 | 28.5 | 16.8 | 18.91 | 31.5 | $12–35 | нет | поиск ▸
+19 | Fellow Stagg EKG Pro Electric Gooseneck Kettle - Pour-Over Coffee and Tea Pot, S | Gooseneck kettle | Fellow | BUY | растёт | 199.95 | 50 | 9998 | 598 | 4.3 | 1 | 17.7 | 29.99 | 10.96 | 20.5 | 55.99 | 79.02 | 39.5 | $9–18 | нет | поиск ▸
+20 | Veken Shower Caddy 6-Pack, Advanced Rustproof Design, No Drilling Adhesive Shelv | Shower caddy | Veken | BUY | НОВ-ПОБЕД | 33.99 | 300 | 10197 | 14349 | 4.7 | 1 | 5.9 | 5.1 | 6.13 | 33 | 9.52 | 9.16 | 26.9 | $2.5–6 | нет | поиск ▸
+21 | Fellow Stagg EKG Pro Studio Edition Electric Gooseneck Kettle - Pour-Over Coffee | Gooseneck kettle | Fellow | BUY | — | 229.95 | 200 | 45990 | 204 | 4.2 | 1 | 41 | 34.49 | 10.96 | 19.8 | 64.39 | 92.52 | 40.2 | $9–18 | нет | поиск ▸
+22 | CIRCLE JOY Rechargeable Handheld Milk Frother Wand with Stand, 3 Variable Speeds | Milk frother | CIRCLE JOY | BUY | НОВ-ПОБЕД | 24.99 | 500 | 12495 | 659 | 4.6 | 1 | 7 | 3.75 | 4.87 | 34.5 | 7 | 6.37 | 25.5 | $2.5–6 | нет | поиск ▸
+... (23 more rows)
+
+===== SHEET: Новинки и тренды (83x14) =====
+НОВИНКИ И РАСТУЩИЕ ТРЕНДЫ (США)
+Свежие листинги и товары с растущими продажами — прямой ответ «что набирает обор
+Товар | Ниша | Бренд | Возраст мес | Listed | Прод/мес | Δ90 продаж % | Тренд ранга % | Цена $ | Отзывы | Рейт. | Вердикт | Флаг | Alibaba
+Rubbermaid Brilliance® Glass Round Leak-Proof 6-Piece Set Food Storage Container | Glass food containers | Rubbermaid | 10.4 | 2025-08 | 400 | 44 | 69.4 | 46.99 | 13859 | 4.6 | BUY | НОВ-ПОБЕД | поиск ▸
+Knife Set,Astercook Kitchen Knife Set with Block 22-Piece Full Tang Stainless St | Knife sharpener | Astercook | 7 | 2025-11 | 300 | 12 | 89.3 | 129.99 | 1087 | 4.8 | BUY | НОВ-ПОБЕД | поиск ▸
+ROYAL CRAFT WOOD Wooden Cutting Boards for Kitchen Meal Prep & Serving - Bamboo  | Cutting board | ROYAL CRAFT WOOD | 2.3 | 2026-04 | 600 | 6 | 80.6 | 45.99 | 53899 | 4.5 | BUY | НОВ-ПОБЕД | поиск ▸
+Aroma Country Ritzy Luxury Hotel Diffuser Oil - Luxury Hotel Scent for Diffuser  | Essential oil diffuser | AROMA COUNTRY | 9.3 | 2025-09 | 600 | -3 | 34.7 | 48.95 | 243 | 4.5 | BUY | НОВ-ПОБЕД | поиск ▸
+Vtopmart 2 Pack Higher Bathroom Organizer, 2 Tier White Under Sink Organizers Va | Bathroom organizer | Vtopmart | 5.9 | 2025-12 | 400 | -16 | -5.4 | 42.99 | 6839 | 4.6 | BUY | НОВ-ПОБЕД | поиск ▸
+CIRCLE JOY Rechargeable Handheld Milk Frother Wand with Stand, 3 Variable Speeds | Milk frother | CIRCLE JOY | 6.3 | 2025-12 | 5000 | -19 | 59.4 | 24.99 | 660 | 4.6 | BUY | НОВ-ПОБЕД | поиск ▸
+Veken Shower Caddy 6-Pack, Advanced Rustproof Design, No Drilling Adhesive Shelv | Shower caddy | Veken | 5.9 | 2025-12 | 300 | -20 | 81.7 | 33.99 | 14349 | 4.7 | BUY | НОВ-ПОБЕД | поиск ▸
+350Pcs Air Fryer Liners Disposable, Non-Stick and Oil Proof for Easy Cleanup Air | Air fryer liners | Baker's Signature | 1.8 | 2026-05 | 300 | -22 | 46.4 | 24.99 | 25488 | 4.6 | WATCH | НОВ-ПОБЕД | поиск ▸
+CIRCLE JOY Rechargeable Handheld Milk Frother Wand with Stand, 3 Variable Speeds | Milk frother | CIRCLE JOY | 7 | 2025-11 | 500 | -23 | 60.5 | 24.99 | 659 | 4.6 | BUY | НОВ-ПОБЕД | поиск ▸
+Niagara Sleep Solution Ultra Soft Twin Size Mattress Topper - Rayon Derived from | Mattress topper | Niagara Sleep Solution | 8.4 | 2025-10 | 600 | -25 | 69.2 | 54.99 | 50979 | 4.4 | BUY | НОВ-ПОБЕД | поиск ▸
+Turelar Immersion Blender Handheld 1100W - 3 in 1 Hand Blenders Set with Trigger | Milk frother | turelar | 11.1 | 2025-07 | 1000 | -32 | 70.5 | 29.99 | 215 | 4.4 | BUY | НОВ-ПОБЕД | поиск ▸
+Veken Shower Caddy 6-Pack, No Drilling & Rustproof, Waterproof Adhesive Shelves  | Shower caddy | Veken | 3.7 | 2026-03 | 700 | -39 | 14.5 | 27.99 | 14366 | 4.7 | BUY | НОВ-ПОБЕД | поиск ▸
+ROYAL CRAFT WOOD Wooden Cutting Boards for Kitchen Meal Prep & Serving - Bamboo  | Cutting board | ROYAL CRAFT WOOD | 7 | 2025-11 | 500 | -42 | 79.2 | 24.97 | 53899 | 4.5 | BUY | НОВ-ПОБЕД | поиск ▸
+Frida Baby 3-in-1 Cool Mist Humidifier for Large Rooms, Top Fill Humidifier for  | Essential oil diffuser | Frida Baby | 3.3 | 2026-03 | 500 | -46 | 84.5 | 40.24 | 12871 | 4.4 | BUY | НОВ-ПОБЕД | поиск ▸
+Niagara Sleep Solution Ultra Soft Twin XL Size Mattress Topper - Rayon Derived f | Mattress topper | Niagara Sleep Solution | 8.4 | 2025-10 | 1000 | -51 | 69.2 | 59.99 | 50979 | 4.4 | BUY | НОВ-ПОБЕД | поиск ▸
+Veken Shower Caddy 6-Pack, Family Choice Award Winner, Large Wall Mounted Shower | Shower caddy | Veken | 8.4 | 2025-10 | 2000 | -55 | 30.4 | 24.99 | 14366 | 4.7 | BUY | НОВ-ПОБЕД | поиск ▸
+Veken Shower Caddy 3-Pack, Advanced Rustproof Design, No Drilling Adhesive Shelv | Shower caddy | Veken | 6 | 2025-12 | 500 | -69 | 77.6 | 23.99 | 14366 | 4.7 | BUY | НОВ-ПОБЕД | поиск ▸
+EUDELE 2 Pack Mesh Shower Caddy Portable for College Dorm Room Essentials, Showe | Shower caddy | EUDELE | 3.9 | 2026-02 | 300 | -140 | 92.8 | 22.99 | 7438 | 4.6 | BUY | НОВ-ПОБЕД | поиск ▸
+EUDELE 2 Pack Mesh Shower Caddy Portable for College Dorm Room Essentials, Showe | Shower caddy | EUDELE | 3.9 | 2026-02 | 300 | -226 | 92.8 | 22.99 | 7438 | 4.6 | BUY | НОВ-ПОБЕД | поиск ▸
+Easy-Going Sofa Slipcover Reversible Loveseat Sofa Cover Couch Cover for 2 Cushi | Sofa slipcover | Easy-Going | 66.6 | 2020-12 | — | 99 | -30.3 | 36.99 | 105984 | 4.3 | BUY | растёт | поиск ▸
+McCook® Kitchen Knife Sets,German Stainless Steel Knives Block Set with Built-in | Knife sharpener | McCook | 55.7 | 2021-11 | — | 99 | 64.7 | 119.99 | 35879 | 4.6 | BUY | растёт | поиск ▸
+McCook® Knife Sets,German Stainless Steel Kitchen Knives Block Set with Built-in | Knife sharpener | McCook | 55.7 | 2021-11 | — | 99 | 64.9 | 119.99 | 35887 | 4.6 | BUY | растёт | поиск ▸
+... (58 more rows)
+
+===== SHEET: США — все товары (243x21) =====
+США — ВСЕ ПРОАНАЛИЗИРОВАННЫЕ ТОВАРЫ
+Полная выборка Keepa live по 24 нишам Home & Kitchen с юнит-экономикой и вердикт
+ASIN | Товар | Ниша | Бренд | Подкатегория | Цена $ | Прод/мес | Выручка/мес $ | Отзывы | Рейт. | Ранг | Офф. | Возр.мес | Δ90% | Referral | FBA $ | Комис% | Маржа п.рекл $ | Маржа п.р.% | Вердикт | Обоснование
+B0G3PDFXJS | CIRCLE JOY Rechargeable Handheld Milk Frother Wand with Stand, 3 Variable Speeds | Milk frother | CIRCLE JOY | Milk Frothers | 24.99 | 5000 | 124950 | 660 | 4.6 | 868 | 1 | 6.3 | -19 | 3.75 | 4.87 | 34.5 | 6.37 | 25.5 | BUY | + маржа п.рекл. 25.5%; + низкая конкуренция (1 офф.); + рейтинг 4.6 / 660 отз.; 
+B0BVD58786 | Ganiza Immersion Blender 5 in 1 Hand Blender Max 1000W Heavy Duty Motor, 16 Spee | Milk frother | Ganiza | Hand Blenders | 52.99 | 1000 | 52990 | 3829 | 4.5 | 863 | 2 | 38.9 | 54 | 7.95 | 7.81 | 29.7 | 16.03 | 30.3 | BUY | + маржа п.рекл. 30.3%; + низкая конкуренция (2 офф.); + рейтинг 4.5 / 3829 отз.;
+B085SBTSBD | Nespresso Vertuo Next Coffee and Espresso Maker by Breville, with Aeroccino Milk | Milk frother | Nespresso | Single-Serve Brewers | 187.99 | 200 | 37598 | 4324 | 4.3 | 564 | 7 | 74.8 | 86 | 28.2 | 18.6 | 24.9 | 65.99 | 35.1 | BUY | + маржа п.рекл. 35.1%; + рейтинг 4.3 / 4324 отз.; + спрос ~200/мес ($37,598); + 
+B0FHJ4Q436 | Turelar Immersion Blender Handheld 1100W - 3 in 1 Hand Blenders Set with Trigger | Milk frother | turelar | Hand Blenders | 29.99 | 1000 | 29990 | 215 | 4.4 | 181 | 1 | 11.1 | -32 | 4.5 | 6.31 | 36 | 7.18 | 23.9 | BUY | + маржа п.рекл. 23.9%; + низкая конкуренция (1 офф.); + рейтинг 4.4 / 215 отз.; 
+B0CSYXJ7TF | KOIOS Immersion Blender, 1000W Anti-scratch 3-in-1 Hand Blender, Upgraded 12 Spe | Milk frother | KOIOS | Hand Blenders | 24.99 | 1000 | 24990 | 2808 | 4.6 | 397 | 2 | 27.5 | 70 | 3.75 | 6.31 | 40.3 | 4.93 | 19.7 | BUY | + низкая конкуренция (2 офф.); + рейтинг 4.6 / 2808 отз.; + спрос ~1000/мес ($24
+B0G3P6YKQ6 | CIRCLE JOY Rechargeable Handheld Milk Frother Wand with Stand, 3 Variable Speeds | Milk frother | CIRCLE JOY | Milk Frothers | 24.99 | 500 | 12495 | 659 | 4.6 | 853 | 1 | 7 | -23 | 3.75 | 4.87 | 34.5 | 6.37 | 25.5 | BUY | + маржа п.рекл. 25.5%; + низкая конкуренция (1 офф.); + рейтинг 4.6 / 659 отз.; 
+B0DHGX1V25 | KOIOS Immersion Blender, 1000W Anti-scratch 3-in-1 Hand Blender, Upgraded 12 Spe | Milk frother | KOIOS | Hand Blenders | 24.99 | 200 | 4998 | 2810 | 4.6 | 423 | 1 | 19.1 | -83 | 3.75 | 6.31 | 40.3 | 4.93 | 19.7 | WATCH | + низкая конкуренция (1 офф.); + рейтинг 4.6 / 2810 отз.
+B0D461DRQK | Zulay Kitchen Rechargeable Milk Frother Handheld - Frother Wand, Drink Mixer, El | Milk frother | Zulay Kitchen | Milk Frothers | 34.99 | 100 | 3499 | 3866 | 4.6 | 22 | 1 | 17.5 | -14 | 5.25 | 4.46 | 27.8 | 11.28 | 32.2 | BUY | + маржа п.рекл. 32.2%; + низкая конкуренция (1 офф.); + рейтинг 4.6 / 3866 отз.
+B0D46265XZ | Zulay Kitchen Rechargeable Milk Frother Handheld - Frother Wand, Drink Mixer, El | Milk frother | Zulay Kitchen | Milk Frothers | 34.99 | 100 | 3499 | 3866 | 4.6 | 23 | 1 | 17.1 | -25 | 5.25 | 4.46 | 27.8 | 11.28 | 32.2 | BUY | + маржа п.рекл. 32.2%; + низкая конкуренция (1 офф.); + рейтинг 4.6 / 3866 отз.
+B0FH2Z3VZD | Zulay Kitchen Rechargeable Milk Frother Handheld - Frother Wand, Drink Mixer, El | Milk frother | Zulay Kitchen | Milk Frothers | 32.99 | 50 | 1650 | 1237 | 4.2 | 22 | 1 | 3.8 | 4 | 4.95 | 4.46 | 28.5 | 10.38 | 31.5 | BUY | + маржа п.рекл. 31.5%; + низкая конкуренция (1 офф.); + растущий тренд; - слабый
+B0C1YBPJ43 | Knife Set, Astercook 15 Pieces Knife Sets for Kitchen with Block, Dishwasher Saf | Knife sharpener | Astercook | Knife Block Sets | 59.99 | 10000 | 599900 | 3091 | 4.8 | 145 | 2 | 38.5 | -11 | 9 | 8.73 | 29.6 | 18.26 | 30.4 | BUY | + маржа п.рекл. 30.4%; + низкая конкуренция (2 офф.); + рейтинг 4.8 / 3091 отз.;
+B0DYP3J5BW | Knife Set,Astercook Kitchen Knife Set with Block 14-Piece Full Tang Stainless St | Knife sharpener | Astercook | Knife Block Sets | 79.99 | 3000 | 239970 | 1093 | 4.8 | 192 | 1 | 15.9 | -3 | 12 | 8.89 | 26.1 | 27.1 | 33.9 | BUY | + маржа п.рекл. 33.9%; + низкая конкуренция (1 офф.); + рейтинг 4.8 / 1093 отз.;
+B09G6QX21B | McCook® Knife Sets,German Stainless Steel Knife Block Sets with Built-in Sharpen | Knife sharpener | McCook | Knife Block Sets | 125.99 | 1000 | 125990 | 35887 | 4.6 | 247 | 1 | 57.3 | 21 | 18.9 | 8.89 | 22.1 | 47.8 | 37.9 | BUY | + маржа п.рекл. 37.9%; + низкая конкуренция (1 офф.); + рейтинг 4.6 / 35887 отз.
+B07RTH8LM7 | McCook® Knife Sets, German Stainless Steel Kitchen Knife Block Sets with Built-i | Knife sharpener | McCook | Knife Block Sets | 125.99 | 800 | 100792 | 35887 | 4.6 | 247 | 2 | 85.6 | 56 | 18.9 | 9.06 | 22.2 | 47.63 | 37.8 | BUY | + маржа п.рекл. 37.8%; + низкая конкуренция (2 офф.); + рейтинг 4.6 / 35887 отз.
+B09GBBMTNS | McCook® Knife Sets,German Stainless Steel Knife Block Sets with Built-in Sharpen | Knife sharpener | McCook | Knife Block Sets | 119.99 | 400 | 47996 | 35887 | 4.6 | 247 | 1 | 57.3 | 47 | 18 | 8.97 | 22.5 | 45.02 | 37.5 | BUY | + маржа п.рекл. 37.5%; + низкая конкуренция (1 офф.); + рейтинг 4.6 / 35887 отз.
+B0FRMKXQ7J | Knife Set,Astercook Kitchen Knife Set with Block 22-Piece Full Tang Stainless St | Knife sharpener | Astercook | Knife Block Sets | 129.99 | 300 | 38997 | 1087 | 4.8 | 177 | 1 | 7 | 12 | 19.5 | 10.71 | 23.2 | 47.78 | 36.8 | BUY | + маржа п.рекл. 36.8%; + низкая конкуренция (1 офф.); + рейтинг 4.8 / 1087 отз.;
+B09Z6Q39QX | McCook® Knife Sets, Golden Titanium Stainless Steel Kitchen Knife Block Sets wit | Knife sharpener | McCook | Knife Block Sets | 119.99 | 300 | 35997 | 35888 | 4.6 | 247 | 1 | 49.9 | 38 | 18 | 9.39 | 22.8 | 44.6 | 37.2 | BUY | + маржа п.рекл. 37.2%; + низкая конкуренция (1 офф.); + рейтинг 4.6 / 35888 отз.
+B09Z6RDXWT | McCook® Kitchen Knife Sets, Golden Titanium Stainless Steel Knives Block Set wit | Knife sharpener | McCook | Knife Block Sets | 135.99 | 50 | 6800 | 35871 | 4.6 | 247 | 1 | 49.9 | 47 | 20.4 | 10.05 | 22.4 | 51.14 | 37.6 | BUY | + маржа п.рекл. 37.6%; + низкая конкуренция (1 офф.); + рейтинг 4.6 / 35871 отз.
+B09KTJMCGY | McCook® Kitchen Knife Sets,German Stainless Steel Knives Block Set with Built-in | Knife sharpener | McCook | Knife Block Sets | 119.99 | — | 0 | 35879 | 4.6 | 247 | 1 | 55.7 | 99 | 18 | 9.97 | 23.3 | 44.02 | 36.7 | BUY | + маржа п.рекл. 36.7%; + низкая конкуренция (1 офф.); + рейтинг 4.6 / 35879 отз.
+B09KTLNZFH | McCook® Knife Sets,German Stainless Steel Kitchen Knives Block Set with Built-in | Knife sharpener | McCook | Knife Block Sets | 119.99 | — | 0 | 35887 | 4.6 | 247 | 1 | 55.7 | 99 | 18 | 9.97 | 23.3 | 44.02 | 36.7 | BUY | + маржа п.рекл. 36.7%; + низкая конкуренция (1 офф.); + рейтинг 4.6 / 35887 отз.
+B0BF7DXLBF | Fellow Stagg EKG Pro Electric Gooseneck Kettle – Precise Temperature Control, Qu | Gooseneck kettle | Fellow | Electric Kettles | 179.95 | 600 | 107970 | 598 | 4.3 | 2033 | 1 | 45.4 | -6 | 26.99 | 10.17 | 20.7 | 70.81 | 39.3 | BUY | + маржа п.рекл. 39.3%; + низкая конкуренция (1 офф.); + рейтинг 4.3 / 598 отз.; 
+B0BF7HJ8MX | Fellow Stagg EKG Pro Electric Gooseneck Kettle - Pour-Over Coffee and Tea, Quick | Gooseneck kettle | Fellow | Electric Kettles | 199.95 | 300 | 59985 | 598 | 4.3 | 1930 | 1 | 45.4 | 12 | 29.99 | 10.57 | 20.3 | 79.41 | 39.7 | BUY | + маржа п.рекл. 39.7%; + низкая конкуренция (1 офф.); + рейтинг 4.3 / 598 отз.; 
+... (218 more rows)
+
+===== SHEET: Германия — спрос (15x8) =====
+ГЕРМАНИЯ — ПРОВЕРКА СПРОСА (amazon.de, Keepa live)
+Едет ли товар из США в DE: цена €, спрос, доля Amazon. Полная экономика DE — в в
+DE-поиск по немецкому ключу может захватывать смежные подтипы — цифры как индика
+Ниша (US) | Найдено (выб.) | Медиана цены € | Прод/мес медиана | Прод/мес ∑ (выб.) | Amazon BB % | Едет в DE? | Комментарий
+Milk frother | 6 | 234.7 | 750 | 2600 | 50 | ✓ да | DE-поиск поймал премиум/автомат. фрозеры (€234) — не ручной тип; цена несопостав
+Knife sharpener | 6 | 38 | 400 | 1600 | 33 | ✓ да | —
+Gooseneck kettle | 6 | 65.5 | 100 | 100 | 0 | слабо | —
+Bathroom organizer | 6 | 20 | 400 | 2900 | 0 | ✓ да | —
+Under-bed storage | 6 | 25.5 | 525 | 1050 | 0 | ✓ да | —
+Shower caddy | 6 | 23 | 300 | 1650 | 0 | ✓ да | —
+Mattress topper | 6 | 17 | 50 | 50 | 0 | слабо | —
+Closet organizer | 6 | 22 | 150 | 1650 | 0 | ✓ да | —
+Cutting board | 6 | 25 | 100 | 800 | 33 | ✓ да | —
+
+Метод: title-поиск, рейтинг≥4.0, отзывы≥50, цена €15–500, топ-6 по продажам. «Ед
+
+===== SHEET: ОАЭ — модель (16x11) =====
+ОАЭ — МОДЕЛЬ ЮНИТ-ЭКОНОМИКИ (amazon.ae)
+Keepa НЕ покрывает amazon.ae → расчёт смоделирован: розница ОАЭ ≈ цена US, тариф
+ВАЖНО: цифры — модель, не выгрузка. Спрос на ОАЭ тоньше США (по вашему анализу м
+Ниша (US) | Розница ОАЭ AED | (≈$) | Referral 15% | FBA AED | Хранение | COGS~28% | Маржа AED | Маржа % | Маржа п.рекл % | Заметка/тир
+Milk frother | 116 | $32 | 17 | 14 | 2 | 32 | 51 | 44 | 33.6 | Tier1 кухня-аксессуар; электро — проверить адаптер/сертификат
+Knife sharpener | 440 | $120 | 66 | 28 | 2 | 123 | 221 | 50.2 | 40.2 | наборы ножей — Tier2, дороже логистика
+Gooseneck kettle | 734 | $200 | 110 | 28 | 2 | 206 | 388 | 52.9 | 42.9 | электро, сертификация; премиум-цена
+Bathroom organizer | 149 | $40 | 22 | 28 | 2 | 42 | 55 | 36.9 | 26.8 | Tier1; органайзеры стабильны в Home ОАЭ
+Essential oil diffuser | 166 | $45 | 25 | 18 | 2 | 46 | 75 | 45.2 | 34.9 | электро; декор-ниша
+Under-bed storage | 128 | $35 | 19 | 18 | 2 | 36 | 53 | 41.4 | 31.2 | Tier1 лёгкий; идеален для ОАЭ
+Shower caddy | 88 | $24 | 13 | 14 | 2 | 25 | 34 | 38.6 | 28.4 | Tier1 ванная; ходовой в ОАЭ (аренда жилья)
+Mattress topper | 193 | $52 | 29 | 28 | 2 | 54 | 80 | 41.5 | 31.6 | объёмный → дорогой FBA/фрахт; маржа на цене
+Pantry organization | 141 | $38 | 21 | 28 | 2 | 39 | 51 | 36.2 | 26.2 | Tier1 наборы контейнеров
+Closet organizer | 128 | $35 | 19 | 18 | 2 | 36 | 53 | 41.4 | 31.2 | Tier1 текстиль/хранение
+Cutting board | 140 | $38 | 21 | 18 | 2 | 39 | 60 | 42.9 | 32.9 | кухня; дерево — вес/влажность
+Glass food containers | 112 | $31 | 17 | 28 | 2 | 31 | 34 | 30.4 | 20.5 | Home/аксессуары
+
+===== SHEET: Юнит-экономика (27x10) =====
+ЮНИТ-ЭКОНОМИКА И КОМИССИИ — МОДЕЛЬ
+Как считаются маржа и вердикты. US: без НДС. Комиссии Amazon берутся из Keepa (r
+
+Параметр | Значение / формула
+Валюта US | USD, цены без НДС
+Referral fee | из Keepa: 8% / 11% / 15% (зависит от подкатегории Home & Kitchen)
+FBA pick&pack | из Keepa (фактический по габаритам/весу)
+COGS (себестоимость landed) | 28% от розницы — базовый сценарий
+COGS — чувствительность | 22% (лучший) … 35% (худший)
+Реклама/запуск (PPC) | 10–12% от цены (в «маржа после рекламы»)
+Маржа/шт | Цена − Referral − FBA − COGS
+Маржа после рекламы | Маржа − PPC
+
+ПРИМЕР РАСЧЁТА (медианный товар ниши)
+Ниша | Цена $ | Referral $ | FBA $ | Комиссии % | COGS 28% $ | Маржа п.рекл $ | Маржа п.рекл % | COGS22%→маржа% | COGS35%→маржа%
+Milk frother | 31.49 | 3.75 | 4.87 | 34.5 | 7 | 6.37 | 25.5 | 25 | 14.7
+Knife sharpener | 119.99 | 9 | 8.73 | 29.6 | 16.8 | 18.26 | 30.4 | 18.2 | 11.7
+Gooseneck kettle | 199.95 | 26.99 | 10.17 | 20.7 | 50.39 | 70.81 | 39.3 | 40.8 | 29.1
+Bathroom organizer | 40.49 | 6.75 | 10.11 | 37.5 | 12.6 | 10.13 | 22.5 | 31.7 | 17.2
+Essential oil diffuser | 45.34 | 5.25 | 10.17 | 44.1 | 9.8 | 5.57 | 15.9 | 16.9 | 6.9
+Under-bed storage | 34.99 | 3.75 | 6.31 | 40.3 | 7 | 4.93 | 19.7 | 18.4 | 9.1
+Shower caddy | 23.99 | 3.75 | 6.34 | 40.4 | 7 | 4.9 | 19.6 | 26.7 | 13.1
+Mattress topper | 52.49 | 7.5 | 14.5 | 44 | 14 | 7.99 | 16 | 20.9 | 8.6
+Pantry organization | 38.49 | 4.65 | 8.79 | 43.4 | 8.68 | 5.15 | 16.6 | 18.2 | 7.7
+Closet organizer | 34.99 | 4.05 | 7.88 | 44.2 | 7.56 | 4.26 | 15.8 | 16.8 | 6.8
+... (2 more rows)
+
+===== SHEET: Alibaba — закупка (37x8) =====
+ALIBABA — ЗАКУПКА ПО НИШАМ
+Рабочие ссылки на поиск Alibaba (кликабельны). FOB и MOQ — ориентир для старта п
+# | Ниша | Score | Поисковый запрос Alibaba | FOB $/шт (ориентир) | MOQ (ориентир) | Что искать / дифференциация | Ссылка Alibaba
+1 | Milk frother | 80.7 | handheld milk frother | $2.5 – $6 | 500-1000 | USB-зарядка, 2-3 венчика, подставка, тихий мотор | открыть поиск ▸
+2 | Knife sharpener | 77.4 | knife sharpener | $2 – $7 | 500-1000 | 3-ступ., алмаз+керамика, нескольз.база; либо ножи-сет | открыть поиск ▸
+3 | Gooseneck kettle | 76.1 | gooseneck electric kettle | $9 – $18 | 200-500 | Темп.контроль, мат.покрытие, 0.8-1.2л для пуровер | открыть поиск ▸
+4 | Bathroom organizer | 72.8 | bathroom countertop organizer | $2 – $6 | 500-1000 | Прозр.выдвижн.ящики, под раковину/столешницу | открыть поиск ▸
+5 | Essential oil diffuser | 71.6 | essential oil diffuser | $4 – $10 | 300-500 | Ультразвук, дерев.декор, таймер/LED, 300-500мл | открыть поиск ▸
+6 | Under-bed storage | 71.3 | under bed storage bag | $1.5 – $4 | 500-1000 | Прозр.окно, усил.ручки, молния по периметру | открыть поиск ▸
+7 | Shower caddy | 69.1 | shower caddy no drilling | $2.5 – $6 | 500-1000 | Нерж.сталь, без сверления, 2-3 яруса, антикоррозия | открыть поиск ▸
+8 | Mattress topper | 67.1 | mattress topper | $12 – $35 | 200-500 | Memory foam/охлажд.гель, резинки по углам, размеры US | открыть поиск ▸
+9 | Pantry organization | 67 | pantry storage bins set | $2.5 – $7 | 500-1000 | Прозр.штабел.контейнеры, набор + этикетки/мерные | открыть поиск ▸
+10 | Closet organizer | 66 | hanging closet organizer | $2 – $6 | 500-1000 | Нетканый, бамбук-вставки, модульные секции | открыть поиск ▸
+11 | Cutting board | 65.8 | bamboo cutting board set | $3.5 – $9 | 300-500 | Бамбук/орех, сок-канавки, набор размеров, гравировка | открыть поиск ▸
+12 | Glass food containers | 64.1 | glass food storage containers set | $4 – $9 | 500-1000 | Боросиликат, защёлки, набор 8-10, для СВЧ/духовки | открыть поиск ▸
+13 | Adhesive wall hooks | 61.7 | adhesive wall hooks heavy duty | $0.5 – $2 | 1000-2000 | Прозрачн./нерж., разн.нагрузка, набор, без следов | открыть поиск ▸
+14 | Drawer organizer | 58.7 | drawer organizer set | $1.5 – $5 | 500-1000 | Прозр.пластик, наборы, регулируемые/стыкуемые | открыть поиск ▸
+15 | Laundry hamper | 56.8 | laundry hamper basket | $3 – $9 | 300-500 | Складной, ручки, разд.секции, водоотталк.ткань | открыть поиск ▸
+16 | Insulated tumbler | 56.6 | insulated tumbler 40oz | $3.5 – $8 | 500-1000 | Двойная сталь, крышка+трубочка, под автодержатель | открыть поиск ▸
+17 | Water filter pitcher | 55.5 | water filter pitcher | $3.5 – $8 | 500-1000 | Совместимость с Brita-картриджами, индикатор, 10 чашек | открыть поиск ▸
+18 | Air fryer liners | 55.2 | air fryer liners disposable | $0.8 – $2.5 | 1000-2000 | Перфорир., разн.размеры, бумага+силикон многораз. | открыть поиск ▸
+19 | Shoe rack | 52.1 | shoe rack organizer | $3 – $9 | 300-500 | Металл+ткань, штабел., узкий профиль для прихожей | открыть поиск ▸
+20 | Throw pillow covers | 49.1 | throw pillow covers | $1 – $3.5 | 1000-2000 | Букле/вельвет, тренд-цвета, наборы 2-4, 18x18 | открыть поиск ▸
+21 | Spice rack organizer | 47.6 | spice rack organizer | $3 – $8 | 300-500 | Выдвижной/поворотный, бамбук, с этикетками | открыть поиск ▸
+22 | Silicone bakeware | 45.8 | silicone baking molds set | $1.5 – $5 | 500-1000 | Пищевой LFGB-силикон, нестандартные формы, наборы | открыть поиск ▸
+... (12 more rows)
+
+===== SHEET: Методика (14x2) =====
+МЕТОДИКА И ДОПУЩЕНИЯ
+
+
+Источник данных US/DE | Keepa API (live), domain US/DE. Метрики: цена Buy Box, ранг, рейтинг, отзывы, чи
+Источник ОАЭ | Keepa не покрывает amazon.ae. Экономика смоделирована по тарифам amazon.ae; спро
+Категория и охват | Amazon Home & Kitchen (root 1055398) + 24 поисковые подниши, по 10 лучших по про
+Фильтры поиска | Цена $20–$500; рейтинг ≥4.2; отзывы ≥200; ранг ≤80 000; офферы ≤25. Сортировка п
+Opportunity Score | 0-100: Спрос (выручка, до 30) + Маржа после рекламы (до 25) + Конкуренция (оффер
+Вердикт BUY/WATCH/SKIP | По сигналам «за/против»: маржа, конкуренция, Buy Box Amazon, рейтинг/отзывы, спр
+Новинка / Новинка-победитель | Новинка = листинг ≤12 мес. Новинка-победитель = новинка со спросом ≥300 шт/мес (
+Юнит-экономика US | Цена − Referral (Keepa: 8/11/15%) − FBA pick&pack (Keepa) − COGS(28%) ; «после р
+COGS и FOB | COGS landed = 28% розницы (сценарии 22–35%). FOB $/шт и MOQ — ориентир для перег
+Ограничения | monthlySold округлён Keepa (50/100/1K…) и есть не у всех. Цена/выручка — оценка.
+Стратегия рынков | США — рынок-источник новинок/трендов (основной поиск). DE — проверка, что товар 

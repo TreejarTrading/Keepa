@@ -1,0 +1,82 @@
+
+===== SHEET: Анализ (51x23) =====
+ASIN | Title | Brand | Category | Rating | Reviews | Review/mo | Monthly sold | Price (New) | New avg | New min | New max | Price volat. | Buy Box | BB=Amazon | Offers | Sales rank | Rank drops/30d | Rank drops/90d | Verdict | Confidence | Rationale | Amazon URL
+B0DG8PNJDD | DREO 20dB Smart Tower Fan, 8.5m/s Velocity Standing Fan for Bedroom, 9 Speeds 4  | DREO | Tower Fans | 4.6 | 4251 | 100 | 1000 | 99.99 | 116.58 | 84.99 | 270.99 | 1.59 | 99.99 |  | 1 | 156 | 16 | 40 | BUY | high | + healthy sales velocity (drops30=16, monthly≈1000); + moderate competition (1 o | https://www.amazon.co.uk/dp/B0DG8PNJDD
+B0FT3NXQBY | Lifewit Cutlery Drawer Organiser, Extendable Cutlery Tray, 7 Compartments, Kitch | Lifewit | Utensil Racks | 4.6 | 27128 | 668.7 | 100 | 11.03 | 11.9 | 11.03 | 12.99 | 0.17 | 11.03 |  | 1 | 211 | 6 | 13 | BUY | medium | + stable price (volatility 0.165); + moderate competition (1 offers); + strong r | https://www.amazon.co.uk/dp/B0FT3NXQBY
+B0G3TV1NWL | Lifewit 50L Clothes Storage Bags Large Storage Box With Lid Packing Boxes for Mo | Lifewit | Under-Bed Storage | 4.4 | 32674 | 129 | 100 | 16.99 | 14.49 | 12.74 | 16.99 | 0.29 | 16.99 |  | 1 | 78 | 9 | 34 | BUY | medium | + healthy sales velocity (drops30=9, monthly≈100); + moderate competition (1 off | https://www.amazon.co.uk/dp/B0G3TV1NWL
+B0G3VCS79F | Lifewit Cutlery Drawer Organiser, Extendable Cutlery Tray, 8 Compartments, Kitch | Lifewit | Utensil Racks | 4.6 | 27128 | 668.7 | 100 | 12.73 | 13.73 | 12.73 | 14.99 | 0.17 | 12.73 |  | 1 | 201 | 9 | 16 | BUY | high | + stable price (volatility 0.165); + healthy sales velocity (drops30=9, monthly≈ | https://www.amazon.co.uk/dp/B0G3VCS79F
+B0GCZBWNS8 | Diveblues Quiet Handheld Turbo Fan, 8.2m/s High Speed Portable Fan, 3-in-1 Hand  | Diveblues | Desk Fans | 4.4 | 1187 | 46.3 | 500 | 18.99 | 16.02 | 12.73 | 21.99 | 0.58 | 18.99 |  | 1 | 213 | 15 | 37 | BUY | high | + healthy sales velocity (drops30=15, monthly≈500); + moderate competition (1 of | https://www.amazon.co.uk/dp/B0GCZBWNS8
+B0GK18KTXW | CIRCLE JOY 2-Speed Rechargeable Milk Frother Hanheld, Dual Coil Whisk Head Elect | CIRCLE JOY | Handheld Milk Frothers | 4.4 | 7326 | 2432.7 | 200 | 16.99 | 18.58 | 16.99 | 21.99 | 0.27 | 16.99 |  | 1 | 63 | 7 | 32 | WATCH | medium | + moderate competition (1 offers); + strong rating 4.4 with 7326 reviews | https://www.amazon.co.uk/dp/B0GK18KTXW
+B0GL115LFT | NileHome Silicone Spatula Set, 4 Pieces Food Grade Kitchen Utensils with Silicon | NileHome | Spatulas | 4.6 | 3103 | 79.3 | 200 | 6.99 | 6.64 | 5.94 | 6.99 | 0.16 | 6.99 |  | 1 | 296 | 4 | 9 | BUY | medium | + stable price (volatility 0.158); + moderate competition (1 offers); + strong r | https://www.amazon.co.uk/dp/B0GL115LFT
+B0GL381YQB | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | KEPLIN | Sunloungers | 4.4 | 1858 | 618.3 | 700 | 49.99 | 63.9 | 49.99 | 79.99 | 0.47 | 51.99 |  | 2 | 111 | 10 | 26 | BUY | medium | + healthy sales velocity (drops30=10, monthly≈700); + moderate competition (2 of | https://www.amazon.co.uk/dp/B0GL381YQB
+B0GL39WRBX | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | KEPLIN | Sunloungers | 4.4 | 1848 | 547 | 100 | 49.99 | 64.19 | 49.99 | 79.99 | 0.47 | 51.99 |  | 2 | 111 | 10 | 29 | BUY | medium | + healthy sales velocity (drops30=10, monthly≈100); + moderate competition (2 of | https://www.amazon.co.uk/dp/B0GL39WRBX
+B0GL3B6KLB | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | KEPLIN | Sunloungers | 4.4 | 1858 | 618.3 | 200 | 49.99 | 64.32 | 49.99 | 79.99 | 0.47 | 51.99 |  | 2 | 111 | 9 | 31 | BUY | medium | + healthy sales velocity (drops30=9, monthly≈200); + moderate competition (2 off | https://www.amazon.co.uk/dp/B0GL3B6KLB
+B0GL3BSMBP | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | KEPLIN | Sunloungers | 4.4 | 1851 | 616.7 | 500 | 49.99 | 63.05 | 49.99 | 79.99 | 0.48 | 51.99 |  | 2 | 104 | 11 | 34 | BUY | medium | + healthy sales velocity (drops30=11, monthly≈500); + moderate competition (2 of | https://www.amazon.co.uk/dp/B0GL3BSMBP
+B0GL3C5ZTV | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | KEPLIN | Sunloungers | 4.4 | 1847 | 614.7 | 400 | 49.99 | 61.24 | 49.99 | 79.99 | 0.49 | 49.99 |  | 2 | 104 | 10 | 28 | BUY | medium | + healthy sales velocity (drops30=10, monthly≈400); + moderate competition (2 of | https://www.amazon.co.uk/dp/B0GL3C5ZTV
+B0GL3FFWTZ | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | KEPLIN | Sunloungers | 4.4 | 1858 | 618.3 | 200 | 49.99 | 63.3 | 49.99 | 79.99 | 0.47 | 51.99 |  | 2 | 111 | 9 | 30 | BUY | medium | + healthy sales velocity (drops30=9, monthly≈200); + moderate competition (2 off | https://www.amazon.co.uk/dp/B0GL3FFWTZ
+B0GL3K57FY | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | KEPLIN | Sunloungers | 4.4 | 1858 | 618.3 | 900 | 49.99 | 62.45 | 49.99 | 79.99 | 0.48 | 51.99 |  | 2 | 104 | 8 | 33 | BUY | medium | + healthy sales velocity (drops30=8, monthly≈900); + moderate competition (2 off | https://www.amazon.co.uk/dp/B0GL3K57FY
+B0GL63WS6B | Leikedun 2 Pack Gradient Color Silk Fabric Hand Fans, Hollow Carved Bamboo Foldi | Leikedun | Display Fans | 4.2 | 259 | 16.3 | 100 | 6.99 | 6.7 | 6.25 | 6.99 | 0.11 | 6.99 |  | 1 | 301 | 6 | 19 | BUY | medium | + stable price (volatility 0.11); + moderate competition (1 offers); + strong ra | https://www.amazon.co.uk/dp/B0GL63WS6B
+B0GL8N9M8Z | Handheld Fan Portable Hand Held - Fans Rechargeable Mini Battery Powered Travel  | MGVIH | Desk Fans | 4.3 | 180 | 59.3 | 200 | 17.99 | 14.49 | 9.99 | 17.99 | 0.55 | 17.99 |  | 1 | 59 | 11 | 17 | BUY | high | + healthy sales velocity (drops30=11, monthly≈200); + moderate competition (1 of | https://www.amazon.co.uk/dp/B0GL8N9M8Z
+B0GL8RY2DV | Handheld Fan Portable Hand Held - Fans Rechargeable Mini Battery Powered Travel  | MGVIH | Desk Fans | 4.3 | 180 | 59.3 | 300 | 17.99 | 14.49 | 9.99 | 17.99 | 0.55 | 17.99 |  | 1 | 65 | 10 | 16 | BUY | high | + healthy sales velocity (drops30=10, monthly≈300); + moderate competition (1 of | https://www.amazon.co.uk/dp/B0GL8RY2DV
+B0GL8SYVBP | Handheld Fan Portable Hand Held - Fans Rechargeable Mini Battery Powered Travel  | MGVIH | Desk Fans | 4.3 | 180 | 58.7 | 300 | 17.99 | 13.82 | 9.99 | 17.99 | 0.58 | 17.99 |  | 1 | 59 | 10 | 16 | BUY | high | + healthy sales velocity (drops30=10, monthly≈300); + moderate competition (1 of | https://www.amazon.co.uk/dp/B0GL8SYVBP
+B0GL8V8TWP | KEPLIN Set of 2 XXL Premium Heavy Duty Padded Diamond Zero Gravity Chairs - Luxu | KEPLIN | Sunloungers | 4.4 | 1858 | 594.7 | 200 | 99.99 | 98.84 | 79.99 | 129.99 | 0.51 | 101.99 |  | 2 | 111 | 9 | 34 | BUY | high | + healthy sales velocity (drops30=9, monthly≈200); + moderate competition (2 off | https://www.amazon.co.uk/dp/B0GL8V8TWP
+B0GL8YB9KJ | KEPLIN Set of 2 XXL Premium Heavy Duty Padded Diamond Zero Gravity Chairs - Luxu | KEPLIN | Sunloungers | 4.4 | 1795 | 573.7 | 100 | 99.99 | 103.87 | 84.99 | 129.99 | 0.43 | 99.99 |  | 1 | 111 | 9 | 35 | BUY | medium | + healthy sales velocity (drops30=9, monthly≈100); + moderate competition (1 off | https://www.amazon.co.uk/dp/B0GL8YB9KJ
+B0GL9596GY | KEPLIN Set of 2 XXL Premium Heavy Duty Padded Diamond Zero Gravity Chairs - Luxu | KEPLIN | Sunloungers | 4.4 | 1858 | 594.3 | 100 | 79.99 | 92.49 | 79.99 | 129.99 | 0.54 | 81.99 |  | 2 | 111 | 10 | 37 | BUY | high | + healthy sales velocity (drops30=10, monthly≈100); + moderate competition (2 of | https://www.amazon.co.uk/dp/B0GL9596GY
+B0GLNMG4J9 | Leikedun 2 Pack Hand Fan Folding, Sexy Bamboo Folding Fan Chinese Hand Fans for  | Leikedun | Display Fans | 4.2 | 259 | 16.3 | 200 | 8.98 | 8.92 | 7.99 | 9.98 | 0.22 | 8.98 |  | 1 | 301 | 7 | 21 | BUY | medium | + stable price (volatility 0.223); + moderate competition (1 offers); + strong r | https://www.amazon.co.uk/dp/B0GLNMG4J9
+B0GLZTLLJS | Ant Killer Spray 1000ml – Indoor & Outdoor Use – Fast-Acting, Residue-Free, Pet  | Pest strike | Ants | 4.6 | 332 | 58 | 1000 | 19.99 | 19.66 | 18.99 | 19.99 | 0.05 | 19.99 |  | 1 | 96 | 7 | 20 | BUY | high | + stable price (volatility 0.051); + healthy sales velocity (drops30=7, monthly≈ | https://www.amazon.co.uk/dp/B0GLZTLLJS
+B0GQBG19DZ | Magicwipe® Bathroom Drying Cloth XXL (40×60 cm, 1 Pack) – Removes Limescale & Ha | MAGIC WIPE | Cleaning Cloths | 4.7 | 2767 | 223.7 | 200 | 9.99 | 10.29 | 4.99 | 17.98 | 1.26 | 9.99 |  | 2 | 134 | 9 | 29 | BUY | high | + healthy sales velocity (drops30=9, monthly≈200); + moderate competition (2 off | https://www.amazon.co.uk/dp/B0GQBG19DZ
+... (26 more rows)
+
+===== SHEET: Характеристики (51x7) =====
+ASIN | Title | Features | Description | Dimensions | Weight (g) | Variations
+B0DG8PNJDD | DREO 20dB Smart Tower Fan, 8.5m/s Velocity Standing Fan for Bedroom, 9 Speeds 4  | 𝗛𝘆𝗽𝗲𝗿𝗳𝗮𝘀𝘁 𝗪𝗶𝗻𝗱 𝗦𝗽𝗲𝗲𝗱𝘀: Built to perform in large spaces, the 519S brings large 4 |  | 1100 x 230 x 205 | 5000 | 2
+B0FT3NXQBY | Lifewit Cutlery Drawer Organiser, Extendable Cutlery Tray, 7 Compartments, Kitch | Suitable Capacity: Organise your kitchen drawer and make more space with the cut |  | 303 x 213 x 39 | 322 | 20
+B0G3TV1NWL | Lifewit 50L Clothes Storage Bags Large Storage Box With Lid Packing Boxes for Mo | Choice of Multi-Pack: Each clothes organizer boasts dimensions of 50cm x 36cm x  |  | 370 x 223 x 107 | 420 | 12
+B0G3VCS79F | Lifewit Cutlery Drawer Organiser, Extendable Cutlery Tray, 8 Compartments, Kitch | Suitable Capacity: Organise your kitchen drawer and make more space with the cut |  | 344 x 275 x 39 | 440 | 20
+B0GCZBWNS8 | Diveblues Quiet Handheld Turbo Fan, 8.2m/s High Speed Portable Fan, 3-in-1 Hand  | [iTurbo Tech: 8.2m/s Jet-Stream] Our proprietary engine compresses airflow into  |  | 186 x 78 x 54 | 200 | 2
+B0GK18KTXW | CIRCLE JOY 2-Speed Rechargeable Milk Frother Hanheld, Dual Coil Whisk Head Elect | 2-SPEED SETTINGS: Powered by a high-speed motor and an upgraded double-spring wh |  | 299 x 43 x 41 | 170 | 3
+B0GL115LFT | NileHome Silicone Spatula Set, 4 Pieces Food Grade Kitchen Utensils with Silicon | FOOD GRADE SILICONE SPATULA: This silicone spatula set is suitable for cooking,  |  | 301 x 162 x 33 | 260 | 14
+B0GL381YQB | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | Foldable & Space-Saving Design – The KEPLIN zero gravity chair easily folds for  | Product description
+
+KEPLIN Gravity Chair Monocolour- Adjustable Reclining Zero  | -1 x -1 x -1 | -1 | 19
+B0GL39WRBX | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | Foldable & Space-Saving Design – The KEPLIN zero gravity chair easily folds for  | Product description
+
+KEPLIN Gravity Chair Monocolour- Adjustable Reclining Zero  | -1 x -1 x -1 | -1 | 19
+B0GL3B6KLB | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | Foldable & Space-Saving Design – The KEPLIN zero gravity chair easily folds for  | Product description
+
+KEPLIN Gravity Chair Monocolour- Adjustable Reclining Zero  | -1 x -1 x -1 | -1 | 19
+B0GL3BSMBP | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | Foldable & Space-Saving Design – The KEPLIN zero gravity chair easily folds for  | Product description
+
+KEPLIN Gravity Chair Monocolour- Adjustable Reclining Zero  | -1 x -1 x -1 | -1 | 19
+B0GL3C5ZTV | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | Foldable & Space-Saving Design – The KEPLIN zero gravity chair easily folds for  | Product description
+
+KEPLIN Gravity Chair Monocolour- Adjustable Reclining Zero  | -1 x -1 x -1 | -1 | 19
+B0GL3FFWTZ | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | Foldable & Space-Saving Design – The KEPLIN zero gravity chair easily folds for  | Product description
+
+KEPLIN Gravity Chair Monocolour- Adjustable Reclining Zero  | -1 x -1 x -1 | -1 | 19
+B0GL3K57FY | KEPLIN Set of 2 Heavy Duty Zero Gravity Chairs – Padded Garden Recliners with Lo | Foldable & Space-Saving Design – The KEPLIN zero gravity chair easily folds for  | Product description
+
+KEPLIN Gravity Chair Monocolour- Adjustable Reclining Zero  | -1 x -1 x -1 | -1 | 19
+B0GL63WS6B | Leikedun 2 Pack Gradient Color Silk Fabric Hand Fans, Hollow Carved Bamboo Foldi | Good Workmanship: Chinese silk hand fan in vintage style is made of fabric surfa | Features:
+Foldable Compartment
+Chinese hand fan made of silk in vintage style is | 236 x 105 x 17 | 90 | 13
+B0GL8N9M8Z | Handheld Fan Portable Hand Held - Fans Rechargeable Mini Battery Powered Travel  | Can MGVIH handheld fan be used outdoors? - Yes. They are perfect fit travel, hol |  | 197 x 103 x 47 | 220 | 4
+B0GL8RY2DV | Handheld Fan Portable Hand Held - Fans Rechargeable Mini Battery Powered Travel  | Can MGVIH handheld fan be used outdoors? - Yes. They are perfect fit travel, hol |  | 196 x 102 x 47 | 220 | 4
+B0GL8SYVBP | Handheld Fan Portable Hand Held - Fans Rechargeable Mini Battery Powered Travel  | Can MGVIH handheld fan be used outdoors? - Yes. They are perfect fit travel, hol |  | 195 x 101 x 47 | 220 | 4
+B0GL8V8TWP | KEPLIN Set of 2 XXL Premium Heavy Duty Padded Diamond Zero Gravity Chairs - Luxu | Indulge in the ultimate outdoor relaxation with our Zero Gravity Reclining Chair |  | -1 x -1 x -1 | -1 | 19
+B0GL8YB9KJ | KEPLIN Set of 2 XXL Premium Heavy Duty Padded Diamond Zero Gravity Chairs - Luxu | Indulge in the ultimate outdoor relaxation with our Zero Gravity Reclining Chair |  | -1 x -1 x -1 | -1 | 19
+B0GL9596GY | KEPLIN Set of 2 XXL Premium Heavy Duty Padded Diamond Zero Gravity Chairs - Luxu | Indulge in the ultimate outdoor relaxation with our Zero Gravity Reclining Chair |  | -1 x -1 x -1 | -1 | 19
+B0GLNMG4J9 | Leikedun 2 Pack Hand Fan Folding, Sexy Bamboo Folding Fan Chinese Hand Fans for  | Good Workmanship: Chinese silk hand fan in vintage style is made of fabric surfa | Features:
+Foldable Compartment
+Chinese hand fan made of silk in vintage style is | 221 x 62 x 14 | 70 | 13
+B0GLZTLLJS | Ant Killer Spray 1000ml – Indoor & Outdoor Use – Fast-Acting, Residue-Free, Pet  | 🐜 Instant Ant Elimination – Fast-acting formula kills ants on contact and stops  |  | -1 x -1 x -1 | 100 | 2
+B0GQBG19DZ | Magicwipe® Bathroom Drying Cloth XXL (40×60 cm, 1 Pack) – Removes Limescale & Ha | Ultra Absorbent & Quick Drying: MAGIC WIPE large microfibre cloth soaks up water |  | 231 x 199 x 44 | 160 | 12
+... (26 more rows)
+
+===== SHEET: Сводка (6x2) =====
+Generated | 2026-07-06T11:16:24
+Products analysed | 50
+Query / context | AUTO 2026-07-06 11:16 | market=GB | filters={"category_id": 3146281, "min_rating
+BUY | 44
+WATCH | 6
+SKIP | 0

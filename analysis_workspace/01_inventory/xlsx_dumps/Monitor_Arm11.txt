@@ -1,0 +1,28 @@
+
+===== SHEET: sheet1 (58x16384) =====
+15% категория Амазон
+Part Number | Picture | Description |  | Закупка | Закупка евро | Примеры конкурентов
+DS200 |  | SUPPORT ARM OF ARTIFICIAL BODY DISPLAY |  |  |  | B07FQRLFX8
+ |  | 1 | Applicable sizes: 17"-32" | 9 | 7.76 | B0BXY7DQJR
+ |  | 2 | VESA:75x75/100x100mm |  |  | B0BXY7DQJR
+ |  | 3 | COLOR: Black
+ |  | 4 | Bearing range:2-9KG
+ |  | 5 | Tlit Angle:±70°
+ |  | 6 | Left-right Adjustment:±90°
+ |  | 7 | Stretching distance:446-510mm
+ |  | 8 | N.W:1.9KG
+ |  | 9 | Material: Aluminum,Mechanical Spring
+DS200-2 |  | SUPPORT ARM OF ARTIFICIAL BODY DISPLAY
+ |  | 1 | Applicable sizes: 17"-32" | 17.69 | 15.25 | B09HCPCSRB
+ |  | 2 | VESA:75x75/100x100mm |  |  | B07FQMRXVZ
+ |  | 3 | COLOR: Black
+ |  | 4 | Bearing range:2-9KG
+ |  | 5 | Tlit Angle:±70°
+ |  | 6 | Left-right Adjustment:±90°
+ |  | 7 | Stretching distance:446-510mm
+ |  | 8 | N.W:4.2KG
+ |  | 9 | Material: Aluminum,Mechanical Spring
+DS110 |  | SUPPORT ARM OF ARTIFICIAL BODY DISPLAY
+ |  | 1 | Applicable sizes: 17"-35" | 13.69 | 11.8 | B08B8X4KBV
+ |  | 2 | VESA:75x75/100x100mm |  |  | B0FSCXYZT3
+... (33 more rows)
