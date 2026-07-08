@@ -1,0 +1,472 @@
+<title>Amazon EU (DE) — Портфель закупки 2026</title>
+<style>
+:root{
+  --paper:#FBFAF7; --card:#FFFFFF; --ink:#20242B; --muted:#5C6470; --line:#E4E1D8;
+  --accent:#B97A14; --accent-ink:#8A5A0E; --good:#1F7D54; --bad:#A8402C; --watch:#8A6D1A;
+  --chart-fee:#2E6DA4; --chart-cogs:#B97A14; --chart-profit:#1F7D54;
+  --chip-w1:#F3E3C3; --chip-w1-ink:#6E4A0B; --chip-w2:#D9E6F2; --chip-w2-ink:#274E6E; --chip-st:#E2E0DA; --chip-st-ink:#44484F;
+  --thead:#F2EFE7; --rowline:#ECE9E0; --codebg:#F2EFE7;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#14181F; --card:#1C232E; --ink:#E7E9EC; --muted:#9AA3AF; --line:#2C3542;
+  --accent:#D19A33; --accent-ink:#E0B15C; --good:#4BAA81; --bad:#D0705A; --watch:#C9A63E;
+  --chart-fee:#4C87BE; --chart-cogs:#A87715; --chart-profit:#2E8560;
+  --chip-w1:#3A2E15; --chip-w1-ink:#E4C27A; --chip-w2:#1E3348; --chip-w2-ink:#9CC4E4; --chip-st:#2A313C; --chip-st-ink:#B9C2CC;
+  --thead:#222A36; --rowline:#28303C; --codebg:#232B37;
+}}
+:root[data-theme="dark"]{
+  --paper:#14181F; --card:#1C232E; --ink:#E7E9EC; --muted:#9AA3AF; --line:#2C3542;
+  --accent:#D19A33; --accent-ink:#E0B15C; --good:#4BAA81; --bad:#D0705A; --watch:#C9A63E;
+  --chart-fee:#4C87BE; --chart-cogs:#A87715; --chart-profit:#2E8560;
+  --chip-w1:#3A2E15; --chip-w1-ink:#E4C27A; --chip-w2:#1E3348; --chip-w2-ink:#9CC4E4; --chip-st:#2A313C; --chip-st-ink:#B9C2CC;
+  --thead:#222A36; --rowline:#28303C; --codebg:#232B37;
+}
+:root[data-theme="light"]{
+  --paper:#FBFAF7; --card:#FFFFFF; --ink:#20242B; --muted:#5C6470; --line:#E4E1D8;
+  --accent:#B97A14; --accent-ink:#8A5A0E; --good:#1F7D54; --bad:#A8402C; --watch:#8A6D1A;
+  --chart-fee:#2E6DA4; --chart-cogs:#B97A14; --chart-profit:#1F7D54;
+  --chip-w1:#F3E3C3; --chip-w1-ink:#6E4A0B; --chip-w2:#D9E6F2; --chip-w2-ink:#274E6E; --chip-st:#E2E0DA; --chip-st-ink:#44484F;
+  --thead:#F2EFE7; --rowline:#ECE9E0; --codebg:#F2EFE7;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;margin:0;padding:0 20px 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto}
+a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 45%,transparent)}
+a:hover{border-bottom-color:var(--accent)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:clamp(28px,4.2vw,44px);line-height:1.12;margin:.4em 0 .3em;font-weight:600}
+h2{font-size:26px;margin:0 0 6px;font-weight:600}
+h3{font-size:19px;margin:0 0 4px;font-weight:600}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+header.top{padding:48px 0 8px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.meta{color:var(--muted);font-size:14px;max-width:72ch}
+.verdict{display:inline-flex;align-items:center;gap:8px;background:var(--chip-w1);color:var(--chip-w1-ink);border-radius:999px;padding:7px 16px;font-weight:700;font-size:14px;margin-top:14px}
+.verdict .dot{width:9px;height:9px;border-radius:50%;background:var(--good)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+nav.toc a{color:var(--muted);border-bottom:none}
+nav.toc a:hover{color:var(--accent-ink)}
+section{padding:34px 0 6px}
+.sec-head{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:18px}
+.sec-head .no{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--muted);font-size:13px}
+.lead{max-width:72ch;color:var(--ink)}
+.muted{color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:20px 0 4px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.kpi .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.kpi .v small{font-size:16px;font-weight:600;color:var(--muted)}
+.kpi .l{font-size:12.5px;color:var(--muted);margin-top:3px}
+.kpi.gold .v{color:var(--accent-ink)}
+.kpi.green .v{color:var(--good)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th{background:var(--thead);text-align:left;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:9px 12px;white-space:nowrap}
+td{padding:9px 12px;border-top:1px solid var(--rowline);vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{font-weight:700;background:var(--thead)}
+.asin{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;background:var(--codebg);border-radius:5px;padding:1px 6px;white-space:nowrap}
+.chip{display:inline-block;border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.w1{background:var(--chip-w1);color:var(--chip-w1-ink)}
+.w2{background:var(--chip-w2);color:var(--chip-w2-ink)}
+.st{background:var(--chip-st);color:var(--chip-st-ink)}
+.tag-good{color:var(--good);font-weight:700}
+.tag-bad{color:var(--bad);font-weight:700}
+.tag-watch{color:var(--watch);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:16px}
+@media (max-width:520px){.cards{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+.card .head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.card .price{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.card .price small{display:block;font-size:11px;color:var(--muted);font-weight:600;text-align:right}
+.comp{font-size:13.5px;color:var(--muted);line-height:1.5}
+.bar{display:flex;gap:2px;height:26px;border-radius:6px;overflow:hidden}
+.bar div{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;min-width:2px}
+.bar .fee{background:var(--chart-fee)}
+.bar .cogs{background:var(--chart-cogs)}
+.bar .profit{background:var(--chart-profit)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin:6px 0 14px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.econ{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;font-size:12px}
+@media (max-width:560px){.econ{grid-template-columns:repeat(3,1fr)}}
+.econ div{background:var(--codebg);border-radius:7px;padding:7px 9px}
+.econ b{display:block;font-size:15px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.econ .up b{color:var(--good)}
+.srcrow{font-size:13px;line-height:1.65}
+.risk{font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:9px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:12px 16px;font-size:14px;margin:14px 0}
+ol.plan{padding-left:20px;margin:8px 0}
+ol.plan li{margin-bottom:7px}
+ul.tight{padding-left:20px;margin:8px 0}
+ul.tight li{margin-bottom:6px}
+.timeline{border-left:3px solid var(--line);padding-left:18px;display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.tstep{position:relative}
+.tstep::before{content:"";position:absolute;left:-24.5px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--paper)}
+.tstep b{display:block;font-size:14px}
+.tstep span{font-size:13.5px;color:var(--muted)}
+footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:var(--muted);line-height:1.7}
+@media (prefers-reduced-motion:no-preference){
+  .card{transition:border-color .15s ease}
+  .card:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">Treejar Trading · отдел закупок · Amazon EU</div>
+  <h1>Портфель запуска на Amazon.de:<br>9 SKU в трех волнах</h1>
+  <p class="meta">Отчет от 08.07.2026 · Рынок: Германия (FBA) · База: 49 файлов аналитики (Keepa BlackBox — 500 бестселлеров DE, Helium 10, нишевые отчеты, PI и котировки фабрик) + живая перепроверка каждого конкурента через Keepa API 08.07.2026 + верифицированные карточки Alibaba.</p>
+  <div class="verdict"><span class="dot"></span>РЕКОМЕНДОВАНО К ЗАКУПКЕ · бюджет ≈ €45–48 тыс. · потенциал ≈ €25 тыс./мес</div>
+</header>
+
+<nav class="toc">
+  <a href="#s1">1 · Резюме</a><a href="#s2">2 · Логика отбора</a><a href="#s3">3 · Портфель</a><a href="#s4">4 · Карточки SKU</a><a href="#s5">5 · Отклонено</a><a href="#s6">6 · Живая проверка</a><a href="#s7">7 · Бюджет и график</a><a href="#s8">8 · Комплаенс</a><a href="#s9">9 · Риски</a><a href="#s10">10 · Решение</a>
+</nav>
+
+<section id="s1">
+  <div class="sec-head"><span class="no">01</span><h2>Резюме для руководства</h2></div>
+  <p class="lead">Из всей собранной аналитики по четырем рынкам к запуску на <b>Amazon Германия</b> отобраны <b>9 товаров</b>: 4 всесезонных SKU первой волны (заказ немедленно, продажи с октября — под пик Q4), 3 сезонных SKU второй волны (заказ ноябрь–январь, продажи с марта 2027) и 2 стратегических SKU, по которым котировки фабрик уже в руках. Все маржи в отчете — <b>чистые, после рекламы</b>, на живых тарифах FBA конкурентов.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="v">9 <small>SKU · 6 ниш</small></div><div class="l">без электроники — ноль затрат на CE/WEEE</div></div>
+    <div class="kpi gold"><div class="v">€45–48<small> тыс.</small></div><div class="l">полный бюджет запуска: товар + фрахт + комплаенс + PPC</div></div>
+    <div class="kpi green"><div class="v">≈€25.2<small> тыс./мес</small></div><div class="l">чистая прибыль портфеля после рекламы на полном разгоне (6–9 мес)</div></div>
+    <div class="kpi"><div class="v">19–32<small>%</small></div><div class="l">чистая маржа по SKU · ROI 63–243% · окупаемость капитала 4–6 мес</div></div>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="sec-head"><span class="no">02</span><h2>Логика отбора: почему именно эти товары</h2></div>
+  <div class="two">
+    <div>
+      <h3>Воронка данных</h3>
+      <ul class="tight">
+        <li><b>500 бестселлеров Amazon.de</b> (Keepa BlackBox) → скоринг → <b>30 товаров A-класса</b>;</li>
+        <li>наложение <b>сорсинг-контура</b>: реальные FOB-диапазоны Alibaba → Landed-COGS → вердикты GO/TEST/SKIP;</li>
+        <li>+ отдельные глубокие отчеты: ТВ-стенды (котировка BKDEP), металлическая мебель (PI Demity), мини-холодильники, кронштейны мониторов;</li>
+        <li><b>живая перепроверка 08.07.2026</b> каждого финалиста через Keepa API → 9 SKU.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Пять фильтров допуска</h3>
+      <ul class="tight">
+        <li><b>Цена 20–60 €</b> (ниже 15 € комиссии съедают маржу; исключение — стратегические SKU с прибылью €36–41/шт);</li>
+        <li><b>ниша принадлежит private label</b>, а не Amazon 1P (36% топа!) и не мегабрендам WMF/Philips/Bosch;</li>
+        <li><b>барьер отзывов ≤ 2 500</b> у лидера — догоняем за 3–4 месяца;</li>
+        <li><b>маржа ≥ 19% после рекламы</b> при полной модели затрат;</li>
+        <li><b>без электроники</b> — экономим €3–5 тыс./год и 6–8 недель на CE/WEEE/EMC.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note"><b>Главный вывод анализа рынка:</b> на Amazon.de дешевый товар структурно убыточен (при цене &lt;10 € медианная маржа −4%), а здоровая экономика начинается с 20 € (21–29% маржи). Мы целимся в коридор 20–60 € плюс два высокочековых стратегических SKU.</div>
+</section>
+
+<section id="s3">
+  <div class="sec-head"><span class="no">03</span><h2>Портфель одним экраном</h2></div>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Волна</th><th>Товар</th><th class="num">Вход, €</th><th class="num">Прибыль/шт</th><th class="num">Маржа</th><th class="num">ROI</th><th class="num">Закупка ≤ (25%)</th><th class="num">Потенциал €/мес</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip w1">В1</span></td><td>Фильтр совм. Jura (RFID), 6-pack</td><td class="num">42.99</td><td class="num">€10.06</td><td class="num">23.4%</td><td class="num">95%</td><td class="num">$9.30</td><td class="num">5 030</td></tr>
+      <tr><td><span class="chip w1">В1</span></td><td>Фильтр совм. DeLonghi DLSC002, 6-pack</td><td class="num">24.99</td><td class="num">€5.16</td><td class="num">20.7%</td><td class="num">109%</td><td class="num">$2.89</td><td class="num">3 098</td></tr>
+      <tr><td><span class="chip w1">В1</span></td><td>Kühltasche faltbar 40L (сумка-холодильник)</td><td class="num">34.99</td><td class="num">€8.35</td><td class="num">23.9%</td><td class="num">142%</td><td class="num">$4.12</td><td class="num">2 505</td></tr>
+      <tr><td><span class="chip w1">В1</span></td><td>Brotbeutel лен/воск, 2-pack (микро-тест)</td><td class="num">19.99</td><td class="num">€4.54</td><td class="num">22.7%</td><td class="num">150%</td><td class="num">$1.77</td><td class="num">817</td></tr>
+      <tr><td><span class="chip st">СТРАТ</span></td><td>TV-стенд мобильный 43–75" (BKDEP CT7501)</td><td class="num">149.99</td><td class="num">€36.19</td><td class="num">24.1%</td><td class="num">114%</td><td class="num">$28.32</td><td class="num">2 714</td></tr>
+      <tr><td><span class="chip st">СТРАТ</span></td><td>Hängeregisterschrank ZY-3 (Demity, B2B)</td><td class="num">219.00</td><td class="num">€40.91</td><td class="num">18.7%</td><td class="num">63%</td><td class="num">$30.40</td><td class="num">859</td></tr>
+      <tr><td><span class="chip w2">В2</span></td><td>Kirschentkerner (вишнечистка настольная)</td><td class="num">45.99</td><td class="num">€14.87</td><td class="num">32.3%</td><td class="num">243%</td><td class="num">$8.29</td><td class="num">5 948</td></tr>
+      <tr><td><span class="chip w2">В2</span></td><td>Fliegengitter Magnet 150×130, 4-pack</td><td class="num">39.99</td><td class="num">€7.93</td><td class="num">19.8%</td><td class="num">98%</td><td class="num">$4.45</td><td class="num">2 378</td></tr>
+      <tr><td><span class="chip w2">В2</span></td><td>Kühldecke Arc-Chill 150×200</td><td class="num">42.99</td><td class="num">€8.35</td><td class="num">19.4%</td><td class="num">81%</td><td class="num">$6.23</td><td class="num">1 877</td></tr>
+      <tr class="total"><td></td><td>ИТОГО портфель (консервативные доли ниш 12–35%)</td><td></td><td></td><td></td><td></td><td></td><td class="num">≈ 25 226</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="muted" style="font-size:13px;margin-top:8px">«Закупка ≤» — потолок FOB $/шт, при котором чистая маржа после рекламы ≥ 25%. Потенциал €/мес — полный разгон 6–9 мес; первые 3 месяца реалистично 30–40% цифры.</p>
+</section>
+
+<section id="s4">
+  <div class="sec-head"><span class="no">04</span><h2>Карточки SKU: конкуренты · экономика · Alibaba</h2></div>
+  <p class="muted" style="font-size:14px;max-width:80ch">Модель на 1 шт: НДС 19% изъят из цены · Referral 15% · FBA — живой тариф конкурента (Keepa, 08.07.2026) · PPC 12% (Jura 10%, B2B 5%) · возвраты 2% · Landed = FOB×0.92×(1+пошлина+3% QC) + фрахт + €0.30 преп. Полоса показывает, куда уходит цена:</p>
+  <div class="legend">
+    <span><i style="background:var(--chart-fee)"></i>Amazon: НДС + Referral + FBA + PPC + возвраты + хранение</span>
+    <span><i style="background:var(--chart-cogs)"></i>Закупка Landed (Китай)</span>
+    <span><i style="background:var(--chart-profit)"></i>Чистая прибыль</span>
+  </div>
+
+  <div class="cards">
+
+  <div class="card">
+    <div class="head"><div><span class="chip w1">Волна 1</span><h3>Фильтр совм. Jura E8/E6 (RFID), 6-pack</h3></div><div class="price">42.99 €<small>вход</small></div></div>
+    <div class="comp">Лидер: GLACIER FRESH <a href="https://www.amazon.de/dp/B0G1438SF7"><span class="asin">B0G1438SF7</span></a> — 39.99 € (ср. 90д 52.99), ~2 000 шт/мес, 351 отзыв, 4.8★, 1 оффер · соседние: Waterdrop Philips <a href="https://www.amazon.de/dp/B09NRJNV7M"><span class="asin">B09NRJNV7M</span></a>, Siemens <a href="https://www.amazon.de/dp/B07M5GK693"><span class="asin">B07M5GK693</span></a></div>
+    <div class="bar" role="img" aria-label="Разбивка цены 42.99 €: сборы и реклама 52%, закупка 25%, прибыль 23%">
+      <div class="fee" style="width:52.3%" title="НДС 6.86 + Referral 6.45 + FBA 3.46 + PPC 4.30 + возвраты 0.86 + хранение 0.40 = 22.33 €">52%</div>
+      <div class="cogs" style="width:24.7%" title="Landed-закупка 10.60 € (FOB $10)">25%</div>
+      <div class="profit" style="width:23.4%" title="Чистая прибыль 10.06 €">23%</div>
+    </div>
+    <div class="econ">
+      <div class="up"><b>€10.06</b>прибыль/шт</div><div><b>23.4%</b>маржа</div><div><b>95%</b>ROI</div><div><b>$9.30</b>закупка ≤ 25%</div><div><b>25.35 €</b>безубыток</div>
+    </div>
+    <div class="srcrow">🎯 <b>Прямая фабрика лидера: Ningbo Koze Purification</b> (реальный производитель GLACIER FRESH — из поля manufacturer; kozerofilter.com) · <a href="https://www.alibaba.com/product-detail/For-Jura-Filter-Claris-Blue-New_1600312097630.html">карточка Jura Claris</a> · <a href="https://www.alibaba.com/product-detail/Coffee-Machine-Water-Filter-Replacement-Compatible-1601239019634.html">Clearyl/Capresso</a> · <a href="https://www.alibaba.com/showroom/jura-filterpatrone-claris-smart.html">витрина Claris Smart</a></div>
+    <div class="risk">Расходник → повторная покупка каждые 1–2 мес (LTV). Риски: RFID-совместимость (требовать видео-тест E8/E6/Z8) · только «kompatibel mit», без чужих логотипов · LFGB ~€1.5–2.5 тыс. разово.</div>
+  </div>
+
+  <div class="card">
+    <div class="head"><div><span class="chip w1">Волна 1</span><h3>Фильтр совм. DeLonghi DLSC002, 6-pack</h3></div><div class="price">24.99 €<small>вход</small></div></div>
+    <div class="comp">Лидер: FILSWA <a href="https://www.amazon.de/dp/B0C7ZTVPPB"><span class="asin">B0C7ZTVPPB</span></a> — 19.94 €, ~4 000 шт/мес (+218 отзывов/мес!), 2 527 отзывов, 4.7★, цена стабильна как скала (волатильность 0.05) · ниша Wessper/AquaCrest 20.99–24.99 €</div>
+    <div class="bar" role="img" aria-label="Разбивка цены 24.99 €: сборы и реклама 61%, закупка 19%, прибыль 20%">
+      <div class="fee" style="width:60.5%" title="НДС 3.99 + Referral 3.75 + FBA 3.47 + PPC 3.00 + возвраты 0.50 + хранение 0.40 = 15.11 €">61%</div>
+      <div class="cogs" style="width:18.9%" title="Landed-закупка 4.72 € (FOB $4/6-pack)">19%</div>
+      <div class="profit" style="width:20.6%" title="Чистая прибыль 5.16 €">21%</div>
+    </div>
+    <div class="econ">
+      <div class="up"><b>€5.16</b>прибыль/шт</div><div><b>20.7%</b>маржа</div><div><b>109%</b>ROI</div><div><b>$2.89</b>закупка ≤ 25%</div><div><b>15.61 €</b>безубыток</div>
+    </div>
+    <div class="srcrow"><a href="https://www.alibaba.com/product-detail/Coffee-Machine-Filter-Fit-for-Delonghi_1601227212670.html">Карточка DLSC002 №1</a> · <a href="https://www.alibaba.com/product-detail/Water-Filter-for-Delonghi-DLSC002-Delongie_1600383388162.html">№2</a> · <a href="https://www.alibaba.com/product-detail/Wholesale-Factory-Price-Household-Use-Auto_1600305115799.html">№3 factory price</a> · <a href="https://www.alibaba.com/showroom/dlsc002-water-filter.html">витрина</a></div>
+    <div class="risk">Рыночный FOB картриджа $0.5–0.7 → потолок $2.89/6-pack реален. Дифференциация против FILSWA: 6+2 пака, кокосовый уголь, вкладыш-календарь замены. Патентный риск ниже, чем у Jura (нет чипа).</div>
+  </div>
+
+  <div class="card">
+    <div class="head"><div><span class="chip w1">Волна 1</span><h3>Kühltasche faltbar 40L — сумка-холодильник</h3></div><div class="price">34.99 €<small>вход</small></div></div>
+    <div class="comp">Лидер: HELDENWERK 40L <a href="https://www.amazon.de/dp/B0FL86NQVD"><span class="asin">B0FL86NQVD</span></a> — 34.99 €, линейка свежая (199 отз.) · семья groß <a href="https://www.amazon.de/dp/B0CP2GLKW7"><span class="asin">B0CP2GLKW7</span></a> 21.24 € · 2 000/мес · 898 отз. · 4.5★ · 1 оффер</div>
+    <div class="bar" role="img" aria-label="Разбивка цены 34.99 €: сборы и реклама 59%, закупка 17%, прибыль 24%">
+      <div class="fee" style="width:59.3%" title="НДС 5.59 + Referral 5.25 + FBA 4.59 + PPC 4.20 + возвраты 0.70 + хранение 0.45 = 20.78 €">59%</div>
+      <div class="cogs" style="width:16.8%" title="Landed-закупка 5.87 € (FOB $4.5, пошлина 9.7%)">17%</div>
+      <div class="profit" style="width:23.9%" title="Чистая прибыль 8.35 €">24%</div>
+    </div>
+    <div class="econ">
+      <div class="up"><b>€8.35</b>прибыль/шт</div><div><b>23.9%</b>маржа</div><div><b>142%</b>ROI</div><div><b>$4.12</b>закупка ≤ 25%</div><div><b>19.82 €</b>безубыток</div>
+    </div>
+    <div class="srcrow"><a href="https://www.alibaba.com/product-detail/Collapsible-Large-Cooler-Bag-Insulated-Leakproof_1601231338691.html">Collapsible Large Leakproof</a> · <a href="https://www.alibaba.com/product-detail/Foldable-large-capacity-big-insulated-cooler_1600958125788.html">Foldable big capacity</a> · <a href="https://www.alibaba.com/product-detail/Leakproof-Insulated-Cooler-Bag-Foldable-Lunch_1601125563200.html">Leakproof foldable</a> · <a href="https://www.alibaba.com/product-detail/Custom-Logo-600D-Oxford-Lunch-Cooler_1600868739125.html">custom logo 600D</a></div>
+    <div class="risk">Самый низкий барьер отзывов выборки. Заходим сразу в 40L (в 20L @ 19.99 маржа лишь ~10%). На образце проверить PEVA-вкладыш, молнии, 12ч холода. VerpackG/LUCID.</div>
+  </div>
+
+  <div class="card">
+    <div class="head"><div><span class="chip w1">Волна 1</span><h3>Brotbeutel лен + пчелиный воск, 2-pack</h3></div><div class="price">19.99 €<small>вход</small></div></div>
+    <div class="comp">Лидер: AirBanish <a href="https://www.amazon.de/dp/B0GHQMDL44"><span class="asin">B0GHQMDL44</span></a> — 20.99 €, ~1 000 шт/мес, <b>всего 101 отзыв</b> (ниша моложе года), 4.5★, FBA €3.08</div>
+    <div class="bar" role="img" aria-label="Разбивка цены 19.99 €: сборы и реклама 62%, закупка 15%, прибыль 23%">
+      <div class="fee" style="width:62.1%" title="НДС 3.19 + Referral 3.00 + FBA 3.08 + PPC 2.40 + возвраты 0.40 + хранение 0.35 = 12.42 €">62%</div>
+      <div class="cogs" style="width:15.2%" title="Landed-закупка 3.03 € (FOB $2.2, пошлина 12%)">15%</div>
+      <div class="profit" style="width:22.7%" title="Чистая прибыль 4.54 €">23%</div>
+    </div>
+    <div class="econ">
+      <div class="up"><b>€4.54</b>прибыль/шт</div><div><b>22.7%</b>маржа</div><div><b>150%</b>ROI</div><div><b>$1.77</b>закупка ≤ 25%</div><div><b>11.73 €</b>безубыток</div>
+    </div>
+    <div class="srcrow"><a href="https://www.alibaba.com/product-detail/2-Pack-Sourdough-Beeswax-Bread-Bags_1601515786986.html">XL Sourdough Beeswax 2-Pack (точный аналог)</a> · <a href="https://www.alibaba.com/product-detail/sourdough-bread-storage-beeswax-lining-bag_1601416846984.html">фабрика Jiahao</a> · <a href="https://www.alibaba.com/showroom/linen-bread-bag.html">витрина</a></div>
+    <div class="risk">Микро-ставка: MOQ-вход ≈ $1.1 тыс., добивает контейнер Волны 1. ЭКО-тренд + сообщество Sauerteig. Воск food-grade, LFGB желателен.</div>
+  </div>
+
+  <div class="card">
+    <div class="head"><div><span class="chip st">Стратегический</span><h3>TV-стенд мобильный 43–75" (CT7501)</h3></div><div class="price">149.99 €<small>вход</small></div></div>
+    <div class="comp">ONKRON (⚠️ уронил цены на 20–45% с июня): аналог <a href="https://www.amazon.de/dp/B0C37Q5B6J"><span class="asin">B0C37Q5B6J</span></a> — <b>127.99 €</b> (ср. 90д 232.57!), BSR 12 136 · 50–90" <a href="https://www.amazon.de/dp/B0C59GH76B"><span class="asin">B0C59GH76B</span></a> 229.99 € · 32–65" <a href="https://www.amazon.de/dp/B085QL383L"><span class="asin">B085QL383L</span></a> 131.99 € · 50–100" <a href="https://www.amazon.de/dp/B0BSR8QBD2"><span class="asin">B0BSR8QBD2</span></a> 279.99 €</div>
+    <div class="bar" role="img" aria-label="Разбивка цены 149.99 €: сборы и реклама 55%, закупка 21%, прибыль 24%">
+      <div class="fee" style="width:54.7%" title="НДС 23.95 + Referral 22.50 + FBA 14.11 + PPC 15.00 + возвраты 3.00 + хранение 3.50 = 82.06 €">55%</div>
+      <div class="cogs" style="width:21.2%" title="Landed-закупка 31.74 € (BKDEP $29.70 EXW + FCL-фрахт)">21%</div>
+      <div class="profit" style="width:24.1%" title="Чистая прибыль 36.19 €">24%</div>
+    </div>
+    <div class="econ">
+      <div class="up"><b>€36.19</b>прибыль/шт</div><div><b>24.1%</b>маржа</div><div><b>114%</b>ROI</div><div><b>$28.32</b>закупка ≤ 25%</div><div><b>86.53 €</b>безубыток</div>
+    </div>
+    <div class="srcrow">✅ <b>Котировка SUZHOU BKDEP от 26-06-04 в руках</b> (CT7501 $29.70 · CT9501 $43.60 · CT90 $52.20 · CF1001 $149). Для торга: <a href="https://www.alibaba.com/product-detail/Mobile-TV-Stand-Rolling-Cart-Floor_1601426411417.html">Mobile TV Stand 32–75"</a> · <a href="https://www.alibaba.com/product-detail/LUMI-Economical-Modern-Rolling-Height-Adjustable_62292480460.html">LUMI</a> · <a href="https://www.alibaba.com/product-detail/Unho-Large-Mobile-TV-Floor-Stand_1601418332981.html">Unho 65–100"</a></div>
+    <div class="risk">Пилот 200 шт CT7501 (+60 шт CT9501 опц. — чек 279–299 €). Честные нагрузки в листинге (45 кг ≠ 60 кг ONKRON!) · Amazon 1P на трети листингов ONKRON · упаковка под FBA + тест устойчивости.</div>
+  </div>
+
+  <div class="card">
+    <div class="head"><div><span class="chip st">Стратегический</span><h3>Hängeregisterschrank ZY-3 — картотека A4, B2B</h3></div><div class="price">219.00 €<small>вход</small></div></div>
+    <div class="comp">Jan Nowak V005 — 204–290 €, <b>3.3–3.5★</b> (уязвим по качеству!) · Sightlife 130–330 €, 4.0–4.3★, 19–240 отз. · семья Jan Nowak <a href="https://www.amazon.de/dp/B01FPD5ZUQ"><span class="asin">B01FPD5ZUQ</span></a> 185.99–195.99 €, 817 отз., ⚠️ Amazon 1P теперь на большинстве листингов</div>
+    <div class="bar" role="img" aria-label="Разбивка цены 219 €: сборы и реклама 52%, закупка 30%, прибыль 19%">
+      <div class="fee" style="width:51.7%" title="НДС 34.97 + Referral 32.85 + FBA 25.00 + PPC(B2B 5%) 10.95 + возвраты 4.38 + хранение 5.00 = 113.15 €">52%</div>
+      <div class="cogs" style="width:29.7%" title="Landed-закупка 64.94 € (PI $45 EXW + фрахт)">30%</div>
+      <div class="profit" style="width:18.7%" title="Чистая прибыль 40.91 €">19%</div>
+    </div>
+    <div class="econ">
+      <div class="up"><b>€40.91</b>прибыль/шт</div><div><b>18.7%</b>маржа</div><div><b>63%</b>ROI</div><div><b>$30.40</b>закупка ≤ 25%</div><div><b>153.05 €</b>безубыток</div>
+    </div>
+    <div class="srcrow">✅ <b>PI Luoyang ZhenYou № 20260126cathy в руках</b> ($45 EXW, сталь 0.6/0.7 мм). Альтернативы: <a href="https://www.alibaba.com/product-detail/Modern-4-Drawer-Vertical-Metal-Filing_526009042.html">Fenglee 4-drawer</a> · <a href="https://www.alibaba.com/showroom/vertical-4-drawer-steel-filing-cabinets.html">витрина Luoyang</a></div>
+    <div class="risk">Изменить PI: ZY-3 20→40 шт · исключить ZY-4 Rollcontainer (SONGMICS/VASAGLE непробиваемы) · локеры 130→60–80 шт · торговаться $45→$38–40 · Amazon Business + EN 14073 + антиопрокидывание. Пошлина 0% (HS 9403.10).</div>
+  </div>
+
+  <div class="card">
+    <div class="head"><div><span class="chip w2">Волна 2</span><h3>Kirschentkerner — вишнечистка настольная 🏆</h3></div><div class="price">45.99 €<small>вход</small></div></div>
+    <div class="comp">Лидер: Thiru <a href="https://www.amazon.de/dp/B0CSZ1KZZB"><span class="asin">B0CSZ1KZZB</span></a> — 49.99 € (поднял в сезон), <b>~2 000 шт/мес прямо сейчас</b> (июль=пик), 523 отзыва, 4.4★, 1 оффер, Made in Germany</div>
+    <div class="bar" role="img" aria-label="Разбивка цены 45.99 €: сборы и реклама 54%, закупка 13%, прибыль 32%">
+      <div class="fee" style="width:54.4%" title="НДС 7.34 + Referral 6.90 + FBA 3.86 + PPC 5.52 + возвраты 0.92 + хранение 0.45 = 24.99 €">54%</div>
+      <div class="cogs" style="width:13.3%" title="Landed-закупка 6.13 € (FOB $5, пошлина 8.5%)">13%</div>
+      <div class="profit" style="width:32.3%" title="Чистая прибыль 14.87 €">32%</div>
+    </div>
+    <div class="econ">
+      <div class="up"><b>€14.87</b>прибыль/шт</div><div><b>32.3%</b>маржа</div><div><b>243%</b>ROI</div><div><b>$8.29</b>закупка ≤ 25%</div><div><b>18.97 €</b>безубыток</div>
+    </div>
+    <div class="srcrow"><a href="https://www.alibaba.com/product-detail/2024-6-Hole-Cherry-Pitter-6_1601253386227.html">6-луночная со splash guard</a> · <a href="https://www.alibaba.com/showroom/cherry-pitter.html">витрина cherry pitter</a> · <a href="https://www.alibaba.com/showroom/cherry-pitters.html">6-in-1 с контейнером</a> · регионы Yangjiang/Yiwu</div>
+    <div class="risk">Лучший SKU по марже и ROI. Сезон июнь–август → основная партия к марту 2027 (заказ XI.26–I.27); опция: авиа-мини-партия 100–150 шт на хвост сезона 2026. LFGB. Бандл: контейнер + 25 рецептов.</div>
+  </div>
+
+  <div class="card">
+    <div class="head"><div><span class="chip w2">Волна 2</span><h3>Fliegengitter Magnet 150×130, 4-pack</h3></div><div class="price">39.99 €<small>вход</small></div></div>
+    <div class="comp">Лидер: EASYmaxx <a href="https://www.amazon.de/dp/B0CX5K1K2D"><span class="asin">B0CX5K1K2D</span></a> — 47.99 €, ~2 000/мес (пик), 713 отз., <b>4.1★ — уязвим</b>, 3–4 оффера, ⚠️ Amazon 1P на листинге (42.00 €)</div>
+    <div class="bar" role="img" aria-label="Разбивка цены 39.99 €: сборы и реклама 60%, закупка 20%, прибыль 20%">
+      <div class="fee" style="width:60%" title="НДС 6.38 + Referral 6.00 + FBA 5.48 + PPC 4.80 + возвраты 0.80 + хранение 0.50 = 23.96 €">60%</div>
+      <div class="cogs" style="width:20.2%" title="Landed-закупка 8.10 € (FOB $6.5/4-pack)">20%</div>
+      <div class="profit" style="width:19.8%" title="Чистая прибыль 7.93 €">20%</div>
+    </div>
+    <div class="econ">
+      <div class="up"><b>€7.93</b>прибыль/шт</div><div><b>19.8%</b>маржа</div><div><b>98%</b>ROI</div><div><b>$4.45</b>закупка ≤ 25%</div><div><b>25.58 €</b>безубыток</div>
+    </div>
+    <div class="srcrow"><a href="https://www.alibaba.com/product-detail/DIY-magnetic-insect-screen-window-with_60060039167.html">DIY magnetic insect screen (патентованная система)</a> · <a href="https://www.alibaba.com/showroom/diy-magnetic-insect-screen-window.html">витрина DIY magnetic</a> · <a href="https://www.alibaba.com/showroom/magnetic-window-screen.html">magnetic window screen</a></div>
+    <div class="risk">Вход только через качество: 16 магнитов (у EASYmaxx 12), клей 3M, UV-стойкая рамка, инструкция DE. Сезон апрель–сентябрь → заказ к февралю 2027.</div>
+  </div>
+
+  <div class="card">
+    <div class="head"><div><span class="chip w2">Волна 2</span><h3>Kühldecke Arc-Chill 150×200 — охлаждающее одеяло</h3></div><div class="price">42.99 €<small>вход</small></div></div>
+    <div class="comp">Лидер: Elegear <a href="https://www.amazon.de/dp/B07QJ132TD"><span class="asin">B07QJ132TD</span></a> — 54.99 € в пике (ср. 50.34), ~800/мес, 2 959 отз., 4.3★ (есть что улучшать), 1 оффер</div>
+    <div class="bar" role="img" aria-label="Разбивка цены 42.99 €: сборы и реклама 57%, закупка 24%, прибыль 19%">
+      <div class="fee" style="width:56.7%" title="НДС 6.86 + Referral 6.45 + FBA 4.42 + PPC 5.16 + возвраты 0.86 + хранение 0.60 = 24.35 €">57%</div>
+      <div class="cogs" style="width:23.9%" title="Landed-закупка 10.29 € (FOB $8.5, пошлина 12%)">24%</div>
+      <div class="profit" style="width:19.4%" title="Чистая прибыль 8.35 €">19%</div>
+    </div>
+    <div class="econ">
+      <div class="up"><b>€8.35</b>прибыль/шт</div><div><b>19.4%</b>маржа</div><div><b>81%</b>ROI</div><div><b>$6.23</b>закупка ≤ 25%</div><div><b>27.82 €</b>безубыток</div>
+    </div>
+    <div class="srcrow"><a href="https://www.alibaba.com/product-detail/Summer-Q-Max-0-4-Arc_1601140883140.html">Arc-chill Q-max 0.4 нейлон (прямой аналог ткани)</a> · <a href="https://www.alibaba.com/product-detail/Washable-Q-Max-0-45-Arc_1601027457525.html">Q-max&gt;0.45 washable</a> · <a href="https://www.alibaba.com/product-detail/Japanese-Q-Max-0-4-Cooling_62381033464.html">Japanese Q-max 0.4</a> · <a href="https://www.alibaba.com/product-detail/PCM-Gel-Cooling-Tech-Fabric-Water_1601360388125.html">PCM-гель</a></div>
+    <div class="risk">Требовать протокол Q-max и OEKO-TEX 100. Сезон май–август → заказ к февралю 2027. Дифференциация: плотнее швы, PCM-гель версия премиум.</div>
+  </div>
+
+  </div>
+</section>
+
+<section id="s5">
+  <div class="sec-head"><span class="no">05</span><h2>Что отклонено — и почему</h2></div>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Товар / ниша</th><th>Вердикт</th><th>Причина (данные)</th></tr></thead>
+    <tbody>
+      <tr><td>Кронштейны мониторов (6 SKU DS/DH)</td><td class="tag-bad">НЕ ЗАКУПАТЬ</td><td>Все 6 убыточны на .de: −1.3%…−23.6%; Invision/HUANUO/ErGear с 2–7.7 тыс. отзывов прижали цены к 26–60 €</td></tr>
+      <tr><td>Mülltrennsystem 2×15 л</td><td class="tag-bad">Отклонен моделью</td><td>9.46 кг → фрахт €10.9 + FBA €7.94: маржа −1.4% даже по цене SONGMICS 57.11 €</td></tr>
+      <tr><td>Садовый ящик 270 л</td><td class="tag-bad">SKIP</td><td>Sperrgut: Landed = 67% цены, маржа −27%</td></tr>
+      <tr><td>ТВ-настенный кронштейн</td><td class="tag-bad">HARD</td><td>Барьер 25–79 тыс. отзывов (PERLESMITH) — не выранжироваться</td></tr>
+      <tr><td>Вакууматор</td><td class="tag-bad">HARD</td><td>COGS 42%, маржа 11%; продажи лидера −45% за 90 дней</td></tr>
+      <tr><td>Rollcontainer ZY-4 (из PI)</td><td class="tag-bad">Исключить</td><td>SONGMICS/VASAGLE: 1.4–2 тыс. отзывов, маржа ≈ 0…−3 €/шт</td></tr>
+      <tr><td>Ширпотреб &lt; 15 € (Entkalker, мерные стаканы…)</td><td class="tag-bad">Нет</td><td>Медианная маржа −4%…+9% — комиссии съедают все</td></tr>
+      <tr><td>Одеяло 4 сезона (Siebenschläfer)</td><td class="tag-bad">Нет</td><td>Amazon 1P на листинге + Made in EU + ров 28.5 тыс. отзывов</td></tr>
+      <tr><td>Мини-холодильник 4–6 л</td><td class="tag-watch">РЕЗЕРВ</td><td>Маржа 4.1% @ 44.99 + WEEE/CE; вернуться, если подтвердится комиссия 7% Elektro</td></tr>
+      <tr><td>Швабра (JOYMOOP-стиль)</td><td class="tag-watch">WATCH</td><td>2 000/мес, но ров 53 тыс. отзывов; цена −24% за 90 дней</td></tr>
+      <tr><td>Сковорода (ZWIEGER-стиль)</td><td class="tag-watch">WATCH</td><td>Ценовая война: 54.99 → 37.95 за 90 дней</td></tr>
+      <tr><td>Стеклянные банки 12er</td><td class="tag-watch">WATCH</td><td>3.7 кг + бой + цена упала до 39.99; маржа ~16%</td></tr>
+      <tr><td>Чугунный горшок (Topbooc)</td><td class="tag-watch">WATCH</td><td>BSR обвал 33 → 54 206 (сток-аут), волатильность цены 0.81</td></tr>
+      <tr><td>US-хиты без DE-листинга (Pocket Hose, neck fans…)</td><td class="tag-watch">Отдельный трек</td><td>Спрос DE не подтвержден + почти все с батареями (WEEE/BattG)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="s6">
+  <div class="sec-head"><span class="no">06</span><h2>Живая проверка 08.07.2026 — что изменилось с июня</h2></div>
+  <ul class="tight" style="max-width:80ch">
+    <li><b>ONKRON уронил цены на 20–45%</b> (аналог CT7501: 232 → 127.99 €) → экономика ТВ-стендов пересчитана консервативно: вход 149.99 вместо 184.99, прибыль €36/шт вместо €64. Проект остается сильным.</li>
+    <li><b>Amazon 1P зашел</b> на листинги EASYmaxx (сетки), SONGMICS (мусорные системы), Jan Nowak (шкафы) — учтено в вердиктах и стратегиях входа.</li>
+    <li><b>Jura-фильтр GLACIER FRESH подешевел 59.99 → 39.99</b>, продажи ×2 — рынок расходников растет, наша модель уже на цене 42.99.</li>
+    <li><b>Kirschentkerner в сезонном пике</b>: 2 000 шт/мес, цена поднята до 49.99 — спрос подтвержден, тайминг закупки выставлен под сезон 2027.</li>
+    <li><b>Мусорная система и сумка 20/30L не проходят полную модель</b> — отклонение и переход на 40L-формат соответственно.</li>
+    <li><b>Topbooc (чугун) нестабилен</b> (BSR 33 → 54 206) — исключен из ядра, несмотря на Score 74 в июне.</li>
+  </ul>
+</section>
+
+<section id="s7">
+  <div class="sec-head"><span class="no">07</span><h2>Бюджет и график запуска</h2></div>
+  <div class="two">
+    <div>
+      <h3>Пилотные партии (FOB)</h3>
+      <div class="tablewrap">
+      <table style="min-width:480px">
+        <thead><tr><th>SKU</th><th class="num">Партия</th><th class="num">FOB $</th><th class="num">Сумма $</th></tr></thead>
+        <tbody>
+          <tr><td>Jura-фильтр 6er</td><td class="num">500</td><td class="num">10.00</td><td class="num">5 000</td></tr>
+          <tr><td>DeLonghi-фильтр 6er</td><td class="num">500</td><td class="num">4.00</td><td class="num">2 000</td></tr>
+          <tr><td>Kühltasche 40L</td><td class="num">500</td><td class="num">4.50</td><td class="num">2 250</td></tr>
+          <tr><td>Brotbeutel 2er</td><td class="num">500</td><td class="num">2.20</td><td class="num">1 100</td></tr>
+          <tr><td>TV-стенд CT7501</td><td class="num">200</td><td class="num">29.70</td><td class="num">5 940</td></tr>
+          <tr><td>TV-стенд CT9501 (опц.)</td><td class="num">60</td><td class="num">43.60</td><td class="num">2 616</td></tr>
+          <tr><td>ZY-3 картотека (торг)</td><td class="num">40</td><td class="num">40–45</td><td class="num">1 600–1 800</td></tr>
+          <tr><td>Kirschentkerner <span class="chip w2">В2</span></td><td class="num">500</td><td class="num">5.00</td><td class="num">2 500</td></tr>
+          <tr><td>Fliegengitter 4er <span class="chip w2">В2</span></td><td class="num">500</td><td class="num">6.50</td><td class="num">3 250</td></tr>
+          <tr><td>Kühldecke <span class="chip w2">В2</span></td><td class="num">300</td><td class="num">8.50</td><td class="num">2 550</td></tr>
+          <tr class="total"><td>ИТОГО FOB</td><td></td><td></td><td class="num">≈ 29 000</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="muted" style="font-size:13px">+ фрахт/пошлины/QC ≈ €7 тыс. + комплаенс ≈ €5–6 тыс. + стартовый PPC ≈ €6–8 тыс. → <b>полный бюджет ≈ €45–48 тыс.</b> Окупаемость капитала ≈ 4–6 мес; 2–4 оборота в год.</p>
+    </div>
+    <div>
+      <h3>График</h3>
+      <div class="timeline">
+        <div class="tstep"><b>Июль 2026</b><span>RFQ по Волне 1 (3–5 фабрик/SKU) · образцы · старт LFGB/OEKO-TEX · GPSR-представитель · LUCID · EUIPO-марка</span></div>
+        <div class="tstep"><b>Август 2026</b><span>Заказы Волны 1 после образцов · листинги DE + A+ контент · Amazon Business для ZY-3</span></div>
+        <div class="tstep"><b>Октябрь 2026</b><span>Приход Волны 1 в Гамбург → продажи стартуют в пик Q4 (фильтры и ТВ-стенды — подарочный сезон)</span></div>
+        <div class="tstep"><b>Ноябрь 2026 – январь 2027</b><span>Заказы Волны 2 (сезонные SKU) с учетом фактов Волны 1</span></div>
+        <div class="tstep"><b>Март–апрель 2027</b><span>Приход Волны 2 к старту сезона: сетки, одеяло, вишнечистка</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s8">
+  <div class="sec-head"><span class="no">08</span><h2>Комплаенс (Германия)</h2></div>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Требование</th><th>Что делать</th><th class="num">Стоимость</th><th>Касается</th></tr></thead>
+    <tbody>
+      <tr><td>GPSR (Reg. 2023/988)</td><td>EU Responsible Person + адрес на упаковке</td><td class="num">€200–400/год</td><td>все SKU</td></tr>
+      <tr><td>VerpackG / LUCID</td><td>Регистрация упаковки + дуальная система</td><td class="num">€100–300/год</td><td>все SKU</td></tr>
+      <tr><td>LFGB (контакт с пищей)</td><td>Лабораторный тест партии</td><td class="num">€1.5–2.5 тыс. × SKU</td><td>фильтры ×2, вишнечистка, Brotbeutel</td></tr>
+      <tr><td>OEKO-TEX Standard 100</td><td>Сертификат ткани</td><td class="num">€0.5–1 тыс.</td><td>Kühldecke (желательно сумка)</td></tr>
+      <tr><td>EN 14073 + антиопрокидывание</td><td>Тест + предупреждающая наклейка</td><td class="num">≈€0.5 тыс.</td><td>ZY-3</td></tr>
+      <tr><td>EUIPO марка + Brand Registry</td><td>Регистрация ТМ (один бренд на портфель)</td><td class="num">€850 разово</td><td>все SKU</td></tr>
+      <tr><td>EAN/GTIN (GS1)</td><td>Коды</td><td class="num">≈€150/год</td><td>все SKU</td></tr>
+      <tr><td>WEEE / BattG / CE</td><td><b>Не требуется — в портфеле нет электроники</b></td><td class="num">€0</td><td>—</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="s9">
+  <div class="sec-head"><span class="no">09</span><h2>Риски и митигация</h2></div>
+  <ol class="plan" style="max-width:80ch">
+    <li><b>Ценовые войны</b> (кейсы: ZWIEGER −31%, ONKRON −45%) → безубыток каждого SKU на 35–45% ниже входной цены; запас на демпинг есть.</li>
+    <li><b>Вход Amazon 1P в нишу</b> (кейсы EASYmaxx/SONGMICS/Jan Nowak) → диверсификация: 9 SKU × 6 ниш, ни одна ниша &gt; 24% прибыли портфеля.</li>
+    <li><b>Сезонность</b> (4 из 9 SKU) → календарь §7; всесезонные фильтры + ТВ + ZY-3 = ~47% прибыли.</li>
+    <li><b>Патенты/бренды (фильтры)</b> → только «kompatibel mit», без логотипов; запрос к Ningbo Koze об отсутствии претензий; юр. проверка перед листингом.</li>
+    <li><b>Качество</b> (рейтинг &lt; 4.2 убивает конверсию при чеке &gt; 40 €) → образцы с 2–3 фабрик, QC-инспекция каждой партии (€100–250), усиленная упаковка ZY-3/TV.</li>
+    <li><b>Валюта/фрахт</b> → USD-контракты, курс 0.92 консервативный; FCL-консолидация Волны 1 снижает фрахт еще на 30–50%.</li>
+  </ol>
+</section>
+
+<section id="s10">
+  <div class="sec-head"><span class="no">10</span><h2>Решение к утверждению</h2></div>
+  <div class="two">
+    <div class="card">
+      <h3 style="color:var(--good)">✅ Волна 1 — заказ немедленно</h3>
+      <ol class="plan">
+        <li>Фильтр Jura RFID 6er — 500 паков (RFQ: Ningbo Koze + 3 фабрики)</li>
+        <li>Фильтр DeLonghi 6er — 500 паков</li>
+        <li>Kühltasche 40L — 500 шт</li>
+        <li>Brotbeutel 2er — 500 шт (микро-тест)</li>
+        <li>TV-стенд CT7501 — 200 шт по котировке BKDEP (+60 шт CT9501 опц.)</li>
+        <li>ZY-3 — 40 шт (изменить PI: −ZY-4, −50 локеров; торг до $40)</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--accent-ink)">📅 Волна 2 — заказ XI.2026–I.2027</h3>
+      <ol class="plan">
+        <li>Kirschentkerner — 500 шт (звезда портфеля: 32% маржа, ROI 243%)</li>
+        <li>Fliegengitter Magnet 4er — 500 шт</li>
+        <li>Kühldecke Arc-Chill — 300 шт</li>
+      </ol>
+      <p class="muted" style="font-size:13.5px"><b>Не закупать:</b> кронштейны мониторов, Mülltrennsystem, садовые ящики, ТВ-кронштейны, вакууматоры, ZY-4, ширпотреб &lt;15 €.<br><b>Резерв Q1 2027:</b> мини-холодильники (при ставке 7%), швабра/сковорода (после войны цен), US-новинки.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Полная версия с методикой и построчной экономикой: <b>FINAL_REPORT_Amazon_EU_2026-07.md</b> в репозитории (ветка claude/amazon-eu-product-analysis-6o8dc2) · рабочие файлы: analysis_workspace/01–04 · модель редактируема: scripts/unit_economics_tuned.py · unit_economics_final.csv.<br>
+  Источники: Keepa BlackBox DE (500 бестселлеров, 24.06.2026) · Keepa API live (08.07.2026, окно 90 дней) · DE_PrivateLabel_Top10_2026 · China_Sourcing_Report · отчеты Demity / TV-стенды / мини-холодильники / кронштейны · PI Luoyang ZhenYou · котировка SUZHOU BKDEP · Helium 10 BlackBox (UAE/US) · проиндексированные карточки Alibaba (08.07.2026). Все суммы: EUR с НДС на стороне продажи; FOB в USD; курс 0.92. Маржи — чистые, после рекламы. FBA-тарифы — фактические сборы листингов-конкурентов.
+</footer>
+</div>
