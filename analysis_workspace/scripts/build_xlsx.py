@@ -7,15 +7,23 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side, NamedSty
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
+import os
 BASE="/home/user/Keepa"
-data=json.load(open(f"{BASE}/analysis_workspace/03_unit_economics/uae_final20.json"))
-meta=json.load(open(f"{BASE}/analysis_workspace/04_alibaba/sku_meta.json"))
+DATA_JSON=os.environ.get("DATA_JSON",f"{BASE}/analysis_workspace/03_unit_economics/uae_final20.json")
+META_JSON=os.environ.get("META_JSON",f"{BASE}/analysis_workspace/04_alibaba/sku_meta.json")
+OUT_XLSX=os.environ.get("OUT_XLSX",f"{BASE}/deliverables/UAE_HomeKitchen_TEO_Model_2026-07.xlsx")
+THEME_NOTE=os.environ.get("THEME_NOTE","Home & Kitchen + мебель/офисные кресла")
+data=json.load(open(DATA_JSON))
+meta=json.load(open(META_JSON))
 
-# pilot order quantities (editable defaults)
+# pilot order quantities (editable defaults); fallback = ~3 months of UAE sales
 QTY={"B0GKMVTD6V":600,"B0GV2DHXWS":500,"B0GT8HK7LS":300,"B0GZVM23CF":300,"B0H13ZY2W4":250,
      "B0GQHGFFHC":300,"B0GJ4NHH4L":300,"B0GYF91BXB":1200,"B0GSZHLZ3B":500,"B0GZZ3VM69":400,
      "B0G5DSK3YF":400,"B0GCJQ4Z51":400,"B0GF7LLCL8":300,"B0GDTFFKYC":500,"B0FZRGB6BN":120,
      "B0GXKMXLDC":120,"B0H2B94R5F":150,"B0GN1P7DTT":80,"B0GL357H51":200,"B0G1SX2D8H":200}
+def get_qty(x):
+    if os.environ.get("FALLBACK_QTY")=="1": return max(60,round(x.get("uae_sales_mo",100)*3))
+    return QTY.get(x["asin"]) or max(60,round(x.get("uae_sales_mo",100)*3))
 
 wb=Workbook()
 HDR=PatternFill("solid",fgColor="1F4E78"); SUB=PatternFill("solid",fgColor="2E75B6")
@@ -63,7 +71,7 @@ ws.column_dimensions["A"].width=42; ws.column_dimensions["B"].width=12
 note_r=r+1
 notes=[
  "МЕТОДИКА:",
- "• Источник спроса — новинки Amazon US (Home & Kitchen + мебель/офисные кресла), отслеживание с 2026.",
+ f"• Источник спроса — новинки Amazon US ({THEME_NOTE}), отслеживание с 2026.",
  "• Целевой рынок — Amazon.ae (ОАЭ), модель FBA. Цена ОАЭ = цена US × курс × наценка рынка (проверено по живым данным .ae).",
  "• 'Рабочий режим' — устойчивая экономика после разгона; 'ЗАПУСК' — повышенная реклама/скидки первые 2-3 мес (по ТЗ: PPC 35%, купон 10%).",
  "• FBA-сбор берётся из справочной таблицы (лист 'Справка_FBA'), поле редактируемое.",
@@ -177,7 +185,7 @@ for i,x in enumerate(data):
     mrow=first+i
     inv.cell(r,1,i+1).alignment=CEN
     inv.cell(r,2,meta[a]["ru"]).alignment=LEFT
-    q=inv.cell(r,3,QTY[a]); q.fill=INFILL; q.number_format="#,##0"; q.alignment=CEN; q.border=BORD
+    q=inv.cell(r,3,get_qty(x)); q.fill=INFILL; q.number_format="#,##0"; q.alignment=CEN; q.border=BORD
     inv.cell(r,4).value=f"=Модель_ТЭО!{CL('Landed AED/шт')}{mrow}"; inv.cell(r,4).number_format="#,##0.0"
     inv.cell(r,5).value=f"=C{r}*D{r}"; inv.cell(r,5).number_format="#,##0"
     inv.cell(r,6).value=f"=Модель_ТЭО!{CL('EBITDA/шт (режим)')}{mrow}"; inv.cell(r,6).number_format="#,##0.0"
@@ -265,7 +273,7 @@ for i,x in enumerate(data):
     r=sfirst+i; a=x["asin"]; mrow=first+i
     se.cell(r,1,i+1).alignment=CEN
     se.cell(r,2,meta[a]["ru"]).alignment=LEFT
-    q=se.cell(r,3,QTY[a]); q.fill=INFILL; q.number_format="#,##0"; q.alignment=CEN
+    q=se.cell(r,3,get_qty(x)); q.fill=INFILL; q.number_format="#,##0"; q.alignment=CEN
     se.cell(r,4).value=f"=Модель_ТЭО!{CL('Landed AED/шт')}{mrow}"; se.cell(r,4).number_format="#,##0.0"
     se.cell(r,5).value=f"=C{r}*D{r}"; se.cell(r,5).number_format="#,##0"
     se.cell(r,6).value=f"=Модель_ТЭО!{CL('Продажи US/мес')}{mrow}*UAE_MKT*SHARE"; se.cell(r,6).number_format="#,##0"
@@ -313,6 +321,6 @@ try:
     wb.calculation=CalcProperties(fullCalcOnLoad=True)
 except Exception as e:
     print("calc prop warn:",e)
-out=f"{BASE}/deliverables/UAE_HomeKitchen_TEO_Model_2026-07.xlsx"
+out=OUT_XLSX
 wb.save(out)
 print("saved",out)
