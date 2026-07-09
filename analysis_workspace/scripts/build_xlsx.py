@@ -248,6 +248,65 @@ for i,t in enumerate(refnotes):
     s.cell(4+len(tab)+1+i,1,t).alignment=LEFT
     s.merge_cells(start_row=4+len(tab)+1+i,start_column=1,end_row=4+len(tab)+1+i,end_column=5)
 
+# ---------- Sheet 5: Расходы_Доходы (spend vs earn) ----------
+se=wb.create_sheet("Расходы_Доходы")
+se.sheet_view.showGridLines=False
+se.cell(1,1,"СКОЛЬКО ПОТРАТИМ И СКОЛЬКО ЗАРАБОТАЕМ. Столбец 'Заказ, шт' — ввод; остальное — формулы.").font=Font(bold=True,size=12,color="1F4E78")
+se.merge_cells("A1:M1")
+scols=[("№",5),("Товар",34),("Заказ, шт",9),("Landed AED/шт",11),("ЗАКУПКА AED",12),
+ ("Продажи ОАЭ/мес",12),("Цена AED",9),("Выручка/мес AED",13),
+ ("EBITDA/шт (режим)",12),("EBITDA/мес AED",12),("EBITDA/мес (запуск)",13),("EBITDA/год AED",13)]
+shr=3
+for j,(n,w) in enumerate(scols,1):
+    c=se.cell(shr,j,n); c.fill=HDR; c.font=WHITE; c.alignment=CEN; c.border=BORD
+    se.column_dimensions[get_column_letter(j)].width=w
+sfirst=shr+1
+for i,x in enumerate(data):
+    r=sfirst+i; a=x["asin"]; mrow=first+i
+    se.cell(r,1,i+1).alignment=CEN
+    se.cell(r,2,meta[a]["ru"]).alignment=LEFT
+    q=se.cell(r,3,QTY[a]); q.fill=INFILL; q.number_format="#,##0"; q.alignment=CEN
+    se.cell(r,4).value=f"=Модель_ТЭО!{CL('Landed AED/шт')}{mrow}"; se.cell(r,4).number_format="#,##0.0"
+    se.cell(r,5).value=f"=C{r}*D{r}"; se.cell(r,5).number_format="#,##0"
+    se.cell(r,6).value=f"=Модель_ТЭО!{CL('Продажи US/мес')}{mrow}*UAE_MKT*SHARE"; se.cell(r,6).number_format="#,##0"
+    se.cell(r,7).value=f"=Модель_ТЭО!{CL('Цена ОАЭ, AED')}{mrow}"; se.cell(r,7).number_format="#,##0"
+    se.cell(r,8).value=f"=F{r}*G{r}"; se.cell(r,8).number_format="#,##0"
+    se.cell(r,9).value=f"=Модель_ТЭО!{CL('EBITDA/шт (режим)')}{mrow}"; se.cell(r,9).number_format="#,##0.0"
+    se.cell(r,10).value=f"=F{r}*I{r}"; se.cell(r,10).number_format="#,##0"
+    se.cell(r,11).value=f"=F{r}*Модель_ТЭО!{CL('EBITDA/шт (запуск)')}{mrow}"; se.cell(r,11).number_format="#,##0"
+    se.cell(r,12).value=f"=J{r}*12"; se.cell(r,12).number_format="#,##0"
+    for j in range(1,13): se.cell(r,j).border=BORD
+str_=sfirst+len(data)
+se.cell(str_,2,"ИТОГО (20 SKU)").font=BOLD
+for col in (5,8,10,11,12):
+    L2=get_column_letter(col); se.cell(str_,col).value=f"=SUM({L2}{sfirst}:{L2}{str_-1})"
+    se.cell(str_,col).font=BOLD; se.cell(str_,col).number_format="#,##0"
+for j in range(1,13): se.cell(str_,j).fill=TOTFILL; se.cell(str_,j).border=BORD
+# summary + 12-month ramp
+b=str_+2
+def srow(r,label,formula,fmt="#,##0",bold=False,color=None):
+    se.cell(r,2,label).alignment=LEFT
+    if bold: se.cell(r,2).font=BOLD
+    c=se.cell(r,5); c.value=formula; c.number_format=fmt; c.alignment=CEN
+    if bold: c.font=BOLD
+    if color: c.font=Font(bold=True,color=color)
+    c.border=BORD
+se.cell(b,2,"ИТОГ: РАСХОДЫ И ДОХОДЫ").font=WHITE; se.cell(b,2).fill=SUB
+srow(b+1,"Закупка (оборотный капитал), AED",f"=E{str_}",bold=True)
+srow(b+2,"Бюджет запуска (единоразово), AED","=(18000+14000+22000+60000+15000)*1.1")
+srow(b+3,"ИТОГО потратим на старте, AED",f"=E{b+1}+E{b+2}",bold=True,color="C00000")
+srow(b+4,"Выручка/мес (полный разгон), AED",f"=H{str_}")
+srow(b+5,"EBITDA/мес (полный разгон), AED",f"=J{str_}",bold=True)
+srow(b+6,"Прибыль/мес после налога 9%, AED",f"=J{str_}*(1-CIT)")
+srow(b+7,"EBITDA/год (полный разгон), AED",f"=M{str_}",bold=True)
+se.cell(b+9,2,"12-МЕСЯЧНЫЙ ПРОГНОЗ (разгон, PPC 35% в старте)").font=WHITE; se.cell(b+9,2).fill=SUB
+srow(b+10,"Мес 1-3 (запуск, 40% объёма)",f"=L{str_}*0.4*3")
+srow(b+11,"Мес 4-6 (70% объёма, режим)",f"=J{str_}*0.7*3")
+srow(b+12,"Мес 7-12 (100% объёма, режим)",f"=J{str_}*6")
+srow(b+13,"EBITDA за 1-й год (до налога), AED",f"=E{b+10}+E{b+11}+E{b+12}",bold=True)
+srow(b+14,"Чистая прибыль 1-го года после 9%, AED",f"=E{b+13}*(1-CIT)",bold=True,color="1F6E28")
+srow(b+15,"Денежный результат 1-го года (минус бюджет запуска), AED",f"=E{b+14}-E{b+2}",bold=True,color="1F6E28")
+
 # force Excel/Sheets to recalculate all formulas on open (openpyxl stores no cached values)
 try:
     from openpyxl.workbook.properties import CalcProperties

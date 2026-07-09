@@ -246,6 +246,48 @@ bullet("Волна 3 (через 8–10 нед.): мебель и офисные
 P("Все объёмы заказа, капитал и окупаемость по каждому SKU редактируются в Excel (лист «Инвестиции»).",
   size=9,color=RGBColor(0x60,0x60,0x60),after=6)
 
+# ---------------- 7b. SPEND vs EARN ----------------
+H("7.1. Сколько потратим и сколько заработаем",2)
+# per-SKU spend/earn table
+sc=["№","Товар","Заказ, шт","Закупка AED","Выручка/мес AED","EBITDA/мес AED","EBITDA/год AED"]
+ts=doc.add_table(rows=1,cols=len(sc)); ts.style="Light Grid Accent 1"
+for j,c in enumerate(sc):
+    setw(ts.rows[0].cells[j],c,bold=True,size=8,color=RGBColor(0xFF,0xFF,0xFF),align=WD_ALIGN_PARAGRAPH.CENTER); shade(ts.rows[0].cells[j],"1F4E78")
+sp_t=rev_t=eb_t=0
+for i,x in enumerate(data,1):
+    a=x["asin"]; q=QTY[a]; landed=x["s_landed_aed"]; spend=q*landed
+    rev=x["uae_sales_mo"]*x["s_price_aed"]; eb=x["mo_ebitda_pot"]
+    sp_t+=spend; rev_t+=rev; eb_t+=eb
+    cells=ts.add_row().cells
+    setw(cells[0],i,size=8,align=WD_ALIGN_PARAGRAPH.CENTER)
+    setw(cells[1],meta[a]["ru"],size=7.5)
+    setw(cells[2],f"{q:,}".replace(","," "),size=8,align=WD_ALIGN_PARAGRAPH.CENTER)
+    setw(cells[3],f"{spend:,.0f}".replace(","," "),size=8,align=WD_ALIGN_PARAGRAPH.CENTER)
+    setw(cells[4],f"{rev:,.0f}".replace(","," "),size=8,align=WD_ALIGN_PARAGRAPH.CENTER)
+    setw(cells[5],f"{eb:,.0f}".replace(","," "),size=8,align=WD_ALIGN_PARAGRAPH.CENTER)
+    setw(cells[6],f"{eb*12:,.0f}".replace(","," "),size=8,align=WD_ALIGN_PARAGRAPH.CENTER)
+    if x["s_furniture"]: shade(cells[1],"FCE4D6")
+tr=ts.add_row().cells
+setw(tr[1],"ИТОГО (20 SKU)",bold=True,size=8)
+setw(tr[3],f"{sp_t:,.0f}".replace(","," "),bold=True,size=8,align=WD_ALIGN_PARAGRAPH.CENTER)
+setw(tr[4],f"{rev_t:,.0f}".replace(","," "),bold=True,size=8,align=WD_ALIGN_PARAGRAPH.CENTER)
+setw(tr[5],f"{eb_t:,.0f}".replace(","," "),bold=True,size=8,align=WD_ALIGN_PARAGRAPH.CENTER)
+setw(tr[6],f"{eb_t*12:,.0f}".replace(","," "),bold=True,size=8,align=WD_ALIGN_PARAGRAPH.CENTER)
+for c in tr: shade(c,"D9E1F2")
+P("",after=2)
+# 12-month ramp
+def month_eb(frac,mode):
+    return sum(x["uae_sales_mo"]*frac*(x["l_ebitda"] if mode=="launch" else x["s_ebitda_unit"]) for x in data)
+m13=month_eb(0.4,"launch")*3; m46=month_eb(0.7,"steady")*3; m712=month_eb(1.0,"steady")*6
+yr1=m13+m46+m712; yr1_net=yr1*(1-CIT)
+P("Итог по деньгам:",bold=True,after=2)
+bullet(f"{sp_t:,.0f} AED — закупка (оборотный капитал); {launch:,.0f} AED — бюджет запуска; ИТОГО старт ≈ {sp_t+launch:,.0f} AED (${(sp_t+launch)/USD_AED:,.0f}).".replace(","," "),bold_prefix="Потратим: ")
+bullet(f"выручка ≈ {rev_t:,.0f} AED/мес, EBITDA ≈ {eb_t:,.0f} AED/мес (≈ {eb_t*12:,.0f} AED/год), после налога 9% ≈ {eb_t*(1-CIT):,.0f} AED/мес.".replace(","," "),bold_prefix="Заработаем (полный разгон): ")
+P("Реалистичный 1-й год (с разгоном, PPC 35% в старте):",bold=True,after=2)
+bullet(f"мес 1-3 (запуск, 40% объёма): {m13:,.0f} AED (инвестиция в разгон);".replace(","," "))
+bullet(f"мес 4-6 (70% объёма): +{m46:,.0f} AED; мес 7-12 (100%): +{m712:,.0f} AED;".replace(","," "))
+bullet(f"EBITDA 1-го года ≈ {yr1:,.0f} AED (после налога ≈ {yr1_net:,.0f}); за вычетом бюджета запуска — денежный результат ≈ {yr1_net-launch:,.0f} AED (${(yr1_net-launch)/USD_AED:,.0f}). Оборотный капитал {sp_t:,.0f} AED остаётся в товаре и крутится.".replace(","," "),bold_prefix="Итог: ")
+
 # ---------------- 8. RISKS ----------------
 H("8. Риски и меры",1)
 risks=[("Тяжёлые кресла — фрахт и FBA «съедают» маржу","возить FCL, держать премиальную цену (спрос .ae подтверждает), для самых тяжёлых — 3PL/локальная доставка вместо FBA;"),
