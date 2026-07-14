@@ -180,7 +180,8 @@ def build_selection(
     if title:
         sel["title"] = title
     if category_id is not None:
-        sel["rootCategory"] = category_id
+        # Keepa Product Finder expects rootCategory as a string id.
+        sel["rootCategory"] = str(category_id)
     if brand:
         sel["brand"] = [brand]
 
