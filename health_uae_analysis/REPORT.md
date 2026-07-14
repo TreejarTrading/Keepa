@@ -115,6 +115,19 @@
 
 ---
 
+## 6.1 Рынок ОАЭ/GCC — что подтверждают данные (не БАД)
+
+Догрузил рыночные данные по не-проглатываемым health-нишам (Keepa-квота была исчерпана, поэтому смотрел рынок ОАЭ/GCC напрямую — это даже релевантнее, т.к. ОАЭ = целевой рынок):
+
+- **Корректор осанки** — глобальный рынок **$1.46 млрд (2026), CAGR 8.7%**; плохая осанка — топ-жалоба работающих взрослых (удалёнка/сидячая работа). Продаётся на **noon.ae**; лидер ComfyBrace — 46k+ отзывов. → сильная, растущая не-БАД ниша.
+- **Ортопедические ортезы (наколенники/налокотники/бандажи)** — OTC-рынок Ближнего Востока и Африки **$119 млн (2025) → $125 млн (2026)**, сконцентрирован в **GCC (ОАЭ, КСА)** за счёт высоких расходов на здоровье и господдержки медизделий.
+- **Компрессия + кинезио-тейп + люмбар-пояса** — вместе **33.9%** рынка поддержки осанки. Лёгкие, дешёвые в логистике, частые повторные покупки.
+- Рынок ОАЭ в целом: **4.2 млн активных онлайн-покупателей**, рост GMV **>22%** г/г.
+
+→ Эти ниши в файле помечены как **оценочные строки** (оранжевые) на листе «Юнит-экономика» и в блоке «к проверке» на «Кандидаты». US-объёмы там — оценка; подтверди title-поиском в Keepa, когда квота восстановится.
+
+---
+
 ## 7. Рекомендации (без БАД)
 
 1. **Первый товар — 🟢 «обычный товар»:** бандаж запястья (FREETOO-тип), компрессионные носки/рукава, органик-гигиена или ортопедические стельки. Спрос в США подтверждён, регистрация минимальная, логистика дешёвая.
@@ -143,5 +156,6 @@
 - [amazon.ae revenue — ecommerceDB](https://ecommercedb.com/store/amazon.ae) · [Amazon global revenue — Statista/ECDB](https://ecdb.com/resources/sample-data/retailer/amazon)
 - [Why Amazon UAE & KSA matter in 2025 — MyAmazonGuy](https://myamazonguy.com/amazon-marketplace/why-amazon-uae-and-ksa-are-key-for-sellers-in-2025/) · [14 trending products — sell.amazon.ae](https://sell.amazon.ae/selling-online-blog/amazon-trending-products-uae)
 - Регистрация БАД: [Freyr — Food/Health Supplement Registration UAE](https://www.freyrsolutions.com/food-supplements/food-supplement-health-supplement-registration-in-uae-mohap-dubai-municipality) · [Artixio — регуляции ОАЭ](https://www.artixio.com/post/regulation-and-registration-of-health-supplements-in-the-uae) · [Dubai Municipality — Technical Guidelines for Health Supplements (PDF)](https://www.dm.gov.ae/wp-content/uploads/2024/07/DM-HSD-GU29-TGHS2_Technical-Guidelines-for-Health-Supplements_V2.pdf)
+- Рынок не-БАД ниш: [Posture corrector market $1.46B, CAGR 8.7% — Coherent Market Insights](https://www.coherentmarketinsights.com/industry-reports/posture-corrector-market) · [MEA OTC Orthopedic Braces market — MarketDataForecast](https://www.marketdataforecast.com/market-reports/middle-east-and-africa-otc-orthopedic-braces-market) · [Posture corrector на noon.ae](https://www.noon.com/uae-en/posture-corrector-back-support-belt-orthopedic-lumbar-spine-brace-shoulder-back-straightener-for-men/Z1757732C9724926E02FFZ/p/) · [Best sellers Amazon UAE 2026 — Accio](https://www.accio.com/business/best-seller-in-amazon-uae)
 
 > Замечание: Keepa не покрывает marketplace ОАЭ (amazon.ae) — цифры по ОАЭ получены масштабированием US-данных, а не прямым измерением. Для точной валидации спроса используй Bright Data / Apify по региону AE или SP-API с seller-аккаунтом ОАЭ (см. `README.md`).
