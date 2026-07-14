@@ -285,6 +285,93 @@ ws3.cell(row=row+1, column=1,
           "Самый лёгкий путь — бандажи/компрессия/гигиена/стельки/органайзеры.").font = SMALL
 
 # ============================================================================
+# ЛИСТ «Юнит-экономика» — таблица ПО КАЖДОМУ ТОВАРУ (подставляешь COGS, fees)
+#   index=1 → ставим вторым листом, сразу после «Модель»
+# ============================================================================
+wsu = wb.create_sheet("Юнит-экономика", 1)
+TP = f"Модель!${ADDR['tgt_profit'][0]}${ADDR['tgt_profit'][1:]}"   # Модель!$B$6
+FX = f"Модель!${ADDR['fixed'][0]}${ADDR['fixed'][1:]}"             # Модель!$B$24
+FC = f"Модель!${ADDR['factor'][0]}${ADDR['factor'][1:]}"           # Модель!$B$32
+
+wsu.cell(row=1, column=1, value="ЮНИТ-ЭКОНОМИКА ПО ТОВАРАМ — подставляй свои COGS и fees").font = TITLE
+wsu.cell(row=2, column=1,
+    value="ЖЁЛТЫЕ столбцы (цена, COGS, комиссия %, FBA, PPC, возвраты) — вводишь под свой товар. "
+          "ЗЕЛЁНЫЕ — считаются формулой. Цель прибыли, фикс и коэффициент берутся с листа «Модель».").font = SMALL
+
+ue_cols = [
+    ("Товар (не БАД)", 30, "in"),
+    ("Продажи US, шт/мес", 12, "in"),
+    ("Цена ОАЭ, AED", 12, "in"),
+    ("COGS landed, AED", 13, "in"),
+    ("Комиссия Amazon, %", 12, "in"),
+    ("FBA, AED", 9, "in"),
+    ("PPC, AED", 9, "in"),
+    ("Возвраты, %", 10, "in"),
+    ("Комиссия, AED", 12, "calc"),
+    ("Перем. затраты, AED", 14, "calc"),
+    ("Валовая приб./шт, AED", 14, "calc"),
+    ("Маржа, %", 9, "calc"),
+    ("Юнитов/мес для цели", 13, "calc"),
+    ("Спрос ОАЭ, шт/мес", 13, "calc"),
+    ("Доля ниши", 10, "calc"),
+    ("Вердикт", 10, "calc"),
+]
+hr = 4
+for i, (name, w, kind) in enumerate(ue_cols, start=1):
+    c = wsu.cell(row=hr, column=i, value=name)
+    c.font = WHITE; c.fill = HEAD
+    c.alignment = Alignment(wrap_text=True, vertical="center", horizontal="center")
+    wsu.column_dimensions[get_column_letter(i)].width = w
+wsu.row_dimensions[hr].height = 42
+
+def ue_row(rr, name, us_units, price_aed):
+    cogs0 = round(price_aed * 0.30, 2)   # старт: COGS ≈ 30% цены — замени на свой
+    wsu.cell(row=rr, column=1, value=name)
+    wsu.cell(row=rr, column=2, value=us_units).number_format = NUM
+    wsu.cell(row=rr, column=3, value=price_aed).number_format = AED
+    wsu.cell(row=rr, column=4, value=cogs0).number_format = AED
+    wsu.cell(row=rr, column=5, value=0.15).number_format = PCT
+    wsu.cell(row=rr, column=6, value=12).number_format = AED
+    wsu.cell(row=rr, column=7, value=12).number_format = AED
+    wsu.cell(row=rr, column=8, value=0.03).number_format = PCT
+    # входы — жёлтым
+    for cc in range(2, 9):
+        wsu.cell(row=rr, column=cc).fill = INPUT
+    # формулы (I..P = столбцы 9..16)
+    wsu.cell(row=rr, column=9,  value=f"=C{rr}*E{rr}").number_format = AED          # I: комиссия AED
+    wsu.cell(row=rr, column=10, value=f"=D{rr}+I{rr}+F{rr}+G{rr}+C{rr}*H{rr}").number_format = AED  # J: перем.затраты
+    wsu.cell(row=rr, column=11, value=f"=C{rr}-J{rr}").number_format = AED          # K: валовая приб/шт
+    wsu.cell(row=rr, column=12, value=f"=K{rr}/C{rr}").number_format = PCT          # L: маржа
+    wsu.cell(row=rr, column=13,                                                      # M: юнитов/мес для цели
+        value=f'=IF(K{rr}<=0,"—",ROUNDUP(({TP}+{FX})/K{rr},0))').number_format = NUM
+    wsu.cell(row=rr, column=14, value=f"=ROUND(B{rr}/{FC},0)").number_format = NUM  # N: спрос ОАЭ
+    wsu.cell(row=rr, column=15,                                                      # O: доля ниши
+        value=f'=IF(OR(N{rr}=0,K{rr}<=0),"—",M{rr}/N{rr})').number_format = PCT
+    wsu.cell(row=rr, column=16,                                                      # P: вердикт
+        value=f'=IF(K{rr}<=0,"цена≤затрат",IF(M{rr}<=N{rr}*0.3,"✅ реально",'
+              f'IF(M{rr}<=N{rr},"⚠️ напряжно","❌ стек SKU")))')
+    for cc in range(9, 17):
+        wsu.cell(row=rr, column=cc).fill = CALC
+    for cc in range(1, 17):
+        wsu.cell(row=rr, column=cc).border = BORDER
+
+rr = hr + 1
+for (niche, brand, asin, pu, us, rev, off, reg, bar, com) in CANDS:
+    ue_row(rr, f"{niche} ({brand})", us, round(pu * USD_AED, 2))
+    rr += 1
+
+wsu.cell(row=rr+1, column=1,
+    value="Столбцы: Комиссия = Цена×Комиссия%. Перем.затраты = COGS+Комиссия+FBA+PPC+Цена×Возвраты%. "
+          "Валовая приб./шт = Цена − Перем.затраты. Юнитов/мес для цели = (Цель прибыли[Модель]+Фикс[Модель]) / "
+          "Валовая приб/шт. Спрос ОАЭ = Продажи US / Коэффициент[Модель]. Вердикт: ✅ ≤30% ниши / ⚠️ до 100% / "
+          "❌ больше ниши (нужен стек из нескольких SKU).").font = SMALL
+wsu.cell(row=rr+3, column=1,
+    value="Цена ОАЭ предзаполнена как прямой пересчёт US-цены ×3.6725 — это НЕЙТРАЛЬНЫЙ старт. "
+          "Импортные health-товары в ОАЭ часто стоят дороже US: подними цену под реальный листинг amazon.ae/noon "
+          "и увидишь, как маржа и вердикт улучшаются.").font = Font(italic=True, color="C00000")
+wsu.freeze_panes = "A5"
+
+# ============================================================================
 # ЛИСТ 4 — ИНСТРУКЦИЯ / ДОПУЩЕНИЯ
 # ============================================================================
 ws4 = wb.create_sheet("Инструкция")
