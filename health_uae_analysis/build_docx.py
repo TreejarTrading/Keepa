@@ -41,6 +41,24 @@ def set_cell_text(cell, text, bold=False, color=None, white=False, size=9.5, ali
     if white: run.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF)
     elif color is not None: run.font.color.rgb = color
 
+def add_hyperlink(paragraph, url, text, color="0563C1", size=9):
+    part = paragraph.part
+    r_id = part.relate_to(
+        url, "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+        is_external=True)
+    link = OxmlElement("w:hyperlink"); link.set(qn("r:id"), r_id)
+    run = OxmlElement("w:r"); rPr = OxmlElement("w:rPr")
+    col = OxmlElement("w:color"); col.set(qn("w:val"), color); rPr.append(col)
+    u = OxmlElement("w:u"); u.set(qn("w:val"), "single"); rPr.append(u)
+    sz = OxmlElement("w:sz"); sz.set(qn("w:val"), str(int(size * 2))); rPr.append(sz)
+    run.append(rPr)
+    t = OxmlElement("w:t"); t.text = text; run.append(t)
+    link.append(run); paragraph._p.append(link)
+
+def set_cell_link(cell, url, text, size=9):
+    cell.text = ""
+    add_hyperlink(cell.paragraphs[0], url, text, size=size)
+
 def h1(text):
     p = doc.add_paragraph(); r = p.add_run(text)
     r.bold = True; r.font.size = Pt(15); r.font.color.rgb = NAVY
@@ -65,7 +83,8 @@ def bullet(text, bold_prefix=None):
 def numbered(text):
     doc.add_paragraph(text, style="List Number")
 
-def table(headers, rows, widths=None, verdict_col=None, barrier_col=None):
+def table(headers, rows, widths=None, verdict_col=None, barrier_col=None,
+          link_col=None, link_url=None):
     t = doc.add_table(rows=1, cols=len(headers))
     t.style = "Table Grid"; t.alignment = WD_TABLE_ALIGNMENT.CENTER
     for i, htext in enumerate(headers):
@@ -74,6 +93,9 @@ def table(headers, rows, widths=None, verdict_col=None, barrier_col=None):
     for row in rows:
         cells = t.add_row().cells
         for i, val in enumerate(row):
+            if link_col is not None and i == link_col and link_url:
+                set_cell_link(cells[i], link_url(str(val)), str(val))
+                continue
             set_cell_text(cells[i], val, size=9)
             v = str(val)
             if barrier_col is not None and i == barrier_col:
@@ -132,22 +154,23 @@ table(
 # ============================ 3. Куда влезем (без БАД) ============================
 h1("3. Куда ВЛЕЗЕМ — БЕЗ БАД (только не-проглатываемые товары)")
 para("По условию добавки/БАД исключены. Оставил физические не-проглатываемые health-товары с подтверждённым спросом, малым числом отзывов (свежие) и низкой конкуренцией.")
-h2("Проверено в Keepa:")
+h2("Проверено в Keepa (ASIN — кликабельные ссылки на Amazon):")
 table(
-    ["Ниша", "Пример", "Цена US", "Продажи US/мес", "Отзывы", "Регистрация ОАЭ", "Барьер"],
+    ["Ниша", "Пример", "ASIN", "Цена US", "Продажи US/мес", "Отзывы", "Регистрация ОАЭ", "Барьер"],
     [
-        ["★ Бандаж запястья / карпал-туннель", "FREETOO", "$19.95", "3 000", "5 704", "нет (обычный товар)", "🟢 низкий"],
-        ["★ Аптечка First Aid Kit", "First Aid Only", "$20.95", "10 000", "5 658", "нет (набор)", "🟢 низкий"],
-        ["★ Органические прокладки", "This is L.", "$22.99", "5 000", "1 091", "нет (гигиена)", "🟢 низкий"],
-        ["Органич. гигиена", "Honey Pot", "$22.99", "2 000", "1 366", "нет (гигиена)", "🟢 низкий"],
-        ["Отбеливание зубов (гель+каппа)", "Opalescence", "$28.98", "10 000", "3 439", "космет. рег.", "🟡 средний"],
-        ["Зубная паста (гидроксиапатит)", "Himalaya", "$19.59", "1 000", "3 699", "космет. рег.", "🟡 средний"],
-        ["Раневая повязка (Xeroform)", "Dr. Med", "$25.99", "1 000", "1 292", "мед.изделие (MOHAP)", "🔴 высокий"],
-        ["Флашбл-салфетки", "DUDE Wipes", "$16.98", "9 000", "241k", "нет (гигиена)", "🔴 занято"],
+        ["★ Бандаж запястья / карпал-туннель", "FREETOO", "B0DNFTL63F", "$19.95", "3 000", "5 704", "нет (обычный товар)", "🟢 низкий"],
+        ["★ Аптечка First Aid Kit", "First Aid Only", "B08P27LHJ4", "$20.95", "10 000", "5 658", "нет (набор)", "🟢 низкий"],
+        ["★ Органические прокладки", "This is L.", "B0DR3BYKWC", "$22.99", "5 000", "1 091", "нет (гигиена)", "🟢 низкий"],
+        ["Органич. гигиена", "Honey Pot", "B0DCDPBZX2", "$22.99", "2 000", "1 366", "нет (гигиена)", "🟢 низкий"],
+        ["Отбеливание зубов (гель+каппа)", "Opalescence", "B000MMYI8G", "$28.98", "10 000", "3 439", "космет. рег.", "🟡 средний"],
+        ["Зубная паста (гидроксиапатит)", "Himalaya", "B0C4MMPCQH", "$19.59", "1 000", "3 699", "космет. рег.", "🟡 средний"],
+        ["Раневая повязка (Xeroform)", "Dr. Med", "B0BGXMXNRD", "$25.99", "1 000", "1 292", "мед.изделие (MOHAP)", "🔴 высокий"],
+        ["Флашбл-салфетки", "DUDE Wipes", "B0GFFLR222", "$16.98", "9 000", "241k", "нет (гигиена)", "🔴 занято"],
     ],
-    widths=[4.8, 2.8, 1.8, 2.4, 1.8, 3.2, 2], barrier_col=6)
-para("★ = приоритет для новичка. Полная таблица с ASIN и оценкой спроса ОАЭ — на листе «Кандидаты US→ОАЭ».",
-     italic=True, color=GREY, size=9)
+    widths=[4.4, 2.6, 2.4, 1.6, 2.2, 1.6, 3, 1.9], barrier_col=7,
+    link_col=2, link_url=lambda a: f"https://www.amazon.com/dp/{a}")
+para("★ = приоритет для новичка. ASIN кликабельны (Amazon). Полная таблица с ссылками Amazon + Keepa — "
+     "на листе «Кандидаты US→ОАЭ» в XLSX.", italic=True, color=GREY, size=9)
 
 h2("Смежные не-БАД ниши — подтверждены рыночными данными:")
 bullet("корректор осанки, наколенник/налокотник, компрессионные носки/рукава, люмбар-пояс, ортопедические стельки, кинезио-тейп, акупрессурный коврик, органайзер для таблеток — все 🟢 обычный товар;")

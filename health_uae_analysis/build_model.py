@@ -205,8 +205,8 @@ ws2.cell(row=r2+1, column=1,
 ws3 = wb.create_sheet("Кандидаты US→ОАЭ")
 cols = ["Ниша (БЕЗ БАД)", "Пример (бренд)", "ASIN", "Цена US, $", "Цена US, AED",
         "Продажи US, шт/мес", "Оценка ОАЭ ÷40, шт/мес", "Отзывы", "Офферов",
-        "Регистрация в ОАЭ", "Барьер входа", "Комментарий"]
-widths = [26, 18, 13, 11, 12, 16, 18, 9, 8, 24, 16, 50]
+        "Регистрация в ОАЭ", "Барьер входа", "Комментарий", "Keepa (график)"]
+widths = [26, 18, 13, 11, 12, 16, 18, 9, 8, 24, 16, 50, 14]
 for i, (cn, w) in enumerate(zip(cols, widths), start=1):
     c = ws3.cell(row=1, column=i, value=cn); c.font = WHITE; c.fill = HEAD
     c.alignment = Alignment(wrap_text=True, vertical="center", horizontal="center")
@@ -255,7 +255,9 @@ row = 2
 for (niche, brand, asin, pu, us, rev, off, reg, bar, com) in CANDS:
     ws3.cell(row=row, column=1, value=niche)
     ws3.cell(row=row, column=2, value=brand)
-    ws3.cell(row=row, column=3, value=asin)
+    ac = ws3.cell(row=row, column=3, value=asin)
+    ac.hyperlink = f"https://www.amazon.com/dp/{asin}"
+    ac.font = Font(color="0563C1", underline="single")
     ws3.cell(row=row, column=4, value=pu).number_format = '#,##0.00" $"'
     ws3.cell(row=row, column=5, value=f"=D{row}*3.6725").number_format = AED
     ws3.cell(row=row, column=6, value=us).number_format = NUM
@@ -266,13 +268,16 @@ for (niche, brand, asin, pu, us, rev, off, reg, bar, com) in CANDS:
     bcell = ws3.cell(row=row, column=11, value=bar)
     bcell.fill = OKF if bar == "Низкий" else (WARNF if bar == "Высокий" else PatternFill("solid", fgColor="FFEB9C"))
     ws3.cell(row=row, column=12, value=com).alignment = Alignment(wrap_text=True, vertical="top")
-    for cc in range(1, 13):
+    kc = ws3.cell(row=row, column=13, value="открыть")
+    kc.hyperlink = f"https://keepa.com/#!product/1-{asin}"
+    kc.font = Font(color="0563C1", underline="single")
+    for cc in range(1, 14):
         ws3.cell(row=row, column=cc).border = BORDER
     row += 1
 # разделитель
 sep = ws3.cell(row=row, column=1, value="СМЕЖНЫЕ НЕ-БАД НИШИ К ПРОВЕРКЕ (запусти title-поиск в Keepa)")
 sep.font = WHITE; sep.fill = HEAD
-for cc in range(2, 13):
+for cc in range(2, 14):
     ws3.cell(row=row, column=cc).fill = HEAD
 row += 1
 for (niche, reg, bar, com) in ADJ:
@@ -281,7 +286,7 @@ for (niche, reg, bar, com) in ADJ:
     bcell = ws3.cell(row=row, column=11, value=bar)
     bcell.fill = OKF if bar == "Низкий" else PatternFill("solid", fgColor="FFEB9C")
     ws3.cell(row=row, column=12, value=com).alignment = Alignment(wrap_text=True, vertical="top")
-    for cc in range(1, 13):
+    for cc in range(1, 14):
         ws3.cell(row=row, column=cc).border = BORDER
     row += 1
 ws3.cell(row=row+1, column=1,
@@ -321,6 +326,7 @@ ue_cols = [
     ("Спрос ОАЭ, шт/мес", 13, "calc"),
     ("Доля ниши", 10, "calc"),
     ("Вердикт", 10, "calc"),
+    ("ASIN (Amazon)", 14, "link"),
 ]
 hr = 4
 for i, (name, w, kind) in enumerate(ue_cols, start=1):
@@ -364,6 +370,9 @@ def ue_row(rr, name, us_units, price_aed):
 rr = hr + 1
 for (niche, brand, asin, pu, us, rev, off, reg, bar, com) in CANDS:
     ue_row(rr, f"{niche} ({brand})", us, round(pu * USD_AED, 2))
+    lc = wsu.cell(row=rr, column=17, value=asin)
+    lc.hyperlink = f"https://www.amazon.com/dp/{asin}"
+    lc.font = Font(color="0563C1", underline="single"); lc.border = BORDER
     rr += 1
 
 # Оценочные строки: ниши, подтверждённые рынком (веб), объёмы US — ОЦЕНКА, уточни в Keepa
