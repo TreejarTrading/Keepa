@@ -14,6 +14,8 @@ from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+import sys; sys.path.insert(0, HERE)
+from niches_data import NICHES, USD_AED  # единый источник ниш (общий с XLSX)
 NAVY = RGBColor(0x1F, 0x4E, 0x78)
 GREY = RGBColor(0x80, 0x80, 0x80)
 RED  = RGBColor(0xC0, 0x00, 0x00)
@@ -151,30 +153,47 @@ table(
     ],
     widths=[4.5, 3.5, 2.2, 3, 5])
 
-# ============================ 3. Куда влезем (без БАД) ============================
-h1("3. Куда ВЛЕЗЕМ — БЕЗ БАД (только не-проглатываемые товары)")
-para("По условию добавки/БАД исключены. Оставил физические не-проглатываемые health-товары с подтверждённым спросом, малым числом отзывов (свежие) и низкой конкуренцией.")
-h2("Проверено в Keepa (ASIN — кликабельные ссылки на Amazon):")
-table(
-    ["Ниша", "Пример", "ASIN", "Цена US", "Продажи US/мес", "Отзывы", "Регистрация ОАЭ", "Барьер"],
-    [
-        ["★ Бандаж запястья / карпал-туннель", "FREETOO", "B0DNFTL63F", "$19.95", "3 000", "5 704", "нет (обычный товар)", "🟢 низкий"],
-        ["★ Аптечка First Aid Kit", "First Aid Only", "B08P27LHJ4", "$20.95", "10 000", "5 658", "нет (набор)", "🟢 низкий"],
-        ["★ Органические прокладки", "This is L.", "B0DR3BYKWC", "$22.99", "5 000", "1 091", "нет (гигиена)", "🟢 низкий"],
-        ["Органич. гигиена", "Honey Pot", "B0DCDPBZX2", "$22.99", "2 000", "1 366", "нет (гигиена)", "🟢 низкий"],
-        ["Отбеливание зубов (гель+каппа)", "Opalescence", "B000MMYI8G", "$28.98", "10 000", "3 439", "космет. рег.", "🟡 средний"],
-        ["Зубная паста (гидроксиапатит)", "Himalaya", "B0C4MMPCQH", "$19.59", "1 000", "3 699", "космет. рег.", "🟡 средний"],
-        ["Раневая повязка (Xeroform)", "Dr. Med", "B0BGXMXNRD", "$25.99", "1 000", "1 292", "мед.изделие (MOHAP)", "🔴 высокий"],
-        ["Флашбл-салфетки", "DUDE Wipes", "B0GFFLR222", "$16.98", "9 000", "241k", "нет (гигиена)", "🔴 занято"],
-    ],
-    widths=[4.4, 2.6, 2.4, 1.6, 2.2, 1.6, 3, 1.9], barrier_col=7,
-    link_col=2, link_url=lambda a: f"https://www.amazon.com/dp/{a}")
-para("★ = приоритет для новичка. ASIN кликабельны (Amazon). Полная таблица с ссылками Amazon + Keepa — "
-     "на листе «Кандидаты US→ОАЭ» в XLSX.", italic=True, color=GREY, size=9)
+# ============================ 3. Каталог ниш ОАЭ (без БАД) ============================
+h1("3. Каталог целевых ниш ОАЭ — БЕЗ БАД (32 позиции, 6 групп)")
+para("Все ниши — не-проглатываемые (не БАД), заточены под рынок ОАЭ: климат/охлаждение, велнес, восстановление, "
+     "сон, качество воздуха, йога. «Данные»: Keepa = продажи US реальные; оценка = US-объём прикинут (уточни "
+     "title-поиском в Keepa). Полная версия с формулами — на листах «Кандидаты» и «Юнит-экономика» в XLSX.")
 
-h2("Смежные не-БАД ниши — подтверждены рыночными данными:")
-bullet("корректор осанки, наколенник/налокотник, компрессионные носки/рукава, люмбар-пояс, ортопедические стельки, кинезио-тейп, акупрессурный коврик, органайзер для таблеток — все 🟢 обычный товар;")
-bullet("массаж-пистолет/ролик, электрогрелка — 🟡 электроника (сертификация G-mark).")
+headers = ["Ниша", "Пример", "ASIN", "Цена US$", "~US шт/мес", "Регистрация ОАЭ", "Барьер", "Данные"]
+t = doc.add_table(rows=1, cols=len(headers))
+t.style = "Table Grid"; t.alignment = WD_TABLE_ALIGNMENT.CENTER
+for i, htext in enumerate(headers):
+    set_cell_text(t.rows[0].cells[i], htext, bold=True, white=True, size=8.5, align="center")
+    shade(t.rows[0].cells[i], HEAD_FILL)
+cur = None
+for (grp, niche, brand, asin, pu, us, reg, bar, real, com) in NICHES:
+    if grp != cur:
+        gr = t.add_row().cells
+        gr[0].merge(gr[len(headers) - 1])
+        set_cell_text(gr[0], f"▸ {grp}", bold=True, white=True, size=9)
+        shade(gr[0], HEAD_FILL)
+        cur = grp
+    cells = t.add_row().cells
+    star = "★ " if "★" in com else ""
+    set_cell_text(cells[0], star + niche, size=8.5)
+    set_cell_text(cells[1], brand or "—", size=8.5)
+    if asin:
+        set_cell_link(cells[2], f"https://www.amazon.com/dp/{asin}", asin, size=8.5)
+    else:
+        set_cell_text(cells[2], "—", size=8.5)
+    set_cell_text(cells[3], f"${pu:g}", size=8.5)
+    set_cell_text(cells[4], f"{us:,}".replace(",", " "), size=8.5)
+    set_cell_text(cells[5], reg, size=8.5)
+    set_cell_text(cells[6], bar, size=8.5)
+    shade(cells[6], GREEN_FILL if bar == "Низкий" else AMBER_FILL)
+    set_cell_text(cells[7], "Keepa" if real else "оценка", size=8.5)
+    shade(cells[7], GREEN_FILL if real else "FCE4D6")
+for i, w in enumerate([4.2, 2.2, 2.3, 1.3, 1.6, 3.1, 1.6, 1.4]):
+    for r in t.rows:
+        r.cells[i].width = Cm(w)
+para("★ = приоритет для ОАЭ (климат/тренд/лёгкий вход). ASIN кликабельны (Amazon). "
+     "Реальные данные Keepa пока по 2 нишам (массаж-пистолет, фиксатор запястья) — остальные US-объёмы оценочные, "
+     "уточняются title-поиском в Keepa.", italic=True, color=GREY, size=9)
 
 # ============================ 4. Масштабирование ============================
 h1("4. Масштабирование США → ОАЭ: осторожно с ÷40")

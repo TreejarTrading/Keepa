@@ -15,6 +15,8 @@ from openpyxl.utils import get_column_letter
 import json, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+import sys; sys.path.insert(0, HERE)
+from niches_data import NICHES, USD_AED  # единый источник ниш
 
 # ---- стили -----------------------------------------------------------------
 INPUT   = PatternFill("solid", fgColor="FFF2CC")   # жёлтый — сюда вводим данные
@@ -203,97 +205,57 @@ ws2.cell(row=r2+1, column=1,
 # ЛИСТ 3 — КАНДИДАТЫ (реальные данные Keepa, США)
 # ============================================================================
 ws3 = wb.create_sheet("Кандидаты US→ОАЭ")
-cols = ["Ниша (БЕЗ БАД)", "Пример (бренд)", "ASIN", "Цена US, $", "Цена US, AED",
-        "Продажи US, шт/мес", "Оценка ОАЭ ÷40, шт/мес", "Отзывы", "Офферов",
-        "Регистрация в ОАЭ", "Барьер входа", "Комментарий", "Keepa (график)"]
-widths = [26, 18, 13, 11, 12, 16, 18, 9, 8, 24, 16, 50, 14]
+cols = ["Ниша", "Пример/бренд", "ASIN", "Цена US $", "Цена US AED",
+        "Продажи US шт/мес", "Оценка ОАЭ ÷40", "Регистрация ОАЭ", "Барьер",
+        "Данные", "Комментарий", "Keepa"]
+widths = [32, 15, 13, 11, 12, 15, 14, 22, 10, 10, 48, 9]
 for i, (cn, w) in enumerate(zip(cols, widths), start=1):
     c = ws3.cell(row=1, column=i, value=cn); c.font = WHITE; c.fill = HEAD
     c.alignment = Alignment(wrap_text=True, vertical="center", horizontal="center")
     ws3.column_dimensions[get_column_letter(i)].width = w
 ws3.row_dimensions[1].height = 44
 
-# --- Блок 1: проверено в Keepa (Health & Household, cat 3760901), БЕЗ БАД ---
-CANDS = [
- # ниша, бренд, asin, price_usd, us_units, reviews, offers, reg, barrier, comment
- ("Бандаж запястья / карпал-туннель", "FREETOO", "B0DNFTL63F", 19.95, 3000, 5704, 1, "нет (обычный товар)", "Низкий",
-  "★ Не БАД, не мед.прибор. Лёгкий, private-label легко. У бренда 5+ SKU-вариантов (левая/правая рука)."),
- ("Аптечка / First Aid Kit", "First Aid Only", "B08P27LHJ4", 20.95, 10000, 5658, 1, "нет (набор расходников)", "Низкий",
-  "★ Высокий спрос, не БАД. Габарит больше — заложи FBA/логистику."),
- ("Органические прокладки", "This is L.", "B0DR3BYKWC", 22.99, 5000, 1091, 3, "нет (гигиена)", "Низкий",
-  "★ Не БАД. Женская гигиена, органик-ниша растёт, повторные покупки."),
- ("Органические прокладки/тампоны", "Honey Pot", "B0DCDPBZX2", 22.99, 2000, 1366, 2, "нет (гигиена)", "Низкий",
-  "Органик женская гигиена, свежий бренд, лёгкая логистика."),
- ("Отбеливание зубов (гель+каппа)", "Opalescence", "B000MMYI8G", 28.98, 10000, 3439, 1, "космет. рег. (легче БАД)", "Средний",
-  "Оральная косметика — регистрация проще БАД, но нужна. Высокий спрос."),
- ("Зубная паста гидроксиапатит", "Himalaya", "B0C4MMPCQH", 19.59, 1000, 3699, 1, "космет. рег.", "Средний",
-  "Fluoride-free тренд, оральная косметика."),
- ("Повязка на рану (Xeroform)", "Dr. Med", "B0BGXMXNRD", 25.99, 1000, 1292, 1, "мед.изделие (MOHAP)", "Высокий",
-  "Раневые повязки = мед.изделие → регистрация MOHAP. Не БАД, но барьер есть."),
- ("Флашбл-салфетки (гигиена)", "DUDE Wipes", "B0GFFLR222", 16.98, 9000, 241600, 1, "нет (гигиена)", "Высокий",
-  "Спрос огромный, но бренд-война (DUDE/Cottonelle) — тяжело зайти новичку."),
-]
-# --- Блок 2: смежные не-БАД ниши — ПОДТВЕРЖДЕНЫ рыночными данными (объёмы уточнить в Keepa) ---
-ADJ = [
- ("Корректор осанки (posture)", "нет (обычный товар)", "Низкий",
-  "★ Рынок $1.46 млрд (2026), CAGR 8.7%. Есть на noon.ae. Топ ComfyBrace 46k отзывов. Лёгкий, вирусится."),
- ("Наколенник / налокотник / бандаж", "нет (обычный товар)", "Низкий",
-  "★ OTC-ортезы MEA $119→125 млн, сконцентрированы в GCC (ОАЭ/КСА). Много под-SKU по размерам."),
- ("Компрессионные носки / рукава", "нет (обычный товар)", "Низкий",
-  "Тревел/спорт/варикоз. Компрессия+кинезио-тейп+люмбар-пояса = 33.9% рынка осанки. Лёгкий, дёшев в логистике."),
- ("Люмбар-пояс / поддержка спины", "нет (обычный товар)", "Низкий",
-  "Часть posture-рынка; офисная аудитория ОАЭ (удалёнка/сидячая работа)."),
- ("Ортопедические стельки", "нет (обычный товар)", "Низкий", "Расходка, повторные покупки, лёгкие."),
- ("Кинезио-тейп", "нет (обычный товар)", "Низкий", "Спорт/восстановление, расходка, высокая частота покупки."),
- ("Массажный коврик (акупрессура)", "нет (обычный товар)", "Низкий", "Не электро; смотри объёмный вес для FBA."),
- ("Органайзер для таблеток", "нет (обычный товар)", "Низкий", "Пластик, дёшево, стабильный спрос, лёгкий."),
- ("Массаж-пистолет / ролик", "эл.прибор (G-mark/сертиф.)", "Средний", "Электроника → сертификация ОАЭ (G-mark). Высокий чек."),
- ("Грелка электрическая (heating pad)", "эл.прибор (G-mark/сертиф.)", "Средний", "Электроника → сертификация. Сезонность."),
-]
-USD_AED = 3.6725
-row = 2
-for (niche, brand, asin, pu, us, rev, off, reg, bar, com) in CANDS:
+
+def kandidat_row(row, niche, brand, asin, pu, us, reg, bar, real, com):
     ws3.cell(row=row, column=1, value=niche)
     ws3.cell(row=row, column=2, value=brand)
-    ac = ws3.cell(row=row, column=3, value=asin)
-    ac.hyperlink = f"https://www.amazon.com/dp/{asin}"
-    ac.font = Font(color="0563C1", underline="single")
+    if asin:
+        ac = ws3.cell(row=row, column=3, value=asin)
+        ac.hyperlink = f"https://www.amazon.com/dp/{asin}"; ac.font = Font(color="0563C1", underline="single")
     ws3.cell(row=row, column=4, value=pu).number_format = '#,##0.00" $"'
     ws3.cell(row=row, column=5, value=f"=D{row}*3.6725").number_format = AED
-    ws3.cell(row=row, column=6, value=us).number_format = NUM
+    uc = ws3.cell(row=row, column=6, value=us); uc.number_format = NUM
     ws3.cell(row=row, column=7, value=f"=ROUND(F{row}/40,0)").number_format = NUM
-    ws3.cell(row=row, column=8, value=rev).number_format = NUM
-    ws3.cell(row=row, column=9, value=off)
-    ws3.cell(row=row, column=10, value=reg)
-    bcell = ws3.cell(row=row, column=11, value=bar)
-    bcell.fill = OKF if bar == "Низкий" else (WARNF if bar == "Высокий" else PatternFill("solid", fgColor="FFEB9C"))
-    ws3.cell(row=row, column=12, value=com).alignment = Alignment(wrap_text=True, vertical="top")
-    kc = ws3.cell(row=row, column=13, value="открыть")
-    kc.hyperlink = f"https://keepa.com/#!product/1-{asin}"
-    kc.font = Font(color="0563C1", underline="single")
-    for cc in range(1, 14):
-        ws3.cell(row=row, column=cc).border = BORDER
-    row += 1
-# разделитель
-sep = ws3.cell(row=row, column=1, value="СМЕЖНЫЕ НЕ-БАД НИШИ К ПРОВЕРКЕ (запусти title-поиск в Keepa)")
-sep.font = WHITE; sep.fill = HEAD
-for cc in range(2, 14):
-    ws3.cell(row=row, column=cc).fill = HEAD
-row += 1
-for (niche, reg, bar, com) in ADJ:
-    ws3.cell(row=row, column=1, value=niche)
-    ws3.cell(row=row, column=10, value=reg)
-    bcell = ws3.cell(row=row, column=11, value=bar)
+    ws3.cell(row=row, column=8, value=reg)
+    bcell = ws3.cell(row=row, column=9, value=bar)
     bcell.fill = OKF if bar == "Низкий" else PatternFill("solid", fgColor="FFEB9C")
-    ws3.cell(row=row, column=12, value=com).alignment = Alignment(wrap_text=True, vertical="top")
-    for cc in range(1, 14):
+    dc = ws3.cell(row=row, column=10, value="Keepa" if real else "оценка")
+    dc.fill = OKF if real else PatternFill("solid", fgColor="FCE4D6")
+    if not real:
+        uc.fill = PatternFill("solid", fgColor="FCE4D6")
+    ws3.cell(row=row, column=11, value=com).alignment = Alignment(wrap_text=True, vertical="top")
+    if asin:
+        kc = ws3.cell(row=row, column=12, value="открыть")
+        kc.hyperlink = f"https://keepa.com/#!product/1-{asin}"; kc.font = Font(color="0563C1", underline="single")
+    for cc in range(1, 13):
         ws3.cell(row=row, column=cc).border = BORDER
+
+row = 2
+cur_group = None
+for (grp, niche, brand, asin, pu, us, reg, bar, real, com) in NICHES:
+    if grp != cur_group:
+        sep = ws3.cell(row=row, column=1, value=f"▸ {grp}")
+        sep.font = WHITE; sep.fill = HEAD
+        for cc in range(2, 13):
+            ws3.cell(row=row, column=cc).fill = HEAD
+        row += 1; cur_group = grp
+    kandidat_row(row, niche, brand, asin, pu, us, reg, bar, real, com)
     row += 1
 ws3.cell(row=row+1, column=1,
-    value="★ = приоритет для НОВОГО продавца: спрос есть, вход дешевле, БЕЗ регистрации. "
-          "ВАЖНО: «не БАД» ≠ «без регистрации» — мед.изделия (повязки, тонометры, TENS) → MOHAP; "
-          "электроника (массажёры, грелки) → сертификация; оральная косметика → космет.регистрация. "
-          "Самый лёгкий путь — бандажи/компрессия/гигиена/стельки/органайзеры.").font = SMALL
+    value="«Данные»: Keepa = продажи US реальные; оценка (оранжевый) = US-объём прикинут, уточни title-поиском в Keepa. "
+          "Регистрация ОАЭ: 🟢 обычный товар (легко) · 🟡 электроника (сертификация/G-mark) · 🔴 мед.изделие (MOHAP). "
+          "★ в комментарии = приоритетно для ОАЭ (климат/тренд/лёгкий вход).").font = SMALL
+ws3.freeze_panes = "A2"
 
 # ============================================================================
 # ЛИСТ «Юнит-экономика» — таблица ПО КАЖДОМУ ТОВАРУ (подставляешь COGS, fees)
@@ -368,23 +330,23 @@ def ue_row(rr, name, us_units, price_aed):
         wsu.cell(row=rr, column=cc).border = BORDER
 
 rr = hr + 1
-for (niche, brand, asin, pu, us, rev, off, reg, bar, com) in CANDS:
-    ue_row(rr, f"{niche} ({brand})", us, round(pu * USD_AED, 2))
-    lc = wsu.cell(row=rr, column=17, value=asin)
-    lc.hyperlink = f"https://www.amazon.com/dp/{asin}"
-    lc.font = Font(color="0563C1", underline="single"); lc.border = BORDER
-    rr += 1
-
-# Оценочные строки: ниши, подтверждённые рынком (веб), объёмы US — ОЦЕНКА, уточни в Keepa
-EST = [
-    ("Корректор осанки (оцен., уточни Keepa)", 5000, round(28 * USD_AED, 2)),
-    ("Компрессионный рукав/налокотник (оцен.)", 3000, round(20 * USD_AED, 2)),
-    ("Люмбар-пояс поддержки спины (оцен.)", 3000, round(30 * USD_AED, 2)),
-]
-for (niche, us, price_aed) in EST:
-    ue_row(rr, niche, us, price_aed)
-    wsu.cell(row=rr, column=1).fill = PatternFill("solid", fgColor="FCE4D6")  # оранжевый = оценка
-    wsu.cell(row=rr, column=2).fill = PatternFill("solid", fgColor="FCE4D6")  # US-объём оценочный
+cur_group = None
+for (grp, niche, brand, asin, pu, us, reg, bar, real, com) in NICHES:
+    if grp != cur_group:
+        sep = wsu.cell(row=rr, column=1, value=f"▸ {grp}")
+        sep.font = WHITE; sep.fill = HEAD
+        for cc in range(2, 18):
+            wsu.cell(row=rr, column=cc).fill = HEAD
+        rr += 1; cur_group = grp
+    label = f"{niche} ({brand})" if brand else niche
+    ue_row(rr, label, us, round(pu * USD_AED, 2))
+    if asin:
+        lc = wsu.cell(row=rr, column=17, value=asin)
+        lc.hyperlink = f"https://www.amazon.com/dp/{asin}"
+        lc.font = Font(color="0563C1", underline="single"); lc.border = BORDER
+    if not real:  # оранжевый = US-объём оценочный
+        wsu.cell(row=rr, column=1).fill = PatternFill("solid", fgColor="FCE4D6")
+        wsu.cell(row=rr, column=2).fill = PatternFill("solid", fgColor="FCE4D6")
     rr += 1
 
 wsu.cell(row=rr+1, column=1,
